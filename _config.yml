@@ -48,6 +48,7 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
+  안녕하세요
   I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
 content:
