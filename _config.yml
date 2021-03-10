@@ -40,10 +40,10 @@ about_content: | # this will include new lines to allow paragraphs
   I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
 content:
-  - title : Skills
-    - content :
-        - layout : left
-          title : Backend
+  #- title : Skills
+  #  - content :
+   #     - layout : left
+    #      title : Backend
           #description :
            # - Java
             #- Spring
