@@ -1,2 +1,5 @@
-url                      : "https://younwony.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+title                    : "이력서"
+name                     : "wony"
+description              : "wony의 이력서"
+url                      : "https://younwony.github.io"
+baseurl                  : ""
