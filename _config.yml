@@ -44,9 +44,9 @@ content:
     - content :
         - layout : left
           title : Backend
-          description :
-            - Java
-            - Spring
+          #description :
+           # - Java
+            #- Spring
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
