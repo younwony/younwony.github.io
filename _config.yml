@@ -8,26 +8,14 @@ version: 2
 # Personal info
 name: wony
 title: dev
-email: wony9324@naver.com
+#email: wony9324@naver.com
 #website: www.github.com/sproogen/resume-theme
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
-#twitter_username: facespics
 github_username:  younwony
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-#instagram_username: jameswgrant
-#linkedin_username: jameswgrant
-# xing_username: jekyll
-# pinterest_username: jekyll
-#youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
 additional_links:
@@ -48,10 +36,17 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  안녕하세요
+  안녕하세요. 윤원희 입니다.
   I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
 content:
+  - title : Skills
+    - content :
+        - layout : left
+          title : Backend
+          description :
+            - Java
+            - Spring
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
