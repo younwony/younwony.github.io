@@ -6,8 +6,8 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: 윤원희
-title: 개발자
+name: wony
+title: dev
 email: wony9324@naver.com
 #website: www.github.com/sproogen/resume-theme
 
@@ -30,7 +30,7 @@ github_username:  younwony
 # orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
-#additional_links:
+additional_links:
 - title: itsgoingto.be
   icon: fas fa-globe
   url: https://www.itsgoingto.be
@@ -48,7 +48,6 @@ github_username:  younwony
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  안녕하세요. 윤원희 입니다.
   I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
 
 content:
