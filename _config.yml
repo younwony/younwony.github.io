@@ -6,8 +6,8 @@ favicon: images/favicon.ico
 version: 2
 
 # Personal info
-name: wony
-title: dev
+name: 윤원희
+title: 도전과제에 두려움 없이 즐기는 개발자 입니다.
 email: wony9324@naver.com
 #website: www.github.com/sproogen/resume-theme
 
@@ -36,8 +36,12 @@ github_username:  younwony
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  안녕하세요. 윤원희 입니다. <br>
-  I am most skilled in: <mark>Java</mark>.
+  4년차 웹 개발자로 주로 Backend를 많이 다루었습니다. <br>
+  <br>
+  프로세스를 만들거나 비효율적인 프로세스를 개선하는 일을 좋아합니다. <mark>ElasticSearch</mark> 도입, <mark>백오피스 개발</mark> 등과 같은 솔루션에 필요한 프로세스들을 맡아왔으며
+  이미 구축 된 프로세스 개선을 통해 구축 프로세스 소요시간을 60%가량 감소 시킨바가 있습니다.
+
+
 
 content:
   - title : Skills
