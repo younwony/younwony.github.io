@@ -36,14 +36,14 @@ github_username:  younwony
 about_title: 소개
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  4년차 웹 개발자로 주로 SI/SM/솔루션 경험했으며 주로 <mark>솔루션</mark> 개발을 했습니다. <br>
+  4년차 웹 개발자로 주로 SI/SM/솔루션 경험했으며 주로 <mark>솔루션 개발</mark>을 했습니다. <br>
   <br>
   자동화 프로세스를 개발, 비효율적인 프로세스를 개선하는 일을 좋아합니다.<br>
   SI 구축 과정에서 팀원들의 반복적으로 발생되는 메타데이터 수정 작업을 자동화 시켜 팀원들의 부담을 줄였으며 프로젝트 구축 시간 또한 단축 시켰습니다. <br>
   솔루션에서 사용성이 많은 비즈니스 로직을 API 구축 하여 프로세스를 개선하였습니다.<br>
   <br>
   새로운 기술에 <mark>도전</mark>하는 것을 즐깁니다.<br>
-  <mark>ElasticSearch</mark> 도입, <mark>백오피스 개발</mark> 등 새로운 기술에 적극적으로 참여하여 구축하였습니다.
+  ElasticSearch 도입, 백오피스 개발 등 새로운 기술에 적극적으로 참여하여 구축하였습니다.
 
 content:
   - title : 기술
