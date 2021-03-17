@@ -33,7 +33,7 @@ github_username:  younwony
 # google_analytics: "UA-00000000-0"
 
 # About Section
-# about_title: About Me
+about_title: 소개
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   4년차 웹 개발자로 주로 SI/SM/솔루션 경험했으며 주로 <mark>솔루션</mark> 개발을 했습니다. <br>
@@ -42,11 +42,11 @@ about_content: | # this will include new lines to allow paragraphs
   SI 구축 과정에서 팀원들의 반복적으로 발생되는 메타데이터 수정 작업을 자동화 시켜 팀원들의 부담을 줄였으며 프로젝트 구축 시간 또한 단축 시켰습니다. <br>
   솔루션에서 사용성이 많은 비즈니스 로직을 API 구축 하여 프로세스를 개선하였습니다.<br>
   <br>
-  새로운 기술에 <mark>도전</mark>하는 것을 즐깁니다.
+  새로운 기술에 <mark>도전</mark>하는 것을 즐깁니다.<br>
   <mark>ElasticSearch</mark> 도입, <mark>백오피스 개발</mark> 등 새로운 기술에 적극적으로 참여하여 구축하였습니다.
 
 content:
-  - title : Skills
+  - title : 기술
     layout : list
     content :
         - layout : left
@@ -65,7 +65,7 @@ content:
             - Linux CentOS
             - ELK Stack
 
-  - title: Experience # Title for the section
+  - title: 경력 # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
@@ -81,6 +81,7 @@ content:
             - 패키지 고도화
             - 썸네일 프로세스 구축
             - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
+            - 파일
 
 #  - title: Projects # Title for the section
 #    layout: list # Type of content section (list/text)
@@ -102,28 +103,25 @@ content:
 #          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
 
 
-  - title: Education # Title for the section
+  - title: 교육 # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
+        title: 대전대학교
+        caption: 2011.02 - 2018.02
+        sub_title: 컴퓨터 공학과
         quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+          대전대학교 컴퓨터 공학과 학사 졸업
         description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+          컴퓨터 공학 기초 과정 이수
 
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
-
-  - title: A Little More About Me
+  - title: 그 외 활동
     layout: text
     content: | # this will include new lines to allow paragraphs
-      외부 활동:
       - [개인 블로그](https://youn12.tistory.com/)
 
 # Footer
-footer_show_references: true
+footer_show_references: false
 references_title:
 #references_title: References on request (Override references text)
 
