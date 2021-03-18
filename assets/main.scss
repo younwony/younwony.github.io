@@ -2,4 +2,8 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+  body{
+    word-break: break-word;
+  }
+
 @import 'modern-resume-theme';

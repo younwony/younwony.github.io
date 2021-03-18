@@ -71,6 +71,26 @@ content:
       - layout: left
         title: 한국문헌정보기술
         sub_title: 웹 개발자
+        caption: 2018.06 ~ 현재
+        quote: >
+          수집 기록, 아카이브 기록을 관리하는 시스템 구축
+        description: | # this will include new lines to allow paragraphs
+            - 2020년 <mark>우수사원</mark> 수상
+
+      - layout: left
+        sub_title: 검색엔진 구축 및 도입
+        caption: 2021.02 ~ 2021.04
+        quote: >
+          ELK Stack 사용, 파일 도입
+        description: | # this will include new lines to allow paragraphs
+            - 솔루션에 검색엔진(ELK Stack) 구축 및 도입
+            - 2020년 <mark>우수사원</mark> 수상
+            - 시큐어 코드 진단 및 리포팅 API 구축
+            - 패키지 고도화
+            - 썸네일 프로세스 구축
+            - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
+            - 파일
+      - layout: left
         caption: 2018.6 ~ 현재
         quote: >
           수집 기록, 아카이브 기록을 관리하는 시스템 구축
@@ -83,29 +103,44 @@ content:
             - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
             - 파일
 
-#  - title: Projects # Title for the section
-#    layout: list # Type of content section (list/text)
-#    content:
-#      - layout: top-middle
-#        title: Super awesome project
-#        link: github.com/sproogen
-#        # link_text: Project Website
-#        additional_links:
-#          - title:  sproogen/modern-resume-theme
-#            icon: fab fa-github
-#            url: github.com/sproogen/modern-resume-theme
-#          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-#          #   icon: fab fa-github
-#          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
-#        quote: >
-#          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-#        description: | # this will include new lines to allow paragraphs
-#          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
-
 
   - title: 교육 # Title for the section
     layout: list # Type of content section (list/text)
     content:
+      - layout: left
+        title: Algorithm 스터디 진행
+        caption: 2020.06 - 2020.09
+        additional_links:
+          - title: Github
+            url: https://github.com/younwony/algo
+        quote: >
+          백준 - <a href='https://github.com/younwony/algo'>Github</a>
+        description: | # this will include new lines to allow paragraphs
+          <mark>[사고력 증진]</mark>
+          <br>
+          <br>
+          회사에서 SI 프로젝트를 다수 진행했습니다. 반복되는 코드 작업에 익숙해 질 때쯤, 반복 작업을 싫어하는 저로 써는 자동화, 성능개선에 관심이 갔습니다.<br>
+          개선을 위해 프로세스에 딥다이브를 할 수록 기본기의 부족함을 느끼게 되어 스터디를 진행하게 되었습니다. <br>
+          <br>
+          팀원들과 함께 스터디를 진행하며 정해진 목표를 달성하였습니다.<br>
+          이를통해 코드 리팩토링을 통한 유지보수 효율 향상, 시스템 부하 감소, 테스트 코드 작성 등 다양한 프로세스 개선을 일궈냈습니다.
+
+      - layout: left
+        title: Spring 스터디 진행
+        link: https://github.com/tyakamyz/spring_study
+        caption: 2020.03 - 2020.05
+        quote: >
+          코드로 배우는 스프링 웹 프로젝트
+        description: | # this will include new lines to allow paragraphs
+          <mark>[탄탄한 기본기]</mark>
+          <br>
+          <br>
+          회사에서 SI 프로젝트를 다수 진행했습니다. 반복되는 코드 작업에 익숙해 질 때쯤, 반복 작업을 싫어하는 저로 써는 자동화, 성능개선에 관심이 갔습니다.<br>
+          개선을 위해 프로세스에 딥다이브를 할 수록 기본기의 부족함을 느끼게 되어 스터디를 진행하게 되었습니다. <br>
+          <br>
+          팀원들과 함께 스터디를 진행하며 정해진 목표를 달성하였습니다.<br>
+          이를통해 코드 리팩토링을 통한 유지보수 효율 향상, 시스템 부하 감소, 테스트 코드 작성 등 다양한 프로세스 개선을 일궈냈습니다.
+
       - layout: left
         title: 대전대학교
         caption: 2011.02 - 2018.02
