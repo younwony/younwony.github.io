@@ -1,0 +1,21 @@
+- company: 한국문헌정보기술
+  dates: 2018.06 ~ 현재
+  job_title: 웹 개발자
+  quote: >
+    수집 기록, 아카이브 기록을 관리하는 시스템 구축
+  description: |
+    - 2020년 <mark>우수사원</mark> 수상
+
+- company: 한국문헌정보기술
+  job_title: 검색엔진 구축 및 도입
+  dates: 2021.02 ~ 2021.04
+  quote: >
+    ELK Stack 사용, 파일 도입
+  description: |
+    - 솔루션에 검색엔진(ELK Stack) 구축 및 도입
+    - 시큐어 코드 진단 및 리포팅 API 구축
+    - 패키지 고도화
+    - 썸네일 프로세스 구축
+    - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
+    - 파일
+

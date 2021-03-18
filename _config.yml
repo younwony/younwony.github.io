@@ -3,34 +3,19 @@ repository: sproogen/resume-theme
 favicon: images/favicon.ico
 
 # Content configuration version
-version: 2
+version: 1
+#version: 2
 
 # Personal info
 name: 윤원희
 title: 도전과제에 두려움 없이 즐기는 개발자 입니다.
 email: wony9324@naver.com
-#website: www.github.com/sproogen/resume-theme
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
 github_username:  younwony
-
-# Additional icon links
-#additional_links:
-#- title: itsgoingto.be
-  #icon: fas fa-globe
-  #url: https://www.itsgoingto.be
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
 
 # About Section
 about_title: 소개
@@ -45,115 +30,8 @@ about_content: | # this will include new lines to allow paragraphs
   새로운 기술에 <mark>도전</mark>하는 것을 즐깁니다.<br>
   ElasticSearch 도입, 백오피스 개발 등 새로운 기술에 적극적으로 참여하여 구축하였습니다.
 
-content:
-  - title : 기술
-    layout : list
-    content :
-        - layout : left
-          title : Backend
-          description : |
-            - Java
-            - Spring, Egovframework
-            - Junit5
-            - Maven
-            - Eclipse, IntelliJ
-        - layout: left
-          title: DevOps
-          description: |
-            - Cubrid, Oracle, Tibero
-            - Tomcat, Jeus
-            - Linux CentOS
-            - ELK Stack
-
-  - title: 경력 # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: 한국문헌정보기술
-        sub_title: 웹 개발자
-        caption: 2018.06 ~ 현재
-        quote: >
-          수집 기록, 아카이브 기록을 관리하는 시스템 구축
-        description: | # this will include new lines to allow paragraphs
-            - 2020년 <mark>우수사원</mark> 수상
-
-      - layout: left
-        sub_title: 검색엔진 구축 및 도입
-        caption: 2021.02 ~ 2021.04
-        quote: >
-          ELK Stack 사용, 파일 도입
-        description: | # this will include new lines to allow paragraphs
-            - 솔루션에 검색엔진(ELK Stack) 구축 및 도입
-            - 2020년 <mark>우수사원</mark> 수상
-            - 시큐어 코드 진단 및 리포팅 API 구축
-            - 패키지 고도화
-            - 썸네일 프로세스 구축
-            - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
-            - 파일
-      - layout: left
-        caption: 2018.6 ~ 현재
-        quote: >
-          수집 기록, 아카이브 기록을 관리하는 시스템 구축
-        description: | # this will include new lines to allow paragraphs
-            - 솔루션에 검색엔진(ELK Stack) 구축 및 도입
-            - 2020년 <mark>우수사원</mark> 수상
-            - 시큐어 코드 진단 및 리포팅 API 구축
-            - 패키지 고도화
-            - 썸네일 프로세스 구축
-            - 파일관련 프로세스 개선 -> OOM 이슈 해결, 성증 증가로 프로세스 시간 단축 60%
-            - 파일
-
-
-  - title: 교육 # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Algorithm 스터디 진행
-        caption: 2020.06 - 2020.09
-        additional_links:
-          - title: Github
-            url: https://github.com/younwony/algo
-        quote: >
-          백준 - <a href='https://github.com/younwony/algo'>Github</a>
-        description: | # this will include new lines to allow paragraphs
-          <mark>[사고력 증진]</mark>
-          <br>
-          <br>
-          회사에서 SI 프로젝트를 다수 진행했습니다. 반복되는 코드 작업에 익숙해 질 때쯤, 반복 작업을 싫어하는 저로 써는 자동화, 성능개선에 관심이 갔습니다.<br>
-          개선을 위해 프로세스에 딥다이브를 할 수록 기본기의 부족함을 느끼게 되어 스터디를 진행하게 되었습니다. <br>
-          <br>
-          팀원들과 함께 스터디를 진행하며 정해진 목표를 달성하였습니다.<br>
-          이를통해 코드 리팩토링을 통한 유지보수 효율 향상, 시스템 부하 감소, 테스트 코드 작성 등 다양한 프로세스 개선을 일궈냈습니다.
-
-      - layout: left
-        title: Spring 스터디 진행
-        link: https://github.com/tyakamyz/spring_study
-        caption: 2020.03 - 2020.05
-        quote: >
-          코드로 배우는 스프링 웹 프로젝트
-        description: | # this will include new lines to allow paragraphs
-          <mark>[탄탄한 기본기]</mark>
-          <br>
-          <br>
-          회사에서 SI 프로젝트를 다수 진행했습니다. 반복되는 코드 작업에 익숙해 질 때쯤, 반복 작업을 싫어하는 저로 써는 자동화, 성능개선에 관심이 갔습니다.<br>
-          개선을 위해 프로세스에 딥다이브를 할 수록 기본기의 부족함을 느끼게 되어 스터디를 진행하게 되었습니다. <br>
-          <br>
-          팀원들과 함께 스터디를 진행하며 정해진 목표를 달성하였습니다.<br>
-          이를통해 코드 리팩토링을 통한 유지보수 효율 향상, 시스템 부하 감소, 테스트 코드 작성 등 다양한 프로세스 개선을 일궈냈습니다.
-
-      - layout: left
-        title: 대전대학교
-        caption: 2011.02 - 2018.02
-        sub_title: 컴퓨터 공학과
-        quote: >
-          대전대학교 컴퓨터 공학과 학사 졸업
-        description: | # this will include new lines to allow paragraphs
-          컴퓨터 공학 기초 과정 이수
-
-  - title: 그 외 활동
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      - [개인 블로그](https://youn12.tistory.com/)
+more_content: | # this will include new lines to allow paragraphs
+   - [개인 블로그](https://youn12.tistory.com/)
 
 # Footer
 footer_show_references: false

@@ -1,0 +1,27 @@
+- company: Algorithm 스터디 진행
+  link: https://github.com/younwony/algo
+  dates: 2020.06 - 2020.09
+  quote: >
+    <mark>[사고력 증진]</mark>
+  description: |
+
+
+- company: Spring 스터디 진행
+  link: https://github.com/tyakamyz/spring_study
+  dates: 2020.03 - 2020.05
+  quote: >
+    <mark>[탄탄한 기본기]</mark>
+  description: |
+          회사에서 SI 프로젝트를 다수 진행했습니다. 반복되는 코드 작업에 익숙해 질 때쯤, 반복 작업을 싫어하는 저로 써는 자동화, 성능개선에 관심이 갔습니다.<br>
+          개선을 위해 프로세스에 딥다이브를 할 수록 기본기의 부족함을 느끼게 되어 스터디를 진행하게 되었습니다. <br>
+          <br>
+          팀원들과 함께 스터디를 진행하며 정해진 목표를 달성하였습니다.<br>
+          이를통해 코드 리팩토링을 통한 유지보수 효율 향상, 시스템 부하 감소, 테스트 코드 작성 등 다양한 프로세스 개선을 일궈냈습니다.
+
+- company: 대전대학교
+  sub_title: 컴퓨터 공학과
+  dates: 2011.02 - 2018.02
+  quote: >
+    대전대학교 컴퓨터 공학과 학사 졸업
+  description: |
+          컴퓨터 공학 기초 과정 이수
