@@ -2,8 +2,8 @@
   <h3>{{ site.experience_title | default: "경력 사항" }}</h3>
   {% for experience in site.data.experience %}
     {% include {{ experience.layout | default: 'left' | append: ".html" | prepend: "v1/" }} item=experience %}
-    {% for experience_sub in site.data.experience_sub %}
+    <!--{% for experience_sub in site.data.experience_sub %}
       {% include {{ experience_sub.layout | default: 'left' | append: ".html" | prepend: "v1/" }} item=experience_sub %}
-    {% endfor %}
+    {% endfor %}-->
   {% endfor %}
 </div>
