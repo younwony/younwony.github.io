@@ -27,6 +27,10 @@
                 {%- include experience.html -%}
             {%- endif -%}
 
+            {%- if site.data.experience_sub.size > 0 -%}
+                {%- include experience_sub.html -%}
+            {%- endif -%}
+
             {%- if site.data.education.size > 0 -%}
                 {%- include education.html -%}
             {%- endif -%}
