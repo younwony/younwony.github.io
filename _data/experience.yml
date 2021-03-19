@@ -10,3 +10,10 @@
     - 썸네일 프로세스 구축 및 개선
     - 메타데이터 수정 자동화
     - 바코드 API 구축
+  content:
+      dates: 201
+      layout: list
+      content:
+        - layout: left
+          title: test2
+          subtitle: test3
