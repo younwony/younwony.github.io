@@ -11,9 +11,6 @@
 
             {%- include about.html -%}
 
-            {%- if site.data.projects.size > 0 -%}
-                {%- include projects.html -%}
-            {%- endif -%}
 
             {%- if site.data.skill.size > 0 -%}
                 {%- include skill.html -%}
@@ -23,15 +20,22 @@
                 {%- include experience.html -%}
             {%- endif -%}
 
+            {%- if site.data.projects.size > 0 -%}
+                {%- include projects.html -%}
+            {%- endif -%}
             <!--{%- if site.data.experience_sub.size > 0 -%}
-                {%- include experience_sub.html -%}
+                {%- include projects.html -%}
             {%- endif -%}-->
 
             {%- if site.data.education.size > 0 -%}
                 {%- include education.html -%}
             {%- endif -%}
 
-            {%- include more.html -%}
+            {%- if site.data.opensource.size > 0 -%}
+                {%- include opensource.html -%}
+            {%- endif -%}
+
+            <!--{%- include more.html -%}-->
 
         </div>
     </main>

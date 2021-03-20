@@ -1,5 +1,0 @@
-<div class="container experience-container">
-  {% for experience in site.data.experience_sub %}
-    {% include {{ experience.layout | default: 'left' | append: ".html" | prepend: "v1/" }} item=experience %}
-  {% endfor %}
-</div>

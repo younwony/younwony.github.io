@@ -1,0 +1,20 @@
+<div class="container projects-container">
+  <h3>{{ site.projects_title | default: "프로젝트" }}</h3>
+  {% for project in site.data.projects %}
+    {% include {{ project.layout | default: 'left' | append: ".html" }} item=project %}
+      {% for project_sub in site.data.projects_sub %}
+      {%- if project_sub.parent == project.parent -%}
+      <div class="row clearfix layout layout-left wonylayout">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"></div>
+        <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 wonyDiv">
+          {%- if projects.quote -%}
+          <p class="quote">{{ projects.quote }}</p>
+          {%- endif -%}
+          {% include {{ project_sub.layout | default: 'left' | append: ".html" | prepend: "v1/" }} item=project_sub %}
+          {{ projects.description | strip | markdownify }}
+        </div>
+      </div>
+      {%- endif -%}
+      {% endfor %}
+  {% endfor %}
+</div>

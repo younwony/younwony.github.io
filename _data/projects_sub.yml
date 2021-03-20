@@ -1,0 +1,42 @@
+- company:
+  parent: 1
+  job_title: 검색엔진 구축 및 도입
+  dates: 2021.02 ~ 2021.04
+  quote: >
+    ELK Stack 7.10 사용, 파일 도입
+  description: |
+    - 상용 검색엔진 S/W에 의지하지 않고자 자체 검색엔진 개발
+    - 문서파일(MS Office, 한글, Txt 등) 색인 PipeLine 구축
+    - DB -> Logstash 동기화
+    - Bulk API 를 통한 대량 데이터 Input 프로세스 개발
+
+- company:
+  parent: 1
+  job_title: 시큐어 코딩 진단 API 구축
+  dates: 2020.08 ~ 2020.10
+  quote: >
+    Jenkins 를 활용한 시큐어 코딩 진단
+  description: |
+    - 상용 시큐어 점검 S/W에 의지하지 않고자 자체 점검 API 구축
+    - Jenkins를 사용한 진단 및 리포팅 기능 개발
+    - IDE Plugin(SpotBugs, FindSecurityBugs)를 통한 Bytecode 점검 및 진단
+- company:
+  parent: 1
+  job_title: 파일 썸네일 생성 프로세스 개발
+  dates: 2020.08 ~ 2020.10
+  quote: >
+    메모리 이슈, 파일 비즈니스 로직의 불안정, 다수의 파일등록으로 인한 솔루션 과부하 등을 줄이고자 기능 개선 + 비즈니스 로직의 프로세스화
+  description: |
+    - 다양한 포맷(MS Office, MP4)의 썸네일 생성 기능 추가
+    - 비즈니스 로직 개선으로 시간 단축 (ex. 10초 -> 3초)
+
+- company:
+  parent: 1
+  job_title: 솔루션 고도화
+  dates: 2020.03 ~ 2020.05
+  quote: >
+    솔루션의 주체인 기록물건의 메타데이터 수정 작업 자동화
+  description: |
+    - SI 구축 시마다 반복되는 수정작업을 기능화
+    - 개발자 범위의 메타데이터 구축에서 관리자, 사용자의 메타데이터 구축으로 솔루션 확장성 향상
+    - 개발팀의 작업부담 감소
