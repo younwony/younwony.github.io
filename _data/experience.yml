@@ -1,4 +1,6 @@
-- company: 한국문헌정보기술
+- layout: left
+  name: 한국문헌정보기술
+  parent: 1
   dates: 2018.06 ~ 현재
   job_title: 웹 개발자
   quote: >
@@ -9,11 +11,3 @@
     - 시큐어 코드 진단 API 구축
     - 썸네일 프로세스 구축 및 개선
     - 메타데이터 수정 자동화
-    - 바코드 API 구축
-  content:
-      dates: 201
-      layout: list
-      content:
-        - layout: left
-          title: test2
-          subtitle: test3
