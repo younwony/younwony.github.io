@@ -6,7 +6,7 @@
     ELK Stack 7.10 사용, 파일 도입
   description: |
     - 상용 검색엔진 S/W에 의지하지 않고자 자체 검색엔진 개발
-    - 문서파일(MS Office, 한글, Txt 등) 색인 PipeLine 구축
+    - 문서 파일(MS Office, 한글, Txt 등) 색인 pipeLine 구축
     - DB -> Logstash 동기화
     - Bulk API 를 통한 대량 데이터 Input 프로세스 개발
 
@@ -15,7 +15,7 @@
   job_title: 시큐어 코딩 진단 API 구축
   dates: 2020.08 ~ 2020.10
   quote: >
-    Jenkins 를 활용한 시큐어 코딩 진단
+    Plugin, Jenkins를 활용한 시큐어 코딩 진단 및 점검
   description: |
     - 상용 시큐어 점검 S/W에 의지하지 않고자 자체 점검 API 구축
     - Jenkins를 사용한 진단 및 리포팅 기능 개발
