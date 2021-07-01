@@ -1,7 +1,7 @@
 - company:
   parent: 1
   job_title: 검색엔진 구축 및 도입
-  dates: 2021.02 ~ 2021.04
+  dates: 2021.02 ~ 2021.06
   quote: >
     ELK Stack 7.10 사용, 파일 도입
   description: |
