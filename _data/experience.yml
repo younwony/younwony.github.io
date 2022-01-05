@@ -1,7 +1,17 @@
 - layout: left
-  name: 한국문헌정보기술
+  name: 인터파크
   parent: 1
-  dates: 2018.06 ~ 현재
+  dates: 2021.09 ~ 현재
+  job_title: Backend 개발자
+  quote: >
+    e 커머스 쇼핑 판매자 담당
+  description: |
+    - TDD 도입
+
+- layout: left
+  name: 한국문헌정보기술
+  parent: 2
+  dates: 2018.06 ~ 2021.08
   job_title: 웹 개발자
   quote: >
     수집 기록, 아카이브 기록을 관리하는 시스템 구축
