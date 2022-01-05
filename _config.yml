@@ -17,17 +17,15 @@ darkmode: false
 # Social links
 github_username:  younwony
 
+# <mark>아무것도 하지 않으면 아무 일도 일어나지 않는다</mark> <br>
 # About Section
 about_title: 소개
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  4년 차 웹 개발자로 솔루션 SI/SM을 경험했으며 주로 Backend 포지션에서 솔루션 고도화를 했습니다.<br>
-  <br>
-  자동화 프로세스를 개발, 비효율적인 비즈니스 로직을 개선하는 일을 좋아합니다. 솔루션 SI 커스텀 과정에서 반복적으로 발생하는 메타데이터 수정 작업을 자동화시켜 개발자의 부담을 줄였으며 프로젝트 구축 시간 또한 단축했습니다. 또한  솔루션에서 사용성이 많은 비즈니스 로직을 프로세스 화 시켜 솔루션의 부하를 줄였습니다.<br>
-  <br>
-  <mark>아무것도 하지 않으면 아무 일도 일어나지 않는다</mark> <br>
-  말로만의 노력이 아닌 작은 일이 됐든 항상 무언가를 하려고 하며 새로운 기술에 도전하는 것을 즐깁니다. 신규 기술에 적극적으로 참여했으며 Elasticsearch, 백오피스 등을 구축하였습니다.
+  Java & Spring 기반의 5년 차 웹 개발자로 e커머스에서 쇼핑 판매자와 관련된 API 개발을 하고 있습니다.<br>
 
+  무언가 새로운 것을 만드는 것과 품질이 좋은 코드를 만들 때 재미를 느끼며 큰 성취감을 느낍니다! 검색 엔진 도입이 필요하다는 의견에 지원하여 Elasticsearch 검색엔진을 기획/개발/구축 하였습니다. 현재는 소프트웨어의 품질 향상을 위해 TDD 도입을 추진하고 있습니다.
+  <br>
 more_content: | # this will include new lines to allow paragraphs
    - [개인 블로그](https://youn12.tistory.com/)
 
