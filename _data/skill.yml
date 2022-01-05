@@ -1,17 +1,20 @@
 - company: Backend
   description: | # this will include new lines to allow paragraphs
     - Java
-    - Spring, Egovframework
+    - Spring, Spring Boot
+    - Mybatis
     - Junit5
     - Maven
     - Eclipse, IntelliJ
 
 - company: DevOps
   description: | # this will include new lines to allow paragraphs
-    - Cubrid, Oracle, Tibero
+    - Oracle
     - Tomcat, Jeus
     - Linux CentOS
     - ELK Stack
+    - SVN, Git
+    - Confluence
 
   
 
