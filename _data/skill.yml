@@ -1,20 +1,26 @@
-- company: Backend
+- company: BackEnd
   description: | # this will include new lines to allow paragraphs
     - Java
-    - Spring, Spring Boot
-    - Mybatis
+    - Spring Boot
+    - JPA, Mybatis
+    - MySQL, Cubrid, Oracle
+    - Redis
     - Junit5
-    - Maven
-    - Eclipse, IntelliJ
 
-- company: DevOps
+- company: FrontEnd
   description: | # this will include new lines to allow paragraphs
-    - Oracle
-    - Tomcat, Jeus
-    - Linux CentOS
-    - ELK Stack
-    - SVN, Git
-    - Confluence
+    - Javascript
+    - jQuery
+    - CSS/HTML5
+
+- company: ETC
+  description: | # this will include new lines to allow paragraphs
+    - ELK Stack (Elasticsearch, Logstash, Kibana)
+    - Slack API
+    - Google Analytics, BigQuery
+    - AWS EC2, S3
+    - Git, SVN
+    - Linux
 
   
 

@@ -1,11 +1,20 @@
-- name: 인터파크
+- name: 구하다
   parent: 1
-  dates: 2021.09 ~ 현재
-  job_title: Backend 개발자
+  dates: 2022.02 ~ 재직 중 (3년 3개월)
+  job_title: Backend Developer
   quote: >
+    명품 커머스 플랫폼 및 Seeding 마케팅 운영
+
+- name: 인터파크
+  parent: 2
+  dates: 2021.09 ~ 2022.01 (5개월)
+  job_title: Backend Developer
+  quote: >
+    쇼핑 플랫폼 판매자 시스템 개발/운영
 
 - name: 한국문헌정보기술
-  parent: 2
-  dates: 2018.06 ~ 2021.08
-  job_title: 웹 개발자
+  parent: 3
+  dates: 2018.06 ~ 2021.08 (3년 2개월)
+  job_title: Web Developer
   quote: >
+    기록물 솔루션 SI/SM
