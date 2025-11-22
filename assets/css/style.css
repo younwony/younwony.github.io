@@ -231,6 +231,15 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid #e2e8f0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 /* Divider */

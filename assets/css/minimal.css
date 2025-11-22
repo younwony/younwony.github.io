@@ -12,19 +12,6 @@ body {
     max-width: 800px;
     margin: 60px auto;
     padding: 0 40px;
-}
-
-/* Header */
-.header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.header h1 {
-    font-family: 'Lora', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
 
@@ -185,10 +172,49 @@ body {
 
     body {
         font-size: 11pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     a {
         text-decoration: none;
         color: black;
     }
+
+    .no-print {
+        display: none !important;
+    }
+
+    section {
+        break-inside: avoid;
+    }
+
+    @page {
+        margin: 10mm;
+        size: A4;
+    }
+}
+
+.pdf-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-weight: bold;
+    border: none;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pdf-btn:hover {
+    transform: translateY(-2px);
+    background: #000;
 }

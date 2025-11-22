@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서_윤원희</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+        header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
+
+        .role {
+            font-size: 20px;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #444;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            color: #111;
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .company-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .company-period {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .company-desc {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0 15px 0;
+        }
+
+        .project-block {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 3px solid #0066cc;
+        }
+
+        .project-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 12px;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .project-label {
+            font-weight: 700;
+            color: #333;
+            margin-right: 8px;
+        }
+
+        .project-content {
+            color: #444;
+            margin: 5px 0;
+        }
+
+        .project-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .project-content li {
+            margin: 6px 0;
+            color: #444;
+        }
+
+        .result-metrics {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .metric-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1967d2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .pdf-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+            transition: all 0.3s;
+        }
+
+        .pdf-btn:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>윤원희</h1>
+        <div class="role">Backend Developer (7년 차)</div>
+        <div class="contact-info">
+            <span>📧 wony9324@naver.com</span>
+            <span>📞 010-3555-2320</span>
+            <span>🔗 <a href="https://github.com/younwony" target="_blank">github.com/younwony</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p>
+            <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
+            커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 왔습니다.
+            200만 건 규모의 인플루언서 데이터 파이프라인을 구축하여 마케팅 효율을 극대화하고,
+            Elasticsearch 기반의 검색 엔진 도입으로 데이터 처리 속도를 획기적으로 개선했습니다.
+            단순 구현을 넘어, 병렬 처리 및 Scale-out 설계를 통해 시스템 확장성을 확보하며,
+            운영팀의 반복 업무를 100% 자동화하여 조직 생산성을 높이는 데 기여합니다.
+        </p>
+    </section>
+
+    <section>
+        <h2>Detailed Work Experience</h2>
+
+        <div class="company-header">
+            <span class="company-name">(주)구하다</span>
+            <span class="company-period">2022.02 - 재직 중 (3년 9개월)</span>
+        </div>
+        <div class="company-desc">백엔드 개발팀 | 핵심 도메인 및 데이터 파이프라인 총괄</div>
+
+        <div class="project-block">
+            <div class="project-title">1. 인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</div>
+
+            <div class="project-item">
+                <span class="project-label">• Situation:</span>
+                <span class="project-content">수동 관리의 한계(시간당 100명)와 플랫폼별 데이터 파편화로 인한 비효율.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Task:</span>
+                <span class="project-content">대규모 데이터 수집·정제·검색·리포팅 자동화 플랫폼 구축.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Action:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>TikAPI, WebScraper 등 다중 소스 앙상블 및 ThreadPoolTaskExecutor 병렬 처리</li>
+                        <li>CDN 링크 만료 대응을 위한 Scale-out 병렬 다운로드 시스템 및 재수집 로직</li>
+                        <li>Elasticsearch 200만+ 인덱스 최적화 및 실시간 검색 구현</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Result:</span>
+                <span class="project-content">인플루언서 풀 20배 확대 및 운영 리소스 획기적 절감</span>
+                <div class="result-metrics">
+                    <span class="metric-pill">🚀 데이터 풀 20배(200만)</span>
+                    <span class="metric-pill">⚡ 수집 속도 5배</span>
+                    <span class="metric-pill">🤖 리포팅 100% 자동화</span>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Spring Batch</span>
+                    <span class="tech-badge">Elasticsearch</span>
+                    <span class="tech-badge">ThreadPool</span>
+                    <span class="tech-badge">REST API</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-block">
+            <div class="project-title">2. 네이버 쇼핑 최저가 대응 및 동적 가격(Dynamic Pricing) 시스템</div>
+
+            <div class="project-item">
+                <span class="project-label">• Situation:</span>
+                <span class="project-content">경쟁사 최저가 추적 지연 및 수동 가격 변경의 비효율(24h+ 소요).</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Task:</span>
+                <span class="project-content">실시간 최저가 모니터링 및 마진 기반 자동 가격 조정 시스템 구축.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Action:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>Spring Batch 대용량 처리 및 Elasticsearch 기반 고속 상품 비교</li>
+                        <li>RateLimiter 및 Exponential Backoff 정책으로 네이버 쇼핑 API 안정성 확보</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Result:</span>
+                <span class="project-content">가격 경쟁력 확보로 매출 증대 및 운영팀 수동 업무 제거</span>
+                <div class="result-metrics">
+                    <span class="metric-pill">💰 매출 10% 증대</span>
+                    <span class="metric-pill">⚙️ Zero Ops (완전 자동화)</span>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Spring Batch</span>
+                    <span class="tech-badge">Naver API</span>
+                    <span class="tech-badge">RateLimiter</span>
+                    <span class="tech-badge">Elasticsearch</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-block">
+            <div class="project-title">3. 데이터 기반 프로세스 최적화 및 Ops 자동화</div>
+
+            <div class="project-item">
+                <span class="project-label">• Situation:</span>
+                <span class="project-content">잦은 품절 클레임 및 이미지 전체 비교로 인한 비용 낭비.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Task:</span>
+                <span class="project-content">데이터 기반 페널티 정책 수립 및 운영 업무 자동화.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Action:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>GA4-DB 로그 BigQuery 통합 분석으로 상습 품절 파트너 식별</li>
+                        <li>이미지 Header(4KB) 해시 비교 도입으로 변경 감지 최적화</li>
+                        <li>Slack Event API 기반 ChatOps로 발주/클레임 처리 자동화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Result:</span>
+                <span class="project-content">품절률 감소 및 이미지 처리 비용 절감, 반복 업무 Zero화</span>
+                <div class="result-metrics">
+                    <span class="metric-pill">📉 품절률 20% 감소</span>
+                    <span class="metric-pill">💸 비용 80% 절감</span>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">BigQuery</span>
+                    <span class="tech-badge">GA4</span>
+                    <span class="tech-badge">Slack API</span>
+                    <span class="tech-badge">AWS S3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="company-header">
+            <span class="company-name">(주)인터파크</span>
+            <span class="company-period">2021.09 - 2022.01 (5개월)</span>
+        </div>
+        <div class="company-desc">쇼핑 개발팀 | 판매자 어드민 시스템 개발 및 유지보수</div>
+
+        <div class="project-block">
+            <div class="project-title">Seller 어드민 성능 개선</div>
+
+            <div class="project-item">
+                <span class="project-label">• Task:</span>
+                <span class="project-content">판매자 어드민 시스템 성능 저하 해결 및 레거시 개선.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Action:</span>
+                <span class="project-content">정산/주문 Slow Query 실행 계획 분석 및 인덱스 튜닝, 비즈니스 로직 리팩토링.</span>
+            </div>
+        </div>
+
+        <div class="company-header">
+            <span class="company-name">(주)한국문헌정보기술</span>
+            <span class="company-period">2018.06 - 2021.08 (3년 2개월)</span>
+        </div>
+        <div class="company-desc">솔루션 개발팀 | 공공기관 기록물 관리 솔루션 SI/SM</div>
+
+        <div class="project-block">
+            <div class="project-title">자체 검색엔진 구축</div>
+
+            <div class="project-item">
+                <span class="project-label">• Task:</span>
+                <span class="project-content">고비용 상용 솔루션 대체 및 대량 이미지 등록 속도 개선.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Action:</span>
+                <span class="project-content">Elasticsearch 기반 자체 검색 엔진 개발(한글 형태소 분석), Bulk Insert 알고리즘 최적화.</span>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">• Result:</span>
+                <span class="project-content">데이터 등록 속도 70% 단축, 2021년 사내 우수사원 선정</span>
+                <div class="result-metrics">
+                    <span class="metric-pill">🚀 등록 속도 70% 단축</span>
+                    <span class="metric-pill">🏆 2021 우수사원</span>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Elasticsearch</span>
+                    <span class="tech-badge">Nori Analyzer</span>
+                    <span class="tech-badge">Bulk API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education & Certificates</h2>
+        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+            <span><strong>대전대학교</strong> (컴퓨터공학 전공)</span>
+            <span>2011.02 ~ 2018.02</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin: 15px 0;">
+            <span><strong>정보처리기사</strong> (한국산업인력공단)</span>
+            <span>2017.05</span>
+        </div>
+    </section>
+
+    <button class="pdf-btn no-print" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Save as PDF
+    </button>
+    <script src="../../assets/js/template-switcher.js"></script>
+</body>
+
+</html>
