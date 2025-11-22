@@ -45,19 +45,41 @@
             </div>
 
             <div class="sidebar-section">
-                <h3><i class="fas fa-code"></i> Skills</h3>
-                <div class="skills-wrap">
-                    <span class="skill-pill">Java 17</span>
-                    <span class="skill-pill">Spring Boot</span>
-                    <span class="skill-pill">Spring Batch</span>
-                    <span class="skill-pill">JPA / QueryDSL</span>
-                    <span class="skill-pill">MySQL</span>
-                    <span class="skill-pill">Redis</span>
-                    <span class="skill-pill">Elasticsearch</span>
-                    <span class="skill-pill">AWS</span>
-                    <span class="skill-pill">Docker</span>
-                    <span class="skill-pill">BigQuery</span>
-                    <span class="skill-pill">GA4</span>
+                <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #1a1a2e;">Languages</h4>
+                    <div class="skills-wrap">
+                        <span class="skill-pill">Java (Expert)</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">SQL</span>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #1a1a2e;">Frameworks</h4>
+                    <div class="skills-wrap">
+                        <span class="skill-pill">Spring Boot</span>
+                        <span class="skill-pill">Spring Batch</span>
+                        <span class="skill-pill">JPA/Hibernate</span>
+                        <span class="skill-pill">QueryDSL</span>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #1a1a2e;">Database & Cache</h4>
+                    <div class="skills-wrap">
+                        <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">Oracle</span>
+                        <span class="skill-pill">Redis</span>
+                        <span class="skill-pill">Elasticsearch</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #1a1a2e;">Infra & DevOps</h4>
+                    <div class="skills-wrap">
+                        <span class="skill-pill">AWS</span>
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">Jenkins</span>
+                        <span class="skill-pill">GitHub Actions</span>
+                    </div>
                 </div>
             </div>
 
@@ -84,11 +106,10 @@
             <section class="section">
                 <h3 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h3>
                 <p class="summary-text">
-                    <strong>"비즈니스 임팩트를 숫자로 증명하는 7년 차 백엔드 개발자"</strong><br>
-                    커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 강점이 있습니다.
-                    200만 건 규모의 데이터 파이프라인을 구축하여 마케팅 효율을 극대화하고, Elasticsearch 도입으로 검색 속도를 획기적으로 개선했습니다.
-                    단순 구현을 넘어, 병렬 처리 및 Scale-out 설계를 통해 시스템 확장성을 확보하며, 운영 비효율을 제거하는 자동화 시스템 구축으로 조직의
-                    생산성을 높이는 데 기여합니다.
+                    <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
+                    7년 간 커머스 및 마케팅 도메인에서 <strong>대용량 트래픽 처리와 시스템 자동화</strong>에 주력해 왔습니다.
+                    Java/Spring Boot 기반의 MSA 전환을 주도하여 시스템 안정성을 확보하고, <strong>Elasticsearch 도입으로 검색 성능을 20배 개선</strong>한 경험이 있습니다.
+                    단순한 기능 구현을 넘어, 운영 비효율을 제거하는 자동화 시스템 구축을 통해 <strong>조직의 생산성을 높이는 데 기여</strong>합니다.
                 </p>
             </section>
 
@@ -103,26 +124,13 @@
                     <div class="exp-role">백엔드 개발팀 | 핵심 도메인 및 데이터 파이프라인 총괄</div>
                     <ul class="exp-list">
                         <li>
-                            <strong>인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</strong>
-                            <ul>
-                                <li>다중 소스 앙상블 및 병렬 처리 아키텍처로 데이터 풀 <strong>20배 확대(10만→200만)</strong>.</li>
-                                <li>Elasticsearch 검색 엔진 최적화 및 수집 속도 <strong>5배 개선</strong>.</li>
-                                <li>리포팅 업무 <strong>100% 자동화</strong>로 마케팅팀 운영 리소스 절감.</li>
-                            </ul>
+                            <strong>인플루언서 데이터 플랫폼 고도화:</strong> ThreadPoolTaskExecutor 병렬 처리 및 Resilience4j 안정화를 통해 수집 속도 <strong>99% 단축</strong> (100건/h → 10,000건/h), 데이터 풀 <strong>20배 확대</strong> (10만 → 200만 명)
                         </li>
                         <li>
-                            <strong>네이버 쇼핑 최저가 대응 및 동적 가격(Dynamic Pricing) 시스템</strong>
-                            <ul>
-                                <li>Spring Batch 대용량 처리로 실시간 최저가 모니터링 구현.</li>
-                                <li>자동 가격 조정 시스템 구축으로 <strong>매출 10% 증대</strong> 및 운영 업무 Zero화.</li>
-                            </ul>
+                            <strong>동적 가격 시스템 구축:</strong> Elasticsearch 도입으로 복합 조건 검색 최적화, Spring Batch 병렬 스텝 적용으로 <strong>매출 10% 증대</strong> 및 유입 트래픽 15% 상승
                         </li>
                         <li>
-                            <strong>데이터 기반 프로세스 최적화 및 Ops 자동화</strong>
-                            <ul>
-                                <li>GA4-DB 로그 통합 분석(BigQuery)으로 상습 품절 파트너 식별 및 <strong>품절률 20% 감소</strong>.</li>
-                                <li>이미지 변경 감지 로직 최적화로 처리 비용 <strong>80% 절감</strong>.</li>
-                            </ul>
+                            <strong>운영 자동화 (Zero Ops):</strong> BigQuery 기반 데이터 분석 및 Slack ChatOps 구현으로 <strong>품절률 20% 감소</strong>, 운영팀 반복 업무 <strong>100% 제거</strong>
                         </li>
                     </ul>
                 </div>
@@ -152,12 +160,10 @@
                     <div class="exp-role">솔루션 개발팀 | 공공기관 기록물 관리 솔루션</div>
                     <ul class="exp-list">
                         <li>
-                            <strong>자체 검색엔진 구축 및 성능 최적화</strong>
-                            <ul>
-                                <li>Elasticsearch 기반 자체 검색 엔진 개발로 고비용 상용 솔루션 대체.</li>
-                                <li>대량 이미지 Bulk Insert 알고리즘 최적화로 데이터 등록 속도 <strong>70% 단축</strong>.</li>
-                                <li>성과를 인정받아 <strong>2021년 사내 우수사원</strong> 선정.</li>
-                            </ul>
+                            <strong>자체 검색 엔진 구축:</strong> 고비용 상용 솔루션을 대체하기 위해 Elasticsearch 기반 검색 엔진 개발, 한글 형태소 분석기(Nori) 적용으로 검색 정확도 향상
+                        </li>
+                        <li>
+                            <strong>대용량 처리 최적화:</strong> Bulk Insert 알고리즘 최적화로 기록물 이미지 등록 속도 <strong>70% 단축</strong>, <strong>2021년 사내 우수사원</strong> 선정
                         </li>
                     </ul>
                 </div>

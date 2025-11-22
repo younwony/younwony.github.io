@@ -18,7 +18,7 @@
     <div class="resume-container">
         <header class="header">
             <h1>윤원희</h1>
-            <h2>Backend Developer Career Description</h2>
+            <h2>Backend Developer Career Description (7년 차)</h2>
             <div class="contact-info">
                 <span>wony9324@naver.com</span>
                 <span class="separator">|</span>
@@ -29,10 +29,12 @@
         </header>
 
         <section class="section">
-            <h3 class="section-title">Introduction</h3>
+            <h3 class="section-title">Professional Summary</h3>
             <p class="summary-text">
-                비즈니스 문제를 기술로 해결하는 과정과 성과를 상세히 기술한 경력기술서입니다.
-                주로 커머스 도메인에서 <strong>대용량 데이터 처리, 프로세스 자동화, 레거시 성능 개선</strong> 업무를 수행했습니다.
+                <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
+                7년 간 커머스 및 마케팅 도메인에서 <strong>대용량 트래픽 처리와 시스템 자동화</strong>에 주력해 왔습니다.
+                Java/Spring Boot 기반의 MSA 전환을 주도하여 시스템 안정성을 확보하고, <strong>Elasticsearch 도입으로 검색 성능을 20배 개선</strong>한 경험이 있습니다.
+                단순한 기능 구현을 넘어, 운영 비효율을 제거하는 자동화 시스템 구축을 통해 <strong>조직의 생산성을 높이는 데 기여</strong>합니다.
             </p>
         </section>
 
@@ -42,36 +44,46 @@
             <div class="experience-item">
                 <div class="exp-header">
                     <h4>(주)구하다</h4>
-                    <span class="exp-period">2022.02 - Present</span>
+                    <span class="exp-period">2022.02 - 재직 중</span>
                 </div>
-                <div class="exp-role">백엔드 개발팀</div>
+                <div class="exp-role">백엔드 개발팀 | 핵심 도메인 및 데이터 파이프라인 총괄</div>
 
                 <div style="margin-bottom: 20px;">
-                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 5px;">1. 인플루언서 마케팅 자동화 시스템 구축</h5>
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">1. 인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 기존 단일 스레드 기반 수집기로는 시간당 100건만 처리 가능, 외부 API Rate Limit 제약</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> API 차단 없이 데이터 수집 속도를 100배(10,000건/h)로 끌어올리기</p>
+                    <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>ThreadPoolTaskExecutor 적용하여 데이터 수집 속도 100배 향상 (100명/h → 10,000명/h).</li>
-                        <li>Redis Distributed Lock으로 멀티 서버 환경 동시성 제어.</li>
-                        <li>Resilience4j RateLimiter로 외부 API 요청 제한 준수.</li>
+                        <li>ThreadPoolTaskExecutor 커스텀하여 I/O Blocking 시간을 최소화</li>
+                        <li>Resilience4j RateLimiter와 Exponential Backoff Retry 정책으로 API 안정성 확보</li>
+                        <li>Redis Distributed Lock으로 멀티 인스턴스 환경 중복 수집 방지</li>
                     </ul>
-                </div>
-
-                <div style="margin-bottom: 20px;">
-                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 5px;">2. 네이버 쇼핑 최저가 비교 및 가격 자동 조정</h5>
-                    <ul class="exp-list">
-                        <li>Elasticsearch 도입으로 복합 조건 검색 속도 ms 단위 단축.</li>
-                        <li>Spring Batch Chunk Processing으로 대용량 가격 업데이트 안정적 처리.</li>
-                        <li>매출 10% 증대 및 가격 관리 업무 자동화.</li>
-                    </ul>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 수집 속도 <strong>99% 단축</strong>, 데이터 풀 <strong>20배 확대</strong> (10만 → 200만 명)</p>
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 5px;">3. 데이터 기반 프로세스 최적화 (Zero Ops)
-                    </h5>
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">2. 네이버 쇼핑 최저가 대응 및 동적 가격 시스템</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> RDB 쿼리 성능 저하로 가격 업데이트가 6시간 이상 지연, 수동 가격 변경으로 24시간+ 소요</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 가격 비교 조회 속도를 ms 단위로 단축하여 실시간 대응 체계 구축</p>
+                    <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>BigQuery 데이터 분석으로 상습 품절 파트너 식별.</li>
-                        <li>이미지 Header 해시값 비교로 변경 감지 비용 절감.</li>
-                        <li>운영팀 반복 업무 제거(Zero Ops) 달성.</li>
+                        <li>복합 조건 검색에 유리한 Elasticsearch 도입, 역색인 구조 활용으로 <strong>검색 성능 20배 개선</strong></li>
+                        <li>Spring Batch Chunk 사이즈 튜닝 및 병렬 스텝 적용으로 대량 트랜잭션 처리 시간 단축</li>
                     </ul>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> <strong>매출 10% 증대</strong>, 트래픽 15% 상승, Zero Ops 달성</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">3. 데이터 기반 프로세스 최적화 및 ChatOps 자동화</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 운영팀 업무의 40%가 단순 반복 작업에 소모, '감'에 의존한 클레임 원인 파악</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 운영팀 개입이 전혀 없는 'Zero Ops' 환경 구축</p>
+                    <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
+                    <ul class="exp-list">
+                        <li>GA4-DB 로그를 BigQuery로 통합 적재하여 '상습 품절 패턴' 분석 쿼리 작성</li>
+                        <li>이미지 전체(수 MB) 대신 Header(4KB) 해시 비교로 S3 다운로드 비용 80% 절감</li>
+                        <li>Slack Event API 기반 ChatOps로 메신저 내 승인/반려 버튼만으로 업무 종결</li>
+                    </ul>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> <strong>품절률 20% 감소</strong>, 운영팀 반복 업무 <strong>100% 제거</strong></p>
                 </div>
             </div>
 
@@ -80,10 +92,10 @@
                     <h4>(주)인터파크</h4>
                     <span class="exp-period">2021.09 - 2022.01</span>
                 </div>
-                <div class="exp-role">쇼핑 개발팀</div>
+                <div class="exp-role">쇼핑 개발팀 | 판매자 어드민 시스템 유지보수</div>
                 <ul class="exp-list">
-                    <li>판매자 정산/주문 목록 조회 Slow Query 실행 계획 분석 및 튜닝.</li>
-                    <li>레거시 비즈니스 로직 리팩토링 및 신규 프로모션 기능 배포.</li>
+                    <li><strong>쿼리 최적화:</strong> 정산/주문 Slow Query 실행 계획 분석 및 인덱스 튜닝, 불필요한 JOIN 제거</li>
+                    <li><strong>코드 리팩토링:</strong> 복잡한 비즈니스 로직을 Service Layer로 분리하여 가독성 향상</li>
                 </ul>
             </div>
 
@@ -92,11 +104,14 @@
                     <h4>(주)한국문헌정보기술</h4>
                     <span class="exp-period">2018.06 - 2021.08</span>
                 </div>
-                <div class="exp-role">솔루션 개발팀</div>
+                <div class="exp-role">솔루션 개발팀 | 공공기관 기록물 관리 솔루션</div>
+                <p style="margin: 8px 0;"><strong>📌 배경:</strong> 기존 상용 검색 솔루션의 높은 라이선스 비용 부담</p>
+                <p style="margin: 8px 0;"><strong>⚡ 해결:</strong></p>
                 <ul class="exp-list">
-                    <li>Elasticsearch 기반 자체 검색 엔진 개발 및 한글 형태소 분석기 적용.</li>
-                    <li>대용량 기록물 이미지 Bulk Insert 최적화 (등록 속도 70% 단축).</li>
+                    <li>Elasticsearch 기반 자체 검색 엔진 개발, Nori 한글 형태소 분석기 적용</li>
+                    <li>단건 Insert를 Bulk Insert 알고리즘으로 전환하여 DB 트랜잭션 횟수 최소화</li>
                 </ul>
+                <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 등록 속도 <strong>70% 단축</strong>, <strong>2021년 사내 우수사원</strong> 선정</p>
             </div>
         </section>
     </div>
