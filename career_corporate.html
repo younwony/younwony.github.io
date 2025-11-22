@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤원희 - Corporate Career Description</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_corporate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="header-content">
+                <h1>윤원희</h1>
+                <h2>Backend Developer Career Description</h2>
+                <div class="contact-grid">
+                    <div class="contact-item"><i class="fas fa-envelope"></i> wony9324@naver.com</div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> 010-3555-2320</div>
+                    <div class="contact-item"><i class="fas fa-home"></i> <a href="index.html">Portfolio Home</a></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h3 class="section-title">Introduction</h3>
+                <p class="summary-text">
+                    비즈니스 문제를 기술로 해결하는 과정과 성과를 상세히 기술한 경력기술서입니다.
+                    주로 커머스 도메인에서 <strong>대용량 데이터 처리, 프로세스 자동화, 레거시 성능 개선</strong> 업무를 수행했습니다.
+                </p>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Detailed Work Experience</h3>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h4>(주)구하다</h4>
+                            <span class="exp-role">| 백엔드 개발팀</span>
+                        </div>
+                        <span class="exp-period">2022.02 - 재직 중</span>
+                    </div>
+
+                    <div style="padding: 15px 0;">
+                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">1. 인플루언서 마케팅 자동화 및 대용량 분석 시스템
+                            구축</h5>
+                        <ul class="exp-list">
+                            <li><strong>문제:</strong> 수동 관리로 인한 비효율 및 플랫폼별 데이터 파편화.</li>
+                            <li><strong>해결:</strong> ThreadPoolTaskExecutor 병렬 처리, Redis Distributed Lock 동시성 제어.</li>
+                            <li><strong>성과:</strong> 데이터 처리 속도 100배 향상, 인플루언서 풀 10배 확대.</li>
+                        </ul>
+                    </div>
+
+                    <div style="padding: 15px 0; border-top: 1px dashed #ddd;">
+                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">2. 네이버 쇼핑 최저가 비교 및 가격 자동 조정 시스템
+                        </h5>
+                        <ul class="exp-list">
+                            <li><strong>문제:</strong> 경쟁사 가격 변동 대응 지연 및 RDB 조회 성능 저하.</li>
+                            <li><strong>해결:</strong> Elasticsearch 인덱싱, Spring Batch 대용량 처리.</li>
+                            <li><strong>성과:</strong> 매출 10% 증대, 가격 관리 자동화.</li>
+                        </ul>
+                    </div>
+
+                    <div style="padding: 15px 0; border-top: 1px dashed #ddd;">
+                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">3. 데이터 기반 프로세스 최적화 (Zero Ops)
+                        </h5>
+                        <ul class="exp-list">
+                            <li><strong>문제:</strong> 잦은 품절/이미지 누락 클레임 및 반복 수동 업무.</li>
+                            <li><strong>해결:</strong> BigQuery 데이터 분석, 이미지 Header 해시값 비교.</li>
+                            <li><strong>성과:</strong> 품절률 20% 감소, 운영 리소스 낭비 제거.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h4>(주)인터파크</h4>
+                            <span class="exp-role">| 쇼핑 개발팀</span>
+                        </div>
+                        <span class="exp-period">2021.09 - 2022.01</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>판매자 어드민 시스템 Slow Query 최적화 (실행 계획 분석 및 인덱스 튜닝).</li>
+                        <li>레거시 비즈니스 로직 리팩토링 및 신규 프로모션 기능 개발.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h4>(주)한국문헌정보기술</h4>
+                            <span class="exp-role">| 솔루션 개발팀</span>
+                        </div>
+                        <span class="exp-period">2018.06 - 2021.08</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Elasticsearch 기반 자체 검색 엔진 구축 및 한글 형태소 분석기 적용.</li>
+                        <li>대용량 기록물 이미지 Bulk Insert 최적화 (속도 70% 개선).</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="template-switcher.js"></script>
+</body>
+
+</html>
