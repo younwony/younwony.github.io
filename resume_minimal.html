@@ -7,128 +7,103 @@
     <title>윤원희 - Minimal Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style_minimal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <div class="resume-container">
         <header class="header">
             <h1>윤원희</h1>
-            <h2>Backend Developer</h2>
             <div class="contact-info">
-                <span>wony9324@naver.com</span>
-                <span class="separator">|</span>
+                <span>Backend Developer (7년 차)</span>
+                <span>|</span>
                 <span>010-3555-2320</span>
-                <span class="separator">|</span>
+                <span>|</span>
+                <span>wony9324@naver.com</span>
+                <span>|</span>
+                <a href="https://github.com/younwony" target="_blank">GitHub</a>
+                <span>|</span>
                 <a href="index.html">Portfolio Home</a>
-                <span class="separator">|</span>
-                <a href="https://github.com/younwony" target="_blank">github.com/younwony</a>
             </div>
         </header>
 
         <section class="section">
-            <h3 class="section-title">Summary</h3>
-            <p class="summary-text">
+            <h2 class="section-title">Summary</h2>
+            <p style="line-height: 1.6; color: #444;">
                 <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
-                커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 온 7년 차 백엔드 개발자입니다.
-                200만 건 규모의 인플루언서 데이터 파이프라인을 구축하여 마케팅 효율을 극대화하고,
-                Elasticsearch 기반의 검색 엔진 도입으로 데이터 처리 속도를 획기적으로 개선했습니다.
+                7년 차 백엔드 개발자로서 커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화 경험을 보유하고 있습니다.
+                200만 건 규모의 데이터 파이프라인 구축과 Elasticsearch 기반 검색 엔진 도입으로 성능을 극대화했으며,
+                운영 비효율을 제거하는 자동화 시스템을 통해 조직의 생산성을 높이는 데 기여합니다.
             </p>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Skills</h3>
+            <h2 class="section-title">Skills</h2>
             <div class="skills-list">
-                Java 17, Spring Boot, Spring Batch, JPA / QueryDSL, MySQL, Redis, Elasticsearch, AWS, Docker, BigQuery,
-                GA4
+                <strong>Languages:</strong> Java 17, Python, SQL<br>
+                <strong>Frameworks:</strong> Spring Boot, Spring Batch, JPA / QueryDSL<br>
+                <strong>Database & Infra:</strong> MySQL, Redis, Elasticsearch, AWS, Docker, BigQuery
             </div>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Experience</h3>
+            <h2 class="section-title">Work Experience</h2>
 
             <div class="experience-item">
                 <div class="exp-header">
-                    <h4>(주)구하다</h4>
-                    <span class="exp-period">2022.02 - Present</span>
+                    <span class="company-name">(주)구하다</span>
+                    <span class="exp-period">2022.02 - 재직 중</span>
                 </div>
                 <div class="exp-role">백엔드 개발팀 | 핵심 도메인 및 데이터 파이프라인 총괄</div>
-                <ul class="exp-list">
-                    <li>
-                        <strong>인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</strong>
-                        <br>다중 소스 앙상블 및 병렬 수집 아키텍처로 데이터 풀 20배 확대, 수집 속도 5배 개선.
-                    </li>
-                    <li>
-                        <strong>네이버 쇼핑 최저가 대응 동적 가격(Dynamic Pricing) 시스템</strong>
-                        <br>경쟁사 최저가 추적 및 자동 가격 보정으로 매출 10% 증대, Zero Ops 달성.
-                    </li>
-                    <li>
-                        <strong>데이터 기반 프로세스 최적화</strong>
-                        <br>GA4-DB 통합 분석으로 상습 품절 파트너 식별(품절률 20% 감소) 및 이미지 변경 감지 비용 80% 절감.
-                    </li>
+                <ul class="exp-desc">
+                    <li><strong>인플루언서 데이터 플랫폼 고도화:</strong> 병렬 처리 아키텍처로 데이터 풀 20배(10만→200만) 확대 및 수집 속도 5배 개선.</li>
+                    <li><strong>Dynamic Pricing 시스템 구축:</strong> 실시간 최저가 대응 및 자동 가격 조정으로 매출 10% 증대 기여.</li>
+                    <li><strong>Ops 자동화:</strong> 품절 파트너 식별 및 이미지 처리 최적화로 비용 80% 절감 및 반복 업무 제거.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
-                    <h4>(주)인터파크</h4>
+                    <span class="company-name">(주)인터파크</span>
                     <span class="exp-period">2021.09 - 2022.01</span>
                 </div>
-                <div class="exp-role">쇼핑 개발팀</div>
-                <ul class="exp-list">
-                    <li>판매자(Seller) 어드민 시스템 Slow Query 분석 및 실행 계획 최적화.</li>
-                    <li>레거시 비즈니스 로직 리팩토링 및 신규 프로모션 기능 배포.</li>
+                <div class="exp-role">쇼핑 개발팀 | 판매자 어드민 시스템 유지보수</div>
+                <ul class="exp-desc">
+                    <li><strong>Seller 어드민 성능 개선:</strong> 정산/주문 Slow Query 인덱스 튜닝 및 비즈니스 로직 리팩토링.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="exp-header">
-                    <h4>(주)한국문헌정보기술</h4>
+                    <span class="company-name">(주)한국문헌정보기술</span>
                     <span class="exp-period">2018.06 - 2021.08</span>
                 </div>
-                <div class="exp-role">솔루션 개발팀</div>
-                <ul class="exp-list">
-                    <li>Elasticsearch 기반 자체 검색 엔진 구축 및 한글 형태소 분석기 적용.</li>
-                    <li>대량 이미지 Bulk Insert 알고리즘 최적화 (등록 속도 70% 단축).</li>
+                <div class="exp-role">솔루션 개발팀 | 공공기관 기록물 관리 솔루션</div>
+                <ul class="exp-desc">
+                    <li><strong>자체 검색엔진 구축:</strong> Elasticsearch 도입 및 Bulk Insert 최적화로 데이터 등록 속도 70% 단축.</li>
+                    <li><strong>성과:</strong> 2021년 사내 우수사원 선정.</li>
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Education</h3>
-            <div class="item-row">
-                <div class="item-main">
-                    <h4>대전대학교</h4>
-                    <p>컴퓨터공학 전공</p>
+            <h2 class="section-title">Education</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="company-name">대전대학교</span>
+                    <span class="exp-period">2011.02 - 2018.02</span>
                 </div>
-                <div class="item-date">2011.02 - 2018.02</div>
+                <div class="exp-role">컴퓨터공학 전공</div>
             </div>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Certifications</h3>
-            <div class="item-row">
-                <div class="item-main">
-                    <h4>정보처리기사</h4>
-                    <p>한국산업인력공단</p>
-                </div>
-                <div class="item-date">2017.05</div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h3 class="section-title">Awards</h3>
-            <div class="item-row">
-                <div class="item-main">
-                    <h4>2021년 사내 우수사원</h4>
-                    <p>(주)한국문헌정보기술</p>
-                </div>
-                <div class="item-date">2021</div>
-            </div>
+            <h2 class="section-title">Certifications & Awards</h2>
+            <ul class="exp-desc">
+                <li><strong>정보처리기사</strong> - 한국산업인력공단 (2017.05)</li>
+                <li><strong>2021년 우수사원상</strong> - (주)한국문헌정보기술 (2021.12)</li>
+            </ul>
         </section>
     </div>
     <script src="template-switcher.js"></script>
