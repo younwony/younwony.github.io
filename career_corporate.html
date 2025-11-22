@@ -22,16 +22,22 @@
                     <div class="contact-item"><i class="fas fa-envelope"></i> wony9324@naver.com</div>
                     <div class="contact-item"><i class="fas fa-phone"></i> 010-3555-2320</div>
                     <div class="contact-item"><i class="fas fa-home"></i> <a href="index.html">Portfolio Home</a></div>
+                    <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/younwony"
+                            target="_blank">github.com/younwony</a></div>
                 </div>
             </div>
         </header>
 
         <main class="main-content">
             <section class="section">
-                <h3 class="section-title">Introduction</h3>
+                <h3 class="section-title">Professional Summary</h3>
                 <p class="summary-text">
-                    비즈니스 문제를 기술로 해결하는 과정과 성과를 상세히 기술한 경력기술서입니다.
-                    주로 커머스 도메인에서 <strong>대용량 데이터 처리, 프로세스 자동화, 레거시 성능 개선</strong> 업무를 수행했습니다.
+                    <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
+                    커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 왔습니다.
+                    200만 건 규모의 인플루언서 데이터 파이프라인을 구축하여 마케팅 효율을 극대화하고,
+                    Elasticsearch 기반의 검색 엔진 도입으로 데이터 처리 속도를 획기적으로 개선했습니다.
+                    단순 구현을 넘어, 병렬 처리 및 Scale-out 설계를 통해 시스템 확장성을 확보하며,
+                    운영팀의 반복 업무를 100% 자동화하여 조직 생산성을 높이는 데 기여합니다.
                 </p>
             </section>
 
@@ -42,38 +48,81 @@
                     <div class="exp-header">
                         <div class="exp-title-group">
                             <h4>(주)구하다</h4>
-                            <span class="exp-role">| 백엔드 개발팀</span>
+                            <span class="exp-role">| 백엔드 개발팀 (핵심 도메인 및 데이터 파이프라인 총괄)</span>
                         </div>
-                        <span class="exp-period">2022.02 - 재직 중</span>
+                        <span class="exp-period">2022.02 - 재직 중 (3년 9개월)</span>
                     </div>
 
+                    <!-- Project 1 -->
                     <div style="padding: 15px 0;">
-                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">1. 인플루언서 마케팅 자동화 및 대용량 분석 시스템
-                            구축</h5>
+                        <h5 style="color: #0056b3; font-size: 1.1rem; margin-bottom: 10px;">1. 인플루언서 데이터 플랫폼 고도화 (200만
+                            데이터 규모)</h5>
                         <ul class="exp-list">
-                            <li><strong>문제:</strong> 수동 관리로 인한 비효율 및 플랫폼별 데이터 파편화.</li>
-                            <li><strong>해결:</strong> ThreadPoolTaskExecutor 병렬 처리, Redis Distributed Lock 동시성 제어.</li>
-                            <li><strong>성과:</strong> 데이터 처리 속도 100배 향상, 인플루언서 풀 10배 확대.</li>
+                            <li><strong>Situation:</strong> 수동 관리의 한계(시간당 100명)와 플랫폼별 데이터 파편화로 인한 비효율.</li>
+                            <li><strong>Task:</strong> 대규모 데이터 수집·정제·검색·리포팅 자동화 플랫폼 구축.</li>
+                            <li><strong>Action:</strong>
+                                <ul>
+                                    <li>TikAPI, WebScraper 등 다중 소스 앙상블 및 ThreadPoolTaskExecutor 병렬 처리.</li>
+                                    <li>CDN 링크 만료 대응을 위한 Scale-out 병렬 다운로드 시스템 및 재수집 로직.</li>
+                                    <li>Elasticsearch 200만+ 인덱스 최적화 및 실시간 검색 구현.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Result:</strong> 인플루언서 풀 20배 확대 및 운영 리소스 획기적 절감.
+                                <div style="margin-top: 5px; font-size: 0.9rem;">
+                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">🚀 데이터 풀
+                                        20배(200만)</span>
+                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">⚡ 수집 속도
+                                        5배</span>
+                                    <span style="color: #d93025; font-weight: bold;">🤖 리포팅 100% 자동화</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
+                    <!-- Project 2 -->
                     <div style="padding: 15px 0; border-top: 1px dashed #ddd;">
-                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">2. 네이버 쇼핑 최저가 비교 및 가격 자동 조정 시스템
-                        </h5>
+                        <h5 style="color: #0056b3; font-size: 1.1rem; margin-bottom: 10px;">2. 네이버 쇼핑 최저가 대응 및 동적
+                            가격(Dynamic Pricing) 시스템</h5>
                         <ul class="exp-list">
-                            <li><strong>문제:</strong> 경쟁사 가격 변동 대응 지연 및 RDB 조회 성능 저하.</li>
-                            <li><strong>해결:</strong> Elasticsearch 인덱싱, Spring Batch 대용량 처리.</li>
-                            <li><strong>성과:</strong> 매출 10% 증대, 가격 관리 자동화.</li>
+                            <li><strong>Situation:</strong> 경쟁사 최저가 추적 지연 및 수동 가격 변경의 비효율(24h+ 소요).</li>
+                            <li><strong>Task:</strong> 실시간 최저가 모니터링 및 마진 기반 자동 가격 조정 시스템 구축.</li>
+                            <li><strong>Action:</strong>
+                                <ul>
+                                    <li>Spring Batch 대용량 처리 및 Elasticsearch 기반 고속 상품 비교.</li>
+                                    <li>RateLimiter 및 Exponential Backoff 정책으로 네이버 쇼핑 API 안정성 확보.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Result:</strong> 가격 경쟁력 확보로 매출 증대 및 운영팀 수동 업무 제거.
+                                <div style="margin-top: 5px; font-size: 0.9rem;">
+                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">💰 매출 10%
+                                        증대</span>
+                                    <span style="color: #d93025; font-weight: bold;">⚙️ Zero Ops (완전 자동화)</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
 
+                    <!-- Project 3 -->
                     <div style="padding: 15px 0; border-top: 1px dashed #ddd;">
-                        <h5 style="color: #0056b3; font-size: 1rem; margin-bottom: 8px;">3. 데이터 기반 프로세스 최적화 (Zero Ops)
+                        <h5 style="color: #0056b3; font-size: 1.1rem; margin-bottom: 10px;">3. 데이터 기반 프로세스 최적화 및 Ops 자동화
                         </h5>
                         <ul class="exp-list">
-                            <li><strong>문제:</strong> 잦은 품절/이미지 누락 클레임 및 반복 수동 업무.</li>
-                            <li><strong>해결:</strong> BigQuery 데이터 분석, 이미지 Header 해시값 비교.</li>
-                            <li><strong>성과:</strong> 품절률 20% 감소, 운영 리소스 낭비 제거.</li>
+                            <li><strong>Situation:</strong> 잦은 품절 클레임 및 이미지 전체 비교로 인한 비용 낭비.</li>
+                            <li><strong>Task:</strong> 데이터 기반 페널티 정책 수립 및 운영 업무 자동화.</li>
+                            <li><strong>Action:</strong>
+                                <ul>
+                                    <li>GA4-DB 로그 BigQuery 통합 분석으로 상습 품절 파트너 식별.</li>
+                                    <li>이미지 Header(4KB) 해시 비교 도입으로 변경 감지 최적화.</li>
+                                    <li>Slack Event API 기반 ChatOps로 발주/클레임 처리 자동화.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Result:</strong> 품절률 감소 및 이미지 처리 비용 절감, 반복 업무 Zero화.
+                                <div style="margin-top: 5px; font-size: 0.9rem;">
+                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">📉 품절률 20%
+                                        감소</span>
+                                    <span style="color: #d93025; font-weight: bold;">💸 비용 80% 절감</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -87,8 +136,8 @@
                         <span class="exp-period">2021.09 - 2022.01</span>
                     </div>
                     <ul class="exp-list">
-                        <li>판매자 어드민 시스템 Slow Query 최적화 (실행 계획 분석 및 인덱스 튜닝).</li>
-                        <li>레거시 비즈니스 로직 리팩토링 및 신규 프로모션 기능 개발.</li>
+                        <li><strong>Task:</strong> 판매자 어드민 시스템 성능 저하 해결 및 레거시 개선.</li>
+                        <li><strong>Action:</strong> 정산/주문 Slow Query 실행 계획 분석 및 인덱스 튜닝, 비즈니스 로직 리팩토링.</li>
                     </ul>
                 </div>
 
@@ -101,8 +150,9 @@
                         <span class="exp-period">2018.06 - 2021.08</span>
                     </div>
                     <ul class="exp-list">
-                        <li>Elasticsearch 기반 자체 검색 엔진 구축 및 한글 형태소 분석기 적용.</li>
-                        <li>대용량 기록물 이미지 Bulk Insert 최적화 (속도 70% 개선).</li>
+                        <li><strong>Task:</strong> 고비용 상용 솔루션 대체 및 대량 이미지 등록 속도 개선.</li>
+                        <li><strong>Action:</strong> Elasticsearch 기반 자체 검색 엔진 개발(한글 형태소 분석), Bulk Insert 알고리즘 최적화.</li>
+                        <li><strong>Result:</strong> 데이터 등록 속도 70% 단축, 2021년 사내 우수사원 선정.</li>
                     </ul>
                 </div>
             </section>

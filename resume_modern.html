@@ -8,9 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style_modern.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+    <!DOCTYPE html>
+    <html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>윤원희 - Modern Resume</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style_modern.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
 
 <body>
     <div class="resume-container">
@@ -37,6 +48,11 @@
                     <i class="fas fa-home"></i>
                     <a href="index.html" style="color: inherit; text-decoration: none;">Portfolio Home</a>
                 </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/younwony" target="_blank"
+                        style="color: inherit; text-decoration: none;">github.com/younwony</a>
+                </div>
             </div>
 
             <div class="sidebar-section">
@@ -44,15 +60,15 @@
                 <div class="skills-wrap">
                     <span class="skill-pill">Java 17</span>
                     <span class="skill-pill">Spring Boot</span>
-                    <span class="skill-pill">JPA / Hibernate</span>
                     <span class="skill-pill">Spring Batch</span>
+                    <span class="skill-pill">JPA / QueryDSL</span>
                     <span class="skill-pill">MySQL</span>
-                    <span class="skill-pill">Oracle</span>
                     <span class="skill-pill">Redis</span>
                     <span class="skill-pill">Elasticsearch</span>
                     <span class="skill-pill">AWS</span>
-                    <span class="skill-pill">BigQuery</span>
                     <span class="skill-pill">Docker</span>
+                    <span class="skill-pill">BigQuery</span>
+                    <span class="skill-pill">GA4</span>
                 </div>
             </div>
 
@@ -60,13 +76,13 @@
                 <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                 <div class="edu-item">
                     <div class="edu-school">대전대학교</div>
-                    <div class="edu-degree">컴퓨터공학 학사</div>
+                    <div class="edu-degree">컴퓨터공학 전공</div>
                     <div class="edu-date">2011.02 - 2018.02</div>
                 </div>
             </div>
 
             <div class="sidebar-section">
-                <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                <h3><i class="fas fa-certificate"></i> Certificates</h3>
                 <div class="cert-item">
                     <div class="cert-name">정보처리기사</div>
                     <div class="cert-org">한국산업인력공단</div>
@@ -79,8 +95,12 @@
             <section class="section">
                 <h3 class="section-title"><i class="fas fa-user-circle"></i> About Me</h3>
                 <p class="summary-text">
-                    커머스 도메인에서 <strong>대용량 데이터 처리, 프로세스 자동화, 레거시 성능 개선</strong>에 강점이 있는 7년차 백엔드 개발자입니다.
-                    비즈니스 문제를 기술적으로 해결하여 실질적인 성과를 만들어내는 것을 중요하게 생각합니다.
+                    <strong>"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"</strong><br>
+                    커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 온 7년 차 백엔드 개발자입니다.
+                    200만 건 규모의 인플루언서 데이터 파이프라인을 구축하여 마케팅 효율을 극대화하고,
+                    Elasticsearch 기반의 검색 엔진 도입으로 데이터 처리 속도를 획기적으로 개선했습니다.
+                    단순 구현을 넘어, 병렬 처리 및 Scale-out 설계를 통해 시스템 확장성을 확보하며,
+                    운영팀의 반복 업무를 100% 자동화하여 조직 생산성을 높이는 데 기여합니다.
                 </p>
             </section>
 
@@ -92,11 +112,31 @@
                         <h4>(주)구하다</h4>
                         <span class="exp-period">2022.02 - 재직 중 (3년 9개월)</span>
                     </div>
-                    <div class="exp-role">백엔드 개발팀</div>
+                    <div class="exp-role">백엔드 개발팀 | 핵심 도메인 개발 및 데이터 파이프라인 총괄</div>
                     <ul class="exp-list">
-                        <li>인플루언서 마케팅 자동화 시스템 구축 (데이터 처리 속도 100배 향상)</li>
-                        <li>네이버 쇼핑 최저가 비교 및 가격 자동 조정 시스템 개발 (매출 10% 증대)</li>
-                        <li>데이터 기반 프로세스 최적화 및 Zero Ops 달성</li>
+                        <li>
+                            <strong>인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</strong>
+                            <ul>
+                                <li>다중 소스(TikAPI 등) 앙상블 및 병렬 수집 아키텍처로 데이터 풀 20배 확대 (10만→200만)</li>
+                                <li>CDN 링크 만료 문제 해결을 위한 Scale-out 병렬 다운로드 시스템 구축</li>
+                                <li>Google Sheets API 연동으로 Daily Report 100% 자동화</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>네이버 쇼핑 최저가 대응 동적 가격(Dynamic Pricing) 시스템</strong>
+                            <ul>
+                                <li>경쟁사 최저가 추적 및 마진율 기반 자동 가격 보정으로 매출 10% 증대</li>
+                                <li>대용량 상품 데이터 Elasticsearch 인덱싱으로 비교 조회 속도 개선</li>
+                                <li>수동 가격 대응 업무 완전 제거 (Zero Ops)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>데이터 기반 프로세스 최적화</strong>
+                            <ul>
+                                <li>GA4-DB 통합 분석으로 상습 품절 파트너 식별 (품절률 20% 감소)</li>
+                                <li>이미지 Header 해시 비교 도입으로 변경 감지 비용 80% 절감</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
@@ -105,10 +145,11 @@
                         <h4>(주)인터파크</h4>
                         <span class="exp-period">2021.09 - 2022.01 (5개월)</span>
                     </div>
-                    <div class="exp-role">쇼핑 개발팀</div>
+                    <div class="exp-role">쇼핑 개발팀 | 판매자 어드민 시스템 유지보수</div>
                     <ul class="exp-list">
-                        <li>판매자(Seller) 어드민 시스템 유지보수 및 Slow Query 최적화</li>
-                        <li>레거시 비즈니스 로직 리팩토링 및 신규 프로모션 기능 배포</li>
+                        <li>판매자 정산/주문 Slow Query 분석 및 실행 계획 최적화</li>
+                        <li>복잡한 레거시 로직 분리 및 리팩토링으로 유지보수성 향상</li>
+                        <li>신규 프로모션 기능 대응 및 시스템 안정성 확보</li>
                     </ul>
                 </div>
 
@@ -117,10 +158,11 @@
                         <h4>(주)한국문헌정보기술</h4>
                         <span class="exp-period">2018.06 - 2021.08 (3년 2개월)</span>
                     </div>
-                    <div class="exp-role">솔루션 개발팀</div>
+                    <div class="exp-role">솔루션 개발팀 | 공공기관 기록물 관리 솔루션</div>
                     <ul class="exp-list">
-                        <li>자체 검색 엔진 구축 (Elasticsearch 기반) 및 한글 형태소 분석기 적용</li>
-                        <li>대용량 기록물 이미지 Bulk Insert 최적화 (등록 속도 70% 단축)</li>
+                        <li>Elasticsearch 기반 자체 검색엔진 개발 (한글 형태소 분석기 적용)</li>
+                        <li>대량 이미지 Bulk Insert 알고리즘 최적화 (등록 속도 70% 개선)</li>
+                        <li>2021년 사내 우수사원 선정</li>
                     </ul>
                 </div>
             </section>
