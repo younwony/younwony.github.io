@@ -279,3 +279,122 @@ body {
     transform: translateY(-2px);
     background: #004494;
 }
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0056b3;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    color-scheme: dark;
+    --primary-color: #60a5fa;
+    --secondary-color: #2d3748;
+    --text-color: #e0e0e0;
+    --border-color: #3d4d68;
+}
+
+[data-theme="dark"] body {
+    background-color: #0f0f23;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .resume-container {
+    background: #16213e;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .header {
+    background-color: #1a1a2e;
+}
+
+[data-theme="dark"] .contact-item a {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}
+
+[data-theme="dark"] .section-title {
+    color: #e0e0e0;
+    border-bottom-color: #2d3748;
+}
+
+[data-theme="dark"] .summary-text {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .skill-category {
+    background: linear-gradient(135deg, #4a6cf7 0%, #60a5fa 100%);
+    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.3);
+}
+
+[data-theme="dark"] .skill-category:hover {
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4);
+}
+
+[data-theme="dark"] .exp-header {
+    background-color: #2d3748;
+}
+
+[data-theme="dark"] .exp-title-group h4 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .exp-role {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .exp-period {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .exp-list li {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .item-block h4 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .item-block p {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .item-block .date {
+    color: #888;
+}
+
+[data-theme="dark"] .pdf-btn {
+    background: #1a1a2e;
+}
+
+[data-theme="dark"] .pdf-btn:hover {
+    background: #0d0d1f;
+}
+
+/* Print styles - hide dark mode toggle */
+@media print {
+    .dark-mode-toggle {
+        display: none !important;
+    }
+}

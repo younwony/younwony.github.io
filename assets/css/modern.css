@@ -273,3 +273,142 @@ body {
     transform: translateY(-2px);
     background: #1a252f;
 }
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3498db;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="dark"] {
+    --sidebar-bg: #1a1a2e;
+    --sidebar-text: #e0e0e0;
+    --main-bg: #16213e;
+    --main-text: #e0e0e0;
+    --accent-color: #60a5fa;
+    --heading-color: #e0e0e0;
+}
+
+[data-theme="dark"] body {
+    background-color: #0f0f23;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .resume-container {
+    background: #16213e;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .sidebar {
+    background-color: #1a1a2e;
+}
+
+[data-theme="dark"] .profile-icon {
+    background: rgba(96, 165, 250, 0.1);
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .sidebar-section h3 {
+    color: #60a5fa;
+    border-bottom-color: rgba(96, 165, 250, 0.2);
+}
+
+[data-theme="dark"] .contact-item i {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .skill-pill {
+    background: rgba(96, 165, 250, 0.1);
+    color: #d0d0d0;
+}
+
+[data-theme="dark"] .main-content {
+    background-color: #16213e;
+}
+
+[data-theme="dark"] .section-title {
+    color: #e0e0e0;
+    border-bottom-color: #2d3748;
+}
+
+[data-theme="dark"] .section-title i {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .summary-text {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .experience-item .exp-period {
+    color: #888;
+}
+
+[data-theme="dark"] .experience-item .exp-role {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .experience-item .exp-list li {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .experience-item .exp-list li::before {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .award-item {
+    background: #1a1a2e;
+    border-left-color: #60a5fa;
+}
+
+[data-theme="dark"] .award-name {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .award-org {
+    color: #888;
+}
+
+[data-theme="dark"] .award-date {
+    color: #666;
+}
+
+[data-theme="dark"] .pdf-btn {
+    background: #1a1a2e;
+    color: white;
+}
+
+[data-theme="dark"] .pdf-btn:hover {
+    background: #0d0d1f;
+}
+
+/* Print styles - hide dark mode toggle */
+@media print {
+    .dark-mode-toggle {
+        display: none !important;
+    }
+}
