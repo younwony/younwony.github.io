@@ -1,373 +1,616 @@
 /**
- * Common UI and Functionality for All Templates
- * - Dark Mode Toggle
- * - Template Switcher
- * - Home Button
- * - PDF Export Button
+ * Portfolio Common UI Manager
+ *
+ * Modular and extensible architecture for managing:
+ * - Theme (Dark/Light mode)
+ * - Navigation (Home, Template Switcher)
+ * - Actions (PDF Export)
+ *
+ * @author Yoon Wonhee
+ * @version 2.0.0
  */
 
 (function () {
     'use strict';
 
-    // ===== 1. DARK MODE =====
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // ===== CONFIGURATION =====
+    const CONFIG = {
+        theme: {
+            storageKey: 'theme',
+            defaultTheme: 'light',
+            attribute: 'data-theme'
+        },
+        navigation: {
+            homeUrl: '../../index.html',
+            templates: [
+                { name: '기본', file: 'default.html' },
+                { name: '모던', file: 'modern.html' },
+                { name: '기업형', file: 'corporate.html' }
+            ]
+        },
+        selectors: {
+            hideInlineElements: [
+                '.home-btn',
+                '.header-actions',
+                '.contact-info a[href*="index.html"]',
+                '.contact-grid .contact-item a[href*="index.html"]',
+                '.sidebar-section a[href*="index.html"]'
+            ]
+        }
+    };
 
-    // Apply theme on page load (before DOM ready for no flash)
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
+    // ===== THEME MANAGER =====
+    class ThemeManager {
+        constructor(config) {
+            this.storageKey = config.storageKey;
+            this.defaultTheme = config.defaultTheme;
+            this.attribute = config.attribute;
+            this.currentTheme = this.loadTheme();
+            this.observers = [];
+        }
+
+        loadTheme() {
+            return localStorage.getItem(this.storageKey) || this.defaultTheme;
+        }
+
+        applyTheme(theme) {
+            document.documentElement.setAttribute(this.attribute, theme);
+            localStorage.setItem(this.storageKey, theme);
+            this.currentTheme = theme;
+            this.notifyObservers(theme);
+        }
+
+        toggleTheme() {
+            const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+            this.applyTheme(newTheme);
+            return newTheme;
+        }
+
+        subscribe(callback) {
+            this.observers.push(callback);
+        }
+
+        notifyObservers(theme) {
+            this.observers.forEach(callback => callback(theme));
+        }
+
+        initialize() {
+            this.applyTheme(this.currentTheme);
+        }
     }
 
-    // ===== 2. DOM READY: CREATE UI ELEMENTS =====
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // 2-1. Create Dark Mode Toggle Button
-        const darkModeToggle = document.createElement('button');
-        darkModeToggle.className = 'dark-mode-toggle';
-        darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
-        darkModeToggle.innerHTML = currentTheme === 'dark'
-            ? '<i class="fas fa-sun"></i>'
-            : '<i class="fas fa-moon"></i>';
-
-        darkModeToggle.addEventListener('click', function () {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const newTheme = theme === 'dark' ? 'light' : 'dark';
-
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            darkModeToggle.innerHTML = newTheme === 'dark'
-                ? '<i class="fas fa-sun"></i>'
-                : '<i class="fas fa-moon"></i>';
-        });
-
-        document.body.appendChild(darkModeToggle);
-
-        // 2-2. Create PDF Export Button
-        const pdfBtn = document.createElement('button');
-        pdfBtn.className = 'pdf-btn no-print';
-        pdfBtn.innerHTML = '<i class="fas fa-file-pdf"></i> Save as PDF';
-        pdfBtn.onclick = function () {
-            window.print();
-        };
-        document.body.appendChild(pdfBtn);
-
-        // 2-3. Template Switcher & Home Button
-        const path = window.location.pathname;
-        let type = 'resume'; // default
-        if (path.includes('/career/')) {
-            type = 'career';
+    // ===== UI COMPONENT BUILDER =====
+    class ComponentBuilder {
+        /**
+         * Create a button element with specified properties
+         */
+        static createButton(config) {
+            const button = document.createElement('button');
+            if (config.className) button.className = config.className;
+            if (config.id) button.id = config.id;
+            if (config.ariaLabel) button.setAttribute('aria-label', config.ariaLabel);
+            if (config.innerHTML) button.innerHTML = config.innerHTML;
+            if (config.onClick) button.addEventListener('click', config.onClick);
+            return button;
         }
 
-        const filename = path.substring(path.lastIndexOf('/') + 1);
-
-        // Create Home Button (Top Left)
-        const homeBtn = document.createElement('a');
-        homeBtn.href = '../../index.html';
-        homeBtn.id = 'fixed-home-btn';
-        homeBtn.innerHTML = '<i class="fas fa-home"></i> 홈으로';
-        document.body.appendChild(homeBtn);
-
-        // Create Switcher UI (Top Right)
-        const switcherContainer = document.createElement('div');
-        switcherContainer.id = 'template-switcher';
-
-        const title = document.createElement('span');
-        title.className = 'switcher-title';
-        title.innerText = '템플릿: ';
-        switcherContainer.appendChild(title);
-
-        // Define templates
-        const templates = [
-            { name: '기본', file: 'default.html' },
-            { name: '모던', file: 'modern.html' },
-            { name: '기업형', file: 'corporate.html' }
-        ];
-
-        templates.forEach(tmpl => {
-            const btn = document.createElement('button');
-            btn.className = 'switcher-btn';
-            btn.innerText = tmpl.name;
-
-            if (filename === tmpl.file) {
-                btn.classList.add('active');
-            }
-
-            btn.onclick = function () {
-                window.location.href = tmpl.file;
-            };
-
-            switcherContainer.appendChild(btn);
-        });
-
-        // Add switch to other type (Resume <-> Career)
-        const switchTypeBtn = document.createElement('button');
-        switchTypeBtn.className = 'switcher-btn switch-type';
-
-        if (type === 'resume') {
-            switchTypeBtn.innerHTML = '<i class="fas fa-briefcase"></i> 경력기술서';
-            switchTypeBtn.onclick = function () {
-                window.location.href = '../career/default.html';
-            };
-        } else {
-            switchTypeBtn.innerHTML = '<i class="fas fa-user"></i> 이력서';
-            switchTypeBtn.onclick = function () {
-                window.location.href = '../resume/default.html';
-            };
+        /**
+         * Create a link element with specified properties
+         */
+        static createLink(config) {
+            const link = document.createElement('a');
+            if (config.href) link.href = config.href;
+            if (config.className) link.className = config.className;
+            if (config.id) link.id = config.id;
+            if (config.innerHTML) link.innerHTML = config.innerHTML;
+            if (config.target) link.target = config.target;
+            return link;
         }
-        switcherContainer.appendChild(switchTypeBtn);
 
-        document.body.appendChild(switcherContainer);
+        /**
+         * Create a container div
+         */
+        static createContainer(config) {
+            const container = document.createElement('div');
+            if (config.className) container.className = config.className;
+            if (config.id) container.id = config.id;
+            return container;
+        }
+    }
 
-        // 2-4. Inject Styles for All Common Elements
-        const style = document.createElement('style');
-        style.innerHTML = `
-            /* ===== HOME BUTTON ===== */
-            #fixed-home-btn {
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 10px 18px;
-                border-radius: 50px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                z-index: 10000;
-                text-decoration: none;
-                color: #333;
-                font-weight: 600;
-                font-size: 0.9rem;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                border: 1px solid #e0e0e0;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-            }
-            #fixed-home-btn:hover {
-                background: white;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-                color: #4a6cf7;
-            }
-            #fixed-home-btn i {
-                font-size: 1rem;
-            }
+    // ===== NAVIGATION BUILDER =====
+    class NavigationBuilder {
+        constructor(config, themeManager) {
+            this.config = config;
+            this.themeManager = themeManager;
+            this.currentPath = window.location.pathname;
+            this.pageType = this.detectPageType();
+            this.currentTemplate = this.getCurrentTemplate();
+        }
 
-            /* ===== DARK MODE TOGGLE ===== */
-            .dark-mode-toggle {
-                position: fixed;
-                bottom: 30px;
-                left: 30px;
-                width: 56px;
-                height: 56px;
-                border-radius: 50%;
-                background: #4a6cf7;
-                color: white;
-                border: none;
-                font-size: 1.3rem;
-                cursor: pointer;
-                box-shadow: 0 4px 14px rgba(74, 108, 247, 0.4);
-                transition: all 0.3s ease;
-                z-index: 10000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .dark-mode-toggle:hover {
-                transform: scale(1.1) rotate(15deg);
-                box-shadow: 0 6px 20px rgba(74, 108, 247, 0.5);
-            }
-            .dark-mode-toggle i {
-                pointer-events: none;
-            }
+        detectPageType() {
+            if (this.currentPath.includes('/career/')) return 'career';
+            if (this.currentPath.includes('/resume/')) return 'resume';
+            return 'unknown';
+        }
 
-            /* ===== PDF BUTTON ===== */
-            .pdf-btn {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                background: #2c3e50;
-                color: white;
-                padding: 12px 24px;
-                border-radius: 50px;
-                cursor: pointer;
-                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-                z-index: 10000;
-                font-weight: 600;
-                border: none;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-size: 0.9rem;
-            }
-            .pdf-btn:hover {
-                transform: translateY(-3px);
-                background: #1a252f;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-            }
-            .pdf-btn i {
-                font-size: 1.1rem;
+        getCurrentTemplate() {
+            return this.currentPath.substring(this.currentPath.lastIndexOf('/') + 1);
+        }
+
+        /**
+         * Build the top navigation bar
+         */
+        buildTopNavBar() {
+            const navBar = ComponentBuilder.createContainer({
+                id: 'top-nav-bar',
+                className: 'top-nav-bar'
+            });
+
+            // Left section: Home button
+            const leftSection = this.buildLeftSection();
+            navBar.appendChild(leftSection);
+
+            // Right section: Theme toggle + Template switcher
+            const rightSection = this.buildRightSection();
+            navBar.appendChild(rightSection);
+
+            return navBar;
+        }
+
+        buildLeftSection() {
+            const section = ComponentBuilder.createContainer({
+                className: 'nav-section nav-left'
+            });
+
+            const homeBtn = ComponentBuilder.createLink({
+                href: this.config.homeUrl,
+                className: 'nav-btn home-link',
+                innerHTML: '<i class="fas fa-home"></i><span>홈으로</span>'
+            });
+
+            section.appendChild(homeBtn);
+            return section;
+        }
+
+        buildRightSection() {
+            const section = ComponentBuilder.createContainer({
+                className: 'nav-section nav-right'
+            });
+
+            // Theme toggle button
+            const themeToggle = this.buildThemeToggle();
+            section.appendChild(themeToggle);
+
+            // Template switcher (only for resume/career pages)
+            if (this.pageType !== 'unknown') {
+                const templateSwitcher = this.buildTemplateSwitcher();
+                section.appendChild(templateSwitcher);
             }
 
-            /* ===== TEMPLATE SWITCHER ===== */
-            #template-switcher {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 12px 18px;
-                border-radius: 50px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-                z-index: 10000;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                border: 1px solid #e0e0e0;
-                backdrop-filter: blur(10px);
-                flex-wrap: wrap;
-            }
-            .switcher-title {
-                font-size: 0.85rem;
-                font-weight: 600;
-                color: #555;
-                white-space: nowrap;
-            }
-            .switcher-btn {
-                background: #f1f5f9;
-                border: none;
-                padding: 7px 14px;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 0.8rem;
-                color: #444;
-                transition: all 0.2s;
-                font-family: inherit;
-                font-weight: 500;
-                white-space: nowrap;
-            }
-            .switcher-btn:hover {
-                background: #e2e8f0;
-                color: #222;
-                transform: translateY(-1px);
-            }
-            .switcher-btn.active {
-                background: #4a6cf7;
-                color: white;
-                font-weight: 600;
-            }
-            .switcher-btn.switch-type {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                margin-left: 5px;
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-            .switcher-btn.switch-type:hover {
-                background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
-                transform: translateY(-1px);
-            }
-            .switcher-btn i {
-                margin-right: 4px;
-                font-size: 0.85rem;
-            }
+            return section;
+        }
 
-            /* ===== DARK MODE STYLES ===== */
-            [data-theme="dark"] #fixed-home-btn {
-                background: rgba(26, 26, 46, 0.95);
-                color: #e0e0e0;
-                border-color: #3d4d68;
-            }
-            [data-theme="dark"] #fixed-home-btn:hover {
-                background: #1a1a2e;
-                color: #60a5fa;
-            }
-            [data-theme="dark"] #template-switcher {
-                background: rgba(26, 26, 46, 0.95);
-                border-color: #3d4d68;
-            }
-            [data-theme="dark"] .switcher-title {
-                color: #b0b0b0;
-            }
-            [data-theme="dark"] .switcher-btn {
-                background: #2d3748;
-                color: #d0d0d0;
-            }
-            [data-theme="dark"] .switcher-btn:hover {
-                background: #3d4d68;
-                color: #e0e0e0;
-            }
-            [data-theme="dark"] .switcher-btn.active {
-                background: #60a5fa;
-                color: #0f0f23;
-            }
-            [data-theme="dark"] .pdf-btn {
-                background: #1a1a2e;
-                color: #e0e0e0;
-            }
-            [data-theme="dark"] .pdf-btn:hover {
-                background: #0d0d1f;
-            }
-
-            /* ===== HIDE INLINE ELEMENTS ===== */
-            .home-btn,
-            .header-actions,
-            .contact-info a[href*="index.html"],
-            .contact-grid .contact-item a[href*="index.html"],
-            .sidebar-section a[href*="index.html"] {
-                display: none !important;
-            }
-
-            /* ===== PRINT STYLES ===== */
-            @media print {
-                #template-switcher,
-                #fixed-home-btn,
-                .dark-mode-toggle,
-                .pdf-btn,
-                .no-print {
-                    display: none !important;
+        buildThemeToggle() {
+            const currentTheme = this.themeManager.currentTheme;
+            const button = ComponentBuilder.createButton({
+                className: 'nav-btn theme-toggle',
+                ariaLabel: 'Toggle dark mode',
+                innerHTML: this.getThemeIcon(currentTheme),
+                onClick: () => {
+                    const newTheme = this.themeManager.toggleTheme();
                 }
-            }
+            });
 
-            /* ===== RESPONSIVE ===== */
-            @media (max-width: 768px) {
-                #fixed-home-btn {
-                    top: 15px;
-                    left: 15px;
-                    padding: 8px 14px;
+            // Subscribe to theme changes
+            this.themeManager.subscribe(theme => {
+                button.innerHTML = this.getThemeIcon(theme);
+            });
+
+            return button;
+        }
+
+        getThemeIcon(theme) {
+            return theme === 'dark'
+                ? '<i class="fas fa-sun"></i><span>라이트</span>'
+                : '<i class="fas fa-moon"></i><span>다크</span>';
+        }
+
+        buildTemplateSwitcher() {
+            const container = ComponentBuilder.createContainer({
+                className: 'template-switcher'
+            });
+
+            // Template buttons
+            this.config.templates.forEach(tmpl => {
+                const btn = ComponentBuilder.createButton({
+                    className: `switcher-btn${this.currentTemplate === tmpl.file ? ' active' : ''}`,
+                    innerHTML: tmpl.name,
+                    onClick: () => window.location.href = tmpl.file
+                });
+                container.appendChild(btn);
+            });
+
+            // Divider
+            const divider = document.createElement('span');
+            divider.className = 'switcher-divider';
+            divider.textContent = '|';
+            container.appendChild(divider);
+
+            // Type switcher (Resume <-> Career)
+            const typeSwitcher = this.buildTypeSwitcher();
+            container.appendChild(typeSwitcher);
+
+            return container;
+        }
+
+        buildTypeSwitcher() {
+            const config = this.pageType === 'resume'
+                ? {
+                    innerHTML: '<i class="fas fa-briefcase"></i>경력기술서',
+                    onClick: () => window.location.href = '../career/default.html'
+                }
+                : {
+                    innerHTML: '<i class="fas fa-user"></i>이력서',
+                    onClick: () => window.location.href = '../resume/default.html'
+                };
+
+            return ComponentBuilder.createButton({
+                className: 'switcher-btn type-switcher',
+                ...config
+            });
+        }
+
+        /**
+         * Build PDF export button
+         */
+        buildPdfButton() {
+            return ComponentBuilder.createButton({
+                className: 'pdf-btn no-print',
+                innerHTML: '<i class="fas fa-file-pdf"></i><span>PDF 저장</span>',
+                onClick: () => window.print()
+            });
+        }
+    }
+
+    // ===== STYLE INJECTOR =====
+    class StyleInjector {
+        static inject() {
+            const style = document.createElement('style');
+            style.innerHTML = this.getStyles();
+            document.head.appendChild(style);
+        }
+
+        static getStyles() {
+            return `
+                /* ===== TOP NAVIGATION BAR ===== */
+                .top-nav-bar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 60px;
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(10px);
+                    border-bottom: 1px solid #e0e0e0;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                    z-index: 10000;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 20px;
+                    transition: all 0.3s ease;
+                }
+
+                .nav-section {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .nav-left {
+                    flex: 0 0 auto;
+                }
+
+                .nav-right {
+                    flex: 0 0 auto;
+                    gap: 20px;
+                }
+
+                /* ===== NAVIGATION BUTTONS ===== */
+                .nav-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                    background: #f8f9fa;
+                    border: 1px solid #e0e0e0;
+                    color: #333;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    font-family: inherit;
+                    white-space: nowrap;
+                }
+
+                .nav-btn:hover {
+                    background: #e9ecef;
+                    color: #4a6cf7;
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-btn i {
+                    font-size: 1rem;
+                }
+
+                .nav-btn.theme-toggle {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    border: none;
+                }
+
+                .nav-btn.theme-toggle:hover {
+                    background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+                }
+
+                /* ===== TEMPLATE SWITCHER ===== */
+                .template-switcher {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 6px 12px;
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    border: 1px solid #e0e0e0;
+                }
+
+                .switcher-btn {
+                    padding: 6px 12px;
+                    border-radius: 6px;
+                    background: transparent;
+                    border: none;
+                    color: #555;
                     font-size: 0.85rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+                    font-family: inherit;
+                    white-space: nowrap;
                 }
 
-                #template-switcher {
-                    top: 70px;
-                    right: 15px;
-                    left: 15px;
-                    padding: 10px 12px;
-                    justify-content: center;
+                .switcher-btn:hover {
+                    background: #e9ecef;
+                    color: #333;
                 }
 
-                .switcher-title {
-                    width: 100%;
-                    text-align: center;
-                    margin-bottom: 5px;
+                .switcher-btn.active {
+                    background: #4a6cf7;
+                    color: white;
+                    font-weight: 600;
                 }
 
-                .dark-mode-toggle {
-                    bottom: 100px;
-                    left: 20px;
-                    width: 50px;
-                    height: 50px;
+                .switcher-btn.type-switcher {
+                    background: #2c3e50;
+                    color: white;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                }
+
+                .switcher-btn.type-switcher:hover {
+                    background: #1a252f;
+                }
+
+                .switcher-divider {
+                    color: #ccc;
+                    font-weight: 300;
+                    margin: 0 4px;
+                }
+
+                /* ===== PDF BUTTON ===== */
+                .pdf-btn {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 14px 24px;
+                    border-radius: 50px;
+                    background: linear-gradient(135deg, #4a6cf7 0%, #764ba2 100%);
+                    color: white;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    border: none;
+                    cursor: pointer;
+                    box-shadow: 0 4px 16px rgba(74, 108, 247, 0.4);
+                    transition: all 0.3s ease;
+                    z-index: 10000;
+                }
+
+                .pdf-btn:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 24px rgba(74, 108, 247, 0.5);
+                }
+
+                .pdf-btn i {
                     font-size: 1.1rem;
                 }
 
-                .pdf-btn {
-                    bottom: 20px;
-                    right: 20px;
-                    left: 20px;
-                    justify-content: center;
-                    padding: 12px 20px;
+                /* ===== BODY PADDING (for fixed nav bar) ===== */
+                body {
+                    padding-top: 60px;
                 }
-            }
-        `;
-        document.head.appendChild(style);
-    });
+
+                /* ===== DARK MODE ===== */
+                [data-theme="dark"] .top-nav-bar {
+                    background: rgba(26, 26, 46, 0.95);
+                    border-bottom-color: #3d4d68;
+                }
+
+                [data-theme="dark"] .nav-btn {
+                    background: #2d3748;
+                    color: #e0e0e0;
+                    border-color: #3d4d68;
+                }
+
+                [data-theme="dark"] .nav-btn:hover {
+                    background: #3d4d68;
+                    color: #60a5fa;
+                }
+
+                [data-theme="dark"] .template-switcher {
+                    background: #2d3748;
+                    border-color: #3d4d68;
+                }
+
+                [data-theme="dark"] .switcher-btn {
+                    color: #b0b0b0;
+                }
+
+                [data-theme="dark"] .switcher-btn:hover {
+                    background: #3d4d68;
+                    color: #e0e0e0;
+                }
+
+                [data-theme="dark"] .switcher-btn.active {
+                    background: #60a5fa;
+                    color: #0f0f23;
+                }
+
+                [data-theme="dark"] .switcher-divider {
+                    color: #555;
+                }
+
+                [data-theme="dark"] .pdf-btn {
+                    background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
+                    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+                }
+
+                [data-theme="dark"] .pdf-btn:hover {
+                    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+                }
+
+                /* ===== HIDE INLINE ELEMENTS ===== */
+                ${CONFIG.selectors.hideInlineElements.map(s => s).join(',\n                ')} {
+                    display: none !important;
+                }
+
+                /* ===== PRINT STYLES ===== */
+                @media print {
+                    .top-nav-bar,
+                    .pdf-btn,
+                    .no-print {
+                        display: none !important;
+                    }
+
+                    body {
+                        padding-top: 0;
+                    }
+                }
+
+                /* ===== RESPONSIVE ===== */
+                @media (max-width: 768px) {
+                    .top-nav-bar {
+                        height: auto;
+                        flex-direction: column;
+                        padding: 12px 15px;
+                        gap: 12px;
+                    }
+
+                    .nav-section {
+                        width: 100%;
+                        justify-content: center;
+                    }
+
+                    .nav-right {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .nav-btn span,
+                    .pdf-btn span {
+                        display: none;
+                    }
+
+                    .nav-btn {
+                        padding: 10px 12px;
+                    }
+
+                    .template-switcher {
+                        width: 100%;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    }
+
+                    .pdf-btn {
+                        bottom: 20px;
+                        right: 20px;
+                        padding: 14px 18px;
+                    }
+
+                    body {
+                        padding-top: 140px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .switcher-btn {
+                        font-size: 0.8rem;
+                        padding: 5px 10px;
+                    }
+
+                    .nav-btn {
+                        font-size: 0.85rem;
+                    }
+                }
+            `;
+        }
+    }
+
+    // ===== MAIN APPLICATION =====
+    class PortfolioApp {
+        constructor() {
+            this.themeManager = new ThemeManager(CONFIG.theme);
+            this.navigationBuilder = null;
+        }
+
+        initialize() {
+            // Apply theme before DOM ready (prevent flash)
+            this.themeManager.initialize();
+
+            // Build UI when DOM is ready
+            document.addEventListener('DOMContentLoaded', () => {
+                this.buildUI();
+                this.injectStyles();
+            });
+        }
+
+        buildUI() {
+            this.navigationBuilder = new NavigationBuilder(CONFIG.navigation, this.themeManager);
+
+            // Build and append top navigation bar
+            const topNavBar = this.navigationBuilder.buildTopNavBar();
+            document.body.insertBefore(topNavBar, document.body.firstChild);
+
+            // Build and append PDF button
+            const pdfButton = this.navigationBuilder.buildPdfButton();
+            document.body.appendChild(pdfButton);
+        }
+
+        injectStyles() {
+            StyleInjector.inject();
+        }
+    }
+
+    // ===== INITIALIZE APPLICATION =====
+    const app = new PortfolioApp();
+    app.initialize();
+
 })();

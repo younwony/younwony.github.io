@@ -223,6 +223,31 @@ body {
     gap: 8px;
 }
 
+/* Education & Certifications */
+.edu-item {
+    margin-bottom: 20px;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.edu-header h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.edu-item p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
 .skill-tag {
     background-color: #f1f5f9;
     color: #334155;
@@ -457,32 +482,6 @@ body {
     }
 }
 
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #4a6cf7;
-    color: white;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dark-mode-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(74, 108, 247, 0.4);
-}
-
 /* Dark Mode Styles */
 [data-theme="dark"] {
     color-scheme: dark;
@@ -612,6 +611,14 @@ body {
     color: #d0d0d0;
 }
 
+[data-theme="dark"] .edu-header h4 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .edu-item p {
+    color: #b0b0b0;
+}
+
 /* Print styles */
 @media print {
     body {
@@ -640,8 +647,7 @@ body {
     }
 
     .home-btn,
-    .btn,
-    .dark-mode-toggle {
+    .btn {
         display: none !important;
     }
 }
