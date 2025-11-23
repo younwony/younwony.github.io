@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이력서_윤원희</title>
+    <title>경력기술서_윤원희</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
@@ -244,6 +245,106 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
         }
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] body {
+            background-color: #0f0f23;
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] header {
+            border-bottom-color: #3d4d68;
+        }
+
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3 {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .role {
+            color: #b0b0b0;
+        }
+
+        [data-theme="dark"] .contact-info {
+            color: #b0b0b0;
+        }
+
+        [data-theme="dark"] .company-name {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .company-period {
+            color: #888;
+        }
+
+        [data-theme="dark"] .company-desc {
+            color: #888;
+        }
+
+        [data-theme="dark"] .project-block {
+            background: #1a1a2e;
+            border-left-color: #60a5fa;
+        }
+
+        [data-theme="dark"] .project-block:hover {
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.15);
+        }
+
+        [data-theme="dark"] .project-title {
+            color: #e0e0e0;
+            border-bottom-color: #3d4d68;
+        }
+
+        [data-theme="dark"] .project-item {
+            background: #16213e;
+        }
+
+        [data-theme="dark"] .project-item:hover {
+            box-shadow: 0 4px 8px rgba(96, 165, 250, 0.1);
+        }
+
+        [data-theme="dark"] .project-label {
+            background: linear-gradient(135deg, #2d3748 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            border-left-color: #60a5fa;
+        }
+
+        [data-theme="dark"] .project-content {
+            color: #b0b0b0;
+        }
+
+        [data-theme="dark"] .project-content li {
+            color: #b0b0b0;
+        }
+
+        [data-theme="dark"] .project-content li::before {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .project-content li strong {
+            color: #e0e0e0;
+        }
+
+        [data-theme="dark"] .metric-pill {
+            background: linear-gradient(135deg, #60a5fa 0%, #7c3aed 100%);
+        }
+
+        [data-theme="dark"] .tech-badge {
+            background: #2d3748;
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .pdf-btn {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+        }
+
+        [data-theme="dark"] .pdf-btn:hover {
+            background: #0d0d1f;
+            box-shadow: 0 6px 16px rgba(96, 165, 250, 0.3);
+        }
     </style>
 </head>
 
@@ -305,6 +406,16 @@
                     <span class="tech-badge">Docker</span>
                     <span class="tech-badge">Jenkins</span>
                     <span class="tech-badge">GitHub Actions</span>
+                </div>
+            </div>
+            <div>
+                <h3 style="font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; border-bottom: 2px solid #4a6cf7; padding-bottom: 5px;">Tools & Libraries</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="tech-badge">Resilience4j</span>
+                    <span class="tech-badge">BigQuery</span>
+                    <span class="tech-badge">GA4</span>
+                    <span class="tech-badge">Slack API</span>
+                    <span class="tech-badge">IntelliJ</span>
                 </div>
             </div>
         </div>
