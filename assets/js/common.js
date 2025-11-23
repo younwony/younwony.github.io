@@ -1,9 +1,11 @@
 /**
  * Common UI and Functionality for All Templates
- * - Dark Mode Toggle
- * - Template Switcher
- * - Home Button
- * - PDF Export Button
+ * - Dark Mode Toggle (Zone: Bottom Left)
+ * - PDF Export Button (Zone: Bottom Right)
+ * - Home Button (Zone: Top Left)
+ * - Template Switcher (Zone: Top Right)
+ *
+ * Requires: layout.js (Layout System)
  */
 
 (function () {
@@ -20,9 +22,9 @@
     // ===== 2. DOM READY: CREATE UI ELEMENTS =====
     document.addEventListener('DOMContentLoaded', function () {
 
-        // 2-1. Create Dark Mode Toggle Button (Left Bottom)
+        // 2-1. Create Dark Mode Toggle Button (Zone: Bottom Left)
         const darkModeToggle = document.createElement('button');
-        darkModeToggle.className = 'dark-mode-toggle';
+        darkModeToggle.className = 'dark-mode-toggle zone-bottom-left';
         darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
         darkModeToggle.innerHTML = currentTheme === 'dark'
             ? '<i class="fas fa-sun"></i>'
@@ -42,9 +44,9 @@
 
         document.body.appendChild(darkModeToggle);
 
-        // 2-2. Create PDF Export Button (Right Bottom)
+        // 2-2. Create PDF Export Button (Zone: Bottom Right)
         const pdfBtn = document.createElement('button');
-        pdfBtn.className = 'pdf-btn no-print';
+        pdfBtn.className = 'pdf-btn zone-bottom-right no-print';
         pdfBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span class="btn-text">Save as PDF</span>';
         pdfBtn.onclick = function () {
             window.print();
@@ -61,16 +63,18 @@
 
         const filename = path.substring(path.lastIndexOf('/') + 1);
 
-        // Create Home Button (Top Left)
+        // Create Home Button (Zone: Top Left)
         const homeBtn = document.createElement('a');
         homeBtn.href = '../../index.html';
         homeBtn.id = 'fixed-home-btn';
+        homeBtn.className = 'zone-top-left';
         homeBtn.innerHTML = '<i class="fas fa-home"></i> 홈으로';
         document.body.appendChild(homeBtn);
 
-        // Create Switcher UI (Top Right)
+        // Create Switcher UI (Zone: Top Right)
         const switcherContainer = document.createElement('div');
         switcherContainer.id = 'template-switcher';
+        switcherContainer.className = 'zone-top-right';
 
         const title = document.createElement('span');
         title.className = 'switcher-title';
@@ -124,14 +128,10 @@
         style.innerHTML = `
             /* ===== HOME BUTTON ===== */
             #fixed-home-btn {
-                position: fixed;
-                top: 20px;
-                left: 20px;
                 background: rgba(255, 255, 255, 0.95);
                 padding: 10px 18px;
                 border-radius: 50px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                z-index: 10000;
                 text-decoration: none;
                 color: #333;
                 font-weight: 600;
@@ -153,11 +153,8 @@
                 font-size: 1rem;
             }
 
-            /* ===== DARK MODE TOGGLE (LEFT BOTTOM) ===== */
+            /* ===== DARK MODE TOGGLE ===== */
             .dark-mode-toggle {
-                position: fixed;
-                bottom: 30px;
-                left: 30px;
                 width: 56px;
                 height: 56px;
                 border-radius: 50%;
@@ -168,7 +165,6 @@
                 cursor: pointer;
                 box-shadow: 0 4px 14px rgba(74, 108, 247, 0.4);
                 transition: all 0.3s ease;
-                z-index: 10000;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -181,18 +177,14 @@
                 pointer-events: none;
             }
 
-            /* ===== PDF BUTTON (RIGHT BOTTOM) ===== */
+            /* ===== PDF BUTTON ===== */
             .pdf-btn {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
                 background: #2c3e50;
                 color: white;
                 padding: 12px 24px;
                 border-radius: 50px;
                 cursor: pointer;
                 box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-                z-index: 10000;
                 font-weight: 600;
                 border: none;
                 transition: all 0.3s ease;
@@ -212,14 +204,10 @@
 
             /* ===== TEMPLATE SWITCHER ===== */
             #template-switcher {
-                position: fixed;
-                top: 20px;
-                right: 20px;
                 background: rgba(255, 255, 255, 0.95);
                 padding: 12px 18px;
                 border-radius: 50px;
                 box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-                z-index: 10000;
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -332,16 +320,13 @@
             /* ===== RESPONSIVE ===== */
             @media (max-width: 768px) {
                 #fixed-home-btn {
-                    top: 15px;
-                    left: 15px;
                     padding: 8px 14px;
                     font-size: 0.85rem;
                 }
 
                 #template-switcher {
-                    top: 70px;
-                    right: 15px;
                     left: 15px;
+                    right: 15px;
                     padding: 10px 12px;
                     justify-content: center;
                 }
@@ -353,16 +338,12 @@
                 }
 
                 .dark-mode-toggle {
-                    bottom: 20px;
-                    left: 15px;
                     width: 50px;
                     height: 50px;
                     font-size: 1.1rem;
                 }
 
                 .pdf-btn {
-                    bottom: 20px;
-                    right: 15px;
                     padding: 10px 18px;
                     font-size: 0.85rem;
                 }

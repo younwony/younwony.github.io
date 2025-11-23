@@ -14,6 +14,7 @@ younwony.github.io/
 │   │   ├── modern.css            # 모던 템플릿 스타일
 │   │   └── style.css             # 이력서 기본 스타일
 │   └── js/
+│       ├── layout.js             # 레이아웃 시스템 (화면 구역 관리) ⭐ NEW
 │       ├── common.js             # 공통 기능 (다크모드, PDF, 템플릿 전환)
 │       ├── landing.js            # 랜딩 페이지 스크립트
 │       └── template-switcher.js  # 템플릿 전환 기능
@@ -35,27 +36,59 @@ younwony.github.io/
 
 ## 주요 기능
 
-### 1. 공통 UI 컴포넌트 (common.js)
+### 1. 레이아웃 시스템 (layout.js) ⭐ NEW
+
+화면을 5개 구역(Zone)으로 분리하여 UI 요소를 체계적으로 관리:
+
+```
+┌─────────────────────────────────────┐
+│ Zone 1 (Top Left)    Zone 2 (Right) │
+│ 🏠 홈 버튼            ⚙️ 템플릿 전환  │
+│                                     │
+│         Zone 5 (Center)             │
+│         메인 콘텐츠                  │
+│                                     │
+│ Zone 3 (Bottom Left) Zone 4 (Right) │
+│ 🌙 다크모드            📄 PDF        │
+└─────────────────────────────────────┘
+```
+
+**구역 정의:**
+- **Zone 1 (Top Left)**: 홈 버튼 - `.zone-top-left`
+- **Zone 2 (Top Right)**: 템플릿 전환 - `.zone-top-right`
+- **Zone 3 (Bottom Left)**: 다크모드 토글 - `.zone-bottom-left`
+- **Zone 4 (Bottom Right)**: PDF 버튼 - `.zone-bottom-right`
+- **Zone 5 (Center)**: 메인 콘텐츠
+
+**특징:**
+- CSS 클래스 기반 위치 관리
+- 반응형 자동 조정 (모바일 최적화)
+- 인쇄 시 자동 숨김 처리
+- 모든 템플릿에서 일관된 레이아웃
+
+### 2. 공통 UI 컴포넌트 (common.js)
 
 모든 템플릿에서 자동으로 생성되는 UI 요소:
 
-- **다크모드 토글** (좌측 하단)
-  - 위치: `left: 30px, bottom: 30px`
+- **다크모드 토글** (Zone 3: Bottom Left)
+  - 위치: `bottom: 30px, left: 30px`
   - localStorage에 테마 저장
   - 페이지 로드 시 자동 적용
 
-- **PDF 저장 버튼** (우측 하단)
-  - 위치: `right: 30px, bottom: 30px`
+- **PDF 저장 버튼** (Zone 4: Bottom Right)
+  - 위치: `bottom: 30px, right: 30px`
   - 브라우저 인쇄 기능 활용
 
-- **홈 버튼** (좌측 상단)
+- **홈 버튼** (Zone 1: Top Left)
+  - 위치: `top: 20px, left: 20px`
   - index.html로 이동
 
-- **템플릿 전환** (우측 상단)
+- **템플릿 전환** (Zone 2: Top Right)
+  - 위치: `top: 20px, right: 20px`
   - 기본 / 모던 / 기업형 템플릿 전환
   - 이력서 ↔ 경력기술서 전환
 
-### 2. 템플릿 종류
+### 3. 템플릿 종류
 
 #### 이력서 (Resume)
 - **default**: 깔끔한 기본 레이아웃
@@ -69,14 +102,14 @@ younwony.github.io/
 - **corporate**: 전문적인 기업형
 - **minimal**: 미니멀한 디자인
 
-### 3. 다크모드
+### 4. 다크모드
 
 모든 CSS 파일에 다크모드 스타일 포함:
 - `[data-theme="dark"]` 선택자 사용
 - 색상 팔레트 통일
 - 배경, 텍스트, 액센트 색상 자동 전환
 
-### 4. 반응형 디자인
+### 5. 반응형 디자인
 
 - 모바일 (768px 이하) 최적화
 - 버튼 크기 및 위치 자동 조정

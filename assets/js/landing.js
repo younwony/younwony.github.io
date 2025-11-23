@@ -11,9 +11,9 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Create Dark Mode Toggle Button
+        // Create Dark Mode Toggle Button (Zone: Bottom Left)
         const darkModeToggle = document.createElement('button');
-        darkModeToggle.className = 'dark-mode-toggle';
+        darkModeToggle.className = 'dark-mode-toggle zone-bottom-left';
         darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
         darkModeToggle.innerHTML = currentTheme === 'dark'
             ? '<i class="fas fa-sun"></i>'
@@ -37,9 +37,6 @@
         const style = document.createElement('style');
         style.innerHTML = `
             .dark-mode-toggle {
-                position: fixed;
-                top: 30px;
-                right: 30px;
                 width: 56px;
                 height: 56px;
                 border-radius: 50%;
@@ -50,7 +47,6 @@
                 cursor: pointer;
                 box-shadow: 0 4px 14px rgba(74, 108, 247, 0.4);
                 transition: all 0.3s ease;
-                z-index: 10000;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -65,8 +61,6 @@
 
             @media (max-width: 768px) {
                 .dark-mode-toggle {
-                    top: 20px;
-                    right: 20px;
                     width: 50px;
                     height: 50px;
                     font-size: 1.1rem;
