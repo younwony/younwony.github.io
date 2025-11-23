@@ -20,11 +20,7 @@
     // ===== 2. DOM READY: CREATE UI ELEMENTS =====
     document.addEventListener('DOMContentLoaded', function () {
 
-        // 2-1. Create Bottom Left Button Container
-        const buttonContainer = document.createElement('div');
-        buttonContainer.className = 'bottom-left-buttons';
-
-        // 2-1-1. Create Dark Mode Toggle Button
+        // 2-1. Create Dark Mode Toggle Button (Left Bottom)
         const darkModeToggle = document.createElement('button');
         darkModeToggle.className = 'dark-mode-toggle';
         darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
@@ -44,18 +40,17 @@
                 : '<i class="fas fa-moon"></i>';
         });
 
-        // 2-1-2. Create PDF Export Button
+        document.body.appendChild(darkModeToggle);
+
+        // 2-2. Create PDF Export Button (Right Bottom)
         const pdfBtn = document.createElement('button');
         pdfBtn.className = 'pdf-btn no-print';
-        pdfBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span class="btn-text">PDF</span>';
+        pdfBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span class="btn-text">Save as PDF</span>';
         pdfBtn.onclick = function () {
             window.print();
         };
 
-        // Add buttons to container
-        buttonContainer.appendChild(darkModeToggle);
-        buttonContainer.appendChild(pdfBtn);
-        document.body.appendChild(buttonContainer);
+        document.body.appendChild(pdfBtn);
 
         // 2-3. Template Switcher & Home Button
         const path = window.location.pathname;
@@ -158,19 +153,11 @@
                 font-size: 1rem;
             }
 
-            /* ===== BOTTOM LEFT BUTTON CONTAINER ===== */
-            .bottom-left-buttons {
+            /* ===== DARK MODE TOGGLE (LEFT BOTTOM) ===== */
+            .dark-mode-toggle {
                 position: fixed;
                 bottom: 30px;
                 left: 30px;
-                z-index: 10000;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            /* ===== DARK MODE TOGGLE ===== */
-            .dark-mode-toggle {
                 width: 56px;
                 height: 56px;
                 border-radius: 50%;
@@ -181,6 +168,7 @@
                 cursor: pointer;
                 box-shadow: 0 4px 14px rgba(74, 108, 247, 0.4);
                 transition: all 0.3s ease;
+                z-index: 10000;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -193,23 +181,25 @@
                 pointer-events: none;
             }
 
-            /* ===== PDF BUTTON ===== */
+            /* ===== PDF BUTTON (RIGHT BOTTOM) ===== */
             .pdf-btn {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
                 background: #2c3e50;
                 color: white;
-                padding: 14px 18px;
+                padding: 12px 24px;
                 border-radius: 50px;
                 cursor: pointer;
                 box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+                z-index: 10000;
                 font-weight: 600;
                 border: none;
                 transition: all 0.3s ease;
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 gap: 10px;
                 font-size: 0.9rem;
-                white-space: nowrap;
             }
             .pdf-btn:hover {
                 transform: translateY(-3px);
@@ -218,9 +208,6 @@
             }
             .pdf-btn i {
                 font-size: 1.1rem;
-            }
-            .pdf-btn .btn-text {
-                font-weight: 700;
             }
 
             /* ===== TEMPLATE SWITCHER ===== */
@@ -335,7 +322,6 @@
             @media print {
                 #template-switcher,
                 #fixed-home-btn,
-                .bottom-left-buttons,
                 .dark-mode-toggle,
                 .pdf-btn,
                 .no-print {
@@ -366,25 +352,19 @@
                     margin-bottom: 5px;
                 }
 
-                .bottom-left-buttons {
+                .dark-mode-toggle {
                     bottom: 20px;
                     left: 15px;
-                    gap: 10px;
-                }
-
-                .dark-mode-toggle {
                     width: 50px;
                     height: 50px;
                     font-size: 1.1rem;
                 }
 
                 .pdf-btn {
-                    padding: 12px 16px;
+                    bottom: 20px;
+                    right: 15px;
+                    padding: 10px 18px;
                     font-size: 0.85rem;
-                }
-
-                .pdf-btn .btn-text {
-                    display: inline;
                 }
             }
         `;
