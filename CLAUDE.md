@@ -1,7 +1,6 @@
 ## 0. 내용 참고
 my_career_data.md 파일의 내용을 참고하여, 경력직 백엔드 개발자 이력서 작성법에 대한 가이드 문서를 작성합니다.
-기본 템플릿만이 아닌 모든 템플렛의 이력서/경력기술서의 내용을 반영하도록합니다.
-
+이력서 업데이트 요청이오면 my_career_data.md 내용을 참고하여 이력서/경력기술서의 내용을 업데이트 할수있도록 합니다.(모든 템플릿 적용. /templates 에 있는 html 파일들 적용)
 ---
 
 ## 1. 핵심 요약 (Professional Summary) 작성 팁
@@ -105,3 +104,93 @@ R (Result - 성과): 정량적 수치(%), 비즈니스 임팩트, 팀 내 변화
   - 좋은 예: "DB 부하를 줄이고 조회 속도를 높이기 위해 **Redis 캐싱 레이어(Look-aside 패턴)**를 적용함"
 - ***키워드 매칭:** 채용 공고(JD)에 있는 핵심 키워드(예: MSA, AWS, 대용량 트래픽)를 이력서 곳곳에 배치하세요.
 - ***가독성:** 불렛 포인트(Bullet points)를 적극 활용하고, 핵심 성과는 굵은 글씨로 강조하세요.
+
+---
+
+## 6. 이력서 업데이트 프로세스
+
+### 사용자가 "이력서 업데이트 해줘" 요청 시 작업 절차
+
+**중요: 변경된 부분만 업데이트하고, 기존 내용은 보존해야 합니다!**
+
+### Step 1: 변경사항 확인
+```bash
+git diff my_career_data.md
+```
+- my_career_data.md에서 실제로 변경된 프로젝트/섹션만 파악
+- 변경되지 않은 프로젝트는 절대 수정하지 않음
+
+### Step 2: 업데이트 대상 파일 목록
+다음 **10개 파일**을 업데이트해야 합니다:
+
+**루트 디렉토리 (2개):**
+1. `resume.md` - 간결한 이력서
+2. `career_portfolio.md` - 상세 경력기술서
+
+**Resume 템플릿 (4개):**
+3. `templates/resume/default.html`
+4. `templates/resume/corporate.html`
+5. `templates/resume/minimal.html`
+6. `templates/resume/modern.html`
+
+**Career 템플릿 (4개):**
+7. `templates/career/default.html`
+8. `templates/career/corporate.html`
+9. `templates/career/minimal.html`
+10. `templates/career/modern.html`
+
+### Step 3: 변경된 프로젝트만 업데이트
+
+**예시: 프로젝트 2만 변경된 경우**
+
+1. **루트 MD 파일 업데이트:**
+   - `resume.md`에서 프로젝트 2 섹션만 찾아서 교체
+   - `career_portfolio.md`에서 프로젝트 2 섹션만 찾아서 교체
+
+2. **템플릿 HTML 파일 업데이트:**
+   - Task 도구를 사용하여 resume 템플릿 4개와 career 템플릿 4개를 병렬로 업데이트
+   - **반드시** 변경된 프로젝트만 찾아서 교체
+   - 다른 프로젝트는 절대 건드리지 않음
+
+### Step 4: 작업 완료 확인
+
+**체크리스트:**
+- [ ] my_career_data.md의 변경 사항만 반영되었는가?
+- [ ] 변경되지 않은 프로젝트는 그대로 보존되었는가?
+- [ ] 10개 파일 모두 업데이트되었는가?
+- [ ] Resilience4j 같은 사용하지 않은 기술은 제거되었는가?
+
+### 주의사항
+
+**❌ 하지 말아야 할 것:**
+- 전체 내용을 다시 작성하지 않음
+- 변경되지 않은 프로젝트를 수정하지 않음
+- Professional Summary나 Core Competencies를 임의로 변경하지 않음
+- 사용하지 않은 기술을 추가하지 않음
+
+**✅ 해야 할 것:**
+- `git diff my_career_data.md`로 변경사항 먼저 확인
+- 변경된 프로젝트/섹션만 정확히 업데이트
+- my_career_data.md의 STAR 형식(Situation, Task, Action, Result)을 그대로 반영
+- 10개 파일 모두 일관되게 업데이트
+
+### 예시 워크플로우
+
+```
+1. git diff my_career_data.md 실행
+   → 프로젝트 2의 Situation, Task, Action, Result가 변경됨을 확인
+
+2. resume.md 업데이트
+   → 프로젝트 2 섹션만 찾아서 새로운 내용으로 교체
+
+3. career_portfolio.md 업데이트
+   → 프로젝트 2 섹션만 찾아서 새로운 내용으로 교체
+
+4. Task 도구로 템플릿 8개 병렬 업데이트
+   → resume 템플릿 4개: 프로젝트 2만 업데이트
+   → career 템플릿 4개: 프로젝트 2만 업데이트
+
+5. 완료 확인
+   → 프로젝트 1, 3은 그대로인지 확인
+   → 10개 파일 모두 업데이트되었는지 확인
+```

@@ -81,19 +81,21 @@
                         <h5 style="color: #0056b3; font-size: 1.1rem; margin-bottom: 10px;">2. 네이버 쇼핑 최저가 대응 및 동적
                             가격(Dynamic Pricing) 시스템</h5>
                         <ul class="exp-list">
-                            <li><strong>📌 Situation:</strong> RDB 쿼리 성능 저하로 업데이트가 6시간 이상 지연, 수동 가격 변경으로 24시간 이상 소요.</li>
-                            <li><strong>🎯 Task:</strong> 가격 비교 조회 속도를 ms 단위로 단축하여 실시간 대응 체계 구축.</li>
+                            <li><strong>📌 Situation:</strong> 매출 비중 1위 채널인 '네이버 쇼핑'의 노출 우위를 점하기 위해 가격비교 그룹 내 최저가 진입이 필수적이었으나, 수동 대응으로는 경쟁 속도를 따라갈 수 없었음. 네이버 API의 일일 호출 한도(25,000 Call)와 엄격한 속도 제한으로 인해, 전체 상품에 대한 실시간 대응이 불가능한 딜레마 발생.</li>
+                            <li><strong>🎯 Task:</strong> 한정된 API 리소스(Quota) 내에서 매출 기여도가 높은 핵심 상품을 선별하여 최저가를 방어하는 알고리즘 구현. 마진율을 보장하는 범위(4% 이내) 내에서만 가격을 조정하는 안전장치 마련. 시스템이 처리하지 못하는 예외 케이스를 MD팀이 수동으로 처리할 수 있도록 '자동+매뉴얼 하이브리드 운영 구조'를 직접 설계하고 리딩.</li>
                             <li><strong>⚡ Action:</strong>
                                 <ul>
-                                    <li><strong>저장소 전환:</strong> 복합 조건 검색에 유리한 Elasticsearch를 도입하여 역색인 구조 활용, <strong>검색 성능 20배 개선</strong>.</li>
-                                    <li><strong>배치 최적화:</strong> Spring Batch의 Chunk 사이즈를 튜닝하고, 병렬 스텝 적용.</li>
+                                    <li><strong>Dynamic Pricing 로직 구현:</strong> 모델번호 매핑을 통해 경쟁사 최저가를 수집하고, [자사 판매가 vs 최저가 차이 < 4%] & [최소 마진 확보] 조건을 만족할 때만 할인율을 자동 적용하는 로직 개발.</li>
+                                    <li><strong>API Quota 효율화:</strong> 일 25,000건의 호출 한도 내에서 최대 성과를 내기 위해, 매출 상위 및 노출 중요 상품을 우선순위로 스케줄링하여 API 활용도 극대화.</li>
+                                    <li><strong>협업 프로세스 주도:</strong> 마케팅/MD팀과 협의하여 '가격 추종 범위(4%)' 및 '예외 상품군' 정책을 확정. MD팀이 예외 케이스만 집중 관리할 수 있도록 업무 플로우 설계.</li>
+                                    <li><strong>성과 검증 환경 구축:</strong> 가격 조정 이력을 로그화하고 GA/BigQuery와 연동하여, 가격 정책 적용 전후의 트래픽 및 매출 변화를 정량적으로 분석할 수 있는 환경 마련.</li>
                                 </ul>
                             </li>
-                            <li><strong>✅ Result:</strong> 가격 경쟁력 확보로 매출 증대.
+                            <li><strong>✅ Result:</strong> 가격 경쟁력 확보를 통해 해당 상품군의 매출과 유입 트래픽이 각각 10%씩 증가함을 데이터로 검증. 단순 반복 업무는 시스템이 전담하고, 운영팀은 전략 상품 및 예외 케이스에만 집중하는 고효율 구조 정착. 단순 기능 개발을 넘어 API 제약 사항을 비즈니스 규칙과 운영 프로세스로 풀어내는 주도적 역할 수행.
                                 <div style="margin-top: 5px; font-size: 0.9rem;">
                                     <span style="color: #d93025; font-weight: bold; margin-right: 10px;">💰 매출 10% 증대</span>
-                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">📈 트래픽 15% 상승</span>
-                                    <span style="color: #d93025; font-weight: bold;">⚙️ Zero Ops 달성</span>
+                                    <span style="color: #d93025; font-weight: bold; margin-right: 10px;">📈 트래픽 10% 상승</span>
+                                    <span style="color: #d93025; font-weight: bold;">⚙️ 운영 효율 혁신</span>
                                 </div>
                             </li>
                         </ul>

@@ -100,7 +100,13 @@
                     </div>
                     <ul class="exp-list">
                         <li><strong>인플루언서 데이터 플랫폼 고도화:</strong> 수작업 기반 수집 방식을 <strong>100% 자동화</strong>하여 일 5,000명의 인플루언서를 자동 수집, <strong>200만 건 규모의 데이터</strong>를 실시간으로 처리하며 리포팅 작업 완전 자동화</li>
-                        <li><strong>동적 가격 시스템 구축:</strong> Elasticsearch 도입으로 복합 조건 검색 최적화, Spring Batch 병렬 스텝 적용으로 <strong>매출 10% 증대</strong> 및 유입 트래픽 15% 상승</li>
+                        <li>
+                            <strong>동적 가격 시스템 구축:</strong> API Quota(25,000건/일) 제약 극복 및 마진율 4% 보장 범위 내 자동 가격 조정 시스템 구축, <strong>매출 10% 증대</strong> 및 유입 트래픽 15% 상승
+                            <br>• Dynamic Pricing 로직: 모델번호 매핑으로 경쟁사 최저가 수집, [자사 판매가 vs 최저가 차이 < 4%] & [최소 마진 확보] 조건 충족 시에만 자동 할인 적용
+                            <br>• API Quota 효율화: 매출 상위 및 노출 중요 상품 우선순위 스케줄링으로 한정된 API 리소스 활용 극대화
+                            <br>• 하이브리드 운영 구조 설계: 자동+매뉴얼 프로세스 통합, MD팀이 예외 케이스만 집중 관리할 수 있도록 Admin 뷰 제공
+                            <br>• 성과 검증 환경 구축: GA/BigQuery 연동하여 가격 정책 전후 트래픽 및 매출 변화 정량 분석
+                        </li>
                         <li><strong>운영 자동화 (Zero Ops):</strong> BigQuery 기반 데이터 분석 및 Slack ChatOps 구현으로 <strong>품절률 20% 감소</strong>, 이미지 처리 비용 <strong>80% 절감</strong>, 운영팀 반복 업무 <strong>100% 제거</strong></li>
                     </ul>
                 </div>
