@@ -127,8 +127,7 @@ body {
 /* Project Detail */
 .project-detail {
     background: #fafbfc;
-    border-left: 3px solid #4a6cf7;
-    padding: 20px 25px;
+    padding: 20px 5px;
     margin-bottom: 20px;
     border-radius: 0 8px 8px 0;
 }
@@ -650,4 +649,93 @@ body {
     .btn {
         display: none !important;
     }
+}
+
+/* Project Block Styles for Better Visibility */
+.project-block {
+    background: #f8f9fa;
+    border-left: 4px solid #4a6cf7;
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.project-block:hover {
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.15);
+    transform: translateY(-2px);
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+}
+
+.project-title::before {
+    content: "📌";
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.project-detail {
+    line-height: 1.8;
+}
+
+.project-detail strong {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.project-detail ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
+}
+
+.project-detail ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: #4a5568;
+}
+
+.project-detail ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #4a6cf7;
+    font-weight: bold;
+}
+
+.project-detail ul li strong {
+    color: #1a1a2e;
+}
+
+.result {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.tech-stack {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.tech-stack strong {
+    color: #4a6cf7;
 }
