@@ -12,7 +12,7 @@
 
 **"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"**
 
-7년 간 커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 왔습니다. Java/Spring Boot 기반의 안정적인 시스템 구축 역량을 바탕으로, **Elasticsearch 도입으로 검색 성능을 20배 개선**하고, **ThreadPoolTaskExecutor 커스터마이징과 병렬 처리 아키텍처 설계로 데이터 수집 속도를 100배(100명/h → 10,000명/h) 단축**한 경험이 있습니다. 단순한 기능 구현을 넘어, 운영 비효율을 제거하는 자동화 시스템 구축을 통해 조직의 생산성을 높이는 데 기여합니다.
+7년 간 커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 왔습니다. Java/Spring Boot 기반의 안정적인 시스템 구축 역량을 바탕으로, **Elasticsearch 도입으로 검색 성능을 100배 개선**하고, **ThreadPoolTaskExecutor 커스터마이징과 병렬 처리 아키텍처 설계로 데이터 수집 속도를 100배(100명/h → 10,000명/h) 단축**한 경험이 있습니다. 단순한 기능 구현을 넘어, 운영 비효율을 제거하는 자동화 시스템 구축을 통해 조직의 생산성을 높이는 데 기여합니다.
 
 ---
 
@@ -20,8 +20,8 @@
 
 - **Architecture & Performance:** 대용량 데이터 처리를 위한 병렬 아키텍처 설계 및 ThreadPoolTaskExecutor 최적화 경험
 - **Data Pipeline:** 200만 건 이상의 이기종 데이터 수집·정제·적재(ETL) 파이프라인 구축
-- **Search Engine:** Elasticsearch 기반의 검색 엔진 도입 및 인덱싱 최적화 (성능 20배 개선)
-- **Resilience Engineering:** Resilience4j RateLimiter 및 Backoff Retry 정책을 통한 API 안정성 확보
+- **Search Engine:** Elasticsearch 기반의 검색 엔진 도입 및 인덱싱 최적화 (성능 100배 개선)
+- **API Stability:** Retry 로직 및 분산 락을 통한 API 안정성 확보
 - **Automation:** 운영 비효율 제거를 위한 업무 프로세스 100% 자동화 (Zero Ops 지향)
 
 ---
@@ -38,7 +38,7 @@
 - AWS (EC2, S3, RDS), Docker, Jenkins, GitHub Actions
 
 ### Tools & Libraries
-- IntelliJ, JIRA, Confluence, **Resilience4j**, Slack API, GA4, BigQuery
+- IntelliJ, JIRA, Confluence, Slack API, Google Sheets API, GA4, BigQuery
 
 ---
 
@@ -49,13 +49,14 @@
 *2022.02 - 현재 (3년 9개월)*
 
 #### 인플루언서 데이터 플랫폼 고도화
-- **핵심 성과:** 수집 속도 **99% 단축 (100명/h → 10,000명/h)**, 데이터 풀 **20배 확대 (10만 → 200만 명)**
+- **핵심 성과:** 수집 속도 **99% 단축 (100명/h → 10,000명/h)**, 데이터 풀 **20배 확대 (10만 → 200만 명)**, 검색 성능 **100배 개선 (10초 → 0.1초)**
 - **주요 기술:**
   - **병렬 아키텍처 설계:** ThreadPoolTaskExecutor를 커스텀하여 I/O Blocking 시간을 최소화하고 리소스 효율 극대화
-  - **안정성 확보:** Resilience4j RateLimiter와 Backoff Retry 정책을 적용해 API 임계치 내에서 최대 효율을 내도록 튜닝
+  - **안정성 확보:** Retry 로직 구현으로 API 차단 없이 안정적인 데이터 수집
   - **분산 제어:** Redis Distributed Lock 도입으로 멀티 인스턴스 환경에서 중복 수집 방지
-  - **검색 최적화:** Elasticsearch 도입하여 복합 조건 검색을 200ms 이내로 처리
-- **사용 기술:** Spring Boot, ThreadPoolTaskExecutor, Resilience4j, Redis Lock, Elasticsearch, Google Sheets API
+  - **검색 최적화:** Elasticsearch 도입하여 복합 조건 검색을 0.1초 이내로 처리 (기존 RDB 대비 100배 개선)
+  - **리포팅 자동화:** Google Sheets API를 활용하여 리포팅 작업 완전 자동화
+- **사용 기술:** Spring Boot, ThreadPoolTaskExecutor, Redis Lock, Elasticsearch, Google Sheets API
 
 #### 네이버 쇼핑 최저가 대응 및 Dynamic Pricing 시스템
 - **핵심 성과:** API Quota(25,000건/일) 제약 극복 및 마진율 4% 보장 범위 내 자동 가격 조정, **매출/트래픽 각각 10% 상승**
@@ -66,13 +67,29 @@
   - **성과 검증 환경:** GA/BigQuery 연동하여 가격 정책 전후 트래픽 및 매출 변화 정량 분석
 - **사용 기술:** Spring Batch, Naver Shopping API, BigQuery, Google Analytics
 
-#### 데이터 기반 프로세스 최적화 및 ChatOps 자동화
-- **핵심 성과:** **품절률 20% 감소**, 이미지 처리 비용 **80% 절감**, 운영팀 반복 업무 **100% 제거**
+#### 해외 부티크 상품 데이터 정합성 확보 및 클레임 방지
+- **핵심 성과:** 상품 이미지 불일치로 인한 고객 클레임 **Zero 달성**, 반품 비용 절감
 - **주요 기술:**
-  - **데이터 파이프라인:** GA4(행동 로그)와 DB(주문 로그)를 BigQuery로 통합 적재하여 '상습 품절 패턴' 분석
-  - **비용 최적화:** 이미지 전체(수 MB) 대신 Header(4KB) 해시 비교로 변경 감지 알고리즘 개선
-  - **ChatOps 구현:** Slack Event API를 활용해 메신저 내에서 '승인/반려' 버튼 클릭만으로 업무 종결
-- **사용 기술:** BigQuery, GA4, Slack Event API, AWS S3, Image Hashing
+  - **해시 기반 검증:** HTTP Header(ETag, Last-Modified) 및 바이너리 해시값(MD5) 비교로 이미지 변경 감지
+  - **동기화 로직 고도화:** 배치 작업 시 해시값 O(1) 비교로 변경 감지 즉시 S3 이미지 강제 업데이트
+  - **리소스 최적화:** 전체 파일 다운로드 대신 Header 우선 비교로 네트워크 비용 최소화
+- **사용 기술:** Java, Spring Boot, AWS S3, Image Hashing (MD5/ETag)
+
+#### 비즈니스 프로세스 최적화 (ChatOps)
+- **핵심 성과:** 파편화된 소통 채널 **100% 통합**, 운영팀 수동 업무 **40% → 0%** (Zero Ops 달성)
+- **주요 기술:**
+  - **채널 일원화:** 모든 운영 요청 창구를 Slack으로 통합하여 업무 투명성 확보
+  - **ChatOps 구축:** Slack Event API 기반 Interactive Component로 메신저 내 업무 완결
+  - **프로세스 자동화:** 버튼 클릭 한 번으로 DB 처리까지 완료되도록 자동화
+- **사용 기술:** Java, Spring Boot, Slack Event API
+
+#### 개발 문화 및 엔지니어링 역량 강화
+- **핵심 성과:** 배포 후 버그 및 핫픽스 건수 감소, 신규 입사자 온보딩 시간 단축
+- **주요 기술:**
+  - **코드 리뷰 문화 정착:** PR 기반 개발 프로세스 도입, 최소 2명 이상 리뷰 승인 의무화
+  - **코드 컨벤션 수립:** Java/Spring 코딩 컨벤션 명문화 및 가이드라인 배포
+  - **팀 역량 강화:** 상호 코드 리뷰를 통한 기술 지식 전파 및 주니어 개발자 성장 견인
+- **사용 기술:** Code Review, Clean Code, Engineering Culture
 
 ---
 

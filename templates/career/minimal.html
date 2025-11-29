@@ -50,15 +50,17 @@
 
                 <div style="margin-bottom: 20px;">
                     <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">1. 인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</h5>
-                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 기존 단일 스레드 기반 수집기로는 시간당 100건만 처리 가능, 외부 API Rate Limit 제약</p>
-                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> API 차단 없이 데이터 수집 속도를 100배(10,000건/h)로 끌어올리기</p>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 수작업 의존으로 하루 수십 명만 수집 가능, 200만 건 이상 데이터의 복합 조건 검색 시 RDB 쿼리 타임아웃 발생 (평균 10초 이상)</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 수집 프로세스 100% 자동화 및 200만 건 규모의 실시간 검색/분석 기능 제공</p>
                     <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>ThreadPoolTaskExecutor 커스텀하여 I/O Blocking 시간을 최소화</li>
-                        <li>Resilience4j RateLimiter와 Exponential Backoff Retry 정책으로 API 안정성 확보</li>
+                        <li>API(TikTok 등)와 Web Scraper 크롤링을 통한 정밀 타겟팅 데이터 자동 수집</li>
+                        <li>단순 재시도 로직 구현으로 API 차단 방지 및 자동 복구</li>
                         <li>Redis Distributed Lock으로 멀티 인스턴스 환경 중복 수집 방지</li>
+                        <li>Elasticsearch 도입으로 복합 조건 검색을 500ms 이내로 처리</li>
+                        <li>Google Sheets API 활용한 리포팅 작업 완전 자동화</li>
                     </ul>
-                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 수집 속도 <strong>99% 단축</strong>, 데이터 풀 <strong>20배 확대</strong> (10만 → 200만 명)</p>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 일 5,000명 자동 수집, <strong>복합 조건 검색 속도 10초 → 0.1초(100ms)</strong>, 리포팅 100% 자동화</p>
                 </div>
 
                 <div style="margin-bottom: 20px;">
@@ -76,16 +78,41 @@
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">3. 데이터 기반 프로세스 최적화 및 ChatOps 자동화</h5>
-                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 운영팀 업무의 40%가 단순 반복 작업에 소모, '감'에 의존한 클레임 원인 파악</p>
-                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 운영팀 개입이 전혀 없는 'Zero Ops' 환경 구축</p>
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">3. 해외 부티크 상품 데이터 정합성 확보 및 클레임 방지</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 상품 이미지가 변경되었음에도 URL이 동일하여 변경 감지 못함, '상품 상이' 오배송 및 클레임 다수 발생</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 이미지 데이터 정합성 100% 확보를 통한 고객 클레임 원천 차단</p>
                     <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>GA4-DB 로그를 BigQuery로 통합 적재하여 '상습 품절 패턴' 분석 쿼리 작성</li>
-                        <li>이미지 전체(수 MB) 대신 Header(4KB) 해시 비교로 S3 다운로드 비용 80% 절감</li>
-                        <li>Slack Event API 기반 ChatOps로 메신저 내 승인/반려 버튼만으로 업무 종결</li>
+                        <li>HTTP Header(ETag, Last-Modified) 및 해시값(MD5) 비교 정밀 검증 시스템 구축</li>
+                        <li>배치 작업 시 해시값 O(1) 비교, 변경 감지 시 즉시 S3 이미지 강제 업데이트</li>
+                        <li>전체 파일 다운로드 대신 Header 정보 우선 비교로 처리 비용 최소화</li>
                     </ul>
-                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> <strong>품절률 20% 감소</strong>, 운영팀 반복 업무 <strong>100% 제거</strong></p>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 고객 클레임 및 오배송 건수 <strong>'Zero' 달성</strong>, 구매 전환율 안정화</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">4. 비즈니스 프로세스 최적화 (ChatOps)</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 발주/클레임 처리가 무분별하게 분산, 운영팀 업무 시간의 40%가 단순 작업에 소모</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 커뮤니케이션 채널 일원화 및 'Zero Ops' 환경 구축</p>
+                    <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
+                    <ul class="exp-list">
+                        <li>구성원이 가장 빈번하게 사용하는 Slack을 업무 플랫폼으로 활용</li>
+                        <li>운영팀 인터뷰 주도하여 병목 지점 파악 및 워크플로우 설계</li>
+                        <li>Slack Event API 기반 ChatOps로 발주 승인/반려 등 버튼 클릭만으로 업무 완결</li>
+                    </ul>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 파편화된 소통 채널 <strong>100% 통합</strong>, 운영팀 수동 업무량 <strong>40% → 0%</strong></p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">5. 개발 문화 및 엔지니어링 역량 강화</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 통일된 코드 컨벤션 부재, 코드 리뷰 없이 배포되어 로직 오류가 운영 환경에서 발견</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 건강한 코드 리뷰 문화 정착 및 개발 단계에서 잠재적 결함 사전 차단</p>
+                    <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
+                    <ul class="exp-list">
+                        <li>Pull Request 기반 개발 프로세스 도입, 배포 전 최소 2명 이상 리뷰 승인 강제화</li>
+                        <li>팀원들과 협의하여 Java/Spring 코딩 컨벤션 명문화 및 가이드라인 배포</li>
+                    </ul>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 배포 후 버그/핫픽스 건수 <strong>유의미하게 감소</strong>, 온보딩 시간 단축, 팀 전체 기술적 성장</p>
                 </div>
             </div>
 
