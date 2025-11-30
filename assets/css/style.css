@@ -361,12 +361,13 @@ body {
 }
 
 .card-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     padding: 60px 40px;
     background: white;
-    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .nav-card {
@@ -374,7 +375,6 @@ body {
     border: 1px solid #eee;
     border-radius: 16px;
     padding: 40px;
-    width: 320px;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
@@ -470,14 +470,13 @@ body {
     }
 
     .card-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         padding: 40px 20px;
+        gap: 30px;
     }
 
     .nav-card {
         width: 100%;
-        max-width: 350px;
     }
 }
 
