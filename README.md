@@ -15,49 +15,74 @@ Java/Spring Boot 기반의 백엔드 개발자 이력서와 경력기술서를 �
 
 ```
 younwony.github.io/
-├── index.html                    # 랜딩 페이지
-├── resume.md                     # 간결한 이력서 (마크다운)
-├── career_portfolio.md           # 상세 경력기술서 (마크다운)
-├── my_career_data.md            # 원본 데이터 (Single Source of Truth)
-├── CLAUDE.md                    # 이력서 작성 가이드 & 업데이트 프로세스
-├── reference_resume_examples.md # 참고용 이력서 예시
+├── index.html                    # 랜딩 페이지 (4개 카드: 이력서, 경력기술서, GitHub, 블로그)
+├── README.md                     # 이 파일 (프로젝트 전체 설명)
+├── CLAUDE.md                     # Claude Code 작업 지침
+├── docs/                         # 📁 문서 디렉토리
+│   ├── README.md                 # 문서 구조 안내
+│   ├── career/                   # 경력 관련 문서
+│   │   ├── my_career_data.md     # 경력 원본 데이터 (Single Source of Truth)
+│   │   ├── resume.md             # 간결한 이력서
+│   │   └── career_portfolio.md   # 상세 경력기술서
+│   ├── references/               # 참고 자료
+│   │   ├── resume_writing_guide.md  # 이력서 작성 가이드
+│   │   └── resume_examples.md       # 이력서 예시
+│   └── analysis/                 # 분석 자료
+│       ├── tech_blog_analysis.md    # 기술 블로그 분석
+│       └── github_analysis.md       # GitHub 분석 (예정)
 ├── templates/
-│   ├── resume/                  # 이력서 템플릿 (4종)
-│   │   ├── default.html         # 기본 템플릿
-│   │   ├── corporate.html       # 기업형 템플릿
-│   │   ├── minimal.html         # 미니멀 템플릿
-│   │   └── modern.html          # 모던 템플릿
-│   └── career/                  # 경력기술서 템플릿 (4종)
-│       ├── default.html         # 기본 템플릿
-│       ├── corporate.html       # 기업형 템플릿
-│       ├── minimal.html         # 미니멀 템플릿
-│       └── modern.html          # 모던 템플릿
+│   ├── resume/                   # 이력서 템플릿 (4종)
+│   │   ├── default.html
+│   │   ├── corporate.html
+│   │   ├── minimal.html
+│   │   └── modern.html
+│   └── career/                   # 경력기술서 템플릿 (4종)
+│       ├── default.html
+│       ├── corporate.html
+│       ├── minimal.html
+│       └── modern.html
 └── assets/
-    ├── css/                     # 스타일시트
-    └── js/                      # JavaScript 파일
-
+    ├── css/style.css             # 스타일시트
+    └── js/landing.js             # JavaScript 파일
 ```
 
 ## 📄 주요 파일 설명
 
-### 원본 데이터
+### 랜딩 페이지
+- **`index.html`**: 메인 페이지
+  - 2x2 그리드 레이아웃 (PC), 1열 그리드 (모바일)
+  - 4개 카드: 이력서, 경력기술서, GitHub Projects, Tech Blog
+
+### 문서 디렉토리 (`docs/`)
+#### 경력 문서 (`docs/career/`)
 - **`my_career_data.md`**: 모든 이력서/경력기술서의 원본 데이터 (Single Source of Truth)
   - 이 파일을 수정하면 모든 템플릿에 반영됩니다
   - STAR 기법 (Situation, Task, Action, Result) 형식으로 작성
-
-### 마크다운 버전
 - **`resume.md`**: 간결한 이력서 (1-2페이지 분량)
 - **`career_portfolio.md`**: 상세 경력기술서 (프로젝트별 상세 설명)
+
+#### 참고 자료 (`docs/references/`)
+- **`resume_writing_guide.md`**: 경력직 백엔드 개발자 이력서 작성 가이드
+  - STAR 기법 적용 방법
+  - 정량적 성과 작성법
+  - 기술 스택 분류 방법
+- **`resume_examples.md`**: 참고용 이력서 예시
+
+#### 분석 자료 (`docs/analysis/`)
+- **`tech_blog_analysis.md`**: 기술 블로그 (youn12.tistory.com) 분석
+  - 80개 포스팅 카테고리 분석
+  - 주요 기술 스택 및 학습 패턴
+  - Clean Code, Effective Java, AWS 경험
 
 ### 템플릿
 - **`templates/resume/`**: 4가지 스타일의 이력서 HTML 템플릿
 - **`templates/career/`**: 4가지 스타일의 경력기술서 HTML 템플릿
 
 ### 가이드 문서
-- **`CLAUDE.md`**:
-  - 경력직 백엔드 개발자 이력서 작성 가이드
-  - STAR 기법 적용 방법
-  - 이력서 업데이트 프로세스 문서화
+- **`CLAUDE.md`**: Claude Code를 위한 작업 지침
+  - 문서 구조 개요
+  - 이력서 업데이트 프로세스
+  - 주의사항 및 워크플로우
 
 ## 🚀 사용 방법
 
@@ -101,23 +126,23 @@ python -m http.server 8000
 
 ### Step 1: 원본 데이터 수정
 ```bash
-# my_career_data.md 파일 수정
-vim my_career_data.md
+# docs/career/my_career_data.md 파일 수정
+vim docs/career/my_career_data.md
 ```
 
 ### Step 2: 변경사항 확인
 ```bash
-git diff my_career_data.md
+git diff docs/career/my_career_data.md
 ```
 
 ### Step 3: 템플릿 업데이트
 변경된 내용을 다음 10개 파일에 반영:
-- `resume.md`
-- `career_portfolio.md`
+- `docs/career/resume.md`
+- `docs/career/career_portfolio.md`
 - `templates/resume/*.html` (4개)
 - `templates/career/*.html` (4개)
 
-> 📖 상세한 업데이트 프로세스는 [CLAUDE.md](./CLAUDE.md) 참조
+> 📖 상세한 업데이트 프로세스는 [docs/README.md](./docs/README.md) 또는 [CLAUDE.md](./CLAUDE.md) 참조
 
 ### Step 4: 커밋 및 푸시
 ```bash
@@ -137,34 +162,63 @@ git push origin master
 ## 📝 주요 특징
 
 ### 1. Single Source of Truth
-- `my_career_data.md` 하나로 모든 템플릿 관리
+- `docs/career/my_career_data.md` 하나로 모든 템플릿 관리
 - 데이터 일관성 보장
 
 ### 2. STAR 기법 적용
-- Situation (배경)
-- Task (과제/목표)
-- Action (행동/해결)
-- Result (성과)
+- **S**ituation (배경)
+- **T**ask (과제/목표)
+- **A**ction (행동/해결)
+- **R**esult (성과)
 
-### 3. 다크 모드 지원
+### 3. 체계적인 문서 구조
+- `docs/` 디렉토리로 문서 패키지화
+- 경력, 참고자료, 분석 자료 분리
+- 명확한 파일 역할 및 참조 관계
+
+### 4. 다크 모드 지원
 - 자동 다크/라이트 모드 전환
 - 사용자 선호도 저장
 
-### 4. 반응형 디자인
-- 모바일, 태블릿, 데스크톱 모두 지원
+### 5. 반응형 디자인
+- 랜딩 페이지: 2x2 그리드 (PC) / 1열 (모바일)
+- 모든 템플릿 모바일, 태블릿, 데스크톱 지원
 - 인쇄 최적화 스타일 제공
 
 ## 📚 참고 문서
 
-- [CLAUDE.md](./CLAUDE.md) - 이력서 작성 가이드 및 업데이트 프로세스
-- [my_career_data.md](./my_career_data.md) - 원본 데이터
-- [reference_resume_examples.md](./reference_resume_examples.md) - 참고용 이력서 예시
+### 핵심 문서
+- [docs/README.md](./docs/README.md) - 📁 **문서 구조 안내** (가장 먼저 읽어야 할 문서)
+- [CLAUDE.md](./CLAUDE.md) - Claude Code 작업 지침
+
+### 경력 문서
+- [docs/career/my_career_data.md](./docs/career/my_career_data.md) - 경력 원본 데이터
+- [docs/career/resume.md](./docs/career/resume.md) - 간결한 이력서
+- [docs/career/career_portfolio.md](./docs/career/career_portfolio.md) - 상세 경력기술서
+
+### 참고 자료
+- [docs/references/resume_writing_guide.md](./docs/references/resume_writing_guide.md) - 이력서 작성 가이드
+- [docs/references/resume_examples.md](./docs/references/resume_examples.md) - 이력서 예시
+
+### 분석 자료
+- [docs/analysis/tech_blog_analysis.md](./docs/analysis/tech_blog_analysis.md) - Tech Blog 분석
+
+## 🌐 외부 링크
+
+- **Tech Blog**: [youn12.tistory.com](https://youn12.tistory.com/)
+  - Clean Code, Effective Java 학습 기록
+  - AWS, Spring Boot 실무 프로젝트 경험
+  - 80개 이상의 기술 포스팅
+
+- **GitHub**: [github.com/younwony](https://github.com/younwony)
+  - 공개 리포지토리 및 프로젝트
 
 ## 📧 연락처
 
 - **Email**: wony9324@naver.com
 - **Phone**: 010-3555-2320
 - **GitHub**: https://github.com/younwony
+- **Blog**: https://youn12.tistory.com
 
 ## 📄 라이선스
 
@@ -172,4 +226,5 @@ git push origin master
 
 ---
 
-**Last Updated**: 2025-11-24
+**Last Updated**: 2025-11-30
+**Version**: 2.0 (docs 구조 개편, 랜딩 페이지 4카드 추가)
