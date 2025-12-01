@@ -1,6 +1,7 @@
 /**
  * Post Detail Page JavaScript
  * View and edit individual blog posts with Markdown support
+ * Supports admin mode (?admin=true) for editing features
  */
 
 (function() {
@@ -12,12 +13,17 @@
         DATA_URL: 'assets/data/blog-posts.json'
     };
 
+    // Check admin mode from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdminMode = urlParams.get('admin') === 'true';
+
     // State
     let state = {
         post: null,
         posts: [],
         categories: [],
-        currentPostId: null
+        currentPostId: null,
+        isAdmin: isAdminMode
     };
 
     // DOM Elements
@@ -50,8 +56,7 @@
 
     // Initialize
     async function init() {
-        // Get post ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
+        // Get post ID from URL (urlParams already defined above)
         state.currentPostId = parseInt(urlParams.get('id'));
 
         if (!state.currentPostId) {
@@ -63,11 +68,28 @@
         findPost();
 
         if (state.post) {
+            setupAdminUI();
             renderPost();
             setupEventListeners();
             setupNavigation();
         } else {
             showError('포스트를 찾을 수 없습니다.');
+        }
+    }
+
+    // Setup admin UI visibility
+    function setupAdminUI() {
+        // Hide edit button for non-admin users
+        if (elements.editPostBtn) {
+            elements.editPostBtn.style.display = state.isAdmin ? 'flex' : 'none';
+        }
+
+        // Add admin indicator to header if in admin mode
+        if (state.isAdmin) {
+            const headerTitle = document.querySelector('.header-title h1');
+            if (headerTitle) {
+                headerTitle.innerHTML += ' <span class="admin-badge">Admin</span>';
+            }
         }
     }
 
@@ -153,13 +175,21 @@
                 <div class="empty-content">
                     <i class="fas fa-file-alt"></i>
                     <h3>컨텐츠가 아직 없습니다</h3>
-                    <p>원본 블로그에서 컨텐츠를 가져오거나 직접 작성해보세요.</p>
+                    <p>${state.isAdmin ? '원본 블로그에서 컨텐츠를 가져오거나 직접 작성해보세요.' : '원본 블로그에서 컨텐츠를 확인해주세요.'}</p>
+                    ${state.isAdmin ? `
                     <button class="btn btn-primary" id="addContentBtn">
                         <i class="fas fa-plus"></i> 컨텐츠 작성
                     </button>
+                    ` : `
+                    <a href="${post.url}" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> 원본 보기
+                    </a>
+                    `}
                 </div>
             `;
-            document.getElementById('addContentBtn')?.addEventListener('click', openEditModal);
+            if (state.isAdmin) {
+                document.getElementById('addContentBtn')?.addEventListener('click', openEditModal);
+            }
             return;
         }
 
@@ -254,11 +284,12 @@
     function setupNavigation() {
         const sortedPosts = [...state.posts].sort((a, b) => new Date(b.date) - new Date(a.date));
         const currentIndex = sortedPosts.findIndex(p => p.id === state.currentPostId);
+        const adminParam = state.isAdmin ? '&admin=true' : '';
 
         // Previous post (newer)
         if (currentIndex > 0) {
             const prevPost = sortedPosts[currentIndex - 1];
-            elements.prevPost.href = `post.html?id=${prevPost.id}`;
+            elements.prevPost.href = `post.html?id=${prevPost.id}${adminParam}`;
             elements.prevPost.querySelector('.nav-title').textContent = truncate(prevPost.title, 30);
         } else {
             elements.prevPost.classList.add('disabled');
@@ -267,7 +298,7 @@
         // Next post (older)
         if (currentIndex < sortedPosts.length - 1) {
             const nextPost = sortedPosts[currentIndex + 1];
-            elements.nextPost.href = `post.html?id=${nextPost.id}`;
+            elements.nextPost.href = `post.html?id=${nextPost.id}${adminParam}`;
             elements.nextPost.querySelector('.nav-title').textContent = truncate(nextPost.title, 30);
         } else {
             elements.nextPost.classList.add('disabled');
@@ -276,31 +307,44 @@
 
     // Setup event listeners
     function setupEventListeners() {
-        // Edit button
-        elements.editPostBtn.addEventListener('click', openEditModal);
+        // Admin-only: Edit functionality
+        if (state.isAdmin) {
+            // Edit button
+            if (elements.editPostBtn) {
+                elements.editPostBtn.addEventListener('click', openEditModal);
+            }
 
-        // Modal close
-        elements.editModalClose.addEventListener('click', closeEditModal);
-        elements.editCancelBtn.addEventListener('click', closeEditModal);
+            // Modal close
+            if (elements.editModalClose) {
+                elements.editModalClose.addEventListener('click', closeEditModal);
+            }
+            if (elements.editCancelBtn) {
+                elements.editCancelBtn.addEventListener('click', closeEditModal);
+            }
 
-        // Save button
-        elements.editSaveBtn.addEventListener('click', saveContent);
+            // Save button
+            if (elements.editSaveBtn) {
+                elements.editSaveBtn.addEventListener('click', saveContent);
+            }
 
-        // Close modal on outside click
-        elements.editModal.addEventListener('click', (e) => {
-            if (e.target === elements.editModal) closeEditModal();
-        });
+            // Close modal on outside click
+            if (elements.editModal) {
+                elements.editModal.addEventListener('click', (e) => {
+                    if (e.target === elements.editModal) closeEditModal();
+                });
+            }
 
-        // Editor preview
-        elements.contentEditor.addEventListener('input', updatePreview);
+            // Editor preview
+            if (elements.contentEditor) {
+                elements.contentEditor.addEventListener('input', updatePreview);
+                elements.contentEditor.addEventListener('keydown', handleEditorKeydown);
+            }
 
-        // Toolbar buttons
-        document.querySelectorAll('.toolbar-btn').forEach(btn => {
-            btn.addEventListener('click', () => handleToolbarAction(btn.dataset.action));
-        });
-
-        // Keyboard shortcuts
-        elements.contentEditor.addEventListener('keydown', handleEditorKeydown);
+            // Toolbar buttons
+            document.querySelectorAll('.toolbar-btn').forEach(btn => {
+                btn.addEventListener('click', () => handleToolbarAction(btn.dataset.action));
+            });
+        }
     }
 
     // Open edit modal

@@ -1,6 +1,7 @@
 /**
  * Blog Page JavaScript
  * CRUD functionality for blog posts with localStorage persistence
+ * Supports admin mode (?admin=true) for management features
  */
 
 (function() {
@@ -13,6 +14,10 @@
         DATA_URL: 'assets/data/blog-posts.json'
     };
 
+    // Check admin mode from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const isAdminMode = urlParams.get('admin') === 'true';
+
     // State
     let state = {
         posts: [],
@@ -22,7 +27,8 @@
         searchQuery: '',
         sortBy: 'date-desc',
         viewMode: 'grid',
-        editingPostId: null
+        editingPostId: null,
+        isAdmin: isAdminMode
     };
 
     // DOM Elements
@@ -72,8 +78,25 @@
     // Initialize
     async function init() {
         await loadData();
+        setupAdminUI();
         setupEventListeners();
         render();
+    }
+
+    // Setup admin UI visibility
+    function setupAdminUI() {
+        const adminSection = document.querySelector('.admin-section');
+        if (adminSection) {
+            adminSection.style.display = state.isAdmin ? 'block' : 'none';
+        }
+
+        // Add admin indicator to header if in admin mode
+        if (state.isAdmin) {
+            const headerTitle = document.querySelector('.header-title h1');
+            if (headerTitle) {
+                headerTitle.innerHTML += ' <span class="admin-badge">Admin</span>';
+            }
+        }
     }
 
     // Load data from localStorage or JSON file
@@ -135,28 +158,49 @@
             btn.addEventListener('click', () => handleViewChange(btn));
         });
 
-        // Add post
-        elements.addPostBtn.addEventListener('click', openAddModal);
+        // Admin-only event listeners
+        if (state.isAdmin) {
+            // Add post
+            if (elements.addPostBtn) {
+                elements.addPostBtn.addEventListener('click', openAddModal);
+            }
 
-        // Modal close
-        elements.modalClose.addEventListener('click', closePostModal);
-        elements.cancelBtn.addEventListener('click', closePostModal);
-        elements.deleteModalClose.addEventListener('click', closeDeleteModal);
-        elements.deleteCancelBtn.addEventListener('click', closeDeleteModal);
+            // Modal close
+            if (elements.modalClose) {
+                elements.modalClose.addEventListener('click', closePostModal);
+            }
+            if (elements.cancelBtn) {
+                elements.cancelBtn.addEventListener('click', closePostModal);
+            }
+            if (elements.deleteModalClose) {
+                elements.deleteModalClose.addEventListener('click', closeDeleteModal);
+            }
+            if (elements.deleteCancelBtn) {
+                elements.deleteCancelBtn.addEventListener('click', closeDeleteModal);
+            }
 
-        // Form submit
-        elements.postForm.addEventListener('submit', handleFormSubmit);
+            // Form submit
+            if (elements.postForm) {
+                elements.postForm.addEventListener('submit', handleFormSubmit);
+            }
 
-        // Delete confirm
-        elements.deleteConfirmBtn.addEventListener('click', handleDeleteConfirm);
+            // Delete confirm
+            if (elements.deleteConfirmBtn) {
+                elements.deleteConfirmBtn.addEventListener('click', handleDeleteConfirm);
+            }
 
-        // Close modal on outside click
-        elements.postModal.addEventListener('click', (e) => {
-            if (e.target === elements.postModal) closePostModal();
-        });
-        elements.deleteModal.addEventListener('click', (e) => {
-            if (e.target === elements.deleteModal) closeDeleteModal();
-        });
+            // Close modal on outside click
+            if (elements.postModal) {
+                elements.postModal.addEventListener('click', (e) => {
+                    if (e.target === elements.postModal) closePostModal();
+                });
+            }
+            if (elements.deleteModal) {
+                elements.deleteModal.addEventListener('click', (e) => {
+                    if (e.target === elements.deleteModal) closeDeleteModal();
+                });
+            }
+        }
     }
 
     // Render all components
@@ -334,6 +378,14 @@
                         <button class="btn-view" onclick="window.open('${post.url}', '_blank')" title="원본 블로그">
                             <i class="fas fa-external-link-alt"></i> 원본
                         </button>
+                        ${state.isAdmin ? `
+                        <button class="btn-edit" data-id="${post.id}" title="수정">
+                            <i class="fas fa-edit"></i> 수정
+                        </button>
+                        <button class="btn-delete" data-id="${post.id}" title="삭제">
+                            <i class="fas fa-trash"></i> 삭제
+                        </button>
+                        ` : ''}
                     </div>
                 </article>
             `;
@@ -344,9 +396,23 @@
         // Add event listeners for read buttons
         document.querySelectorAll('.btn-read').forEach(btn => {
             btn.addEventListener('click', () => {
-                window.location.href = `post.html?id=${btn.dataset.id}`;
+                const postId = btn.dataset.id;
+                // Admin mode passes admin parameter to post page
+                const adminParam = state.isAdmin ? '&admin=true' : '';
+                window.location.href = `post.html?id=${postId}${adminParam}`;
             });
         });
+
+        // Admin-only: Add event listeners for edit and delete buttons
+        if (state.isAdmin) {
+            document.querySelectorAll('.btn-edit').forEach(btn => {
+                btn.addEventListener('click', () => openEditModal(parseInt(btn.dataset.id)));
+            });
+
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', () => openDeleteModal(parseInt(btn.dataset.id)));
+            });
+        }
     }
 
     // Render pagination
