@@ -259,7 +259,7 @@
         if (currentIndex > 0) {
             const prevPost = sortedPosts[currentIndex - 1];
             elements.prevPost.href = `post.html?id=${prevPost.id}`;
-            elements.prevPost.querySelector('span').textContent = truncate(prevPost.title, 20);
+            elements.prevPost.querySelector('.nav-title').textContent = truncate(prevPost.title, 30);
         } else {
             elements.prevPost.classList.add('disabled');
         }
@@ -268,7 +268,7 @@
         if (currentIndex < sortedPosts.length - 1) {
             const nextPost = sortedPosts[currentIndex + 1];
             elements.nextPost.href = `post.html?id=${nextPost.id}`;
-            elements.nextPost.querySelector('span').textContent = truncate(nextPost.title, 20);
+            elements.nextPost.querySelector('.nav-title').textContent = truncate(nextPost.title, 30);
         } else {
             elements.nextPost.classList.add('disabled');
         }

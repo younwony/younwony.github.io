@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/blog.css">
     <link rel="stylesheet" href="assets/css/post.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Highlight.js for code syntax highlighting -->
@@ -18,117 +17,163 @@
 </head>
 
 <body>
-    <div class="post-container">
+    <div class="post-page">
         <!-- Header -->
         <header class="post-header">
             <div class="header-content">
                 <a href="blog.html" class="back-btn">
                     <i class="fas fa-arrow-left"></i> Blog
                 </a>
+                <div class="header-title">
+                    <h1><i class="fas fa-file-alt"></i> Post</h1>
+                </div>
                 <div class="header-actions">
-                    <a href="#" id="originalLink" class="header-link" target="_blank" title="원본 블로그에서 보기">
-                        <i class="fas fa-external-link-alt"></i> 원본
+                    <a href="#" id="originalLink" class="header-btn" target="_blank" title="원본 블로그">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>원본</span>
                     </a>
-                    <button id="editPostBtn" class="header-link" title="수정">
-                        <i class="fas fa-edit"></i> 수정
+                    <button id="editPostBtn" class="header-btn" title="수정">
+                        <i class="fas fa-edit"></i>
+                        <span>수정</span>
                     </button>
                 </div>
             </div>
         </header>
 
-        <!-- Article -->
-        <article class="post-article">
-            <!-- Meta Info -->
-            <div class="post-meta-header">
-                <span class="post-category-badge" id="postCategory">Category</span>
-                <span class="post-date" id="postDate"><i class="fas fa-calendar-alt"></i> 2024-01-01</span>
-                <span class="post-series" id="postSeries"></span>
-            </div>
-
-            <!-- Title -->
-            <h1 class="post-title" id="postTitle">포스트 제목</h1>
-
-            <!-- Tags -->
-            <div class="post-tags" id="postTags"></div>
-
-            <!-- Summary -->
-            <div class="post-summary" id="postSummary">
-                포스트 요약
-            </div>
-
-            <!-- Content -->
-            <div class="post-content" id="postContent">
-                <div class="loading">
-                    <p>컨텐츠를 불러오는 중...</p>
+        <!-- Main Content -->
+        <main class="post-main">
+            <!-- Sidebar: Table of Contents -->
+            <aside class="post-sidebar">
+                <div class="sidebar-section toc-section">
+                    <h3><i class="fas fa-list"></i> 목차</h3>
+                    <nav class="toc-nav" id="tocNav">
+                        <p class="toc-empty">목차가 없습니다.</p>
+                    </nav>
                 </div>
-            </div>
+            </aside>
 
-            <!-- Footer -->
-            <div class="post-footer">
-                <div class="post-nav">
-                    <a href="#" id="prevPost" class="nav-link prev">
-                        <i class="fas fa-chevron-left"></i>
-                        <span>이전 글</span>
-                    </a>
-                    <a href="blog.html" class="nav-link home">
-                        <i class="fas fa-th-large"></i>
-                        <span>목록</span>
-                    </a>
-                    <a href="#" id="nextPost" class="nav-link next">
-                        <span>다음 글</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
+            <!-- Article Content -->
+            <article class="post-article">
+                <!-- Meta Info -->
+                <div class="article-meta">
+                    <span class="category-badge" id="postCategory">Category</span>
+                    <span class="meta-date" id="postDate">
+                        <i class="fas fa-calendar-alt"></i> 2024-01-01
+                    </span>
+                    <span class="meta-series" id="postSeries"></span>
                 </div>
-            </div>
-        </article>
 
-        <!-- Table of Contents (Sidebar) -->
-        <aside class="toc-sidebar" id="tocSidebar">
-            <div class="toc-header">
-                <h3><i class="fas fa-list"></i> 목차</h3>
-            </div>
-            <nav class="toc-nav" id="tocNav">
-                <!-- TOC will be generated here -->
-            </nav>
-        </aside>
+                <!-- Title -->
+                <h1 class="article-title" id="postTitle">포스트 제목</h1>
+
+                <!-- Tags -->
+                <div class="article-tags" id="postTags"></div>
+
+                <!-- Summary -->
+                <div class="article-summary" id="postSummary">
+                    포스트 요약
+                </div>
+
+                <!-- Content -->
+                <div class="article-content" id="postContent">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>컨텐츠를 불러오는 중...</p>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation -->
+                <footer class="article-footer">
+                    <div class="nav-links">
+                        <a href="#" id="prevPost" class="nav-link nav-prev">
+                            <i class="fas fa-chevron-left"></i>
+                            <div class="nav-info">
+                                <span class="nav-label">이전 글</span>
+                                <span class="nav-title">이전 글 제목</span>
+                            </div>
+                        </a>
+                        <a href="blog.html" class="nav-link nav-home">
+                            <i class="fas fa-th-large"></i>
+                            <span>목록</span>
+                        </a>
+                        <a href="#" id="nextPost" class="nav-link nav-next">
+                            <div class="nav-info">
+                                <span class="nav-label">다음 글</span>
+                                <span class="nav-title">다음 글 제목</span>
+                            </div>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </footer>
+            </article>
+        </main>
     </div>
 
     <!-- Edit Content Modal -->
     <div class="modal" id="editModal">
-        <div class="modal-content modal-large">
+        <div class="modal-content modal-editor">
             <div class="modal-header">
                 <h3><i class="fas fa-edit"></i> 컨텐츠 수정</h3>
                 <button class="modal-close" id="editModalClose">&times;</button>
             </div>
-            <div class="edit-toolbar">
-                <button type="button" class="toolbar-btn" data-action="bold" title="굵게 (Ctrl+B)"><i class="fas fa-bold"></i></button>
-                <button type="button" class="toolbar-btn" data-action="italic" title="기울임 (Ctrl+I)"><i class="fas fa-italic"></i></button>
-                <button type="button" class="toolbar-btn" data-action="code" title="인라인 코드"><i class="fas fa-code"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="toolbar-btn" data-action="h2" title="제목 2">H2</button>
-                <button type="button" class="toolbar-btn" data-action="h3" title="제목 3">H3</button>
-                <button type="button" class="toolbar-btn" data-action="h4" title="제목 4">H4</button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="toolbar-btn" data-action="ul" title="목록"><i class="fas fa-list-ul"></i></button>
-                <button type="button" class="toolbar-btn" data-action="ol" title="번호 목록"><i class="fas fa-list-ol"></i></button>
-                <button type="button" class="toolbar-btn" data-action="quote" title="인용"><i class="fas fa-quote-left"></i></button>
-                <span class="toolbar-divider"></span>
-                <button type="button" class="toolbar-btn" data-action="codeblock" title="코드 블록"><i class="fas fa-file-code"></i></button>
-                <button type="button" class="toolbar-btn" data-action="link" title="링크"><i class="fas fa-link"></i></button>
-                <button type="button" class="toolbar-btn" data-action="image" title="이미지"><i class="fas fa-image"></i></button>
-                <button type="button" class="toolbar-btn" data-action="table" title="테이블"><i class="fas fa-table"></i></button>
+            <div class="editor-toolbar">
+                <div class="toolbar-group">
+                    <button type="button" class="toolbar-btn" data-action="bold" title="굵게 (Ctrl+B)">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="italic" title="기울임 (Ctrl+I)">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="code" title="인라인 코드">
+                        <i class="fas fa-code"></i>
+                    </button>
+                </div>
+                <div class="toolbar-group">
+                    <button type="button" class="toolbar-btn" data-action="h2" title="제목 2">H2</button>
+                    <button type="button" class="toolbar-btn" data-action="h3" title="제목 3">H3</button>
+                    <button type="button" class="toolbar-btn" data-action="h4" title="제목 4">H4</button>
+                </div>
+                <div class="toolbar-group">
+                    <button type="button" class="toolbar-btn" data-action="ul" title="목록">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="ol" title="번호 목록">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="quote" title="인용">
+                        <i class="fas fa-quote-left"></i>
+                    </button>
+                </div>
+                <div class="toolbar-group">
+                    <button type="button" class="toolbar-btn" data-action="codeblock" title="코드 블록">
+                        <i class="fas fa-file-code"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="link" title="링크">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="image" title="이미지">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <button type="button" class="toolbar-btn" data-action="table" title="테이블">
+                        <i class="fas fa-table"></i>
+                    </button>
+                </div>
             </div>
-            <div class="edit-container">
-                <div class="edit-pane">
-                    <label>마크다운 편집</label>
+            <div class="editor-container">
+                <div class="editor-pane">
+                    <div class="pane-header">
+                        <i class="fas fa-pencil-alt"></i> 마크다운 편집
+                    </div>
                     <textarea id="contentEditor" placeholder="마크다운으로 컨텐츠를 작성하세요..."></textarea>
                 </div>
                 <div class="preview-pane">
-                    <label>미리보기</label>
-                    <div id="contentPreview" class="post-content"></div>
+                    <div class="pane-header">
+                        <i class="fas fa-eye"></i> 미리보기
+                    </div>
+                    <div id="contentPreview" class="preview-content"></div>
                 </div>
             </div>
-            <div class="form-actions">
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" id="editCancelBtn">취소</button>
                 <button type="button" class="btn btn-primary" id="editSaveBtn">
                     <i class="fas fa-save"></i> 저장
@@ -143,9 +188,8 @@
         <span id="toastMessage">저장되었습니다.</span>
     </div>
 
-    <!-- Highlight.js -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
     <script src="assets/js/post.js"></script>
 </body>

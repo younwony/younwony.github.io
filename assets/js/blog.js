@@ -334,12 +334,6 @@
                         <button class="btn-view" onclick="window.open('${post.url}', '_blank')" title="원본 블로그">
                             <i class="fas fa-external-link-alt"></i> 원본
                         </button>
-                        <button class="btn-edit" data-id="${post.id}" title="수정">
-                            <i class="fas fa-edit"></i> 수정
-                        </button>
-                        <button class="btn-delete" data-id="${post.id}" title="삭제">
-                            <i class="fas fa-trash"></i> 삭제
-                        </button>
                     </div>
                 </article>
             `;
@@ -352,15 +346,6 @@
             btn.addEventListener('click', () => {
                 window.location.href = `post.html?id=${btn.dataset.id}`;
             });
-        });
-
-        // Add event listeners for edit and delete buttons
-        document.querySelectorAll('.btn-edit').forEach(btn => {
-            btn.addEventListener('click', () => openEditModal(parseInt(btn.dataset.id)));
-        });
-
-        document.querySelectorAll('.btn-delete').forEach(btn => {
-            btn.addEventListener('click', () => openDeleteModal(parseInt(btn.dataset.id)));
         });
     }
 
