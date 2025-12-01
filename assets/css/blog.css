@@ -429,6 +429,11 @@
     transition: all 0.2s ease;
 }
 
+.btn-read {
+    background: #d1fae5;
+    color: #059669;
+}
+
 .btn-view {
     background: #e8f0fe;
     color: #4a6cf7;
@@ -446,6 +451,10 @@
 
 .post-actions button:hover {
     transform: scale(1.05);
+}
+
+.btn-read:hover {
+    background: #a7f3d0;
 }
 
 /* List View Post */

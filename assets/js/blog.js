@@ -328,13 +328,16 @@
                         </div>
                     ` : ''}
                     <div class="post-actions">
-                        <button class="btn-view" onclick="window.open('${post.url}', '_blank')">
-                            <i class="fas fa-external-link-alt"></i> 보기
+                        <button class="btn-read" data-id="${post.id}" title="상세보기">
+                            <i class="fas fa-book-open"></i> 읽기
                         </button>
-                        <button class="btn-edit" data-id="${post.id}">
+                        <button class="btn-view" onclick="window.open('${post.url}', '_blank')" title="원본 블로그">
+                            <i class="fas fa-external-link-alt"></i> 원본
+                        </button>
+                        <button class="btn-edit" data-id="${post.id}" title="수정">
                             <i class="fas fa-edit"></i> 수정
                         </button>
-                        <button class="btn-delete" data-id="${post.id}">
+                        <button class="btn-delete" data-id="${post.id}" title="삭제">
                             <i class="fas fa-trash"></i> 삭제
                         </button>
                     </div>
@@ -343,6 +346,13 @@
         });
 
         elements.postsContainer.innerHTML = html;
+
+        // Add event listeners for read buttons
+        document.querySelectorAll('.btn-read').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.location.href = `post.html?id=${btn.dataset.id}`;
+            });
+        });
 
         // Add event listeners for edit and delete buttons
         document.querySelectorAll('.btn-edit').forEach(btn => {
