@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog - 윤원희 Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blog-container">
+        <!-- Header -->
+        <header class="blog-header">
+            <div class="header-content">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Home
+                </a>
+                <div class="header-title">
+                    <h1><i class="fas fa-blog"></i> Tech Blog</h1>
+                    <p>개발 학습 기록 및 기술 블로그 아카이브</p>
+                </div>
+                <div class="header-stats">
+                    <span class="stat"><i class="fas fa-file-alt"></i> <span id="totalPosts">0</span> Posts</span>
+                    <span class="stat"><i class="fas fa-folder"></i> <span id="totalCategories">0</span> Categories</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="blog-main">
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <!-- Search -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-search"></i> 검색</h3>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="포스트 검색...">
+                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-folder-open"></i> 카테고리</h3>
+                    <ul class="category-list" id="categoryList">
+                        <li class="category-item active" data-category="all">
+                            <span class="category-name">전체</span>
+                            <span class="category-count" id="allCount">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-tags"></i> 인기 태그</h3>
+                    <div class="tag-cloud" id="tagCloud"></div>
+                </div>
+
+                <!-- Admin Panel -->
+                <div class="sidebar-section admin-section">
+                    <h3><i class="fas fa-cog"></i> 관리</h3>
+                    <button class="admin-btn" id="addPostBtn">
+                        <i class="fas fa-plus"></i> 새 포스트
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Posts Grid -->
+            <section class="blog-content">
+                <div class="content-header">
+                    <h2 id="currentCategory">전체 포스트</h2>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid" title="그리드 보기">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" title="리스트 보기">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <select id="sortSelect">
+                            <option value="date-desc">최신순</option>
+                            <option value="date-asc">오래된순</option>
+                            <option value="title-asc">제목 (A-Z)</option>
+                            <option value="title-desc">제목 (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="posts-container" id="postsContainer">
+                    <!-- Posts will be rendered here -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add/Edit Post Modal -->
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"><i class="fas fa-plus"></i> 새 포스트 추가</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <form id="postForm">
+                <input type="hidden" id="postId">
+
+                <div class="form-group">
+                    <label for="postTitle">제목 *</label>
+                    <input type="text" id="postTitle" required placeholder="포스트 제목">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postCategory">카테고리 *</label>
+                        <select id="postCategory" required>
+                            <option value="">선택하세요</option>
+                            <option value="project">프로젝트</option>
+                            <option value="study">Study</option>
+                            <option value="live-study">Live-Study</option>
+                            <option value="algorithm">Algorithm</option>
+                            <option value="devops">DevOps</option>
+                            <option value="etc">기타</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postSubcategory">서브카테고리</label>
+                        <input type="text" id="postSubcategory" placeholder="예: CleanCode, IntelliJ">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="postSummary">요약 *</label>
+                    <textarea id="postSummary" required placeholder="포스트 요약 (1-2줄)"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postDate">작성일 *</label>
+                        <input type="date" id="postDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postUrl">URL *</label>
+                        <input type="url" id="postUrl" required placeholder="https://youn12.tistory.com/...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="postTags">태그 (쉼표로 구분)</label>
+                    <input type="text" id="postTags" placeholder="Java, Spring Boot, AWS">
+                </div>
+
+                <div class="form-group">
+                    <label for="postSeries">시리즈</label>
+                    <input type="text" id="postSeries" placeholder="예: CleanCode, ddangbbo">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">취소</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">
+                        <i class="fas fa-save"></i> 저장
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> 삭제 확인</h3>
+                <button class="modal-close" id="deleteModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>정말로 이 포스트를 삭제하시겠습니까?</p>
+                <p class="delete-title" id="deletePostTitle"></p>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="deleteCancelBtn">취소</button>
+                <button type="button" class="btn btn-danger" id="deleteConfirmBtn">
+                    <i class="fas fa-trash"></i> 삭제
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">저장되었습니다.</span>
+    </div>
+
+    <script src="assets/js/blog.js"></script>
+</body>
+
+</html>

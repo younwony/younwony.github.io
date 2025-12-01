@@ -1,0 +1,382 @@
+{
+  "categories": [
+    {
+      "id": "project",
+      "name": "프로젝트",
+      "icon": "fa-rocket",
+      "color": "#4a6cf7"
+    },
+    {
+      "id": "study",
+      "name": "Study",
+      "icon": "fa-book-open",
+      "color": "#10b981"
+    },
+    {
+      "id": "live-study",
+      "name": "Live-Study",
+      "icon": "fa-java",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "algorithm",
+      "name": "Algorithm",
+      "icon": "fa-code",
+      "color": "#ef4444"
+    },
+    {
+      "id": "devops",
+      "name": "DevOps",
+      "icon": "fa-server",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "etc",
+      "name": "기타",
+      "icon": "fa-folder",
+      "color": "#6b7280"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 모바일 청첩장",
+      "summary": "개발자 부부가 함께 만든 모바일 청첩장 프로젝트. Spring Boot, MySQL, JPA, jQuery 활용",
+      "date": "2025-02-08",
+      "tags": ["Spring Boot", "MySQL", "AWS", "JPA"],
+      "url": "https://youn12.tistory.com/89",
+      "series": "ddangbbo"
+    },
+    {
+      "id": 2,
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 1 - EC2 생성",
+      "summary": "AWS EC2 인스턴스 생성 및 기본 설정",
+      "date": "2025-02-08",
+      "tags": ["AWS", "EC2"],
+      "url": "https://youn12.tistory.com/90",
+      "series": "ddangbbo"
+    },
+    {
+      "id": 3,
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 2 - MySQL 설치",
+      "summary": "AWS EC2에 MySQL 설치 및 보안 그룹 설정",
+      "date": "2025-02-09",
+      "tags": ["AWS", "MySQL", "EC2"],
+      "url": "https://youn12.tistory.com/91",
+      "series": "ddangbbo"
+    },
+    {
+      "id": 4,
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 3 - Route 53 도메인 구매",
+      "summary": "AWS Route 53을 이용한 도메인 등록",
+      "date": "2025-02-13",
+      "tags": ["AWS", "Route 53", "도메인"],
+      "url": "https://youn12.tistory.com/92",
+      "series": "ddangbbo"
+    },
+    {
+      "id": 5,
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 4 - 프로젝트 개발",
+      "summary": "모바일 청첩장 개발 - 10가지 기능 구현 (Welcome, 사진, 캘린더, 지도 등)",
+      "date": "2025-03-04",
+      "tags": ["Spring Boot", "jQuery", "GitHub Actions"],
+      "url": "https://youn12.tistory.com/93",
+      "series": "ddangbbo"
+    },
+    {
+      "id": 6,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 1. 깨끗한 코드",
+      "summary": "5S 원칙, 르블랑의 법칙, 보이스카우트 규칙 - 깨끗한 코드의 특징과 중요성",
+      "date": "2022-06-28",
+      "tags": ["Clean Code", "리팩터링"],
+      "url": "https://youn12.tistory.com/53",
+      "series": "CleanCode"
+    },
+    {
+      "id": 7,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 2. 의미 있는 이름",
+      "summary": "의도를 분명히 밝히고, 그릇된 정보를 피하는 이름 짓기 규칙",
+      "date": "2022-06-28",
+      "tags": ["Clean Code", "네이밍"],
+      "url": "https://youn12.tistory.com/54",
+      "series": "CleanCode"
+    },
+    {
+      "id": 8,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 3. 함수",
+      "summary": "작게 만들어라! 한 가지만 해라! 함수 인수 개수 최소화",
+      "date": "2022-07-01",
+      "tags": ["Clean Code", "함수"],
+      "url": "https://youn12.tistory.com/55",
+      "series": "CleanCode"
+    },
+    {
+      "id": 9,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 9. 단위 테스트",
+      "summary": "TDD 세 가지 법칙, F.I.R.S.T 원칙",
+      "date": "2022-07-17",
+      "tags": ["Clean Code", "TDD", "테스트"],
+      "url": "https://youn12.tistory.com/61",
+      "series": "CleanCode"
+    },
+    {
+      "id": 10,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 17. 냄새와 휴리스틱",
+      "summary": "코드 냄새와 휴리스틱 정리 - 주석, 환경, 함수, 일반, 이름, 테스트",
+      "date": "2022-08-15",
+      "tags": ["Clean Code", "리팩터링"],
+      "url": "https://youn12.tistory.com/70",
+      "series": "CleanCode"
+    },
+    {
+      "id": 11,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 2장 객체 생성과 파괴",
+      "summary": "정적 팩터리 메서드, 빌더 패턴, 싱글턴, 의존 객체 주입",
+      "date": "2023-04-30",
+      "tags": ["Effective Java", "디자인 패턴"],
+      "url": "https://youn12.tistory.com/84",
+      "series": "Effective Java"
+    },
+    {
+      "id": 12,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 3장 모든 객체의 공통 메서드",
+      "summary": "equals, hashCode, toString, clone, Comparable 재정의 규약",
+      "date": "2023-05-07",
+      "tags": ["Effective Java", "Object"],
+      "url": "https://youn12.tistory.com/85",
+      "series": "Effective Java"
+    },
+    {
+      "id": 13,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 4장 클래스와 인터페이스",
+      "summary": "접근 권한 최소화, 상속보다 컴포지션, 추상 클래스보다 인터페이스",
+      "date": "2023-05-23",
+      "tags": ["Effective Java", "OOP"],
+      "url": "https://youn12.tistory.com/86",
+      "series": "Effective Java"
+    },
+    {
+      "id": 14,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 1. 자라기",
+      "summary": "의도적 수련, 복리 효과, 학습 프레임 - 지속적 성장의 원리",
+      "date": "2022-08-28",
+      "tags": ["함께자라기", "성장"],
+      "url": "https://youn12.tistory.com/75",
+      "series": "함께자라기"
+    },
+    {
+      "id": 15,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 2. 함께",
+      "summary": "심리적 안전감, 협력을 통한 추상화, 빠른 학습팀의 특징",
+      "date": "2022-08-28",
+      "tags": ["함께자라기", "협력"],
+      "url": "https://youn12.tistory.com/76",
+      "series": "함께자라기"
+    },
+    {
+      "id": 16,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 3. 애자일",
+      "summary": "고객에게 매일 가치를 전하라 - 애자일의 본질과 도입 방법",
+      "date": "2022-08-28",
+      "tags": ["함께자라기", "애자일"],
+      "url": "https://youn12.tistory.com/77",
+      "series": "함께자라기"
+    },
+    {
+      "id": 17,
+      "category": "live-study",
+      "title": "[Live-Study] 5주차 - 클래스",
+      "summary": "클래스 정의, 객체 생성, 메서드, 생성자, this 키워드",
+      "date": "2021-01-04",
+      "tags": ["Java", "OOP", "클래스"],
+      "url": "https://youn12.tistory.com/19",
+      "series": "Live-Study"
+    },
+    {
+      "id": 18,
+      "category": "live-study",
+      "title": "[Live-Study] 11주차 - Enum",
+      "summary": "열거형 정의, values(), valueOf(), ordinal(), EnumSet",
+      "date": "2021-02-19",
+      "tags": ["Java", "Enum"],
+      "url": "https://youn12.tistory.com/34",
+      "series": "Live-Study"
+    },
+    {
+      "id": 19,
+      "category": "live-study",
+      "title": "[Live-Study] 12주차 - 애노테이션",
+      "summary": "@Override, @Retention, @Target, 애노테이션 프로세서",
+      "date": "2021-02-19",
+      "tags": ["Java", "Annotation"],
+      "url": "https://youn12.tistory.com/35",
+      "series": "Live-Study"
+    },
+    {
+      "id": 20,
+      "category": "live-study",
+      "title": "[Live-Study] 13주차 - I/O",
+      "summary": "스트림, 버퍼, 채널, NIO, 파일 읽기/쓰기",
+      "date": "2021-02-19",
+      "tags": ["Java", "I/O", "NIO"],
+      "url": "https://youn12.tistory.com/36",
+      "series": "Live-Study"
+    },
+    {
+      "id": 21,
+      "category": "algorithm",
+      "title": "[LeetCode] 1672. Richest Customer Wealth",
+      "summary": "2D 배열에서 각 행의 합 중 최대값 찾기",
+      "date": "2021-01-06",
+      "tags": ["LeetCode", "Easy", "배열"],
+      "url": "https://youn12.tistory.com/23",
+      "series": "LeetCode"
+    },
+    {
+      "id": 22,
+      "category": "algorithm",
+      "title": "[LeetCode] 1470. Shuffle the Array",
+      "summary": "배열을 두 부분으로 나누어 번갈아가며 섞기",
+      "date": "2021-01-11",
+      "tags": ["LeetCode", "Easy", "배열"],
+      "url": "https://youn12.tistory.com/26",
+      "series": "LeetCode"
+    },
+    {
+      "id": 23,
+      "category": "algorithm",
+      "title": "[Programmers] 신규아이디 추천",
+      "summary": "2021 카카오 블라인드 - 7단계 문자열 정규화",
+      "date": "2021-03-25",
+      "tags": ["Programmers", "Level1", "문자열"],
+      "url": "https://youn12.tistory.com/41",
+      "series": "Programmers"
+    },
+    {
+      "id": 24,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] 실행 Jar 생성",
+      "summary": "외부 의존성 포함 실행 가능한 JAR 파일 생성 방법",
+      "date": "2021-04-02",
+      "tags": ["IntelliJ", "JAR", "빌드"],
+      "url": "https://youn12.tistory.com/42",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 25,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] File Size Exceeds 이슈 해결",
+      "summary": "idea.max.intellisense.filesize 설정 변경으로 해결",
+      "date": "2021-09-13",
+      "tags": ["IntelliJ", "설정"],
+      "url": "https://youn12.tistory.com/46",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 26,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] Slf4j Live Template 설정",
+      "summary": "logv로 SLF4J 로깅 코드 자동완성 설정",
+      "date": "2021-11-24",
+      "tags": ["IntelliJ", "Live Template", "로깅"],
+      "url": "https://youn12.tistory.com/47",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 27,
+      "category": "devops",
+      "subcategory": "DBMS",
+      "title": "[CUBRID] Server Start FATAL ERROR",
+      "summary": "Out of virtual memory 오류 - data_buffer_size 조정",
+      "date": "2021-03-18",
+      "tags": ["CUBRID", "메모리"],
+      "url": "https://youn12.tistory.com/40",
+      "series": "CUBRID"
+    },
+    {
+      "id": 28,
+      "category": "devops",
+      "subcategory": "Linux",
+      "title": "[Linux] JAVA_HOME 설정",
+      "summary": "CentOS 7에서 JAVA_HOME 환경변수 설정 방법",
+      "date": "2021-01-14",
+      "tags": ["Linux", "CentOS", "Java"],
+      "url": "https://youn12.tistory.com/27",
+      "series": "Linux"
+    },
+    {
+      "id": 29,
+      "category": "devops",
+      "subcategory": "Server",
+      "title": "[Nginx] 서버 점검 JSON 응답",
+      "summary": "점검 모드에서 JSON 형식으로 상태 정보 제공",
+      "date": "2022-08-03",
+      "tags": ["Nginx", "점검페이지"],
+      "url": "https://youn12.tistory.com/63",
+      "series": "Server"
+    },
+    {
+      "id": 30,
+      "category": "devops",
+      "subcategory": "AWS",
+      "title": "[AWS] EC2 ec2-user 디렉토리 복구",
+      "summary": "SSH 접속 불가 시 .ssh 디렉토리 및 authorized_keys 복구",
+      "date": "2022-08-19",
+      "tags": ["AWS", "EC2", "SSH"],
+      "url": "https://youn12.tistory.com/78",
+      "series": "AWS"
+    },
+    {
+      "id": 31,
+      "category": "etc",
+      "subcategory": "Python",
+      "title": "[Python] Python 시작기",
+      "summary": "웹 크롤링을 위한 Python 설치 및 PyCharm IDE 선택",
+      "date": "2025-01-08",
+      "tags": ["Python", "크롤링", "PyCharm"],
+      "url": "https://youn12.tistory.com/88",
+      "series": "Python"
+    },
+    {
+      "id": 32,
+      "category": "etc",
+      "subcategory": "Elasticsearch",
+      "title": "[Elasticsearch] Linux 설치 가이드",
+      "summary": "Elasticsearch 7.10.0 CentOS 7 설치 및 플러그인 설정",
+      "date": "2021-05-20",
+      "tags": ["Elasticsearch", "CentOS", "검색엔진"],
+      "url": "https://youn12.tistory.com/44",
+      "series": "Elasticsearch"
+    }
+  ]
+}
