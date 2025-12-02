@@ -4,7 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="윤원희 백엔드 개발자의 기술 블로그 포스트">
+    <meta name="author" content="윤원희">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Post - 윤원희 Tech Blog">
+    <meta property="og:description" content="백엔드 개발자의 기술 블로그 포스트">
+    <meta property="og:type" content="article">
+
     <title>Post - 윤원희 Tech Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,19 +31,19 @@
         <!-- Header -->
         <header class="post-header">
             <div class="header-content">
-                <a href="blog.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i> Blog
+                <a href="blog.html" class="back-btn" aria-label="블로그 목록으로 돌아가기">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Blog
                 </a>
                 <div class="header-title">
-                    <h1><i class="fas fa-file-alt"></i> Post</h1>
+                    <h1><i class="fas fa-file-alt" aria-hidden="true"></i> Post</h1>
                 </div>
                 <div class="header-actions">
-                    <a href="#" id="originalLink" class="header-btn" target="_blank" title="원본 블로그">
-                        <i class="fas fa-external-link-alt"></i>
+                    <a href="#" id="originalLink" class="header-btn" target="_blank" rel="noopener noreferrer" aria-label="원본 블로그에서 보기">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         <span>원본</span>
                     </a>
-                    <button id="editPostBtn" class="header-btn" title="수정">
-                        <i class="fas fa-edit"></i>
+                    <button id="editPostBtn" class="header-btn" aria-label="포스트 수정">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
                         <span>수정</span>
                     </button>
                 </div>
@@ -44,10 +53,10 @@
         <!-- Main Content -->
         <main class="post-main">
             <!-- Sidebar: Table of Contents -->
-            <aside class="post-sidebar">
+            <aside class="post-sidebar" role="complementary" aria-label="목차">
                 <div class="sidebar-section toc-section">
-                    <h3><i class="fas fa-list"></i> 목차</h3>
-                    <nav class="toc-nav" id="tocNav">
+                    <h3><i class="fas fa-list" aria-hidden="true"></i> 목차</h3>
+                    <nav class="toc-nav" id="tocNav" aria-label="포스트 목차">
                         <p class="toc-empty">목차가 없습니다.</p>
                     </nav>
                 </div>
@@ -85,37 +94,37 @@
 
                 <!-- Footer Navigation -->
                 <footer class="article-footer">
-                    <div class="nav-links">
-                        <a href="#" id="prevPost" class="nav-link nav-prev">
-                            <i class="fas fa-chevron-left"></i>
+                    <nav class="nav-links" aria-label="포스트 네비게이션">
+                        <a href="#" id="prevPost" class="nav-link nav-prev" aria-label="이전 글로 이동">
+                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
                             <div class="nav-info">
                                 <span class="nav-label">이전 글</span>
                                 <span class="nav-title">이전 글 제목</span>
                             </div>
                         </a>
-                        <a href="blog.html" class="nav-link nav-home">
-                            <i class="fas fa-th-large"></i>
+                        <a href="blog.html" class="nav-link nav-home" aria-label="블로그 목록으로 이동">
+                            <i class="fas fa-th-large" aria-hidden="true"></i>
                             <span>목록</span>
                         </a>
-                        <a href="#" id="nextPost" class="nav-link nav-next">
+                        <a href="#" id="nextPost" class="nav-link nav-next" aria-label="다음 글로 이동">
                             <div class="nav-info">
                                 <span class="nav-label">다음 글</span>
                                 <span class="nav-title">다음 글 제목</span>
                             </div>
-                            <i class="fas fa-chevron-right"></i>
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
                         </a>
-                    </div>
+                    </nav>
                 </footer>
             </article>
         </main>
     </div>
 
     <!-- Edit Content Modal -->
-    <div class="modal" id="editModal">
+    <div class="modal" id="editModal" role="dialog" aria-labelledby="editModalTitle" aria-modal="true">
         <div class="modal-content modal-editor">
             <div class="modal-header">
-                <h3><i class="fas fa-edit"></i> 컨텐츠 수정</h3>
-                <button class="modal-close" id="editModalClose">&times;</button>
+                <h3 id="editModalTitle"><i class="fas fa-edit" aria-hidden="true"></i> 컨텐츠 수정</h3>
+                <button class="modal-close" id="editModalClose" aria-label="닫기">&times;</button>
             </div>
             <div class="editor-toolbar">
                 <div class="toolbar-group">
@@ -165,7 +174,7 @@
                     <div class="pane-header">
                         <i class="fas fa-pencil-alt"></i> 마크다운 편집
                     </div>
-                    <textarea id="contentEditor" placeholder="마크다운으로 컨텐츠를 작성하세요..."></textarea>
+                    <textarea id="contentEditor" placeholder="마크다운으로 컨텐츠를 작성하세요..." aria-label="마크다운 편집기"></textarea>
                 </div>
                 <div class="preview-pane">
                     <div class="pane-header">
@@ -184,8 +193,8 @@
     </div>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
         <span id="toastMessage">저장되었습니다.</span>
     </div>
 

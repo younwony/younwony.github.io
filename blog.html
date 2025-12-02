@@ -4,7 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="윤원희 백엔드 개발자의 기술 블로그 - Java, Spring Boot, AWS, Clean Code 학습 기록">
+    <meta name="keywords" content="Java, Spring Boot, AWS, Backend, 백엔드 개발자, 기술 블로그">
+    <meta name="author" content="윤원희">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tech Blog - 윤원희 Portfolio">
+    <meta property="og:description" content="백엔드 개발자의 기술 블로그 - Java, Spring Boot, AWS 학습 기록">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://younwony.github.io/blog.html">
+
     <title>Tech Blog - 윤원희 Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,8 +30,8 @@
         <!-- Header -->
         <header class="blog-header">
             <div class="header-content">
-                <a href="index.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i> Home
+                <a href="index.html" class="back-btn" aria-label="홈으로 돌아가기">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Home
                 </a>
                 <div class="header-title">
                     <h1><i class="fas fa-blog"></i> Tech Blog</h1>
@@ -36,21 +47,21 @@
         <!-- Main Content -->
         <main class="blog-main">
             <!-- Sidebar -->
-            <aside class="blog-sidebar">
+            <aside class="blog-sidebar" role="complementary" aria-label="블로그 사이드바">
                 <!-- Search -->
                 <div class="sidebar-section">
-                    <h3><i class="fas fa-search"></i> 검색</h3>
-                    <div class="search-box">
-                        <input type="text" id="searchInput" placeholder="포스트 검색...">
-                        <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    <h3><i class="fas fa-search" aria-hidden="true"></i> 검색</h3>
+                    <div class="search-box" role="search">
+                        <input type="text" id="searchInput" placeholder="포스트 검색..." aria-label="포스트 검색">
+                        <button id="searchBtn" aria-label="검색 실행"><i class="fas fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
 
                 <!-- Categories -->
                 <div class="sidebar-section">
-                    <h3><i class="fas fa-folder-open"></i> 카테고리</h3>
-                    <ul class="category-list" id="categoryList">
-                        <li class="category-item active" data-category="all">
+                    <h3><i class="fas fa-folder-open" aria-hidden="true"></i> 카테고리</h3>
+                    <ul class="category-list" id="categoryList" role="listbox" aria-label="카테고리 필터">
+                        <li class="category-item active" data-category="all" role="option" aria-selected="true">
                             <span class="category-name">전체</span>
                             <span class="category-count" id="allCount">0</span>
                         </li>
@@ -58,32 +69,32 @@
                 </div>
 
                 <!-- Tags -->
-                <div class="sidebar-section">
-                    <h3><i class="fas fa-tags"></i> 인기 태그</h3>
-                    <div class="tag-cloud" id="tagCloud"></div>
-                </div>
+                <nav class="sidebar-section" aria-label="인기 태그">
+                    <h3><i class="fas fa-tags" aria-hidden="true"></i> 인기 태그</h3>
+                    <div class="tag-cloud" id="tagCloud" role="list"></div>
+                </nav>
 
                 <!-- Admin Panel -->
                 <div class="sidebar-section admin-section">
-                    <h3><i class="fas fa-cog"></i> 관리</h3>
-                    <button class="admin-btn" id="addPostBtn">
-                        <i class="fas fa-plus"></i> 새 포스트
+                    <h3><i class="fas fa-cog" aria-hidden="true"></i> 관리</h3>
+                    <button class="admin-btn" id="addPostBtn" aria-label="새 포스트 추가">
+                        <i class="fas fa-plus" aria-hidden="true"></i> 새 포스트
                     </button>
                 </div>
             </aside>
 
             <!-- Posts Grid -->
-            <section class="blog-content">
+            <section class="blog-content" aria-label="블로그 포스트 목록">
                 <div class="content-header">
                     <h2 id="currentCategory">전체 포스트</h2>
                     <div class="view-options">
-                        <button class="view-btn active" data-view="grid" title="그리드 보기">
-                            <i class="fas fa-th-large"></i>
+                        <button class="view-btn active" data-view="grid" title="그리드 보기" aria-label="그리드 보기" aria-pressed="true">
+                            <i class="fas fa-th-large" aria-hidden="true"></i>
                         </button>
-                        <button class="view-btn" data-view="list" title="리스트 보기">
-                            <i class="fas fa-list"></i>
+                        <button class="view-btn" data-view="list" title="리스트 보기" aria-label="리스트 보기" aria-pressed="false">
+                            <i class="fas fa-list" aria-hidden="true"></i>
                         </button>
-                        <select id="sortSelect">
+                        <select id="sortSelect" aria-label="정렬 방식 선택">
                             <option value="date-desc">최신순</option>
                             <option value="date-asc">오래된순</option>
                             <option value="title-asc">제목 (A-Z)</option>
@@ -92,22 +103,22 @@
                     </div>
                 </div>
 
-                <div class="posts-container" id="postsContainer">
+                <div class="posts-container" id="postsContainer" role="feed" aria-label="포스트 목록">
                     <!-- Posts will be rendered here -->
                 </div>
 
                 <!-- Pagination -->
-                <div class="pagination" id="pagination"></div>
+                <nav class="pagination" id="pagination" aria-label="페이지 네비게이션"></nav>
             </section>
         </main>
     </div>
 
     <!-- Add/Edit Post Modal -->
-    <div class="modal" id="postModal">
+    <div class="modal" id="postModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modalTitle"><i class="fas fa-plus"></i> 새 포스트 추가</h3>
-                <button class="modal-close" id="modalClose">&times;</button>
+                <h3 id="modalTitle"><i class="fas fa-plus" aria-hidden="true"></i> 새 포스트 추가</h3>
+                <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
             </div>
             <form id="postForm">
                 <input type="hidden" id="postId">
@@ -173,11 +184,11 @@
     </div>
 
     <!-- Delete Confirmation Modal -->
-    <div class="modal" id="deleteModal">
+    <div class="modal" id="deleteModal" role="alertdialog" aria-labelledby="deleteModalTitle" aria-modal="true">
         <div class="modal-content modal-small">
             <div class="modal-header">
-                <h3><i class="fas fa-exclamation-triangle"></i> 삭제 확인</h3>
-                <button class="modal-close" id="deleteModalClose">&times;</button>
+                <h3 id="deleteModalTitle"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> 삭제 확인</h3>
+                <button class="modal-close" id="deleteModalClose" aria-label="닫기">&times;</button>
             </div>
             <div class="modal-body">
                 <p>정말로 이 포스트를 삭제하시겠습니까?</p>
@@ -193,8 +204,8 @@
     </div>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <i class="fas fa-check-circle" aria-hidden="true"></i>
         <span id="toastMessage">저장되었습니다.</span>
     </div>
 
