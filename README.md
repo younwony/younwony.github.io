@@ -41,9 +41,24 @@ younwony.github.io/
 │       ├── corporate.html
 │       ├── minimal.html
 │       └── modern.html
+├── blog.html                     # 블로그 메인 페이지
+├── post.html                     # 포스트 상세 페이지
+├── test-runner.html              # JavaScript 테스트 러너
 └── assets/
-    ├── css/style.css             # 스타일시트
-    └── js/landing.js             # JavaScript 파일
+    ├── css/
+    │   ├── style.css             # 기본 스타일시트
+    │   ├── blog-common.css       # 블로그 공통 스타일
+    │   ├── blog.css              # 블로그 페이지 스타일
+    │   └── post.css              # 포스트 페이지 스타일
+    ├── js/
+    │   ├── landing.js            # 랜딩 페이지 스크립트
+    │   ├── common.js             # 포트폴리오 공통 스크립트
+    │   ├── blog-utils.js         # 블로그 공통 유틸리티
+    │   ├── blog.js               # 블로그 페이지 스크립트
+    │   ├── post.js               # 포스트 페이지 스크립트
+    │   └── blog-utils.test.js    # 유틸리티 테스트
+    └── data/
+        └── blog-posts.json       # 블로그 포스트 데이터
 ```
 
 ## 📄 주요 파일 설명
@@ -78,11 +93,25 @@ younwony.github.io/
 - **`templates/resume/`**: 4가지 스타일의 이력서 HTML 템플릿
 - **`templates/career/`**: 4가지 스타일의 경력기술서 HTML 템플릿
 
+### 블로그 페이지
+- **`blog.html`**: 블로그 메인 페이지
+  - 포스트 목록 (그리드/리스트 보기)
+  - 카테고리 필터링 및 검색
+  - 태그 클라우드
+  - 관리자 모드 (`?admin=true`) 지원
+
+- **`post.html`**: 포스트 상세 페이지
+  - Markdown 렌더링 (marked.js)
+  - 코드 하이라이팅 (highlight.js)
+  - 자동 목차(TOC) 생성
+  - 이전/다음 글 네비게이션
+
 ### 가이드 문서
 - **`CLAUDE.md`**: Claude Code를 위한 작업 지침
   - 문서 구조 개요
   - 이력서 업데이트 프로세스
   - 주의사항 및 워크플로우
+- **`docs/blog-guide.md`**: 블로그 기능 사용 가이드
 
 ## 🚀 사용 방법
 
@@ -185,6 +214,13 @@ git push origin master
 - 모든 템플릿 모바일, 태블릿, 데스크톱 지원
 - 인쇄 최적화 스타일 제공
 
+### 6. 블로그 기능
+- 카테고리별 포스트 관리 (프로젝트, Study, Algorithm, DevOps 등)
+- Markdown 기반 콘텐츠 작성 및 렌더링
+- 관리자 모드 (CRUD 기능)
+- localStorage 기반 데이터 저장
+- 테스트 코드 포함 (`test-runner.html`)
+
 ## 📚 참고 문서
 
 ### 핵심 문서
@@ -226,5 +262,5 @@ git push origin master
 
 ---
 
-**Last Updated**: 2025-11-30
-**Version**: 2.0 (docs 구조 개편, 랜딩 페이지 4카드 추가)
+**Last Updated**: 2025-12-02
+**Version**: 2.1 (블로그 기능 추가, 코드 리팩토링)

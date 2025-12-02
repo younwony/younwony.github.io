@@ -7,19 +7,13 @@
 (function() {
     'use strict';
 
-    // Configuration
-    const CONFIG = {
-        POSTS_PER_PAGE: 9,
-        STORAGE_KEY: 'blog_posts_data',
-        DATA_URL: 'assets/data/blog-posts.json'
-    };
-
-    // Check admin mode from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const isAdminMode = urlParams.get('admin') === 'true';
+    // Use shared utilities
+    const { CONFIG, isAdminMode, loadData, saveData, escapeHtml, formatDate,
+            findCategory, generatePostId, countByCategory, countTags,
+            sortPosts, filterPosts, paginate, setupAdminBadge, onReady } = BlogUtils;
 
     // State
-    let state = {
+    const state = {
         posts: [],
         categories: [],
         currentCategory: 'all',
@@ -28,130 +22,97 @@
         sortBy: 'date-desc',
         viewMode: 'grid',
         editingPostId: null,
-        isAdmin: isAdminMode
+        isAdmin: isAdminMode()
     };
 
-    // DOM Elements
-    const elements = {
-        postsContainer: document.getElementById('postsContainer'),
-        categoryList: document.getElementById('categoryList'),
-        tagCloud: document.getElementById('tagCloud'),
-        pagination: document.getElementById('pagination'),
-        searchInput: document.getElementById('searchInput'),
-        searchBtn: document.getElementById('searchBtn'),
-        sortSelect: document.getElementById('sortSelect'),
-        currentCategory: document.getElementById('currentCategory'),
-        totalPosts: document.getElementById('totalPosts'),
-        totalCategories: document.getElementById('totalCategories'),
-        allCount: document.getElementById('allCount'),
-        viewBtns: document.querySelectorAll('.view-btn'),
+    // DOM Elements cache
+    let elements = {};
 
-        // Modal elements
-        postModal: document.getElementById('postModal'),
-        deleteModal: document.getElementById('deleteModal'),
-        postForm: document.getElementById('postForm'),
-        modalTitle: document.getElementById('modalTitle'),
-        postId: document.getElementById('postId'),
-        postTitle: document.getElementById('postTitle'),
-        postCategory: document.getElementById('postCategory'),
-        postSubcategory: document.getElementById('postSubcategory'),
-        postSummary: document.getElementById('postSummary'),
-        postDate: document.getElementById('postDate'),
-        postUrl: document.getElementById('postUrl'),
-        postTags: document.getElementById('postTags'),
-        postSeries: document.getElementById('postSeries'),
-        deletePostTitle: document.getElementById('deletePostTitle'),
+    /**
+     * Cache DOM elements
+     */
+    function cacheElements() {
+        elements = {
+            postsContainer: document.getElementById('postsContainer'),
+            categoryList: document.getElementById('categoryList'),
+            tagCloud: document.getElementById('tagCloud'),
+            pagination: document.getElementById('pagination'),
+            searchInput: document.getElementById('searchInput'),
+            searchBtn: document.getElementById('searchBtn'),
+            sortSelect: document.getElementById('sortSelect'),
+            currentCategory: document.getElementById('currentCategory'),
+            totalPosts: document.getElementById('totalPosts'),
+            totalCategories: document.getElementById('totalCategories'),
+            allCount: document.getElementById('allCount'),
+            viewBtns: document.querySelectorAll('.view-btn'),
 
-        // Buttons
-        addPostBtn: document.getElementById('addPostBtn'),
-        modalClose: document.getElementById('modalClose'),
-        cancelBtn: document.getElementById('cancelBtn'),
-        deleteModalClose: document.getElementById('deleteModalClose'),
-        deleteCancelBtn: document.getElementById('deleteCancelBtn'),
-        deleteConfirmBtn: document.getElementById('deleteConfirmBtn'),
+            // Modal elements
+            postModal: document.getElementById('postModal'),
+            deleteModal: document.getElementById('deleteModal'),
+            postForm: document.getElementById('postForm'),
+            modalTitle: document.getElementById('modalTitle'),
+            postId: document.getElementById('postId'),
+            postTitle: document.getElementById('postTitle'),
+            postCategory: document.getElementById('postCategory'),
+            postSubcategory: document.getElementById('postSubcategory'),
+            postSummary: document.getElementById('postSummary'),
+            postDate: document.getElementById('postDate'),
+            postUrl: document.getElementById('postUrl'),
+            postTags: document.getElementById('postTags'),
+            postSeries: document.getElementById('postSeries'),
+            deletePostTitle: document.getElementById('deletePostTitle'),
 
-        // Toast
-        toast: document.getElementById('toast'),
-        toastMessage: document.getElementById('toastMessage')
-    };
+            // Buttons
+            addPostBtn: document.getElementById('addPostBtn'),
+            modalClose: document.getElementById('modalClose'),
+            cancelBtn: document.getElementById('cancelBtn'),
+            deleteModalClose: document.getElementById('deleteModalClose'),
+            deleteCancelBtn: document.getElementById('deleteCancelBtn'),
+            deleteConfirmBtn: document.getElementById('deleteConfirmBtn'),
 
-    // Initialize
+            // Toast
+            toast: document.getElementById('toast'),
+            toastMessage: document.getElementById('toastMessage')
+        };
+    }
+
+    /**
+     * Initialize application
+     */
     async function init() {
-        await loadData();
+        cacheElements();
+        const data = await loadData();
+        state.posts = data.posts;
+        state.categories = data.categories;
+
         setupAdminUI();
         setupEventListeners();
         render();
     }
 
-    // Setup admin UI visibility
+    /**
+     * Setup admin UI visibility
+     */
     function setupAdminUI() {
         const adminSection = document.querySelector('.admin-section');
         if (adminSection) {
             adminSection.style.display = state.isAdmin ? 'block' : 'none';
         }
-
-        // Add admin indicator to header if in admin mode
-        if (state.isAdmin) {
-            const headerTitle = document.querySelector('.header-title h1');
-            if (headerTitle) {
-                headerTitle.innerHTML += ' <span class="admin-badge">Admin</span>';
-            }
-        }
+        setupAdminBadge(state.isAdmin);
     }
 
-    // Load data from localStorage or JSON file
-    async function loadData() {
-        const storedData = localStorage.getItem(CONFIG.STORAGE_KEY);
-
-        if (storedData) {
-            const data = JSON.parse(storedData);
-            state.posts = data.posts || [];
-            state.categories = data.categories || [];
-        } else {
-            try {
-                const response = await fetch(CONFIG.DATA_URL);
-                const data = await response.json();
-                state.posts = data.posts || [];
-                state.categories = data.categories || [];
-                saveData();
-            } catch (error) {
-                console.error('Error loading data:', error);
-                state.posts = [];
-                state.categories = getDefaultCategories();
-            }
-        }
-    }
-
-    // Save data to localStorage
-    function saveData() {
-        localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify({
-            posts: state.posts,
-            categories: state.categories
-        }));
-    }
-
-    // Get default categories
-    function getDefaultCategories() {
-        return [
-            { id: 'project', name: '프로젝트', icon: 'fa-rocket', color: '#4a6cf7' },
-            { id: 'study', name: 'Study', icon: 'fa-book-open', color: '#10b981' },
-            { id: 'live-study', name: 'Live-Study', icon: 'fa-graduation-cap', color: '#8b5cf6' },
-            { id: 'algorithm', name: 'Algorithm', icon: 'fa-code', color: '#f59e0b' },
-            { id: 'devops', name: 'DevOps', icon: 'fa-server', color: '#ef4444' },
-            { id: 'etc', name: '기타', icon: 'fa-ellipsis-h', color: '#6b7280' }
-        ];
-    }
-
-    // Setup event listeners
+    /**
+     * Setup event listeners
+     */
     function setupEventListeners() {
         // Search
-        elements.searchBtn.addEventListener('click', handleSearch);
-        elements.searchInput.addEventListener('keypress', (e) => {
+        elements.searchBtn?.addEventListener('click', handleSearch);
+        elements.searchInput?.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') handleSearch();
         });
 
         // Sort
-        elements.sortSelect.addEventListener('change', handleSort);
+        elements.sortSelect?.addEventListener('change', handleSort);
 
         // View toggle
         elements.viewBtns.forEach(btn => {
@@ -160,50 +121,34 @@
 
         // Admin-only event listeners
         if (state.isAdmin) {
-            // Add post
-            if (elements.addPostBtn) {
-                elements.addPostBtn.addEventListener('click', openAddModal);
-            }
-
-            // Modal close
-            if (elements.modalClose) {
-                elements.modalClose.addEventListener('click', closePostModal);
-            }
-            if (elements.cancelBtn) {
-                elements.cancelBtn.addEventListener('click', closePostModal);
-            }
-            if (elements.deleteModalClose) {
-                elements.deleteModalClose.addEventListener('click', closeDeleteModal);
-            }
-            if (elements.deleteCancelBtn) {
-                elements.deleteCancelBtn.addEventListener('click', closeDeleteModal);
-            }
-
-            // Form submit
-            if (elements.postForm) {
-                elements.postForm.addEventListener('submit', handleFormSubmit);
-            }
-
-            // Delete confirm
-            if (elements.deleteConfirmBtn) {
-                elements.deleteConfirmBtn.addEventListener('click', handleDeleteConfirm);
-            }
-
-            // Close modal on outside click
-            if (elements.postModal) {
-                elements.postModal.addEventListener('click', (e) => {
-                    if (e.target === elements.postModal) closePostModal();
-                });
-            }
-            if (elements.deleteModal) {
-                elements.deleteModal.addEventListener('click', (e) => {
-                    if (e.target === elements.deleteModal) closeDeleteModal();
-                });
-            }
+            setupAdminEventListeners();
         }
     }
 
-    // Render all components
+    /**
+     * Setup admin-only event listeners
+     */
+    function setupAdminEventListeners() {
+        elements.addPostBtn?.addEventListener('click', openAddModal);
+        elements.modalClose?.addEventListener('click', closePostModal);
+        elements.cancelBtn?.addEventListener('click', closePostModal);
+        elements.deleteModalClose?.addEventListener('click', closeDeleteModal);
+        elements.deleteCancelBtn?.addEventListener('click', closeDeleteModal);
+        elements.postForm?.addEventListener('submit', handleFormSubmit);
+        elements.deleteConfirmBtn?.addEventListener('click', handleDeleteConfirm);
+
+        // Close modal on outside click
+        elements.postModal?.addEventListener('click', (e) => {
+            if (e.target === elements.postModal) closePostModal();
+        });
+        elements.deleteModal?.addEventListener('click', (e) => {
+            if (e.target === elements.deleteModal) closeDeleteModal();
+        });
+    }
+
+    /**
+     * Render all components
+     */
     function render() {
         renderCategories();
         renderTags();
@@ -212,12 +157,11 @@
         updateStats();
     }
 
-    // Render categories
+    /**
+     * Render categories sidebar
+     */
     function renderCategories() {
-        const categoryCounts = {};
-        state.posts.forEach(post => {
-            categoryCounts[post.category] = (categoryCounts[post.category] || 0) + 1;
-        });
+        const categoryCounts = countByCategory(state.posts);
 
         let html = `
             <li class="category-item ${state.currentCategory === 'all' ? 'active' : ''}" data-category="all">
@@ -248,25 +192,15 @@
         });
     }
 
-    // Render tags
+    /**
+     * Render tags cloud
+     */
     function renderTags() {
-        const tagCounts = {};
-        state.posts.forEach(post => {
-            if (post.tags) {
-                post.tags.forEach(tag => {
-                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-                });
-            }
-        });
+        const sortedTags = countTags(state.posts);
 
-        const sortedTags = Object.entries(tagCounts)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 15);
-
-        let html = '';
-        sortedTags.forEach(([tag, count]) => {
-            html += `<span class="tag" data-tag="${tag}">${tag} (${count})</span>`;
-        });
+        const html = sortedTags
+            .map(([tag, count]) => `<span class="tag" data-tag="${tag}">${tag} (${count})</span>`)
+            .join('');
 
         elements.tagCloud.innerHTML = html;
 
@@ -281,129 +215,147 @@
         });
     }
 
-    // Get filtered and sorted posts
+    /**
+     * Get filtered and sorted posts
+     * @returns {Array}
+     */
     function getFilteredPosts() {
-        let filtered = [...state.posts];
-
-        // Filter by category
-        if (state.currentCategory !== 'all') {
-            filtered = filtered.filter(post => post.category === state.currentCategory);
-        }
-
-        // Filter by search query
-        if (state.searchQuery) {
-            const query = state.searchQuery.toLowerCase();
-            filtered = filtered.filter(post =>
-                post.title.toLowerCase().includes(query) ||
-                post.summary.toLowerCase().includes(query) ||
-                (post.tags && post.tags.some(tag => tag.toLowerCase().includes(query))) ||
-                (post.subcategory && post.subcategory.toLowerCase().includes(query))
-            );
-        }
-
-        // Sort
-        switch (state.sortBy) {
-            case 'date-desc':
-                filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-                break;
-            case 'date-asc':
-                filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-                break;
-            case 'title-asc':
-                filtered.sort((a, b) => a.title.localeCompare(b.title));
-                break;
-            case 'title-desc':
-                filtered.sort((a, b) => b.title.localeCompare(a.title));
-                break;
-        }
-
-        return filtered;
+        const filtered = filterPosts(state.posts, state.currentCategory, state.searchQuery);
+        return sortPosts(filtered, state.sortBy);
     }
 
-    // Render posts
+    /**
+     * Render posts grid/list
+     */
     function renderPosts() {
         const filtered = getFilteredPosts();
-        const start = (state.currentPage - 1) * CONFIG.POSTS_PER_PAGE;
-        const end = start + CONFIG.POSTS_PER_PAGE;
-        const paginatedPosts = filtered.slice(start, end);
+        const { items: paginatedPosts } = paginate(filtered, state.currentPage);
 
         // Update category title
-        if (state.currentCategory === 'all') {
-            elements.currentCategory.textContent = '전체 포스트';
-        } else {
-            const cat = state.categories.find(c => c.id === state.currentCategory);
-            elements.currentCategory.textContent = cat ? cat.name : '포스트';
-        }
+        updateCategoryTitle();
 
         if (paginatedPosts.length === 0) {
-            elements.postsContainer.innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>포스트가 없습니다</h3>
-                    <p>${state.searchQuery ? '검색 결과가 없습니다. 다른 키워드로 검색해보세요.' : '새 포스트를 추가해보세요!'}</p>
-                </div>
-            `;
+            renderEmptyState();
             return;
         }
 
         // Set view mode class
         elements.postsContainer.className = `posts-container ${state.viewMode === 'list' ? 'list-view' : ''}`;
 
-        let html = '';
-        paginatedPosts.forEach(post => {
-            const category = state.categories.find(c => c.id === post.category);
-            const categoryColor = category ? category.color : '#4a6cf7';
-            const categoryName = category ? category.name : post.category;
+        elements.postsContainer.innerHTML = paginatedPosts.map(post => renderPostCard(post)).join('');
 
-            html += `
-                <article class="post-card" style="--category-color: ${categoryColor}">
-                    <span class="post-category" style="background: ${categoryColor}">${categoryName}</span>
-                    <h3 class="post-title">
-                        <a href="${post.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(post.title)}</a>
-                    </h3>
-                    <p class="post-summary">${escapeHtml(post.summary)}</p>
-                    <div class="post-meta">
-                        <span><i class="fas fa-calendar-alt"></i> ${formatDate(post.date)}</span>
-                        ${post.subcategory ? `<span><i class="fas fa-folder"></i> ${escapeHtml(post.subcategory)}</span>` : ''}
-                    </div>
-                    ${post.tags && post.tags.length > 0 ? `
-                        <div class="post-tags">
-                            ${post.tags.slice(0, 4).map(tag => `<span class="post-tag">${escapeHtml(tag)}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    <div class="post-actions">
-                        <button class="btn-read" data-id="${post.id}" title="상세보기">
-                            <i class="fas fa-book-open"></i> 읽기
-                        </button>
-                        <button class="btn-view" onclick="window.open('${post.url}', '_blank')" title="원본 블로그">
-                            <i class="fas fa-external-link-alt"></i> 원본
-                        </button>
-                        ${state.isAdmin ? `
-                        <button class="btn-edit" data-id="${post.id}" title="수정">
-                            <i class="fas fa-edit"></i> 수정
-                        </button>
-                        <button class="btn-delete" data-id="${post.id}" title="삭제">
-                            <i class="fas fa-trash"></i> 삭제
-                        </button>
-                        ` : ''}
-                    </div>
-                </article>
-            `;
-        });
+        // Add event listeners
+        setupPostCardListeners();
+    }
 
-        elements.postsContainer.innerHTML = html;
+    /**
+     * Update category title
+     */
+    function updateCategoryTitle() {
+        if (state.currentCategory === 'all') {
+            elements.currentCategory.textContent = '전체 포스트';
+        } else {
+            const cat = findCategory(state.categories, state.currentCategory);
+            elements.currentCategory.textContent = cat ? cat.name : '포스트';
+        }
+    }
 
-        // Add event listeners for read buttons
+    /**
+     * Render empty state
+     */
+    function renderEmptyState() {
+        elements.postsContainer.innerHTML = `
+            <div class="empty-state">
+                <i class="fas fa-file-alt"></i>
+                <h3>포스트가 없습니다</h3>
+                <p>${state.searchQuery ? '검색 결과가 없습니다. 다른 키워드로 검색해보세요.' : '새 포스트를 추가해보세요!'}</p>
+            </div>
+        `;
+    }
+
+    /**
+     * Render single post card
+     * @param {Object} post - Post data
+     * @returns {string}
+     */
+    function renderPostCard(post) {
+        const category = findCategory(state.categories, post.category);
+        const categoryColor = category ? category.color : '#4a6cf7';
+        const categoryName = category ? category.name : post.category;
+
+        return `
+            <article class="post-card" style="--category-color: ${categoryColor}">
+                <span class="post-category" style="background: ${categoryColor}">${categoryName}</span>
+                <h3 class="post-title">
+                    <a href="${post.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(post.title)}</a>
+                </h3>
+                <p class="post-summary">${escapeHtml(post.summary)}</p>
+                <div class="post-meta">
+                    <span><i class="fas fa-calendar-alt"></i> ${formatDate(post.date)}</span>
+                    ${post.subcategory ? `<span><i class="fas fa-folder"></i> ${escapeHtml(post.subcategory)}</span>` : ''}
+                </div>
+                ${renderPostTags(post.tags)}
+                ${renderPostActions(post)}
+            </article>
+        `;
+    }
+
+    /**
+     * Render post tags
+     * @param {Array} tags - Tags array
+     * @returns {string}
+     */
+    function renderPostTags(tags) {
+        if (!tags || tags.length === 0) return '';
+        return `
+            <div class="post-tags">
+                ${tags.slice(0, 4).map(tag => `<span class="post-tag">${escapeHtml(tag)}</span>`).join('')}
+            </div>
+        `;
+    }
+
+    /**
+     * Render post action buttons
+     * @param {Object} post - Post data
+     * @returns {string}
+     */
+    function renderPostActions(post) {
+        const adminButtons = state.isAdmin ? `
+            <button class="btn-edit" data-id="${post.id}" title="수정">
+                <i class="fas fa-edit"></i> 수정
+            </button>
+            <button class="btn-delete" data-id="${post.id}" title="삭제">
+                <i class="fas fa-trash"></i> 삭제
+            </button>
+        ` : '';
+
+        return `
+            <div class="post-actions">
+                <button class="btn-read" data-id="${post.id}" title="상세보기">
+                    <i class="fas fa-book-open"></i> 읽기
+                </button>
+                <button class="btn-view" onclick="window.open('${post.url}', '_blank')" title="원본 블로그">
+                    <i class="fas fa-external-link-alt"></i> 원본
+                </button>
+                ${adminButtons}
+            </div>
+        `;
+    }
+
+    /**
+     * Setup post card event listeners
+     */
+    function setupPostCardListeners() {
+        // Read buttons
         document.querySelectorAll('.btn-read').forEach(btn => {
             btn.addEventListener('click', () => {
                 const postId = btn.dataset.id;
-                // Admin mode passes admin parameter to post page
                 const adminParam = state.isAdmin ? '&admin=true' : '';
                 window.location.href = `post.html?id=${postId}${adminParam}`;
             });
         });
 
-        // Admin-only: Add event listeners for edit and delete buttons
+        // Admin-only: Edit and delete buttons
         if (state.isAdmin) {
             document.querySelectorAll('.btn-edit').forEach(btn => {
                 btn.addEventListener('click', () => openEditModal(parseInt(btn.dataset.id)));
@@ -415,10 +367,12 @@
         }
     }
 
-    // Render pagination
+    /**
+     * Render pagination
+     */
     function renderPagination() {
         const filtered = getFilteredPosts();
-        const totalPages = Math.ceil(filtered.length / CONFIG.POSTS_PER_PAGE);
+        const { totalPages } = paginate(filtered, state.currentPage);
 
         if (totalPages <= 1) {
             elements.pagination.innerHTML = '';
@@ -432,18 +386,9 @@
         `;
 
         for (let i = 1; i <= totalPages; i++) {
-            if (
-                i === 1 ||
-                i === totalPages ||
-                (i >= state.currentPage - 2 && i <= state.currentPage + 2)
-            ) {
-                html += `
-                    <button class="${i === state.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>
-                `;
-            } else if (
-                i === state.currentPage - 3 ||
-                i === state.currentPage + 3
-            ) {
+            if (i === 1 || i === totalPages || (i >= state.currentPage - 2 && i <= state.currentPage + 2)) {
+                html += `<button class="${i === state.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+            } else if (i === state.currentPage - 3 || i === state.currentPage + 3) {
                 html += `<span>...</span>`;
             }
         }
@@ -469,27 +414,38 @@
         });
     }
 
-    // Update stats
+    /**
+     * Update statistics display
+     */
     function updateStats() {
         elements.totalPosts.textContent = state.posts.length;
         elements.totalCategories.textContent = state.categories.length;
         elements.allCount.textContent = state.posts.length;
     }
 
-    // Handle search
+    // Event Handlers
+
+    /**
+     * Handle search input and filter posts
+     */
     function handleSearch() {
         state.searchQuery = elements.searchInput.value.trim();
         state.currentPage = 1;
         render();
     }
 
-    // Handle sort
+    /**
+     * Handle sort select change
+     */
     function handleSort() {
         state.sortBy = elements.sortSelect.value;
         renderPosts();
     }
 
-    // Handle view change
+    /**
+     * Handle view mode change (grid/list)
+     * @param {HTMLButtonElement} btn - Clicked view button
+     */
     function handleViewChange(btn) {
         elements.viewBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -497,7 +453,11 @@
         renderPosts();
     }
 
-    // Open add modal
+    // Modal Functions
+
+    /**
+     * Open modal for adding new post
+     */
     function openAddModal() {
         state.editingPostId = null;
         elements.modalTitle.innerHTML = '<i class="fas fa-plus"></i> 새 포스트 추가';
@@ -507,7 +467,10 @@
         elements.postModal.classList.add('show');
     }
 
-    // Open edit modal
+    /**
+     * Open modal for editing existing post
+     * @param {number} id - Post ID to edit
+     */
     function openEditModal(id) {
         const post = state.posts.find(p => p.id === id);
         if (!post) return;
@@ -526,13 +489,18 @@
         elements.postModal.classList.add('show');
     }
 
-    // Close post modal
+    /**
+     * Close post add/edit modal
+     */
     function closePostModal() {
         elements.postModal.classList.remove('show');
         state.editingPostId = null;
     }
 
-    // Open delete modal
+    /**
+     * Open delete confirmation modal
+     * @param {number} id - Post ID to delete
+     */
     function openDeleteModal(id) {
         const post = state.posts.find(p => p.id === id);
         if (!post) return;
@@ -542,13 +510,18 @@
         elements.deleteModal.classList.add('show');
     }
 
-    // Close delete modal
+    /**
+     * Close delete confirmation modal
+     */
     function closeDeleteModal() {
         elements.deleteModal.classList.remove('show');
         state.editingPostId = null;
     }
 
-    // Handle form submit
+    /**
+     * Handle post form submission (add/edit)
+     * @param {Event} e - Form submit event
+     */
     function handleFormSubmit(e) {
         e.preventDefault();
 
@@ -564,67 +537,44 @@
         };
 
         if (state.editingPostId) {
-            // Update existing post
             const index = state.posts.findIndex(p => p.id === state.editingPostId);
             if (index !== -1) {
                 state.posts[index] = { ...state.posts[index], ...postData };
                 showToast('포스트가 수정되었습니다.');
             }
         } else {
-            // Add new post
-            const newId = state.posts.length > 0 ? Math.max(...state.posts.map(p => p.id)) + 1 : 1;
+            const newId = generatePostId(state.posts);
             state.posts.push({ id: newId, ...postData });
             showToast('새 포스트가 추가되었습니다.');
         }
 
-        saveData();
+        saveData(state.posts, state.categories);
         closePostModal();
         render();
     }
 
-    // Handle delete confirm
+    /**
+     * Handle delete confirmation
+     */
     function handleDeleteConfirm() {
         if (state.editingPostId) {
             state.posts = state.posts.filter(p => p.id !== state.editingPostId);
-            saveData();
+            saveData(state.posts, state.categories);
             closeDeleteModal();
             render();
             showToast('포스트가 삭제되었습니다.', true);
         }
     }
 
-    // Show toast notification
+    /**
+     * Show toast notification
+     * @param {string} message - Message to display
+     * @param {boolean} isError - Whether it's an error message
+     */
     function showToast(message, isError = false) {
-        elements.toastMessage.textContent = message;
-        elements.toast.classList.toggle('error', isError);
-        elements.toast.classList.add('show');
-
-        setTimeout(() => {
-            elements.toast.classList.remove('show');
-        }, 3000);
-    }
-
-    // Utility: Escape HTML
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
-
-    // Utility: Format date
-    function formatDate(dateStr) {
-        const date = new Date(dateStr);
-        return date.toLocaleDateString('ko-KR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+        BlogUtils.showToast(elements.toast, elements.toastMessage, message, isError);
     }
 
     // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
+    onReady(init);
 })();

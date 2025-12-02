@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Utils - Test Runner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #60a5fa;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .instructions {
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4a6cf7;
+        }
+
+        .instructions h2 {
+            color: #4a6cf7;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .instructions p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        .instructions code {
+            background: #1a1a2e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #f472b6;
+        }
+
+        #test-output {
+            background: #0d0d1f;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 200px;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            border: 1px solid #2d2d44;
+        }
+
+        .test-pass {
+            color: #22c55e;
+        }
+
+        .test-fail {
+            color: #dc2626;
+        }
+
+        .test-group {
+            color: #60a5fa;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Blog Utils - Test Runner</h1>
+
+    <div class="instructions">
+        <h2>사용 방법</h2>
+        <p>1. 브라우저의 개발자 도구 콘솔(<code>F12</code>)을 열어주세요.</p>
+        <p>2. 테스트 결과가 콘솔에 출력됩니다.</p>
+        <p>3. 아래에서도 요약 결과를 확인할 수 있습니다.</p>
+    </div>
+
+    <div id="test-output">테스트 로딩 중...</div>
+
+    <script src="assets/js/blog-utils.js"></script>
+    <script src="assets/js/blog-utils.test.js"></script>
+    <script>
+        // Capture console output to display on page
+        (function() {
+            const output = document.getElementById('test-output');
+            let logs = [];
+
+            const originalLog = console.log;
+            const originalError = console.error;
+            const originalGroup = console.group;
+            const originalGroupEnd = console.groupEnd;
+
+            console.log = function(...args) {
+                originalLog.apply(console, args);
+                const text = args.join(' ');
+                if (text.includes('✅')) {
+                    logs.push(`<span class="test-pass">${escapeHtml(text)}</span>`);
+                } else if (text.includes('📊')) {
+                    logs.push(`<strong>${escapeHtml(text)}</strong>`);
+                } else {
+                    logs.push(escapeHtml(text));
+                }
+                updateOutput();
+            };
+
+            console.error = function(...args) {
+                originalError.apply(console, args);
+                const text = args.join(' ');
+                logs.push(`<span class="test-fail">${escapeHtml(text)}</span>`);
+                updateOutput();
+            };
+
+            console.group = function(...args) {
+                originalGroup.apply(console, args);
+                const text = args.join(' ');
+                logs.push(`<span class="test-group">${escapeHtml(text)}</span>`);
+                updateOutput();
+            };
+
+            console.groupEnd = function() {
+                originalGroupEnd.apply(console);
+                logs.push('');
+                updateOutput();
+            };
+
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            function updateOutput() {
+                output.innerHTML = logs.join('\n');
+            }
+
+            // Clear initial message
+            setTimeout(() => {
+                if (logs.length === 0) {
+                    output.textContent = '테스트를 실행할 수 없습니다. 콘솔에서 오류를 확인해주세요.';
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

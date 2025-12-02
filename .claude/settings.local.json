@@ -6,7 +6,9 @@
       "Bash(tree:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:youn12.tistory.com)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(findstr:*)",
+      "Bash(ls -la \"C:\\workspace\\intellij\\younwony.github.io\\assets\\data\"\" 2>nul || echo \"directory not found \")"
     ],
     "deny": [],
     "ask": []
