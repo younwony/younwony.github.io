@@ -41,518 +41,1307 @@
     {
       "id": 1,
       "category": "project",
-      "title": "[프로젝트 - ddangbbo] 모바일 청첩장",
-      "summary": "개발자 부부가 함께 만든 모바일 청첩장 프로젝트. Spring Boot, MySQL, JPA, jQuery 활용",
-      "date": "2025-02-08",
-      "tags": ["Spring Boot", "MySQL", "AWS", "JPA"],
-      "url": "https://youn12.tistory.com/89",
+      "title": "[프로젝트] ddangbbo 완벽 정리",
+      "summary": "모바일 청첩장 프로젝트의 전체 개발 과정과 기술 스택 정리",
+      "date": "2025-12-02",
+      "tags": [
+        "Spring Boot",
+        "MySQL",
+        "AWS",
+        "JPA",
+        "프로젝트"
+      ],
+      "url": "docs/blog/project/ddangbbo-summary.md",
       "series": "ddangbbo",
-      "content": "## 프로젝트 개요\n\n개발자 부부로서 결혼 준비 중 개발과 관련된 컨텐츠를 만들어보고자 시작한 모바일 청첩장 프로젝트입니다.\n\n> 프로젝트명 \"ddangbbo\"는 서로의 애칭인 '땅'과 '뽀'를 합쳐서 지었습니다.\n\n## 기술 스택\n\n| 구분 | 기술 |\n|------|------|\n| Backend | Spring Boot, JPA, MySQL |\n| Frontend | jQuery, JavaScript |\n| DevOps | GitHub Actions (CI/CD) |\n| Infrastructure | AWS EC2, Route 53 |\n\n## 구현된 기능 (10가지)\n\n### 1. Welcome Section\n- 웨딩 사진 표시\n- 떨어지는 벚꽃 애니메이션 효과\n\n### 2. Greeting Messages\n하객 그룹별 맞춤 메시지\n\n### 3. Photo Slideshow\n약 30장의 웨딩 사진 슬라이드쇼\n\n### 4. Making Film\n아내가 편집한 웨딩 비디오\n\n### 5. Calendar\n손으로 그린 결혼식 카운트다운 타이머\n\n### 6. Navigation\n네이버, Tmap, 카카오맵 연동\n\n### 7. Directions\n지역별 상세 교통 안내\n\n### 8. Ceremony Information\n식사 장소, 시간, 주차 정보\n\n### 9. Congratulations Messages\n- 하객 방명록 기능\n- 축하 메시지 보존\n\n### 10. Thanks & Sharing\n- 맞춤 감사 메시지\n- 카카오톡 공유\n- 링크 공유 기능\n\n## 프로젝트 회고\n\n### 기술적 성과\n- Spring Boot + JPA 기반 백엔드 구현\n- jQuery를 활용한 인터랙티브 프론트엔드\n- GitHub Actions를 통한 CI/CD 파이프라인 구축\n- AWS 인프라 직접 구성 경험\n\n### 특별한 점\n- 개발자 부부가 함께 만든 의미 있는 프로젝트\n- 실제 결혼식에서 사용된 실용적인 결과물"
+      "isSummary": true,
+      "content": "개발자 부부가 함께 만든 모바일 청첩장 프로젝트의 전체 개발 과정, 기술 스택, 구현 기능, 인프라 구성, 트러블슈팅 경험을 종합적으로 정리한 문서입니다."
     },
     {
       "id": 2,
-      "category": "project",
-      "title": "[프로젝트 - ddangbbo] 1 - EC2 생성",
-      "summary": "AWS EC2 인스턴스 생성 및 기본 설정",
-      "date": "2025-02-08",
-      "tags": ["AWS", "EC2"],
-      "url": "https://youn12.tistory.com/90",
-      "series": "ddangbbo",
-      "content": "## 서버 선택 이유\n\nAWS를 선택한 이유:\n1. 현재 회사에서 AWS를 사용 중\n2. AWS 지식을 강화하기 위함\n\n## 구현 내용\n\n- EC2 인스턴스 생성\n- 기본 설정값으로 생성 (큰 특이점 없음)\n\n## EC2 인스턴스 생성 단계\n\n1. AWS 콘솔 접속\n2. EC2 서비스 선택\n3. 인스턴스 시작\n4. AMI 선택 (Amazon Linux 2)\n5. 인스턴스 유형 선택\n6. 키 페어 생성/선택\n7. 보안 그룹 설정\n8. 인스턴스 시작"
+      "category": "algorithm",
+      "title": "[알고리즘] 문제 풀이 모음",
+      "summary": "LeetCode, Programmers 알고리즘 문제 풀이 정리",
+      "date": "2025-12-02",
+      "tags": [
+        "알고리즘",
+        "코딩테스트",
+        "LeetCode",
+        "Programmers"
+      ],
+      "url": "docs/blog/algorithm/algorithm-solutions-summary.md",
+      "series": "Algorithm",
+      "isSummary": true,
+      "content": "LeetCode와 Programmers에서 푼 알고리즘 문제들의 풀이 방법과 핵심 개념을 정리한 문서입니다. 다이나믹 프로그래밍, 해시, 완전탐색 등 다양한 알고리즘 기법을 다룹니다."
     },
     {
       "id": 3,
-      "category": "project",
-      "title": "[프로젝트 - ddangbbo] 2 - MySQL 설치",
-      "summary": "AWS EC2에 MySQL 설치 및 보안 그룹 설정",
-      "date": "2025-02-09",
-      "tags": ["AWS", "MySQL", "EC2"],
-      "url": "https://youn12.tistory.com/91",
-      "series": "ddangbbo",
-      "content": "## DB 선택\n\nMySQL을 선택한 이유: 회사에서 사용 중인 기술이기 때문\n\n## 설치 단계\n\n### 1단계: AWS MySQL 설치\n\n```bash\n# 리포지토리 설치\n# GPG key 설정\n# 상태 업데이트\n# 서버 설치\nmysql --version  # 설치 확인\n# 서버 시작 및 상태 확인\n# 임시 비밀번호 확인 후 root 계정 접속\n# 루트 비밀번호 변경\n# 새로운 사용자 생성 및 접속 테스트\n```\n\n### 2단계: DB 생성\n\n```sql\n-- 데이터베이스 생성\nCREATE DATABASE ddangbbo;\n\n-- 사용자 권한 확인 및 필요시 권한 부여\nGRANT ALL PRIVILEGES ON ddangbbo.* TO 'user'@'%';\n\n-- 변경사항 즉시 적용\nFLUSH PRIVILEGES;\n```\n\n### 3단계: EC2 보안 그룹 설정\n\n- MySQL/Aurora 유형 선택\n- 포트 3306 설정\n- 0.0.0.0/0으로 외부 접속 허용 (개발용)"
+      "category": "live-study",
+      "title": "[Java Live-Study] 완벽 정리",
+      "summary": "백기선님의 자바 라이브 스터디 13주차 전체 정리",
+      "date": "2025-12-02",
+      "tags": [
+        "Java",
+        "Live-Study",
+        "백기선"
+      ],
+      "url": "docs/blog/live_study/java-live-study-summary.md",
+      "series": "Java Live-Study",
+      "isSummary": true,
+      "content": "백기선님의 자바 라이브 스터디 13주차 전체 내용을 정리한 문서입니다. JVM 구조부터 람다, 스트림, 멀티스레드까지 Java의 핵심 개념을 다룹니다."
     },
     {
       "id": 4,
-      "category": "project",
-      "title": "[프로젝트 - ddangbbo] 3 - Route 53 도메인 구매",
-      "summary": "AWS Route 53을 이용한 도메인 등록",
-      "date": "2025-02-13",
-      "tags": ["AWS", "Route 53", "도메인"],
-      "url": "https://youn12.tistory.com/92",
-      "series": "ddangbbo",
-      "content": "## 목적\n\n> \"청첩장 URL을 의미 있게 하고자 도메인을 등록\"\n\n## 구현 내용\n\n- AWS Route 53 서비스 이용\n- 도메인 검색 및 결제\n- 도메인명: ddangbbo (서로의 애칭 조합)\n\n## Route 53 도메인 등록 단계\n\n1. AWS 콘솔에서 Route 53 접속\n2. 도메인 등록 선택\n3. 원하는 도메인명 검색\n4. 도메인 선택 및 결제\n5. 연락처 정보 입력\n6. 등록 완료 확인\n\n## EC2와 연결\n\n1. Route 53 호스팅 영역 생성\n2. A 레코드 추가\n3. EC2 퍼블릭 IP 입력\n4. DNS 전파 대기"
+      "category": "study",
+      "title": "[Clean Code] 완벽 정리",
+      "summary": "클린 코드 스터디 전체 내용 정리 - 로버트 C. 마틴",
+      "date": "2025-12-02",
+      "tags": [
+        "Clean Code",
+        "스터디",
+        "코드품질"
+      ],
+      "url": "docs/blog/study/clean-code-summary.md",
+      "series": "Clean Code",
+      "isSummary": true,
+      "content": "로버트 C. 마틴의 'Clean Code' 책을 기반으로 한 스터디 내용 정리입니다. 의미 있는 이름, 함수, 주석, 객체와 자료구조 등 클린 코드 작성 원칙을 다룹니다."
     },
     {
       "id": 5,
+      "category": "study",
+      "title": "[Effective Java] 완벽 정리",
+      "summary": "이펙티브 자바 스터디 전체 내용 정리 - 조슈아 블로크",
+      "date": "2025-12-02",
+      "tags": [
+        "Effective Java",
+        "Java",
+        "스터디"
+      ],
+      "url": "docs/blog/study/effective-java-summary.md",
+      "series": "Effective Java",
+      "isSummary": true,
+      "content": "조슈아 블로크의 'Effective Java' 책을 기반으로 한 스터디 내용 정리입니다. 객체 생성과 파괴, 모든 객체의 공통 메서드, 제네릭 등 Java 베스트 프랙티스를 다룹니다."
+    },
+    {
+      "id": 6,
+      "category": "study",
+      "title": "[객체지향의 사실과 오해] 완벽 정리",
+      "summary": "객체지향 프로그래밍의 본질 이해 - 조영호",
+      "date": "2025-12-02",
+      "tags": [
+        "OOP",
+        "객체지향",
+        "스터디"
+      ],
+      "url": "docs/blog/study/oop-facts-summary.md",
+      "series": "OOP",
+      "isSummary": true,
+      "content": "조영호 저자의 '객체지향의 사실과 오해'를 기반으로 한 스터디 내용 정리입니다. 역할, 책임, 협력 중심의 객체지향 설계 원칙을 다룹니다."
+    },
+    {
+      "id": 7,
+      "category": "devops",
+      "title": "[DevOps] 실무 경험 정리",
+      "summary": "AWS, Database, Linux, Server 운영 경험 종합 정리",
+      "date": "2025-12-02",
+      "tags": [
+        "AWS",
+        "Linux",
+        "Database",
+        "Server",
+        "DevOps"
+      ],
+      "url": "docs/blog/devops/devops-summary.md",
+      "series": "DevOps",
+      "isSummary": true,
+      "content": "AWS, Database, Linux, Server 관련 실무 경험과 문제 해결 방법을 종합적으로 정리한 문서입니다. EC2 복구, MySQL 설정, systemd 서비스 등을 다룹니다."
+    },
+    {
+      "id": 8,
+      "category": "etc",
+      "title": "[기술 종합] Framework, Frontend, Open Source, Python",
+      "summary": "eGovFrame, JavaScript, Elasticsearch, Python 크롤링 정리",
+      "date": "2025-12-02",
+      "tags": [
+        "eGovFrame",
+        "JavaScript",
+        "Elasticsearch",
+        "Python"
+      ],
+      "url": "docs/blog/etc/tech-misc-summary.md",
+      "series": "Tech Misc",
+      "isSummary": true,
+      "content": "eGovFrame 빌드 초기화, JavaScript 이미지 처리, Elasticsearch 설치, Python 웹 크롤링 등 다양한 기술 경험을 종합적으로 정리한 문서입니다."
+    },
+    {
+      "id": 9,
       "category": "project",
       "title": "[프로젝트 - ddangbbo] 4 - 프로젝트 개발",
       "summary": "모바일 청첩장 개발 - 10가지 기능 구현 (Welcome, 사진, 캘린더, 지도 등)",
       "date": "2025-03-04",
-      "tags": ["Spring Boot", "jQuery", "GitHub Actions"],
+      "tags": [
+        "Spring Boot",
+        "jQuery",
+        "GitHub Actions"
+      ],
       "url": "https://youn12.tistory.com/93",
       "series": "ddangbbo",
       "content": "## 개요\n\n> \"가장 많이 공들였던 개발 부분이다\"\n\n아내가 디자인 및 기타 측면을 지원했습니다.\n\n## 기술 스택\n\n- **Backend**: Spring Boot, JPA\n- **Frontend**: jQuery, JavaScript\n- **CI/CD**: GitHub Actions\n\n## 구현 기능\n\n### 1. Welcome Section\n웨딩 사진과 떨어지는 벚꽃 애니메이션\n\n### 2. Photo Slideshow\n약 30장의 웨딩 사진\n\n### 3. Calendar\n손으로 그린 카운트다운 타이머\n\n### 4. Navigation\n네이버/Tmap/카카오맵 연동\n\n### 5. Guestbook\n방명록 기능 (CRUD)\n\n## CI/CD 구성\n\n```yaml\nname: Deploy\non:\n  push:\n    branches: [main]\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Build\n        run: ./gradlew build\n      - name: Deploy\n        run: # EC2 배포 스크립트\n```"
     },
     {
-      "id": 6,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 1. 깨끗한 코드",
-      "summary": "5S 원칙, 르블랑의 법칙, 보이스카우트 규칙 - 깨끗한 코드의 특징과 중요성",
-      "date": "2022-06-28",
-      "tags": ["Clean Code", "리팩터링"],
-      "url": "https://youn12.tistory.com/53",
-      "series": "CleanCode",
-      "content": "## 5S 원칙\n\n프로그래밍에도 적용되는 5S 원칙:\n\n- **정리** (Seiri): 적절한 명명법\n- **정돈** (Seiton): 코드가 있어야 할 위치\n- **청소** (Seiso): 주석과 불필요한 코드 제거\n- **청결** (Seiketsu): 표준화된 스타일\n- **생활화** (Shitsuke): 규칙 준수 습관화\n\n## 르블랑의 법칙\n\n> \"나중은 결코 오지 않는다\"\n\n기한을 맞추는 유일한 방법은 **언제나 코드를 최대한 깨끗하게 유지**하는 습관입니다.\n\n## 깨끗한 코드의 특징\n\n- 세세한 사항까지 꼼꼼하게 처리\n- 한 가지에 집중\n- 다른 사람도 읽기 쉬움\n- 단위 및 인수 테스트 존재\n- 의미 있는 이름 사용\n\n## 단순 코드 규칙 (중요도 순)\n\n1. 모든 테스트 통과\n2. 중복 제거\n3. 설계 아이디어 표현\n4. 클래스/메서드/함수 최소화\n\n## 핵심 기법\n\n### 메서드 추출 (Extract Method)\n여러 기능을 수행하는 메서드를 기능별로 분리\n\n### 추상화\n추상 메서드나 추상 클래스로 구현을 감싸 유연성 확보\n\n### 보이스카우트 규칙\n> \"캠프장은 처음보다 더 깨끗하게 해 놓고 떠나라\""
-    },
-    {
-      "id": 7,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 2. 의미 있는 이름",
-      "summary": "의도를 분명히 밝히고, 그릇된 정보를 피하는 이름 짓기 규칙",
-      "date": "2022-06-28",
-      "tags": ["Clean Code", "네이밍"],
-      "url": "https://youn12.tistory.com/54",
-      "series": "CleanCode",
-      "content": "## 핵심 규칙들\n\n### 1. 의도를 분명히 밝혀라\n\n변수, 함수, 클래스명은 **\"존재 이유, 수행 기능, 사용 방법\"**에 답해야 합니다.\n\n```java\n// Bad\nint d;\n\n// Good\nint elapsedTimeInDays;\n```\n\n> 주석이 필요하면 의도가 불명확하다는 신호입니다.\n\n### 2. 그릇된 정보를 피해라\n\n```java\n// Bad - 실제 List가 아니라면 사용 금지\nList<Account> accountList;\n\n// Good\nList<Account> accounts;\n```\n\n### 3. 의미 있게 구분하라\n\n불용어(noise word) 추가를 피하세요.\n- `NameString` vs `Name` - 실질적 차이 없음\n\n### 4. 발음하기 쉬운 이름 사용\n\n```java\n// Bad\nDate genymdhms;\n\n// Good\nDate generationTimestamp;\n```\n\n### 5. 클래스/객체 이름\n\n- 명사나 명사구 사용 (Customer, WikiPage)\n- 동사 금지\n\n### 6. 메서드 이름\n\n- 동사나 동사구 사용 (postPayment, save)\n- 접근자는 get/set/is 접두어 사용\n\n### 7. 해법/문제 영역 이름\n\n> \"기술 개념에는 기술 이름이 가장 적합\"\n\nVisitor 패턴처럼 기술 용어를 활용하되, 적절한 용어가 없으면 문제 영역에서 가져옵니다."
-    },
-    {
-      "id": 8,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 3. 함수",
-      "summary": "작게 만들어라! 한 가지만 해라! 함수 인수 개수 최소화",
-      "date": "2022-07-01",
-      "tags": ["Clean Code", "함수"],
-      "url": "https://youn12.tistory.com/55",
-      "series": "CleanCode",
-      "content": "## 핵심 원칙들\n\n### 작게 만들어라!\n\n> \"Make functions small!\"\n\n함수는 최소한의 중첩(최대 1-2 들여쓰기)으로 가독성을 높여야 합니다.\n\n### 한 가지만 해라!\n\n함수는 한 가지를 잘 해야 하며, 관심사를 섞지 않아야 합니다.\n\n### 위에서 아래로 읽히게\n\n코드는 내러티브처럼 흘러가야 하며, 위에서 아래로 추상화 수준이 낮아져야 합니다.\n\n### 서술적인 이름\n\n긴 명확한 이름이 긴 주석보다 낫습니다.\n\n## 함수 인수\n\n### 이상적인 인수 개수\n\n0개 > 1개 > 2개 > 3개 이상은 피하라\n\n### 플래그 인수 금지\n\n플래그 인수는 단일 책임 원칙을 위반합니다.\n\n### 매개변수 객체 사용\n\n2-3개 인수가 필요하면 객체로 묶으세요.\n\n```java\n// Bad\nvoid drawCircle(int x, int y, int radius);\n\n// Good\nvoid drawCircle(Point center, int radius);\n```\n\n## 오류 처리\n\n### 오류 코드보다 예외\n\n오류 코드 열거형은 \"의존성 자석\"입니다. 예외를 사용하면 새 오류 유형 추가 시 재컴파일이 불필요합니다.\n\n### Try/Catch 블록 분리\n\n오류 처리는 별도 함수로 추출하세요."
-    },
-    {
-      "id": 9,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 4. 주석",
-      "summary": "주석을 가능한 줄이도록 노력하라 - 좋은 주석과 나쁜 주석",
-      "date": "2022-07-11",
-      "tags": ["Clean Code", "주석"],
-      "url": "https://youn12.tistory.com/56",
-      "series": "CleanCode",
-      "content": "## 핵심 원칙\n\n> \"주석을 가능한 줄이도록 꾸준히 노력한다\"\n\n코드 자체가 의도를 명확히 표현할 수 있다면 주석은 불필요합니다.\n\n## 좋은 주석의 예시\n\n### 법적 주석\n저작권이나 라이선스 정보\n\n### TODO 주석\n앞으로 구현해야 할 작업 (정기적으로 제거 필요)\n\n### 복잡한 알고리즘 설명\n\"왜 이 방식을 선택했는가\"를 설명하는 주석\n\n## 나쁜 주석 목록\n\n- 중복되거나 주절거리는 주석\n- 오해의 여지가 있는 주석\n- 의무적 주석\n- 코드 이력을 기록하는 주석\n- 있으나 마나한 주석\n\n## 결론\n\n> 정말 좋은 주석은 **주석을 달지 않는 방법**"
-    },
-    {
       "id": 10,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 5. 형식 맞추기",
-      "summary": "코드 형식은 의사소통의 일환 - 신문 기사 구조, 세로/가로 형식",
-      "date": "2022-07-13",
-      "tags": ["Clean Code", "코드 형식"],
-      "url": "https://youn12.tistory.com/57",
-      "series": "CleanCode",
-      "content": "## 핵심 개념\n\n> \"코드 형식은 의사소통의 일환\"\n\n구현 코드는 변하지만, **\"개발자의 스타일과 규율은 사라지지 않는다\"**\n\n## 신문 기사 구조\n\n- 최상단: 고차원 개념과 알고리즘\n- 중간: 세부 내용\n- 하단: 저차원 함수와 세부 내역\n\n## 세로 형식\n\n- 빈 행으로 개념 분리\n- 밀접한 코드는 가까이 배치\n- 변수는 사용 위치 근처에 선언\n- 인스턴스 변수는 클래스 맨 처음\n- 호출 함수를 호출되는 함수보다 먼저 배치\n\n## 가로 형식\n\n- 행길이 제한 (저자는 120자 기준)\n- 공백으로 밀접/느슨한 개념 구분\n\n## 팀 규칙\n\n> \"팀에 속한다면 자신이 선호해야 할 규칙은 팀 규칙\"\n\n개인의 스타일보다 일관성을 우선해야 합니다."
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 3 - Route 53 도메인 구매",
+      "summary": "AWS Route 53을 이용한 도메인 등록",
+      "date": "2025-02-13",
+      "tags": [
+        "AWS",
+        "Route 53",
+        "도메인"
+      ],
+      "url": "https://youn12.tistory.com/92",
+      "series": "ddangbbo",
+      "content": "## 목적\n\n> \"청첩장 URL을 의미 있게 하고자 도메인을 등록\"\n\n## 구현 내용\n\n- AWS Route 53 서비스 이용\n- 도메인 검색 및 결제\n- 도메인명: ddangbbo (서로의 애칭 조합)\n\n## Route 53 도메인 등록 단계\n\n1. AWS 콘솔에서 Route 53 접속\n2. 도메인 등록 선택\n3. 원하는 도메인명 검색\n4. 도메인 선택 및 결제\n5. 연락처 정보 입력\n6. 등록 완료 확인\n\n## EC2와 연결\n\n1. Route 53 호스팅 영역 생성\n2. A 레코드 추가\n3. EC2 퍼블릭 IP 입력\n4. DNS 전파 대기"
     },
     {
       "id": 11,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 6. 객체와 자료구조",
-      "summary": "자료 추상화, 객체/자료구조 비대칭, 디미터 법칙",
-      "date": "2022-07-14",
-      "tags": ["Clean Code", "OOP"],
-      "url": "https://youn12.tistory.com/58",
-      "series": "CleanCode",
-      "content": "## 핵심 주제\n\n변수를 비공개로 정의하면서도 get/set 함수를 공개하는 모순을 다룹니다.\n\n## 자료 추상화\n\n> \"get/set 함수만으로는 클래스가 되지 않는다\"\n\n추상 인터페이스를 통해 사용자가 구현을 모른 채 핵심을 조작할 수 있어야 합니다.\n\n## 객체/자료구조 비대칭\n\n| 구분 | 객체 | 자료구조 |\n|------|------|----------|\n| 특징 | 함수 공개, 자료 숨김 | 자료 노출, 함수 미제공 |\n| 장점 | 새 클래스 추가 용이 | 새 함수 추가 용이 |\n\n- 새로운 타입이 필요하면 → 객체지향\n- 새로운 함수가 필요하면 → 절차적 코드\n\n## 디미터 법칙\n\n> \"모듈은 조작하는 객체의 속사정을 몰라야 한다\"\n\n기차 충돌 코드(연쇄된 메서드 호출)를 피하세요.\n\n## 잡종 구조\n\n객체와 자료구조가 섞인 구조는 **\"양쪽의 단점만 모아놓게\"** 되므로 피해야 합니다.\n\n## DTO/활성 레코드\n\n자료 전달 객체는 자료구조로 취급하되, 비즈니스 규칙은 별도 객체에서 처리해야 합니다."
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 2 - MySQL 설치",
+      "summary": "AWS EC2에 MySQL 설치 및 보안 그룹 설정",
+      "date": "2025-02-09",
+      "tags": [
+        "AWS",
+        "MySQL",
+        "EC2"
+      ],
+      "url": "https://youn12.tistory.com/91",
+      "series": "ddangbbo",
+      "content": "## DB 선택\n\nMySQL을 선택한 이유: 회사에서 사용 중인 기술이기 때문\n\n## 설치 단계\n\n### 1단계: AWS MySQL 설치\n\n```bash\n# 리포지토리 설치\n# GPG key 설정\n# 상태 업데이트\n# 서버 설치\nmysql --version  # 설치 확인\n# 서버 시작 및 상태 확인\n# 임시 비밀번호 확인 후 root 계정 접속\n# 루트 비밀번호 변경\n# 새로운 사용자 생성 및 접속 테스트\n```\n\n### 2단계: DB 생성\n\n```sql\n-- 데이터베이스 생성\nCREATE DATABASE ddangbbo;\n\n-- 사용자 권한 확인 및 필요시 권한 부여\nGRANT ALL PRIVILEGES ON ddangbbo.* TO 'user'@'%';\n\n-- 변경사항 즉시 적용\nFLUSH PRIVILEGES;\n```\n\n### 3단계: EC2 보안 그룹 설정\n\n- MySQL/Aurora 유형 선택\n- 포트 3306 설정\n- 0.0.0.0/0으로 외부 접속 허용 (개발용)"
     },
     {
       "id": 12,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 7. 오류 처리",
-      "summary": "예외 사용, Try-Catch-Finally, Unchecked 예외, Null 회피",
-      "date": "2022-07-16",
-      "tags": ["Clean Code", "예외처리"],
-      "url": "https://youn12.tistory.com/59",
-      "series": "CleanCode",
-      "content": "## 핵심 원칙들\n\n### 1. 예외 사용 선호\n오류 코드와 if/else 문보다 try/catch를 통한 예외 처리가 더 깔끔합니다.\n\n### 2. Try-Catch-Finally부터 작성\n> \"try 블록은 트랜잭션과 비슷하다\"\n\n예외 발생 코드 작성 시 먼저 try-catch-finally로 시작하면 안정적입니다.\n\n### 3. Unchecked 예외 사용\nChecked 예외는 OCP를 위반하고 캡슐화를 깨뜨립니다.\n\n### 4. 의미 있는 예외 정보\n오류 메시지에 실패한 연산, 실패 유형 등 충분한 정보를 담아야 합니다.\n\n### 5. Wrapper 패턴 활용\n외부 API의 다양한 예외들을 하나의 예외로 변환하면 의존성이 줄어듭니다.\n\n### 6. Null 회피\nnull 반환/전달 대신 예외 발생이나 특수 사례 객체(`Collections.emptyList()`)를 사용하세요.\n\n## 결론\n\n> \"깨끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 한다\""
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 모바일 청첩장",
+      "summary": "개발자 부부가 함께 만든 모바일 청첩장 프로젝트. Spring Boot, MySQL, JPA, jQuery 활용",
+      "date": "2025-02-08",
+      "tags": [
+        "Spring Boot",
+        "MySQL",
+        "AWS",
+        "JPA"
+      ],
+      "url": "https://youn12.tistory.com/89",
+      "series": "ddangbbo",
+      "content": "## 프로젝트 개요\n\n개발자 부부로서 결혼 준비 중 개발과 관련된 컨텐츠를 만들어보고자 시작한 모바일 청첩장 프로젝트입니다.\n\n> 프로젝트명 \"ddangbbo\"는 서로의 애칭인 '땅'과 '뽀'를 합쳐서 지었습니다.\n\n## 기술 스택\n\n| 구분 | 기술 |\n|------|------|\n| Backend | Spring Boot, JPA, MySQL |\n| Frontend | jQuery, JavaScript |\n| DevOps | GitHub Actions (CI/CD) |\n| Infrastructure | AWS EC2, Route 53 |\n\n## 구현된 기능 (10가지)\n\n### 1. Welcome Section\n- 웨딩 사진 표시\n- 떨어지는 벚꽃 애니메이션 효과\n\n### 2. Greeting Messages\n하객 그룹별 맞춤 메시지\n\n### 3. Photo Slideshow\n약 30장의 웨딩 사진 슬라이드쇼\n\n### 4. Making Film\n아내가 편집한 웨딩 비디오\n\n### 5. Calendar\n손으로 그린 결혼식 카운트다운 타이머\n\n### 6. Navigation\n네이버, Tmap, 카카오맵 연동\n\n### 7. Directions\n지역별 상세 교통 안내\n\n### 8. Ceremony Information\n식사 장소, 시간, 주차 정보\n\n### 9. Congratulations Messages\n- 하객 방명록 기능\n- 축하 메시지 보존\n\n### 10. Thanks & Sharing\n- 맞춤 감사 메시지\n- 카카오톡 공유\n- 링크 공유 기능\n\n## 프로젝트 회고\n\n### 기술적 성과\n- Spring Boot + JPA 기반 백엔드 구현\n- jQuery를 활용한 인터랙티브 프론트엔드\n- GitHub Actions를 통한 CI/CD 파이프라인 구축\n- AWS 인프라 직접 구성 경험\n\n### 특별한 점\n- 개발자 부부가 함께 만든 의미 있는 프로젝트\n- 실제 결혼식에서 사용된 실용적인 결과물"
     },
     {
       "id": 13,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 8. 경계",
-      "summary": "외부 코드 사용, 학습 테스트, Adapter 패턴으로 경계 관리",
-      "date": "2022-07-16",
-      "tags": ["Clean Code", "경계"],
-      "url": "https://youn12.tistory.com/60",
-      "series": "CleanCode",
-      "content": "## 개요\n\n> \"시스템에 들어가는 모든 소프트웨어를 직접 개발하는 경우는 드물다\"\n\n패키지, 오픈소스, 사내 컴포넌트 등을 깔끔하게 통합하는 기법을 설명합니다.\n\n## 핵심 내용\n\n### 1. 외부 코드 사용하기\n경계 인터페이스를 공개 API로 직접 넘기면 인터페이스 변경 시 수정할 코드가 많아집니다.\n\n**해결책**: 경계 인터페이스를 클래스 안으로 숨겨 객체 유형을 관리하세요.\n\n### 2. 경계 살피고 익히기\n외부 API를 신뢰하지 말고 **학습 테스트**를 작성하세요.\n\n### 3. 학습 테스트의 가치\n> \"필요한 지식만 확보하는 손쉬운 방법\"\n\n패키지 업그레이드 시 경계 테스트가 있으면 이전이 수월합니다.\n\n### 4. 미존재 코드 사용하기\n모르는 코드와 아는 코드를 분리하여 **Adapter 패턴**으로 API 사용을 캡슐화합니다.\n\n### 5. 깨끗한 경계\n- 변경이 대표적인 경계에서는 코드를 깔끔히 분리\n- 테스트 케이스로 기대치 정의\n- 외부 코드보다 우리 코드에 의존\n- 새로운 클래스로 감싸거나 Adapter 패턴 사용"
+      "category": "project",
+      "title": "[프로젝트 - ddangbbo] 1 - EC2 생성",
+      "summary": "AWS EC2 인스턴스 생성 및 기본 설정",
+      "date": "2025-02-08",
+      "tags": [
+        "AWS",
+        "EC2"
+      ],
+      "url": "https://youn12.tistory.com/90",
+      "series": "ddangbbo",
+      "content": "## 서버 선택 이유\n\nAWS를 선택한 이유:\n1. 현재 회사에서 AWS를 사용 중\n2. AWS 지식을 강화하기 위함\n\n## 구현 내용\n\n- EC2 인스턴스 생성\n- 기본 설정값으로 생성 (큰 특이점 없음)\n\n## EC2 인스턴스 생성 단계\n\n1. AWS 콘솔 접속\n2. EC2 서비스 선택\n3. 인스턴스 시작\n4. AMI 선택 (Amazon Linux 2)\n5. 인스턴스 유형 선택\n6. 키 페어 생성/선택\n7. 보안 그룹 설정\n8. 인스턴스 시작"
     },
     {
       "id": 14,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 9. 단위 테스트",
-      "summary": "TDD 세 가지 법칙, F.I.R.S.T 원칙",
-      "date": "2022-07-17",
-      "tags": ["Clean Code", "TDD", "테스트"],
-      "url": "https://youn12.tistory.com/61",
-      "series": "CleanCode",
-      "content": "## TDD의 세 가지 법칙\n\n1. 실패하는 테스트를 먼저 작성한 후 실제 코드 작성\n2. 컴파일만 실패하도록 최소한의 테스트 작성\n3. \"테스트를 통과할 정도로만 실제 코드를 작성\"\n\n## 깨끗한 테스트 코드의 중요성\n\n> \"지저분한 테스트 코드를 짜는 건 짜지 않는 것보다 더 못하다\"\n\n테스트 코드가 유지되지 않으면 실제 코드도 점점 악화됩니다.\n\n## 테스트의 가치\n\n테스트 케이스가 존재하면 개발자는 변경을 두려워하지 않습니다.\n\n## F.I.R.S.T 원칙\n\n- **F**ast: 빠른 실행 속도\n- **I**ndependent: 테스트 간 독립성\n- **R**epeatable: 모든 환경에서 반복 가능\n- **S**elf-Validating: 명확한 성공/실패 판정\n- **T**imely: 실제 코드 작성 전에 작성\n\n> \"테스트 코드를 깨끗이 유지하자\""
-    },
-    {
-      "id": 15,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 10. 클래스",
-      "summary": "클래스 구조, 캡슐화, 단일 책임 원칙(SRP), 응집도",
-      "date": "2022-08-01",
-      "tags": ["Clean Code", "클래스", "SRP"],
-      "url": "https://youn12.tistory.com/62",
-      "series": "CleanCode",
-      "content": "## 클래스 구조\n\n표준 Java 관례에 따른 순서:\n1. static public 변수\n2. static private 변수\n3. private 인스턴스 변수\n4. public 함수\n5. private 함수 (호출하는 public 함수 다음에 배치)\n\n## 캡슐화\n\n> \"변수와 유틸리티 함수는 가급적 공개하지 않는 것이 좋다\"\n\n테스트를 위해 protected 접근이 필요할 때도 있지만, 캡슐화를 풀어주는 것은 최후의 수단입니다.\n\n## 클래스 크기\n\n함수는 줄 수로 측정하지만, 클래스 크기는 **\"맡은 책임의 수\"**로 결정됩니다.\n\n## 단일 책임 원칙 (SRP)\n\n> \"클래스는 변경해야 할 이유가 하나뿐이어야 한다\"\n\n작은 클래스 여러 개가 큰 클래스 하나보다 낫습니다.\n\n## 응집도\n\n메서드가 여러 인스턴스 변수를 사용해야 높은 응집도를 유지합니다. 특정 변수가 일부 메서드에서만 사용되면 새 클래스 추출을 고려하세요.\n\n## 변경으로부터 격리\n\n결합도를 줄이고 구체 구현보다 추상화에 의존하면 시스템이 유연해집니다 (의존성 역전 원칙)."
-    },
-    {
-      "id": 16,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 11. 시스템",
-      "summary": "시스템 제작과 사용 분리, 확장성, 횡단 관심사, AOP",
-      "date": "2022-08-04",
-      "tags": ["Clean Code", "시스템", "AOP"],
-      "url": "https://youn12.tistory.com/64",
-      "series": "CleanCode",
-      "content": "## 핵심 주제\n\n높은 추상화 수준에서 깨끗한 시스템 설계 원칙을 다룹니다.\n\n> 도시처럼 소프트웨어도 \"각자의 역할에 맞는 팀\"이 필요합니다.\n\n## 1. 시스템 제작과 사용의 분리\n\n초기화 지연 기법의 한계:\n- 의존성 증가\n- 테스트 어려움\n- 단일책임원칙 위배\n\n**해결책**:\n- Main 분리\n- 팩토리 패턴\n- 의존성 주입(DI)\n\n## 2. 확장성\n\n반복적 애자일 방식으로 점진적 발전 가능합니다.\n> \"관심사를 적절히 분리\"하면 아키텍처가 진화할 수 있습니다.\n\n## 3. 횡단 관심사\n\nAOP(Aspect-Oriented Programming)로 영속성, 보안 등을 분리하여 핵심 로직에 영향 없이 처리합니다.\n\n## 4. 테스트 주도 아키텍처\n\nPOJO 객체 기반 모듈화와 관점 활용으로 진정한 테스트 주도 설계가 가능합니다.\n\n## 5. 기타 원칙\n\n- 최선의 결정은 \"마지막 순간까지 미루기\"로 정보수집 후 진행\n- 표준은 고객 가치 위에 있어야 함\n- 도메인 특화 언어(DSL)로 의사소통 간극 축소"
-    },
-    {
-      "id": 17,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 12. 창발성",
-      "summary": "Kent Beck의 4가지 단순 설계 규칙 - 테스트, 중복 제거, 표현성",
-      "date": "2022-08-04",
-      "tags": ["Clean Code", "설계"],
-      "url": "https://youn12.tistory.com/65",
-      "series": "CleanCode",
-      "content": "## Kent Beck의 4가지 단순 설계 규칙 (우선순위 순)\n\n1. **모든 테스트를 실행한다** (최고 우선순위)\n2. **중복을 없앤다**\n3. **프로그래머 의도를 표현한다**\n4. **클래스와 메서드 수를 최소로 줄인다** (최저 우선순위)\n\n## 규칙 1: 테스트 실행\n\n> \"검증이 불가능한 시스템은 절대 출시하면 안 된다\"\n\n테스트 가능성이 SRP 준수와 낮은 결합도를 자동으로 유도합니다.\n\n## 규칙 2~4: 리팩터링\n\n테스트 케이스 작성 후 점진적으로 설계 품질을 개선합니다.\n- 응집도 향상\n- 결합도 감소\n- 관심사 분리\n\n## 규칙 3: 표현성\n\n- 좋은 이름 선택\n- 함수·클래스 크기 축소\n- 표준 디자인 패턴 활용\n- 단위 테스트를 문서처럼 작성\n\n## 규칙 4: 최소화\n\n극단적 적용 피하기"
-    },
-    {
-      "id": 18,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 13. 동시성",
-      "summary": "동시성 미신과 진실, 방어 원칙, 데드락, 실행 모델",
-      "date": "2022-08-10",
-      "tags": ["Clean Code", "동시성", "멀티스레드"],
-      "url": "https://youn12.tistory.com/66",
-      "series": "CleanCode",
-      "content": "## 핵심 개념\n\n> 동시성의 정의: \"무엇\"과 \"언제\"를 분리하는 전략\n\n## 동시성의 미신과 진실\n\n**잘못된 인식**:\n- 동시성이 항상 성능을 높인다\n- 설계가 변하지 않는다\n- 컨테이너를 사용하면 이해할 필요가 없다\n\n**올바른 인식**:\n> \"동시성은 다소 부하를 유발하며, 복잡하고, 버그 재현이 어렵습니다\"\n\n## 동시성 방어 원칙\n\n1. **단일 책임 원칙(SRP)**: 동시성 코드는 별도로 분리\n2. **자료 범위 제한**: 공유 자료 최소화, `synchronized` 활용\n3. **자료 사본 사용**: 원본 대신 읽기 전용 복사본 활용\n4. **독립적 스레드**: 각 스레드는 고유 데이터로 독립 운영\n\n## 주요 개념\n\n- **한정된 자원**: DB 연결, 버퍼 등 제한된 리소스\n- **상호 배제**: 한 번에 한 스레드만 접근\n- **기아 상태**: 스레드가 자원을 영원히 기다림\n- **데드락**: \"여러 스레드가 서로 끝나기를 기다린다\"\n- **라이브락**: 스레드들이 상호 간섭으로 진행 불가\n\n## 실행 모델\n\n- **생산자-소비자**: 대기열을 통한 정보 교환\n- **읽기-쓰기**: 공유자원의 읽기/쓰기 균형 관리\n\n## 구현 지침\n\n1. 동기화 최소화 (임계 영역을 최대한 작게)\n2. 종료 코드는 개발 초기부터 구현\n3. 다양한 환경에서 테스트\n4. 보조 코드 삽입으로 오류 유발 테스트\n5. 순차 코드부터 검증 (POJO)"
-    },
-    {
-      "id": 19,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 14. 점진적인 개선",
-      "summary": "프로그래밍은 공예, 깨끗한 코드는 정리 후에 - TDD 기반 개선",
-      "date": "2022-08-10",
-      "tags": ["Clean Code", "리팩터링", "TDD"],
-      "url": "https://youn12.tistory.com/67",
-      "series": "CleanCode",
-      "content": "## 핵심 원칙\n\n> \"프로그래밍은 과학보다 공예에 가깝다\"\n\n> \"깨끗한 코드를 짜려면 먼저 지저분한 코드를 짠 뒤에 정리해야 한다\"\n\n단순히 동작하는 코드만으로는 부족합니다. 전문가 정신이 필요합니다.\n\n## 개선 시 주의사항\n\n큰 구조 변경은 프로그램을 망칠 수 있으며, 일부는 회복 불가능한 상태에 빠질 수 있습니다.\n\n## 해결 방법: TDD\n\n> \"언제 어느 때라도 시스템이 돌아가야 한다\"\n\n변경 전후 동일한 동작을 보장하기 위해:\n- 단위 테스트: JUnit 사용\n- 인수 테스트: FitNess 위키 활용\n\n## 핵심 교훈\n\n즉각적인 정리가 중요합니다. 시간이 지날수록 개선 비용이 증가합니다."
-    },
-    {
-      "id": 20,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 15. JUnit 들여다보기",
-      "summary": "JUnit 프레임워크 분석, 보이스카우트 규칙",
-      "date": "2022-08-11",
-      "tags": ["Clean Code", "JUnit", "테스트"],
-      "url": "https://youn12.tistory.com/68",
-      "series": "CleanCode",
-      "content": "## 핵심 메시지\n\n> \"JUnit은 자바 프레임워크 중 가장 유명하다. 개념은 단순하며 정의는 정밀하고 구현은 우아하다\"\n\n이 장은 코드 예제로 구성되어 있으며, 실제 프레임워크 구현을 분석합니다.\n\n## 보이스카우트 규칙\n\n> \"캠프장은 처음 왔을 때보다 더 깨끗하게 해 놓고 떠나라\"\n\n코드 개선은 지속적인 책임입니다.\n\n## 저자의 통찰\n\n- 주어진 기능 개발뿐 아니라 주변 코드의 개선도 함께 고려\n- 완벽한 모듈도 지속적 개선 필요\n- 코드 품질 향상은 모든 개발자의 책임"
-    },
-    {
-      "id": 21,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 16. SerialDate 리팩터링",
-      "summary": "SerialDate 분석, 테스트 커버리지, Boy Scout Rule",
-      "date": "2022-08-14",
-      "tags": ["Clean Code", "리팩터링"],
-      "url": "https://youn12.tistory.com/69",
-      "series": "CleanCode",
-      "content": "## 핵심 내용\n\nDate 클래스인 SerialDate를 분석하고 테스트 케이스 부족 문제와 리팩터링 과정을 다룹니다.\n\n## Boy Scout Rule\n\n> \"check in code cleaner than when you checked it out\"\n\n시간 투자에도 불구하고 다음과 같은 가치가 있었습니다:\n- 테스트 커버리지 증가\n- 버그 수정\n- 코드 크기 감소\n- 코드 명확성 향상"
-    },
-    {
-      "id": 22,
-      "category": "study",
-      "subcategory": "CleanCode",
-      "title": "[CleanCode] 17. 냄새와 휴리스틱",
-      "summary": "코드 냄새와 휴리스틱 정리 - 주석, 환경, 함수, 일반, 이름, 테스트",
-      "date": "2022-08-15",
-      "tags": ["Clean Code", "리팩터링"],
-      "url": "https://youn12.tistory.com/70",
-      "series": "CleanCode",
-      "content": "## 코드 냄새 (Code Smells)\n\n### 주석 (C1~C5)\n- 버전 관리 시스템에 속한 정보를 주석으로 남기지 말 것\n- 불필요하거나 잘못된 주석은 제거\n- 주석 처리된 코드는 즉시 삭제\n\n### 환경 (E1~E2)\n- 빌드는 한 단계로 끝나야 함\n- 모든 단위 테스트는 한 명령으로 실행 가능해야 함\n\n### 함수 (F1~F4)\n- 함수 인수 개수 최소화\n- 출력 인수 피하기\n- 함수는 한 가지 기능만 수행\n- 호출되지 않는 함수는 삭제\n\n### 일반 (G1~G36)\n\n**G5: 중복 (DRY 원칙)**\n> \"이 책에 나오는 가장 중요한 규칙 중 하나\"\n\n중복은 추상화 기회로 봐야 합니다.\n\n**G6: 추상화 수준**\n저차원 개념은 파생 클래스에, 고차원 개념은 기초 클래스에 배치\n\n**G23: 다형성**\nSwitch/Case 문보다 다형성 활용을 우선\n\n**G36: 추이적 탐색 회피**\n디미터 법칙(Demeter's Law)을 따를 것\n\n### 자바 (J1~J3)\n- Wildcard import 권장 (결합도 감소)\n- 상수 상속 금지, static import 사용\n- int 상수 대신 Enum 활용\n\n### 이름 (N1~N7)\n> \"소프트웨어의 가독성의 90%는 이름이 결정\"\n\n- 구현을 드러내는 이름 피하기\n- 표준 명명법 사용\n- 이름 길이는 범위에 비례\n- 헝가리안 표기법 피하기\n\n### 테스트 (T1~T9)\n- 깨질 만한 모든 부분을 검증\n- 커버리지 도구 활용\n- 경계 조건 철저히 테스트\n- 버그 주변 코드 집중 테스트\n- 느린 테스트는 실행되지 않음\n\n## 결론\n\n> \"목록을 따른다고 깨끗한 코드가 나오지 않는다. 전문가 정신과 장인 정신은 가치에서 나온다\""
-    },
-    {
-      "id": 23,
-      "category": "study",
-      "subcategory": "Effective Java",
-      "title": "[Effective Java 3/E] 2장 객체 생성과 파괴",
-      "summary": "정적 팩터리 메서드, 빌더 패턴, 싱글턴, 의존 객체 주입",
-      "date": "2023-04-30",
-      "tags": ["Effective Java", "디자인 패턴"],
-      "url": "https://youn12.tistory.com/84",
-      "series": "Effective Java",
-      "content": "## 아이템 1: 정적 팩터리 메서드를 고려하라\n\n생성자 대신 정적 팩터리 메서드를 고려해야 하는 이유:\n- 명명의 자유로움 (이름으로 의미 전달)\n- 인스턴스 통제 가능\n- 하위 타입 반환 가능\n- 입력 매개변수에 따라 다른 클래스 객체 반환 가능\n\n**단점**: 생성자보다 찾기 어려움\n\n## 아이템 2: 빌더 패턴\n\n많은 매개변수를 가진 클래스의 경우:\n- 점층적 생성자 패턴 → 읽기 어려움\n- 자바빈즈 패턴 → 일관성 문제\n- **빌더 패턴** → 가독성과 안정성 모두 확보\n\n## 아이템 3: 싱글턴 보증\n\n싱글턴 보장 방법:\n1. private 생성자 + public static final 필드\n2. private 생성자 + 정적 팩터리 메서드\n3. **열거 타입** (가장 견고, 리플렉션 및 직렬화 공격에 안전)\n\n## 아이템 5: 의존 객체 주입\n\n> \"의존성을 하드코딩하지 말고 주입하라\"\n\n의존 객체 주입은:\n- 유연성 향상\n- 테스트 용이성 증가\n- 재사용성 증가\n\n## 아이템 9: try-with-resources\n\n```java\ntry (InputStream in = new FileInputStream(src)) {\n    // ...\n}\n```\n\n자원 정리와 예외 억제를 적절히 처리합니다."
-    },
-    {
-      "id": 24,
-      "category": "study",
-      "subcategory": "Effective Java",
-      "title": "[Effective Java 3/E] 3장 모든 객체의 공통 메서드",
-      "summary": "equals, hashCode, toString, clone, Comparable 재정의 규약",
-      "date": "2023-05-07",
-      "tags": ["Effective Java", "Object"],
-      "url": "https://youn12.tistory.com/85",
-      "series": "Effective Java",
-      "content": "## 아이템 10: equals 규약\n\nequals 재정의 시 5가지 규약:\n- **반사성**: x.equals(x) == true\n- **대칭성**: x.equals(y) == y.equals(x)\n- **추이성**: x.equals(y) && y.equals(z) → x.equals(z)\n- **일관성**: 일정하게 같은 결과\n- **null-아님**: x.equals(null) == false\n\n## 아이템 11: hashCode 재정의\n\n> 같은 객체는 같은 해시코드를 반환해야 합니다.\n\n그렇지 않으면 HashMap이나 HashSet에서 문제가 발생합니다.\n\n## 아이템 12: toString 재정의\n\n> \"모든 구체 클래스에서 Object의 toString을 재정의하자\"\n\n디버깅과 로깅에 유용합니다.\n\n## 아이템 13: clone 주의사항\n\n**더 나은 대안**: 복사 생성자, 복사 팩터리\n\n```java\npublic Yum(Yum yum) { ... }  // 복사 생성자\npublic static Yum newInstance(Yum yum) { ... }  // 복사 팩터리\n```\n\n## 아이템 14: Comparable 구현\n\ncompareTo 규약:\n- sgn(x.compareTo(y)) == -sgn(y.compareTo(x))\n- 추이성 보장\n- equals와 일관성 유지 권장"
-    },
-    {
-      "id": 25,
-      "category": "study",
-      "subcategory": "Effective Java",
-      "title": "[Effective Java 3/E] 4장 클래스와 인터페이스",
-      "summary": "접근 권한 최소화, 상속보다 컴포지션, 추상 클래스보다 인터페이스",
-      "date": "2023-05-23",
-      "tags": ["Effective Java", "OOP"],
-      "url": "https://youn12.tistory.com/86",
-      "series": "Effective Java",
-      "content": "## 아이템 15: 접근 권한 최소화\n\n> \"정보 은닉\"은 소프트웨어 설계의 근본 원칙\n\n- 모든 클래스와 멤버는 가능한 한 접근 불가능하게\n- public 클래스는 가변 필드를 직접 노출하지 않음\n\n## 아이템 17: 불변 클래스\n\n불변 클래스의 5가지 규칙:\n1. setter를 제공하지 않음\n2. 확장을 막음 (final 클래스 또는 private 생성자)\n3. 모든 필드를 final로 선언\n4. 모든 필드를 private으로 선언\n5. 가변 컴포넌트에 대한 접근을 막음\n\n## 아이템 18: 상속보다 컴포지션\n\n> 상속은 캡슐화를 깨뜨립니다.\n\n래퍼 클래스(데코레이터 패턴)를 사용하여 기능을 확장하세요.\n\n## 아이템 20: 인터페이스 우선\n\n인터페이스의 장점:\n- 다중 상속 가능\n- 믹스인 정의 가능\n- 계층구조 없는 타입 프레임워크\n\n## 아이템 22: 인터페이스는 타입 정의 용도로만\n\n> 상수 인터페이스 안티패턴을 피하세요.\n\n```java\n// Bad - 상수 인터페이스\npublic interface Constants {\n    double PI = 3.14159;\n}\n\n// Good - 상수 유틸리티 클래스\npublic final class Constants {\n    private Constants() { }\n    public static final double PI = 3.14159;\n}\n```"
-    },
-    {
-      "id": 26,
-      "category": "study",
-      "subcategory": "함께자라기",
-      "title": "[함께자라기] 1. 자라기",
-      "summary": "의도적 수련, 복리 효과, 학습 프레임 - 지속적 성장의 원리",
-      "date": "2022-08-28",
-      "tags": ["함께자라기", "성장"],
-      "url": "https://youn12.tistory.com/75",
-      "series": "함께자라기",
-      "content": "## 야생 학습 vs 학교 학습\n\n| 구분 | 야생 학습 | 학교 학습 |\n|------|-----------|-----------|\n| 특징 | 협력적, 불확실, 명확한 평가 없음 | 개인적, 정해진 정답, 명확한 평가 |\n| 중요성 | 현실에서 더 중요 | 기초 습득에 유용 |\n\n## 의도적 수련의 중요성\n\n> 단순한 경험 시간이 아닌 **\"자신의 약점을 개선하려는 훈련\"**이 실력 향상을 결정합니다.\n\n핵심: **짧은 피드백 사이클**이 매우 효과적\n\n## 복리 효과 창출\n\n세 가지 작업 균형:\n- **A**: 원래 업무\n- **B**: 업무 개선\n- **C**: 개선 방법 개선\n\nA, B, C를 균형있게 수행하면 \"매일 더 나은 나\"가 됩니다.\n\n## 학습 프레임 채택\n\n> **\"잘하기\"**보다 **\"자라기\"**에 초점을 맞추면 더 많이 배웁니다.\n\n## 핵심 메시지\n\n> **지속적인 성장은 의도적이고 체계적인 노력**을 통해서만 가능합니다."
-    },
-    {
-      "id": 27,
-      "category": "study",
-      "subcategory": "함께자라기",
-      "title": "[함께자라기] 2. 함께",
-      "summary": "심리적 안전감, 협력을 통한 추상화, 빠른 학습팀의 특징",
-      "date": "2022-08-28",
-      "tags": ["함께자라기", "협력"],
-      "url": "https://youn12.tistory.com/76",
-      "series": "함께자라기",
-      "content": "## 조엘 테스트와 개선 우선순위\n\n| 개선 영역 | 효과 |\n|----------|------|\n| 도구 개선 | 3배 |\n| **관리 개선** | **64배** |\n\n> 관리자들은 자신을 바꾸기보다 도구부터 개선하려는 경향이 있습니다.\n\n## 협력을 통한 추상화\n\n> \"다른 사람과 협동하고 대화\"하며 함께 문제를 해결할 때 코드의 추상성이 높아집니다.\n\n뛰어난 프로그래머의 특징:\n- 단순히 기술이 뛰어나기보다\n- **커뮤니케이션과 협력 능력이 우수**\n\n## 구글의 팀 연구\n\n탁월한 팀의 핵심: **심리적 안전감**\n\n> \"실수나 질문이 처벌받지 않을 거라는 믿음\"\n\n## 빠른 학습팀의 특징\n\n- 새로운 기술을 **\"함께 일하는 방법\"**으로 접근\n- **실패에 관대**\n- **학습과 실행을 하나로** 봄"
-    },
-    {
-      "id": 28,
-      "category": "study",
-      "subcategory": "함께자라기",
-      "title": "[함께자라기] 3. 애자일",
-      "summary": "고객에게 매일 가치를 전하라 - 애자일의 본질과 도입 방법",
-      "date": "2022-08-28",
-      "tags": ["함께자라기", "애자일"],
-      "url": "https://youn12.tistory.com/77",
-      "series": "함께자라기",
-      "content": "## 애자일의 정의\n\n> 불확실성이 클 때의 대응 전략\n\n특징: \"짧은 주기로 더 일찍부터 다양한 사람들로부터 자주 피드백을 받는\" 방식\n\n핵심: **협력과 학습**\n\n## 애자일의 씨앗\n\n> **\"고객에게 매일 가치를 전하라\"**\n\n| 단어 | 의미 |\n|------|------|\n| 고객에게 | 진정한 고객을 파악하고 협력하기 |\n| 매일 | 점진적 가치 전달로 학습의 복리 효과 창출 |\n| 가치를 | 무엇이 진정한 가치인지 계속 질문하기 |\n| 전하라 | 고객이 실제로 가치를 얻는지 확인하기 |\n\n## 도입 성공 요인\n\n| 성숙도 | 가장 중요한 요소 |\n|--------|------------------|\n| 낮은 조직 | **고객 참여** |\n| 높은 조직 | **짧은 반복 개발 주기** |\n\n## 방법론 도입의 핵심\n\n> **누가 참여하는가**가 **어떤 방법론을 사용하는지**보다 압도적으로 중요합니다."
-    },
-    {
-      "id": 29,
-      "category": "live-study",
-      "title": "[Live-Study] 5주차 - 클래스",
-      "summary": "클래스 정의, 객체 생성, 메서드, 생성자, this 키워드",
-      "date": "2021-01-04",
-      "tags": ["Java", "OOP", "클래스"],
-      "url": "https://youn12.tistory.com/19",
-      "series": "Live-Study",
-      "content": "## 클래스 정의\n\n> 객체지향프로그래밍에서 객체를 만들기 위한 설계도\n\n구성 요소:\n- 필드 (Field)\n- 메서드 (Method)\n\n## 객체 생성\n\n> \"new 연산자를 통해 메모리에 할당하면서 인스턴스화\"\n\n## 메서드 정의\n\n```java\n접근제어자 반환타입 메서드명(매개변수) {\n    // 구현\n}\n```\n\n### 오버로딩 vs 오버라이딩\n\n| 구분 | 오버로딩 | 오버라이딩 |\n|------|----------|-----------|\n| 정의 | 같은 이름, 다른 매개변수 | 상속받은 메서드 재정의 |\n| 반환타입 | 상관없음 | 동일해야 함 |\n\n## 생성자\n\n- 클래스 이름과 동일\n- 반환값 없음\n- 오버로딩 가능\n\n## this 키워드\n\n- 인스턴스가 자신을 참조\n- 생성자에서 다른 생성자 호출 시 사용"
-    },
-    {
-      "id": 30,
-      "category": "live-study",
-      "title": "[Live-Study] 11주차 - Enum",
-      "summary": "열거형 정의, values(), valueOf(), ordinal(), EnumSet",
-      "date": "2021-02-19",
-      "tags": ["Java", "Enum"],
-      "url": "https://youn12.tistory.com/34",
-      "series": "Live-Study",
-      "content": "## Enum 정의\n\n> \"멤버라 불리는 명명된 값의 집합을 이루는 자료형\"\n\nJava 1.5부터 지원, 타입 안정성 제공\n\n## 기본 사용법\n\n```java\npublic enum Day {\n    MONDAY, TUESDAY, WEDNESDAY\n}\n```\n\n## 생성자와 필드\n\n```java\npublic enum Day {\n    MONDAY(\"월요일\"),\n    TUESDAY(\"화요일\");\n\n    private final String korean;\n\n    Day(String korean) {\n        this.korean = korean;\n    }\n}\n```\n\n## 제공 메소드\n\n| 메소드 | 설명 |\n|--------|------|\n| values() | 모든 상수를 배열로 반환 |\n| valueOf() | 문자열에 해당하는 상수 반환 |\n| ordinal() | 정의된 순서 반환 (0부터) |\n\n## EnumSet\n\n- 메모리 효율적인 Set 구현체\n- 비트 연산 기반\n- null 미지원\n- 생성 메서드: allOf(), of(), range() 등"
-    },
-    {
-      "id": 31,
-      "category": "live-study",
-      "title": "[Live-Study] 12주차 - 애노테이션",
-      "summary": "@Override, @Retention, @Target, 애노테이션 프로세서",
-      "date": "2021-02-19",
-      "tags": ["Java", "Annotation"],
-      "url": "https://youn12.tistory.com/35",
-      "series": "Live-Study",
-      "content": "## 애노테이션 정의\n\n> \"자바 소스코드에 추가하여 사용할 수 있는 메타데이터의 일종\"\n\nJava 1.5 이상에서 사용 가능\n\n## 내장 애노테이션\n\n| 애노테이션 | 설명 |\n|-----------|------|\n| @Override | 메서드 재정의 표시 |\n| @Deprecated | 사용 자제 권고 |\n| @SuppressWarnings | 경고 억제 |\n\n## @Retention\n\n애노테이션 유지 범위\n\n| 값 | 설명 |\n|----|------|\n| SOURCE | 소스 코드까지만 |\n| CLASS | 클래스 파일까지 |\n| RUNTIME | 런타임까지 |\n\n## @Target\n\n적용 대상 제한\n- TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR 등\n\n## 애노테이션 프로세서\n\n- 컴파일 시점에 애노테이션 처리\n- Lombok 등에서 활용"
-    },
-    {
-      "id": 32,
-      "category": "live-study",
-      "title": "[Live-Study] 13주차 - I/O",
-      "summary": "스트림, 버퍼, 채널, NIO, 파일 읽기/쓰기",
-      "date": "2021-02-19",
-      "tags": ["Java", "I/O", "NIO"],
-      "url": "https://youn12.tistory.com/36",
-      "series": "Live-Study",
-      "content": "## 스트림 (Stream)\n\n> \"자바는 파일이나 콘솔의 입출력을 직접 다루지 않고, 스트림(Stream)을 통해 처리\"\n\n### InputStream / OutputStream\n- read(), write() 메서드\n- BufferedInputStream 등 보조 스트림\n\n## 버퍼 (Buffer)\n\n장치 간 속도 차이를 완화\n\n| 클래스 | 용량 |\n|--------|------|\n| BufferedInputStream/Reader | 8,192 bytes/chars |\n| BufferedOutputStream/Writer | 8,192 bytes/chars |\n\n## 채널 (Channel)\n\n> \"채널은 스트림과 달리 양방향으로 입력과 출력이 가능하다\"\n\nNIO (New Input/Output) 도입\n\n## IO vs NIO\n\n| 구분 | IO | NIO |\n|------|-----|-----|\n| 방향 | 단방향 | 양방향 |\n| 처리 | 스트림 | 채널 + 버퍼 |\n| 블로킹 | 블로킹 | 논블로킹 지원 |\n\n## 표준 스트림\n\n- System.in\n- System.out\n- System.err"
-    },
-    {
-      "id": 33,
-      "category": "algorithm",
-      "title": "[LeetCode] 1672. Richest Customer Wealth",
-      "summary": "2D 배열에서 각 행의 합 중 최대값 찾기",
-      "date": "2021-01-06",
-      "tags": ["LeetCode", "Easy", "배열"],
-      "url": "https://youn12.tistory.com/23",
-      "series": "LeetCode",
-      "content": "## 문제 설명\n\n2D 배열에서 각 행의 합 중 최대값 찾기\n\n## 풀이\n\n```java\npublic int maximumWealth(int[][] accounts) {\n    int max = 0;\n    for (int[] account : accounts) {\n        int sum = 0;\n        for (int i : account) {\n            sum += i;\n        }\n        max = Math.max(max, sum);\n    }\n    return max;\n}\n```\n\n## 핵심 포인트\n\n- 중첩 for문으로 2D 배열 순회\n- Math.max()로 최대값 갱신\n\n## 시간 복잡도\n\nO(m * n) - m은 고객 수, n은 은행 수"
-    },
-    {
-      "id": 34,
-      "category": "algorithm",
-      "title": "[LeetCode] 1470. Shuffle the Array",
-      "summary": "배열을 두 부분으로 나누어 번갈아가며 섞기",
-      "date": "2021-01-11",
-      "tags": ["LeetCode", "Easy", "배열"],
-      "url": "https://youn12.tistory.com/26",
-      "series": "LeetCode",
-      "content": "## 문제 설명\n\n배열을 두 부분으로 나누어 번갈아가며 섞기\n\n## 풀이\n\n```java\npublic int[] shuffle(int[] nums, int n) {\n    int[] result = new int[nums.length];\n    for (int i = 0; i < n; i++) {\n        result[2*i] = nums[i];      // xi\n        result[2*i+1] = nums[i+n];  // yi\n    }\n    return result;\n}\n```\n\n## 핵심 포인트\n\n- 짝수 인덱스: 앞쪽 절반\n- 홀수 인덱스: 뒤쪽 절반\n\n## 시간 복잡도\n\nO(n)"
-    },
-    {
-      "id": 35,
-      "category": "algorithm",
-      "title": "[Programmers] 신규아이디 추천",
-      "summary": "2021 카카오 블라인드 - 7단계 문자열 정규화",
-      "date": "2021-03-25",
-      "tags": ["Programmers", "Level1", "문자열"],
-      "url": "https://youn12.tistory.com/41",
-      "series": "Programmers",
-      "content": "## 문제 설명\n\n카카오 계정 아이디 생성 규칙에 맞게 추천 아이디 생성\n\n## 풀이 접근\n\n7단계 로직으로 구성:\n\n1. **1단계**: 대문자 → 소문자 변환\n2. **2단계**: 소문자, 숫자, `-`, `_`, `.` 제외 문자 제거\n3. **3단계**: 연속된 마침표를 단일 마침표로 통합\n4. **4단계**: 시작/끝의 마침표 제거\n5. **5단계**: 빈 문자열일 경우 \"a\" 대입\n6. **6단계**: 16자 이상일 경우 15자로 자르고 끝 마침표 제거\n7. **7단계**: 3자 이상이 될 때까지 마지막 문자 반복 추가\n\n## 정규식 활용\n\n```java\nString answer = new_id.toLowerCase()\n    .replaceAll(\"[^a-z0-9._-]\", \"\")\n    .replaceAll(\"\\\\.+\", \".\")\n    .replaceAll(\"^\\\\.|\\\\.$\", \"\");\n```"
-    },
-    {
-      "id": 36,
-      "category": "devops",
-      "subcategory": "IntelliJ",
-      "title": "[IntelliJ] 실행 Jar 생성",
-      "summary": "외부 의존성 포함 실행 가능한 JAR 파일 생성 방법",
-      "date": "2021-04-02",
-      "tags": ["IntelliJ", "JAR", "빌드"],
-      "url": "https://youn12.tistory.com/42",
-      "series": "IntelliJ",
-      "content": "## 개요\n\n외부 의존성을 포함한 실행 가능한 JAR 파일 생성\n\n## 단계별 가이드\n\n### 1. Resources 디렉토리 생성\n- `src/main/resources` 생성\n- MANIFEST.MF 파일 저장 위치\n\n### 2. Artifacts 생성\n- Project Structure → Artifacts\n- Main Class 지정\n\n### 3. 의존성 관리\n- \"Extract into Output Root\" 선택\n- 라이브러리를 JAR 내부에 포함\n\n### 4. 빌드\n- Build → Build Artifacts 메뉴 실행\n\n### 5. 실행\n\n```bash\njava -jar [path]/execute_jar.jar\n```\n\n## 트러블슈팅\n\n**NoClassDefFoundError** 발생 시:\n- 의존성이 제대로 포함되었는지 확인\n- Extract 옵션 확인"
-    },
-    {
-      "id": 37,
-      "category": "devops",
-      "subcategory": "IntelliJ",
-      "title": "[IntelliJ] File Size Exceeds 이슈 해결",
-      "summary": "idea.max.intellisense.filesize 설정 변경으로 해결",
-      "date": "2021-09-13",
-      "tags": ["IntelliJ", "설정"],
-      "url": "https://youn12.tistory.com/46",
-      "series": "IntelliJ",
-      "content": "## 문제\n\n> \"The file size exceeds the configured limit. Code insight features are not available.\"\n\n코드 파일 크기가 기본 제한값을 초과할 때 발생\n\n## 해결 방법 (4단계)\n\n### 1. 설치 경로 확인\n- ToolBox: Settings → Configuration → Install location\n- \"Show...\" 버튼으로 바로 이동\n\n### 2. idea.properties 파일 찾기\n- 설치 폴더 내 `bin` 디렉토리\n- 텍스트 에디터로 열기\n\n### 3. 설정값 수정\n\n```properties\n# 기본값: 2500\nidea.max.intellisense.filesize=25000\n```\n\n### 4. 재시작\nIntelliJ 완전히 재시작"
-    },
-    {
-      "id": 38,
-      "category": "devops",
-      "subcategory": "IntelliJ",
-      "title": "[IntelliJ] Slf4j Live Template 설정",
-      "summary": "logv로 SLF4J 로깅 코드 자동완성 설정",
-      "date": "2021-11-24",
-      "tags": ["IntelliJ", "Live Template", "로깅"],
-      "url": "https://youn12.tistory.com/47",
-      "series": "IntelliJ",
-      "content": "## 목적\n\n> \"log.info, log.debug 등 Slf4j의 Log를 자동 생성하기\"\n\n`sout`처럼 `logv`로 로깅 코드 자동 완성\n\n## 설정 단계\n\n### 1. Live Templates 접근\n- Settings → Editor → Live Templates\n\n### 2. Java 템플릿 생성\n- Template Group: Java\n- **Abbreviation**: `logv`\n- **Description**: 템플릿 설명\n- **Template text**: log.info 템플릿 작성\n- **Application Contexts**: Java 선택\n\n### 3. Edit Variables 설정\n\n| 항목 | Expression | Default |\n|------|-----------|--------|\n| EXPR | `variableOfType(\"\")` | \"expr\" |\n| EXPR_COPY | `escapeString(EXPR)` | (공백) |\n\n## 사용 방법\n\n`logv` 입력 후 Tab → 자동으로 SLF4J 로깅 코드 생성"
-    },
-    {
-      "id": 39,
-      "category": "devops",
-      "subcategory": "DBMS",
-      "title": "[CUBRID] Server Start FATAL ERROR",
-      "summary": "Out of virtual memory 오류 - data_buffer_size 조정",
-      "date": "2021-03-18",
-      "tags": ["CUBRID", "메모리"],
-      "url": "https://youn12.tistory.com/40",
-      "series": "CUBRID",
-      "content": "## 문제\n\n데이터베이스 생성 후 `cubrid server start testdb` 명령 실행 시:\n> \"Out of virtual memory\" 오류 발생\n\n## 원인\n\n설정된 `data_buffer_size` 값이 실제 서버의 할당 가능한 메모리를 초과\n\n## 해결 방법\n\n**cubrid.conf** 파일 수정:\n- 경로: `/app/CUBRID/conf/cubrid.conf`\n\n```conf\n# 변경 전\ndata_buffer_size=2G\n\n# 변경 후\ndata_buffer_size=1G\n```\n\n설정 변경 후 CUBRID 서버 재시작"
-    },
-    {
-      "id": 40,
-      "category": "devops",
-      "subcategory": "Linux",
-      "title": "[Linux] JAVA_HOME 설정",
-      "summary": "CentOS 7에서 JAVA_HOME 환경변수 설정 방법",
-      "date": "2021-01-14",
-      "tags": ["Linux", "CentOS", "Java"],
-      "url": "https://youn12.tistory.com/27",
-      "series": "Linux",
-      "content": "## 설정 단계\n\n### 1단계: JAVAC 경로 확인\n\n```bash\nwhich javac\n```\n\n### 1.1단계: 원본 파일 경로 확인\n\n심볼릭 링크의 실제 경로 파악:\n\n```bash\nreadlink -f [javac 경로]\n```\n\n### 2단계: JAVA_HOME 설정\n\n```bash\nvi /etc/profile\n```\n\n파일 하단에 추가:\n\n```bash\nexport JAVA_HOME=/app/jdk1.8.0_271\nexport PATH=$PATH:$JAVA_HOME/bin\n```\n\n### 3단계: 설정 확인\n\n```bash\n# 설정 적용\nsource /etc/profile\n\n# 환경변수 확인\necho $JAVA_HOME\n```"
-    },
-    {
-      "id": 41,
-      "category": "devops",
-      "subcategory": "Server",
-      "title": "[Nginx] 서버 점검 JSON 응답",
-      "summary": "점검 모드에서 JSON 형식으로 상태 정보 제공",
-      "date": "2022-08-03",
-      "tags": ["Nginx", "점검페이지"],
-      "url": "https://youn12.tistory.com/63",
-      "series": "Server",
-      "content": "## 배경\n\n> \"Front, Android, AOS 각 Client가 있기에 Html이 아닌 Json 형식으로 필요 변수들을 내려주었다\"\n\n## 구현 방법\n\n### 1. 점검 JSON 파일 생성\n\n**경로**: `/home/maintenance/maintenance.json`\n\n```json\n{\n  \"name\": \"점검중\",\n  \"start-time\": \"2022.08.03 11:00:00\",\n  \"end-time\": \"2022.08.03 16:00:00\"\n}\n```\n\n### 2. Nginx Config 설정\n\n```nginx\nset $maintenance 0;\n\nif (-f /home/maintenance/maintenance.json) {\n    set $maintenance 1;\n}\n\nif ($maintenance = 1) {\n    return 503;\n}\n\nerror_page 503 @maintenance;\n\nlocation @maintenance {\n    add_header Retry-After 3600;\n    add_header Content-Type application/json;\n    root /home/maintenance;\n    rewrite ^(.*)$ /maintenance.json break;\n}\n```\n\n## 점검 모드 전환\n\n```bash\n# 점검 모드 시작\ntouch /home/maintenance/maintenance.json\n\n# 점검 모드 종료\nrm /home/maintenance/maintenance.json\n```"
-    },
-    {
-      "id": 42,
-      "category": "devops",
-      "subcategory": "AWS",
-      "title": "[AWS] EC2 ec2-user 디렉토리 복구",
-      "summary": "SSH 접속 불가 시 .ssh 디렉토리 및 authorized_keys 복구",
-      "date": "2022-08-19",
-      "tags": ["AWS", "EC2", "SSH"],
-      "url": "https://youn12.tistory.com/78",
-      "series": "AWS",
-      "content": "## 문제 상황\n\n실수로 ec2-user 홈 디렉토리를 삭제하여 SSH 접속 불가\n\n## 해결 방법: 수동 복구\n\n### 1. .ssh 디렉토리 생성\n\n```bash\nmkdir -p /home/ec2-user/.ssh\n```\n\n### 2. authorized_keys 파일 복구\n\n```bash\necho \"[YOUR_PUBLIC_KEY]\" > /home/ec2-user/.ssh/authorized_keys\n```\n\n### 3. 권한 설정\n\n```bash\n# .ssh 디렉토리 권한\nchmod 700 /home/ec2-user/.ssh\n\n# authorized_keys 파일 권한\nchmod 600 /home/ec2-user/.ssh/authorized_keys\n\n# 소유자 설정\nchown -R ec2-user:ec2-user /home/ec2-user/.ssh\n```\n\n## 핵심 포인트\n\n| 항목 | 권한 |\n|------|------|\n| .ssh 디렉토리 | 700 (drwx------) |\n| authorized_keys | 600 (-rw-------) |"
-    },
-    {
-      "id": 43,
       "category": "etc",
       "subcategory": "Python",
       "title": "[Python] Python 시작기",
       "summary": "웹 크롤링을 위한 Python 설치 및 PyCharm IDE 선택",
       "date": "2025-01-08",
-      "tags": ["Python", "크롤링", "PyCharm"],
+      "tags": [
+        "Python",
+        "크롤링",
+        "PyCharm"
+      ],
       "url": "https://youn12.tistory.com/88",
       "series": "Python",
       "content": "## 배경\n\n웹 크롤링 학습을 위해 Python을 시작하게 되었습니다.\n\n> \"이전에는 Selenium과 Java를 사용하여 매크로 프로그램을 만들었었는데, 이번에는 Python이 Windows 기반 웹 크롤링 프로젝트에 더 적합하다고 판단하여 선택했습니다.\"\n\n## 1. Python 설치\n\n공식 웹사이트: https://www.python.org/downloads/\n\n```bash\npython --version\n```\n\n## 2. IDE 선택\n\n| IDE | 장점 | 단점 |\n|-----|------|------|\n| **VSCode** | 가볍고 범용적 | Python 특화 기능 부족 |\n| **PyCharm** | JetBrains 생태계, Python 특화 | 무거움 |\n\n### 최종 선택: PyCharm\n\n선택 이유:\n- 현재 IntelliJ와 DataGrip 사용 중\n- JetBrains 제품군의 일관된 UX\n\n## 다음 단계\n\nPython 기초 학습 후 웹 크롤링 관련 라이브러리 학습 예정:\n- Selenium\n- BeautifulSoup\n- Requests"
     },
     {
+      "id": 15,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 4장 클래스와 인터페이스",
+      "summary": "접근 권한 최소화, 상속보다 컴포지션, 추상 클래스보다 인터페이스",
+      "date": "2023-05-23",
+      "tags": [
+        "Effective Java",
+        "OOP"
+      ],
+      "url": "https://youn12.tistory.com/86",
+      "series": "Effective Java",
+      "content": "## 아이템 15: 접근 권한 최소화\n\n> \"정보 은닉\"은 소프트웨어 설계의 근본 원칙\n\n- 모든 클래스와 멤버는 가능한 한 접근 불가능하게\n- public 클래스는 가변 필드를 직접 노출하지 않음\n\n## 아이템 17: 불변 클래스\n\n불변 클래스의 5가지 규칙:\n1. setter를 제공하지 않음\n2. 확장을 막음 (final 클래스 또는 private 생성자)\n3. 모든 필드를 final로 선언\n4. 모든 필드를 private으로 선언\n5. 가변 컴포넌트에 대한 접근을 막음\n\n## 아이템 18: 상속보다 컴포지션\n\n> 상속은 캡슐화를 깨뜨립니다.\n\n래퍼 클래스(데코레이터 패턴)를 사용하여 기능을 확장하세요.\n\n## 아이템 20: 인터페이스 우선\n\n인터페이스의 장점:\n- 다중 상속 가능\n- 믹스인 정의 가능\n- 계층구조 없는 타입 프레임워크\n\n## 아이템 22: 인터페이스는 타입 정의 용도로만\n\n> 상수 인터페이스 안티패턴을 피하세요.\n\n```java\n// Bad - 상수 인터페이스\npublic interface Constants {\n    double PI = 3.14159;\n}\n\n// Good - 상수 유틸리티 클래스\npublic final class Constants {\n    private Constants() { }\n    public static final double PI = 3.14159;\n}\n```"
+    },
+    {
+      "id": 16,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 3장 모든 객체의 공통 메서드",
+      "summary": "equals, hashCode, toString, clone, Comparable 재정의 규약",
+      "date": "2023-05-07",
+      "tags": [
+        "Effective Java",
+        "Object"
+      ],
+      "url": "https://youn12.tistory.com/85",
+      "series": "Effective Java",
+      "content": "## 아이템 10: equals 규약\n\nequals 재정의 시 5가지 규약:\n- **반사성**: x.equals(x) == true\n- **대칭성**: x.equals(y) == y.equals(x)\n- **추이성**: x.equals(y) && y.equals(z) → x.equals(z)\n- **일관성**: 일정하게 같은 결과\n- **null-아님**: x.equals(null) == false\n\n## 아이템 11: hashCode 재정의\n\n> 같은 객체는 같은 해시코드를 반환해야 합니다.\n\n그렇지 않으면 HashMap이나 HashSet에서 문제가 발생합니다.\n\n## 아이템 12: toString 재정의\n\n> \"모든 구체 클래스에서 Object의 toString을 재정의하자\"\n\n디버깅과 로깅에 유용합니다.\n\n## 아이템 13: clone 주의사항\n\n**더 나은 대안**: 복사 생성자, 복사 팩터리\n\n```java\npublic Yum(Yum yum) { ... }  // 복사 생성자\npublic static Yum newInstance(Yum yum) { ... }  // 복사 팩터리\n```\n\n## 아이템 14: Comparable 구현\n\ncompareTo 규약:\n- sgn(x.compareTo(y)) == -sgn(y.compareTo(x))\n- 추이성 보장\n- equals와 일관성 유지 권장"
+    },
+    {
+      "id": 17,
+      "category": "study",
+      "subcategory": "Effective Java",
+      "title": "[Effective Java 3/E] 2장 객체 생성과 파괴",
+      "summary": "정적 팩터리 메서드, 빌더 패턴, 싱글턴, 의존 객체 주입",
+      "date": "2023-04-30",
+      "tags": [
+        "Effective Java",
+        "디자인 패턴"
+      ],
+      "url": "https://youn12.tistory.com/84",
+      "series": "Effective Java",
+      "content": "## 아이템 1: 정적 팩터리 메서드를 고려하라\n\n생성자 대신 정적 팩터리 메서드를 고려해야 하는 이유:\n- 명명의 자유로움 (이름으로 의미 전달)\n- 인스턴스 통제 가능\n- 하위 타입 반환 가능\n- 입력 매개변수에 따라 다른 클래스 객체 반환 가능\n\n**단점**: 생성자보다 찾기 어려움\n\n## 아이템 2: 빌더 패턴\n\n많은 매개변수를 가진 클래스의 경우:\n- 점층적 생성자 패턴 → 읽기 어려움\n- 자바빈즈 패턴 → 일관성 문제\n- **빌더 패턴** → 가독성과 안정성 모두 확보\n\n## 아이템 3: 싱글턴 보증\n\n싱글턴 보장 방법:\n1. private 생성자 + public static final 필드\n2. private 생성자 + 정적 팩터리 메서드\n3. **열거 타입** (가장 견고, 리플렉션 및 직렬화 공격에 안전)\n\n## 아이템 5: 의존 객체 주입\n\n> \"의존성을 하드코딩하지 말고 주입하라\"\n\n의존 객체 주입은:\n- 유연성 향상\n- 테스트 용이성 증가\n- 재사용성 증가\n\n## 아이템 9: try-with-resources\n\n```java\ntry (InputStream in = new FileInputStream(src)) {\n    // ...\n}\n```\n\n자원 정리와 예외 억제를 적절히 처리합니다."
+    },
+    {
+      "id": 18,
+      "category": "study",
+      "title": "[Effective Java 3/E] 1장 들어가기",
+      "summary": "Introduction to foundational principles of Effective Java, outlining seven core guidelines for writing clear, simple, and maintainable code",
+      "date": "2023-04-18",
+      "tags": [
+        "Effective Java",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/83",
+      "content": "Introduction to foundational principles of Effective Java, outlining seven core guidelines for writing clear, simple, and maintainable code",
+      "subcategory": "Effective Java",
+      "series": "Effective Java 3/E"
+    },
+    {
+      "id": 19,
+      "category": "study",
+      "title": "[객체지향의 사실과 오해 - 2] 이상한 나라의 객체",
+      "summary": "Explores object-oriented concepts including object characteristics, state changes, behavior, and metaphors in software design",
+      "date": "2023-01-17",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/81",
+      "content": "Explores object-oriented concepts including object characteristics, state changes, behavior, and metaphors in software design",
+      "series": "객체지향의 사실과 오해 - 2"
+    },
+    {
+      "id": 20,
+      "category": "study",
+      "title": "[객체지향의 사실과 오해 - 1] 협력하는 객체들의 공동체",
+      "summary": "Discusses cooperative objects, roles, responsibilities, and the essence of object-oriented design principles",
+      "date": "2023-01-17",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/80",
+      "content": "Discusses cooperative objects, roles, responsibilities, and the essence of object-oriented design principles",
+      "series": "객체지향의 사실과 오해 - 1"
+    },
+    {
+      "id": 21,
+      "category": "study",
+      "title": "[객체지향의 사실과 오해 - 0] 계획",
+      "summary": "Introduction and planning for studying the book on object-oriented misconceptions and principles",
+      "date": "2023-01-17",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/79",
+      "content": "Introduction and planning for studying the book on object-oriented misconceptions and principles",
+      "series": "객체지향의 사실과 오해 - 0"
+    },
+    {
+      "id": 22,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 1. 자라기",
+      "summary": "의도적 수련, 복리 효과, 학습 프레임 - 지속적 성장의 원리",
+      "date": "2022-08-28",
+      "tags": [
+        "함께자라기",
+        "성장"
+      ],
+      "url": "https://youn12.tistory.com/75",
+      "series": "함께자라기",
+      "content": "## 야생 학습 vs 학교 학습\n\n| 구분 | 야생 학습 | 학교 학습 |\n|------|-----------|-----------|\n| 특징 | 협력적, 불확실, 명확한 평가 없음 | 개인적, 정해진 정답, 명확한 평가 |\n| 중요성 | 현실에서 더 중요 | 기초 습득에 유용 |\n\n## 의도적 수련의 중요성\n\n> 단순한 경험 시간이 아닌 **\"자신의 약점을 개선하려는 훈련\"**이 실력 향상을 결정합니다.\n\n핵심: **짧은 피드백 사이클**이 매우 효과적\n\n## 복리 효과 창출\n\n세 가지 작업 균형:\n- **A**: 원래 업무\n- **B**: 업무 개선\n- **C**: 개선 방법 개선\n\nA, B, C를 균형있게 수행하면 \"매일 더 나은 나\"가 됩니다.\n\n## 학습 프레임 채택\n\n> **\"잘하기\"**보다 **\"자라기\"**에 초점을 맞추면 더 많이 배웁니다.\n\n## 핵심 메시지\n\n> **지속적인 성장은 의도적이고 체계적인 노력**을 통해서만 가능합니다."
+    },
+    {
+      "id": 23,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 2. 함께",
+      "summary": "심리적 안전감, 협력을 통한 추상화, 빠른 학습팀의 특징",
+      "date": "2022-08-28",
+      "tags": [
+        "함께자라기",
+        "협력"
+      ],
+      "url": "https://youn12.tistory.com/76",
+      "series": "함께자라기",
+      "content": "## 조엘 테스트와 개선 우선순위\n\n| 개선 영역 | 효과 |\n|----------|------|\n| 도구 개선 | 3배 |\n| **관리 개선** | **64배** |\n\n> 관리자들은 자신을 바꾸기보다 도구부터 개선하려는 경향이 있습니다.\n\n## 협력을 통한 추상화\n\n> \"다른 사람과 협동하고 대화\"하며 함께 문제를 해결할 때 코드의 추상성이 높아집니다.\n\n뛰어난 프로그래머의 특징:\n- 단순히 기술이 뛰어나기보다\n- **커뮤니케이션과 협력 능력이 우수**\n\n## 구글의 팀 연구\n\n탁월한 팀의 핵심: **심리적 안전감**\n\n> \"실수나 질문이 처벌받지 않을 거라는 믿음\"\n\n## 빠른 학습팀의 특징\n\n- 새로운 기술을 **\"함께 일하는 방법\"**으로 접근\n- **실패에 관대**\n- **학습과 실행을 하나로** 봄"
+    },
+    {
+      "id": 24,
+      "category": "study",
+      "subcategory": "함께자라기",
+      "title": "[함께자라기] 3. 애자일",
+      "summary": "고객에게 매일 가치를 전하라 - 애자일의 본질과 도입 방법",
+      "date": "2022-08-28",
+      "tags": [
+        "함께자라기",
+        "애자일"
+      ],
+      "url": "https://youn12.tistory.com/77",
+      "series": "함께자라기",
+      "content": "## 애자일의 정의\n\n> 불확실성이 클 때의 대응 전략\n\n특징: \"짧은 주기로 더 일찍부터 다양한 사람들로부터 자주 피드백을 받는\" 방식\n\n핵심: **협력과 학습**\n\n## 애자일의 씨앗\n\n> **\"고객에게 매일 가치를 전하라\"**\n\n| 단어 | 의미 |\n|------|------|\n| 고객에게 | 진정한 고객을 파악하고 협력하기 |\n| 매일 | 점진적 가치 전달로 학습의 복리 효과 창출 |\n| 가치를 | 무엇이 진정한 가치인지 계속 질문하기 |\n| 전하라 | 고객이 실제로 가치를 얻는지 확인하기 |\n\n## 도입 성공 요인\n\n| 성숙도 | 가장 중요한 요소 |\n|--------|------------------|\n| 낮은 조직 | **고객 참여** |\n| 높은 조직 | **짧은 반복 개발 주기** |\n\n## 방법론 도입의 핵심\n\n> **누가 참여하는가**가 **어떤 방법론을 사용하는지**보다 압도적으로 중요합니다."
+    },
+    {
+      "id": 25,
+      "category": "devops",
+      "subcategory": "AWS",
+      "title": "[AWS] EC2 ec2-user 디렉토리 복구",
+      "summary": "SSH 접속 불가 시 .ssh 디렉토리 및 authorized_keys 복구",
+      "date": "2022-08-19",
+      "tags": [
+        "AWS",
+        "EC2",
+        "SSH"
+      ],
+      "url": "https://youn12.tistory.com/78",
+      "series": "AWS",
+      "content": "## 문제 상황\n\n실수로 ec2-user 홈 디렉토리를 삭제하여 SSH 접속 불가\n\n## 해결 방법: 수동 복구\n\n### 1. .ssh 디렉토리 생성\n\n```bash\nmkdir -p /home/ec2-user/.ssh\n```\n\n### 2. authorized_keys 파일 복구\n\n```bash\necho \"[YOUR_PUBLIC_KEY]\" > /home/ec2-user/.ssh/authorized_keys\n```\n\n### 3. 권한 설정\n\n```bash\n# .ssh 디렉토리 권한\nchmod 700 /home/ec2-user/.ssh\n\n# authorized_keys 파일 권한\nchmod 600 /home/ec2-user/.ssh/authorized_keys\n\n# 소유자 설정\nchown -R ec2-user:ec2-user /home/ec2-user/.ssh\n```\n\n## 핵심 포인트\n\n| 항목 | 권한 |\n|------|------|\n| .ssh 디렉토리 | 700 (drwx------) |\n| authorized_keys | 600 (-rw-------) |"
+    },
+    {
+      "id": 26,
+      "category": "devops",
+      "title": "[AWS][EC2] ec2-user 디렉토리 복구",
+      "summary": "Technical guide for restoring EC2 user directory access after accidental deletion",
+      "date": "2022-08-19",
+      "tags": [
+        "AWS",
+        "AWS"
+      ],
+      "url": "https://youn12.tistory.com/74",
+      "content": "Technical guide for restoring EC2 user directory access after accidental deletion",
+      "subcategory": "AWS",
+      "series": "AWS"
+    },
+    {
+      "id": 27,
+      "category": "study",
+      "title": "[Study][함께자라기 - 0] 계획",
+      "summary": "Study planning for a book on collaboration and continuous learning in professional development",
+      "date": "2022-08-18",
+      "tags": [
+        "함께자라기"
+      ],
+      "url": "https://youn12.tistory.com/73",
+      "content": "Study planning for a book on collaboration and continuous learning in professional development",
+      "subcategory": "함께자라기",
+      "series": "Study"
+    },
+    {
+      "id": 28,
+      "category": "study",
+      "title": "[Study][CleanCode - 5] 회고",
+      "summary": "Reflective summary of Clean Code study, noting benefits, lessons learned, and areas for improvement",
+      "date": "2022-08-17",
+      "tags": [
+        "CleanCode"
+      ],
+      "url": "https://youn12.tistory.com/72",
+      "content": "Reflective summary of Clean Code study, noting benefits, lessons learned, and areas for improvement",
+      "subcategory": "CleanCode",
+      "series": "Study"
+    },
+    {
+      "id": 29,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 17. 냄새와 휴리스틱",
+      "summary": "코드 냄새와 휴리스틱 정리 - 주석, 환경, 함수, 일반, 이름, 테스트",
+      "date": "2022-08-15",
+      "tags": [
+        "Clean Code",
+        "리팩터링"
+      ],
+      "url": "https://youn12.tistory.com/70",
+      "series": "CleanCode",
+      "content": "## 코드 냄새 (Code Smells)\n\n### 주석 (C1~C5)\n- 버전 관리 시스템에 속한 정보를 주석으로 남기지 말 것\n- 불필요하거나 잘못된 주석은 제거\n- 주석 처리된 코드는 즉시 삭제\n\n### 환경 (E1~E2)\n- 빌드는 한 단계로 끝나야 함\n- 모든 단위 테스트는 한 명령으로 실행 가능해야 함\n\n### 함수 (F1~F4)\n- 함수 인수 개수 최소화\n- 출력 인수 피하기\n- 함수는 한 가지 기능만 수행\n- 호출되지 않는 함수는 삭제\n\n### 일반 (G1~G36)\n\n**G5: 중복 (DRY 원칙)**\n> \"이 책에 나오는 가장 중요한 규칙 중 하나\"\n\n중복은 추상화 기회로 봐야 합니다.\n\n**G6: 추상화 수준**\n저차원 개념은 파생 클래스에, 고차원 개념은 기초 클래스에 배치\n\n**G23: 다형성**\nSwitch/Case 문보다 다형성 활용을 우선\n\n**G36: 추이적 탐색 회피**\n디미터 법칙(Demeter's Law)을 따를 것\n\n### 자바 (J1~J3)\n- Wildcard import 권장 (결합도 감소)\n- 상수 상속 금지, static import 사용\n- int 상수 대신 Enum 활용\n\n### 이름 (N1~N7)\n> \"소프트웨어의 가독성의 90%는 이름이 결정\"\n\n- 구현을 드러내는 이름 피하기\n- 표준 명명법 사용\n- 이름 길이는 범위에 비례\n- 헝가리안 표기법 피하기\n\n### 테스트 (T1~T9)\n- 깨질 만한 모든 부분을 검증\n- 커버리지 도구 활용\n- 경계 조건 철저히 테스트\n- 버그 주변 코드 집중 테스트\n- 느린 테스트는 실행되지 않음\n\n## 결론\n\n> \"목록을 따른다고 깨끗한 코드가 나오지 않는다. 전문가 정신과 장인 정신은 가치에서 나온다\""
+    },
+    {
+      "id": 30,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 16. SerialDate 리팩터링",
+      "summary": "SerialDate 분석, 테스트 커버리지, Boy Scout Rule",
+      "date": "2022-08-14",
+      "tags": [
+        "Clean Code",
+        "리팩터링"
+      ],
+      "url": "https://youn12.tistory.com/69",
+      "series": "CleanCode",
+      "content": "## 핵심 내용\n\nDate 클래스인 SerialDate를 분석하고 테스트 케이스 부족 문제와 리팩터링 과정을 다룹니다.\n\n## Boy Scout Rule\n\n> \"check in code cleaner than when you checked it out\"\n\n시간 투자에도 불구하고 다음과 같은 가치가 있었습니다:\n- 테스트 커버리지 증가\n- 버그 수정\n- 코드 크기 감소\n- 코드 명확성 향상"
+    },
+    {
+      "id": 31,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 15. JUnit 들여다보기",
+      "summary": "JUnit 프레임워크 분석, 보이스카우트 규칙",
+      "date": "2022-08-11",
+      "tags": [
+        "Clean Code",
+        "JUnit",
+        "테스트"
+      ],
+      "url": "https://youn12.tistory.com/68",
+      "series": "CleanCode",
+      "content": "## 핵심 메시지\n\n> \"JUnit은 자바 프레임워크 중 가장 유명하다. 개념은 단순하며 정의는 정밀하고 구현은 우아하다\"\n\n이 장은 코드 예제로 구성되어 있으며, 실제 프레임워크 구현을 분석합니다.\n\n## 보이스카우트 규칙\n\n> \"캠프장은 처음 왔을 때보다 더 깨끗하게 해 놓고 떠나라\"\n\n코드 개선은 지속적인 책임입니다.\n\n## 저자의 통찰\n\n- 주어진 기능 개발뿐 아니라 주변 코드의 개선도 함께 고려\n- 완벽한 모듈도 지속적 개선 필요\n- 코드 품질 향상은 모든 개발자의 책임"
+    },
+    {
+      "id": 32,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 13. 동시성",
+      "summary": "동시성 미신과 진실, 방어 원칙, 데드락, 실행 모델",
+      "date": "2022-08-10",
+      "tags": [
+        "Clean Code",
+        "동시성",
+        "멀티스레드"
+      ],
+      "url": "https://youn12.tistory.com/66",
+      "series": "CleanCode",
+      "content": "## 핵심 개념\n\n> 동시성의 정의: \"무엇\"과 \"언제\"를 분리하는 전략\n\n## 동시성의 미신과 진실\n\n**잘못된 인식**:\n- 동시성이 항상 성능을 높인다\n- 설계가 변하지 않는다\n- 컨테이너를 사용하면 이해할 필요가 없다\n\n**올바른 인식**:\n> \"동시성은 다소 부하를 유발하며, 복잡하고, 버그 재현이 어렵습니다\"\n\n## 동시성 방어 원칙\n\n1. **단일 책임 원칙(SRP)**: 동시성 코드는 별도로 분리\n2. **자료 범위 제한**: 공유 자료 최소화, `synchronized` 활용\n3. **자료 사본 사용**: 원본 대신 읽기 전용 복사본 활용\n4. **독립적 스레드**: 각 스레드는 고유 데이터로 독립 운영\n\n## 주요 개념\n\n- **한정된 자원**: DB 연결, 버퍼 등 제한된 리소스\n- **상호 배제**: 한 번에 한 스레드만 접근\n- **기아 상태**: 스레드가 자원을 영원히 기다림\n- **데드락**: \"여러 스레드가 서로 끝나기를 기다린다\"\n- **라이브락**: 스레드들이 상호 간섭으로 진행 불가\n\n## 실행 모델\n\n- **생산자-소비자**: 대기열을 통한 정보 교환\n- **읽기-쓰기**: 공유자원의 읽기/쓰기 균형 관리\n\n## 구현 지침\n\n1. 동기화 최소화 (임계 영역을 최대한 작게)\n2. 종료 코드는 개발 초기부터 구현\n3. 다양한 환경에서 테스트\n4. 보조 코드 삽입으로 오류 유발 테스트\n5. 순차 코드부터 검증 (POJO)"
+    },
+    {
+      "id": 33,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 14. 점진적인 개선",
+      "summary": "프로그래밍은 공예, 깨끗한 코드는 정리 후에 - TDD 기반 개선",
+      "date": "2022-08-10",
+      "tags": [
+        "Clean Code",
+        "리팩터링",
+        "TDD"
+      ],
+      "url": "https://youn12.tistory.com/67",
+      "series": "CleanCode",
+      "content": "## 핵심 원칙\n\n> \"프로그래밍은 과학보다 공예에 가깝다\"\n\n> \"깨끗한 코드를 짜려면 먼저 지저분한 코드를 짠 뒤에 정리해야 한다\"\n\n단순히 동작하는 코드만으로는 부족합니다. 전문가 정신이 필요합니다.\n\n## 개선 시 주의사항\n\n큰 구조 변경은 프로그램을 망칠 수 있으며, 일부는 회복 불가능한 상태에 빠질 수 있습니다.\n\n## 해결 방법: TDD\n\n> \"언제 어느 때라도 시스템이 돌아가야 한다\"\n\n변경 전후 동일한 동작을 보장하기 위해:\n- 단위 테스트: JUnit 사용\n- 인수 테스트: FitNess 위키 활용\n\n## 핵심 교훈\n\n즉각적인 정리가 중요합니다. 시간이 지날수록 개선 비용이 증가합니다."
+    },
+    {
+      "id": 34,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 11. 시스템",
+      "summary": "시스템 제작과 사용 분리, 확장성, 횡단 관심사, AOP",
+      "date": "2022-08-04",
+      "tags": [
+        "Clean Code",
+        "시스템",
+        "AOP"
+      ],
+      "url": "https://youn12.tistory.com/64",
+      "series": "CleanCode",
+      "content": "## 핵심 주제\n\n높은 추상화 수준에서 깨끗한 시스템 설계 원칙을 다룹니다.\n\n> 도시처럼 소프트웨어도 \"각자의 역할에 맞는 팀\"이 필요합니다.\n\n## 1. 시스템 제작과 사용의 분리\n\n초기화 지연 기법의 한계:\n- 의존성 증가\n- 테스트 어려움\n- 단일책임원칙 위배\n\n**해결책**:\n- Main 분리\n- 팩토리 패턴\n- 의존성 주입(DI)\n\n## 2. 확장성\n\n반복적 애자일 방식으로 점진적 발전 가능합니다.\n> \"관심사를 적절히 분리\"하면 아키텍처가 진화할 수 있습니다.\n\n## 3. 횡단 관심사\n\nAOP(Aspect-Oriented Programming)로 영속성, 보안 등을 분리하여 핵심 로직에 영향 없이 처리합니다.\n\n## 4. 테스트 주도 아키텍처\n\nPOJO 객체 기반 모듈화와 관점 활용으로 진정한 테스트 주도 설계가 가능합니다.\n\n## 5. 기타 원칙\n\n- 최선의 결정은 \"마지막 순간까지 미루기\"로 정보수집 후 진행\n- 표준은 고객 가치 위에 있어야 함\n- 도메인 특화 언어(DSL)로 의사소통 간극 축소"
+    },
+    {
+      "id": 35,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 12. 창발성",
+      "summary": "Kent Beck의 4가지 단순 설계 규칙 - 테스트, 중복 제거, 표현성",
+      "date": "2022-08-04",
+      "tags": [
+        "Clean Code",
+        "설계"
+      ],
+      "url": "https://youn12.tistory.com/65",
+      "series": "CleanCode",
+      "content": "## Kent Beck의 4가지 단순 설계 규칙 (우선순위 순)\n\n1. **모든 테스트를 실행한다** (최고 우선순위)\n2. **중복을 없앤다**\n3. **프로그래머 의도를 표현한다**\n4. **클래스와 메서드 수를 최소로 줄인다** (최저 우선순위)\n\n## 규칙 1: 테스트 실행\n\n> \"검증이 불가능한 시스템은 절대 출시하면 안 된다\"\n\n테스트 가능성이 SRP 준수와 낮은 결합도를 자동으로 유도합니다.\n\n## 규칙 2~4: 리팩터링\n\n테스트 케이스 작성 후 점진적으로 설계 품질을 개선합니다.\n- 응집도 향상\n- 결합도 감소\n- 관심사 분리\n\n## 규칙 3: 표현성\n\n- 좋은 이름 선택\n- 함수·클래스 크기 축소\n- 표준 디자인 패턴 활용\n- 단위 테스트를 문서처럼 작성\n\n## 규칙 4: 최소화\n\n극단적 적용 피하기"
+    },
+    {
+      "id": 36,
+      "category": "devops",
+      "subcategory": "Server",
+      "title": "[Nginx] 서버 점검 JSON 응답",
+      "summary": "점검 모드에서 JSON 형식으로 상태 정보 제공",
+      "date": "2022-08-03",
+      "tags": [
+        "Nginx",
+        "점검페이지"
+      ],
+      "url": "https://youn12.tistory.com/63",
+      "series": "Server",
+      "content": "## 배경\n\n> \"Front, Android, AOS 각 Client가 있기에 Html이 아닌 Json 형식으로 필요 변수들을 내려주었다\"\n\n## 구현 방법\n\n### 1. 점검 JSON 파일 생성\n\n**경로**: `/home/maintenance/maintenance.json`\n\n```json\n{\n  \"name\": \"점검중\",\n  \"start-time\": \"2022.08.03 11:00:00\",\n  \"end-time\": \"2022.08.03 16:00:00\"\n}\n```\n\n### 2. Nginx Config 설정\n\n```nginx\nset $maintenance 0;\n\nif (-f /home/maintenance/maintenance.json) {\n    set $maintenance 1;\n}\n\nif ($maintenance = 1) {\n    return 503;\n}\n\nerror_page 503 @maintenance;\n\nlocation @maintenance {\n    add_header Retry-After 3600;\n    add_header Content-Type application/json;\n    root /home/maintenance;\n    rewrite ^(.*)$ /maintenance.json break;\n}\n```\n\n## 점검 모드 전환\n\n```bash\n# 점검 모드 시작\ntouch /home/maintenance/maintenance.json\n\n# 점검 모드 종료\nrm /home/maintenance/maintenance.json\n```"
+    },
+    {
+      "id": 37,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 10. 클래스",
+      "summary": "클래스 구조, 캡슐화, 단일 책임 원칙(SRP), 응집도",
+      "date": "2022-08-01",
+      "tags": [
+        "Clean Code",
+        "클래스",
+        "SRP"
+      ],
+      "url": "https://youn12.tistory.com/62",
+      "series": "CleanCode",
+      "content": "## 클래스 구조\n\n표준 Java 관례에 따른 순서:\n1. static public 변수\n2. static private 변수\n3. private 인스턴스 변수\n4. public 함수\n5. private 함수 (호출하는 public 함수 다음에 배치)\n\n## 캡슐화\n\n> \"변수와 유틸리티 함수는 가급적 공개하지 않는 것이 좋다\"\n\n테스트를 위해 protected 접근이 필요할 때도 있지만, 캡슐화를 풀어주는 것은 최후의 수단입니다.\n\n## 클래스 크기\n\n함수는 줄 수로 측정하지만, 클래스 크기는 **\"맡은 책임의 수\"**로 결정됩니다.\n\n## 단일 책임 원칙 (SRP)\n\n> \"클래스는 변경해야 할 이유가 하나뿐이어야 한다\"\n\n작은 클래스 여러 개가 큰 클래스 하나보다 낫습니다.\n\n## 응집도\n\n메서드가 여러 인스턴스 변수를 사용해야 높은 응집도를 유지합니다. 특정 변수가 일부 메서드에서만 사용되면 새 클래스 추출을 고려하세요.\n\n## 변경으로부터 격리\n\n결합도를 줄이고 구체 구현보다 추상화에 의존하면 시스템이 유연해집니다 (의존성 역전 원칙)."
+    },
+    {
+      "id": 38,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 9. 단위 테스트",
+      "summary": "TDD 세 가지 법칙, F.I.R.S.T 원칙",
+      "date": "2022-07-17",
+      "tags": [
+        "Clean Code",
+        "TDD",
+        "테스트"
+      ],
+      "url": "https://youn12.tistory.com/61",
+      "series": "CleanCode",
+      "content": "## TDD의 세 가지 법칙\n\n1. 실패하는 테스트를 먼저 작성한 후 실제 코드 작성\n2. 컴파일만 실패하도록 최소한의 테스트 작성\n3. \"테스트를 통과할 정도로만 실제 코드를 작성\"\n\n## 깨끗한 테스트 코드의 중요성\n\n> \"지저분한 테스트 코드를 짜는 건 짜지 않는 것보다 더 못하다\"\n\n테스트 코드가 유지되지 않으면 실제 코드도 점점 악화됩니다.\n\n## 테스트의 가치\n\n테스트 케이스가 존재하면 개발자는 변경을 두려워하지 않습니다.\n\n## F.I.R.S.T 원칙\n\n- **F**ast: 빠른 실행 속도\n- **I**ndependent: 테스트 간 독립성\n- **R**epeatable: 모든 환경에서 반복 가능\n- **S**elf-Validating: 명확한 성공/실패 판정\n- **T**imely: 실제 코드 작성 전에 작성\n\n> \"테스트 코드를 깨끗이 유지하자\""
+    },
+    {
+      "id": 39,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 7. 오류 처리",
+      "summary": "예외 사용, Try-Catch-Finally, Unchecked 예외, Null 회피",
+      "date": "2022-07-16",
+      "tags": [
+        "Clean Code",
+        "예외처리"
+      ],
+      "url": "https://youn12.tistory.com/59",
+      "series": "CleanCode",
+      "content": "## 핵심 원칙들\n\n### 1. 예외 사용 선호\n오류 코드와 if/else 문보다 try/catch를 통한 예외 처리가 더 깔끔합니다.\n\n### 2. Try-Catch-Finally부터 작성\n> \"try 블록은 트랜잭션과 비슷하다\"\n\n예외 발생 코드 작성 시 먼저 try-catch-finally로 시작하면 안정적입니다.\n\n### 3. Unchecked 예외 사용\nChecked 예외는 OCP를 위반하고 캡슐화를 깨뜨립니다.\n\n### 4. 의미 있는 예외 정보\n오류 메시지에 실패한 연산, 실패 유형 등 충분한 정보를 담아야 합니다.\n\n### 5. Wrapper 패턴 활용\n외부 API의 다양한 예외들을 하나의 예외로 변환하면 의존성이 줄어듭니다.\n\n### 6. Null 회피\nnull 반환/전달 대신 예외 발생이나 특수 사례 객체(`Collections.emptyList()`)를 사용하세요.\n\n## 결론\n\n> \"깨끗한 코드는 읽기도 좋아야 하지만 안정성도 높아야 한다\""
+    },
+    {
+      "id": 40,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 8. 경계",
+      "summary": "외부 코드 사용, 학습 테스트, Adapter 패턴으로 경계 관리",
+      "date": "2022-07-16",
+      "tags": [
+        "Clean Code",
+        "경계"
+      ],
+      "url": "https://youn12.tistory.com/60",
+      "series": "CleanCode",
+      "content": "## 개요\n\n> \"시스템에 들어가는 모든 소프트웨어를 직접 개발하는 경우는 드물다\"\n\n패키지, 오픈소스, 사내 컴포넌트 등을 깔끔하게 통합하는 기법을 설명합니다.\n\n## 핵심 내용\n\n### 1. 외부 코드 사용하기\n경계 인터페이스를 공개 API로 직접 넘기면 인터페이스 변경 시 수정할 코드가 많아집니다.\n\n**해결책**: 경계 인터페이스를 클래스 안으로 숨겨 객체 유형을 관리하세요.\n\n### 2. 경계 살피고 익히기\n외부 API를 신뢰하지 말고 **학습 테스트**를 작성하세요.\n\n### 3. 학습 테스트의 가치\n> \"필요한 지식만 확보하는 손쉬운 방법\"\n\n패키지 업그레이드 시 경계 테스트가 있으면 이전이 수월합니다.\n\n### 4. 미존재 코드 사용하기\n모르는 코드와 아는 코드를 분리하여 **Adapter 패턴**으로 API 사용을 캡슐화합니다.\n\n### 5. 깨끗한 경계\n- 변경이 대표적인 경계에서는 코드를 깔끔히 분리\n- 테스트 케이스로 기대치 정의\n- 외부 코드보다 우리 코드에 의존\n- 새로운 클래스로 감싸거나 Adapter 패턴 사용"
+    },
+    {
+      "id": 41,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 6. 객체와 자료구조",
+      "summary": "자료 추상화, 객체/자료구조 비대칭, 디미터 법칙",
+      "date": "2022-07-14",
+      "tags": [
+        "Clean Code",
+        "OOP"
+      ],
+      "url": "https://youn12.tistory.com/58",
+      "series": "CleanCode",
+      "content": "## 핵심 주제\n\n변수를 비공개로 정의하면서도 get/set 함수를 공개하는 모순을 다룹니다.\n\n## 자료 추상화\n\n> \"get/set 함수만으로는 클래스가 되지 않는다\"\n\n추상 인터페이스를 통해 사용자가 구현을 모른 채 핵심을 조작할 수 있어야 합니다.\n\n## 객체/자료구조 비대칭\n\n| 구분 | 객체 | 자료구조 |\n|------|------|----------|\n| 특징 | 함수 공개, 자료 숨김 | 자료 노출, 함수 미제공 |\n| 장점 | 새 클래스 추가 용이 | 새 함수 추가 용이 |\n\n- 새로운 타입이 필요하면 → 객체지향\n- 새로운 함수가 필요하면 → 절차적 코드\n\n## 디미터 법칙\n\n> \"모듈은 조작하는 객체의 속사정을 몰라야 한다\"\n\n기차 충돌 코드(연쇄된 메서드 호출)를 피하세요.\n\n## 잡종 구조\n\n객체와 자료구조가 섞인 구조는 **\"양쪽의 단점만 모아놓게\"** 되므로 피해야 합니다.\n\n## DTO/활성 레코드\n\n자료 전달 객체는 자료구조로 취급하되, 비즈니스 규칙은 별도 객체에서 처리해야 합니다."
+    },
+    {
+      "id": 42,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 5. 형식 맞추기",
+      "summary": "코드 형식은 의사소통의 일환 - 신문 기사 구조, 세로/가로 형식",
+      "date": "2022-07-13",
+      "tags": [
+        "Clean Code",
+        "코드 형식"
+      ],
+      "url": "https://youn12.tistory.com/57",
+      "series": "CleanCode",
+      "content": "## 핵심 개념\n\n> \"코드 형식은 의사소통의 일환\"\n\n구현 코드는 변하지만, **\"개발자의 스타일과 규율은 사라지지 않는다\"**\n\n## 신문 기사 구조\n\n- 최상단: 고차원 개념과 알고리즘\n- 중간: 세부 내용\n- 하단: 저차원 함수와 세부 내역\n\n## 세로 형식\n\n- 빈 행으로 개념 분리\n- 밀접한 코드는 가까이 배치\n- 변수는 사용 위치 근처에 선언\n- 인스턴스 변수는 클래스 맨 처음\n- 호출 함수를 호출되는 함수보다 먼저 배치\n\n## 가로 형식\n\n- 행길이 제한 (저자는 120자 기준)\n- 공백으로 밀접/느슨한 개념 구분\n\n## 팀 규칙\n\n> \"팀에 속한다면 자신이 선호해야 할 규칙은 팀 규칙\"\n\n개인의 스타일보다 일관성을 우선해야 합니다."
+    },
+    {
+      "id": 43,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 4. 주석",
+      "summary": "주석을 가능한 줄이도록 노력하라 - 좋은 주석과 나쁜 주석",
+      "date": "2022-07-11",
+      "tags": [
+        "Clean Code",
+        "주석"
+      ],
+      "url": "https://youn12.tistory.com/56",
+      "series": "CleanCode",
+      "content": "## 핵심 원칙\n\n> \"주석을 가능한 줄이도록 꾸준히 노력한다\"\n\n코드 자체가 의도를 명확히 표현할 수 있다면 주석은 불필요합니다.\n\n## 좋은 주석의 예시\n\n### 법적 주석\n저작권이나 라이선스 정보\n\n### TODO 주석\n앞으로 구현해야 할 작업 (정기적으로 제거 필요)\n\n### 복잡한 알고리즘 설명\n\"왜 이 방식을 선택했는가\"를 설명하는 주석\n\n## 나쁜 주석 목록\n\n- 중복되거나 주절거리는 주석\n- 오해의 여지가 있는 주석\n- 의무적 주석\n- 코드 이력을 기록하는 주석\n- 있으나 마나한 주석\n\n## 결론\n\n> 정말 좋은 주석은 **주석을 달지 않는 방법**"
+    },
+    {
       "id": 44,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 3. 함수",
+      "summary": "작게 만들어라! 한 가지만 해라! 함수 인수 개수 최소화",
+      "date": "2022-07-01",
+      "tags": [
+        "Clean Code",
+        "함수"
+      ],
+      "url": "https://youn12.tistory.com/55",
+      "series": "CleanCode",
+      "content": "## 핵심 원칙들\n\n### 작게 만들어라!\n\n> \"Make functions small!\"\n\n함수는 최소한의 중첩(최대 1-2 들여쓰기)으로 가독성을 높여야 합니다.\n\n### 한 가지만 해라!\n\n함수는 한 가지를 잘 해야 하며, 관심사를 섞지 않아야 합니다.\n\n### 위에서 아래로 읽히게\n\n코드는 내러티브처럼 흘러가야 하며, 위에서 아래로 추상화 수준이 낮아져야 합니다.\n\n### 서술적인 이름\n\n긴 명확한 이름이 긴 주석보다 낫습니다.\n\n## 함수 인수\n\n### 이상적인 인수 개수\n\n0개 > 1개 > 2개 > 3개 이상은 피하라\n\n### 플래그 인수 금지\n\n플래그 인수는 단일 책임 원칙을 위반합니다.\n\n### 매개변수 객체 사용\n\n2-3개 인수가 필요하면 객체로 묶으세요.\n\n```java\n// Bad\nvoid drawCircle(int x, int y, int radius);\n\n// Good\nvoid drawCircle(Point center, int radius);\n```\n\n## 오류 처리\n\n### 오류 코드보다 예외\n\n오류 코드 열거형은 \"의존성 자석\"입니다. 예외를 사용하면 새 오류 유형 추가 시 재컴파일이 불필요합니다.\n\n### Try/Catch 블록 분리\n\n오류 처리는 별도 함수로 추출하세요."
+    },
+    {
+      "id": 45,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 1. 깨끗한 코드",
+      "summary": "5S 원칙, 르블랑의 법칙, 보이스카우트 규칙 - 깨끗한 코드의 특징과 중요성",
+      "date": "2022-06-28",
+      "tags": [
+        "Clean Code",
+        "리팩터링"
+      ],
+      "url": "https://youn12.tistory.com/53",
+      "series": "CleanCode",
+      "content": "## 5S 원칙\n\n프로그래밍에도 적용되는 5S 원칙:\n\n- **정리** (Seiri): 적절한 명명법\n- **정돈** (Seiton): 코드가 있어야 할 위치\n- **청소** (Seiso): 주석과 불필요한 코드 제거\n- **청결** (Seiketsu): 표준화된 스타일\n- **생활화** (Shitsuke): 규칙 준수 습관화\n\n## 르블랑의 법칙\n\n> \"나중은 결코 오지 않는다\"\n\n기한을 맞추는 유일한 방법은 **언제나 코드를 최대한 깨끗하게 유지**하는 습관입니다.\n\n## 깨끗한 코드의 특징\n\n- 세세한 사항까지 꼼꼼하게 처리\n- 한 가지에 집중\n- 다른 사람도 읽기 쉬움\n- 단위 및 인수 테스트 존재\n- 의미 있는 이름 사용\n\n## 단순 코드 규칙 (중요도 순)\n\n1. 모든 테스트 통과\n2. 중복 제거\n3. 설계 아이디어 표현\n4. 클래스/메서드/함수 최소화\n\n## 핵심 기법\n\n### 메서드 추출 (Extract Method)\n여러 기능을 수행하는 메서드를 기능별로 분리\n\n### 추상화\n추상 메서드나 추상 클래스로 구현을 감싸 유연성 확보\n\n### 보이스카우트 규칙\n> \"캠프장은 처음보다 더 깨끗하게 해 놓고 떠나라\""
+    },
+    {
+      "id": 46,
+      "category": "study",
+      "subcategory": "CleanCode",
+      "title": "[CleanCode] 2. 의미 있는 이름",
+      "summary": "의도를 분명히 밝히고, 그릇된 정보를 피하는 이름 짓기 규칙",
+      "date": "2022-06-28",
+      "tags": [
+        "Clean Code",
+        "네이밍"
+      ],
+      "url": "https://youn12.tistory.com/54",
+      "series": "CleanCode",
+      "content": "## 핵심 규칙들\n\n### 1. 의도를 분명히 밝혀라\n\n변수, 함수, 클래스명은 **\"존재 이유, 수행 기능, 사용 방법\"**에 답해야 합니다.\n\n```java\n// Bad\nint d;\n\n// Good\nint elapsedTimeInDays;\n```\n\n> 주석이 필요하면 의도가 불명확하다는 신호입니다.\n\n### 2. 그릇된 정보를 피해라\n\n```java\n// Bad - 실제 List가 아니라면 사용 금지\nList<Account> accountList;\n\n// Good\nList<Account> accounts;\n```\n\n### 3. 의미 있게 구분하라\n\n불용어(noise word) 추가를 피하세요.\n- `NameString` vs `Name` - 실질적 차이 없음\n\n### 4. 발음하기 쉬운 이름 사용\n\n```java\n// Bad\nDate genymdhms;\n\n// Good\nDate generationTimestamp;\n```\n\n### 5. 클래스/객체 이름\n\n- 명사나 명사구 사용 (Customer, WikiPage)\n- 동사 금지\n\n### 6. 메서드 이름\n\n- 동사나 동사구 사용 (postPayment, save)\n- 접근자는 get/set/is 접두어 사용\n\n### 7. 해법/문제 영역 이름\n\n> \"기술 개념에는 기술 이름이 가장 적합\"\n\nVisitor 패턴처럼 기술 용어를 활용하되, 적절한 용어가 없으면 문제 영역에서 가져옵니다."
+    },
+    {
+      "id": 47,
+      "category": "study",
+      "title": "[Study][CleanCode - 0] 계획",
+      "summary": "Introduction to Clean Code group study initiative covering agile techniques and software craftsmanship, planned for 4 weeks with weekly online meetings",
+      "date": "2022-06-24",
+      "tags": [
+        "CleanCode"
+      ],
+      "url": "https://youn12.tistory.com/52",
+      "content": "Introduction to Clean Code group study initiative covering agile techniques and software craftsmanship, planned for 4 weeks with weekly online meetings",
+      "subcategory": "CleanCode",
+      "series": "Study"
+    },
+    {
+      "id": 48,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] Slf4j Live Template 설정",
+      "summary": "logv로 SLF4J 로깅 코드 자동완성 설정",
+      "date": "2021-11-24",
+      "tags": [
+        "IntelliJ",
+        "Live Template",
+        "로깅"
+      ],
+      "url": "https://youn12.tistory.com/47",
+      "series": "IntelliJ",
+      "content": "## 목적\n\n> \"log.info, log.debug 등 Slf4j의 Log를 자동 생성하기\"\n\n`sout`처럼 `logv`로 로깅 코드 자동 완성\n\n## 설정 단계\n\n### 1. Live Templates 접근\n- Settings → Editor → Live Templates\n\n### 2. Java 템플릿 생성\n- Template Group: Java\n- **Abbreviation**: `logv`\n- **Description**: 템플릿 설명\n- **Template text**: log.info 템플릿 작성\n- **Application Contexts**: Java 선택\n\n### 3. Edit Variables 설정\n\n| 항목 | Expression | Default |\n|------|-----------|--------|\n| EXPR | `variableOfType(\"\")` | \"expr\" |\n| EXPR_COPY | `escapeString(EXPR)` | (공백) |\n\n## 사용 방법\n\n`logv` 입력 후 Tab → 자동으로 SLF4J 로깅 코드 생성"
+    },
+    {
+      "id": 49,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] File Size Exceeds 이슈 해결",
+      "summary": "idea.max.intellisense.filesize 설정 변경으로 해결",
+      "date": "2021-09-13",
+      "tags": [
+        "IntelliJ",
+        "설정"
+      ],
+      "url": "https://youn12.tistory.com/46",
+      "series": "IntelliJ",
+      "content": "## 문제\n\n> \"The file size exceeds the configured limit. Code insight features are not available.\"\n\n코드 파일 크기가 기본 제한값을 초과할 때 발생\n\n## 해결 방법 (4단계)\n\n### 1. 설치 경로 확인\n- ToolBox: Settings → Configuration → Install location\n- \"Show...\" 버튼으로 바로 이동\n\n### 2. idea.properties 파일 찾기\n- 설치 폴더 내 `bin` 디렉토리\n- 텍스트 에디터로 열기\n\n### 3. 설정값 수정\n\n```properties\n# 기본값: 2500\nidea.max.intellisense.filesize=25000\n```\n\n### 4. 재시작\nIntelliJ 완전히 재시작"
+    },
+    {
+      "id": 50,
+      "category": "devops",
+      "title": "[IntelliJ] Shortcuts and Tips - sout (System.out.print)",
+      "summary": "Common debugging shortcuts including sout, soutm, soutp, and soutv for console output",
+      "date": "2021-07-08",
+      "tags": [
+        "IntelliJ"
+      ],
+      "url": "https://youn12.tistory.com/45",
+      "content": "Common debugging shortcuts including sout, soutm, soutp, and soutv for console output",
+      "subcategory": "IntelliJ",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 51,
       "category": "etc",
       "subcategory": "Elasticsearch",
       "title": "[Elasticsearch] Linux 설치 가이드",
       "summary": "Elasticsearch 7.10.0 CentOS 7 설치 및 플러그인 설정",
       "date": "2021-05-20",
-      "tags": ["Elasticsearch", "CentOS", "검색엔진"],
+      "tags": [
+        "Elasticsearch",
+        "CentOS",
+        "검색엔진"
+      ],
       "url": "https://youn12.tistory.com/44",
       "series": "Elasticsearch",
       "content": "## 설치 과정\n\n### 1. 다운로드 및 압축 해제\n\n```bash\nwget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.0-linux-x86_64.tar.gz\ntar -xzf elasticsearch-7.10.0-linux-x86_64.tar.gz\n```\n\n### 2. 외부 접속 활성화\n\n**파일**: `config/elasticsearch.yml`\n\n```yaml\nnetwork.host: 0.0.0.0\ncluster.initial_master_nodes: [\"127.0.0.1\"]\n```\n\n### 3. 플러그인 설치\n\n```bash\n# Nori (한글 형태소 분석기)\n./bin/elasticsearch-plugin install analysis-nori\n\n# Ingest Attachment (파일 색인)\n./bin/elasticsearch-plugin install ingest-attachment\n```\n\n### 4. 실행\n\n```bash\n./bin/elasticsearch  # 포그라운드\n./bin/elasticsearch -d  # 백그라운드\n```\n\n### 5. 접속 확인\n\n```bash\ncurl http://localhost:9200\n```"
+    },
+    {
+      "id": 52,
+      "category": "etc",
+      "title": "[CUBRID] Excel Line Break Character Migration",
+      "summary": "Data migration techniques for handling Excel line breaks using SUBSTITUTE() and database character conversion",
+      "date": "2021-04-08",
+      "tags": [
+        "CUBRID"
+      ],
+      "url": "https://youn12.tistory.com/43",
+      "content": "Data migration techniques for handling Excel line breaks using SUBSTITUTE() and database character conversion",
+      "subcategory": "CUBRID",
+      "series": "CUBRID"
+    },
+    {
+      "id": 53,
+      "category": "devops",
+      "subcategory": "IntelliJ",
+      "title": "[IntelliJ] 실행 Jar 생성",
+      "summary": "외부 의존성 포함 실행 가능한 JAR 파일 생성 방법",
+      "date": "2021-04-02",
+      "tags": [
+        "IntelliJ",
+        "JAR",
+        "빌드"
+      ],
+      "url": "https://youn12.tistory.com/42",
+      "series": "IntelliJ",
+      "content": "## 개요\n\n외부 의존성을 포함한 실행 가능한 JAR 파일 생성\n\n## 단계별 가이드\n\n### 1. Resources 디렉토리 생성\n- `src/main/resources` 생성\n- MANIFEST.MF 파일 저장 위치\n\n### 2. Artifacts 생성\n- Project Structure → Artifacts\n- Main Class 지정\n\n### 3. 의존성 관리\n- \"Extract into Output Root\" 선택\n- 라이브러리를 JAR 내부에 포함\n\n### 4. 빌드\n- Build → Build Artifacts 메뉴 실행\n\n### 5. 실행\n\n```bash\njava -jar [path]/execute_jar.jar\n```\n\n## 트러블슈팅\n\n**NoClassDefFoundError** 발생 시:\n- 의존성이 제대로 포함되었는지 확인\n- Extract 옵션 확인"
+    },
+    {
+      "id": 54,
+      "category": "algorithm",
+      "title": "[Programmers] 신규아이디 추천",
+      "summary": "2021 카카오 블라인드 - 7단계 문자열 정규화",
+      "date": "2021-03-25",
+      "tags": [
+        "Programmers",
+        "Level1",
+        "문자열"
+      ],
+      "url": "https://youn12.tistory.com/41",
+      "series": "Programmers",
+      "content": "## 문제 설명\n\n카카오 계정 아이디 생성 규칙에 맞게 추천 아이디 생성\n\n## 풀이 접근\n\n7단계 로직으로 구성:\n\n1. **1단계**: 대문자 → 소문자 변환\n2. **2단계**: 소문자, 숫자, `-`, `_`, `.` 제외 문자 제거\n3. **3단계**: 연속된 마침표를 단일 마침표로 통합\n4. **4단계**: 시작/끝의 마침표 제거\n5. **5단계**: 빈 문자열일 경우 \"a\" 대입\n6. **6단계**: 16자 이상일 경우 15자로 자르고 끝 마침표 제거\n7. **7단계**: 3자 이상이 될 때까지 마지막 문자 반복 추가\n\n## 정규식 활용\n\n```java\nString answer = new_id.toLowerCase()\n    .replaceAll(\"[^a-z0-9._-]\", \"\")\n    .replaceAll(\"\\\\.+\", \".\")\n    .replaceAll(\"^\\\\.|\\\\.$\", \"\");\n```"
+    },
+    {
+      "id": 55,
+      "category": "devops",
+      "subcategory": "DBMS",
+      "title": "[CUBRID] Server Start FATAL ERROR",
+      "summary": "Out of virtual memory 오류 - data_buffer_size 조정",
+      "date": "2021-03-18",
+      "tags": [
+        "CUBRID",
+        "메모리"
+      ],
+      "url": "https://youn12.tistory.com/40",
+      "series": "CUBRID",
+      "content": "## 문제\n\n데이터베이스 생성 후 `cubrid server start testdb` 명령 실행 시:\n> \"Out of virtual memory\" 오류 발생\n\n## 원인\n\n설정된 `data_buffer_size` 값이 실제 서버의 할당 가능한 메모리를 초과\n\n## 해결 방법\n\n**cubrid.conf** 파일 수정:\n- 경로: `/app/CUBRID/conf/cubrid.conf`\n\n```conf\n# 변경 전\ndata_buffer_size=2G\n\n# 변경 후\ndata_buffer_size=1G\n```\n\n설정 변경 후 CUBRID 서버 재시작"
+    },
+    {
+      "id": 56,
+      "category": "etc",
+      "title": "[Programmers] Level 2 - Truck Crossing Bridge (Java)",
+      "summary": "Queue-based algorithm calculating time for trucks to cross a weight-limited bridge",
+      "date": "2021-03-17",
+      "tags": [
+        "programmers",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/39",
+      "content": "Queue-based algorithm calculating time for trucks to cross a weight-limited bridge",
+      "subcategory": "programmers",
+      "series": "Programmers"
+    },
+    {
+      "id": 57,
+      "category": "etc",
+      "title": "[Javascript/jQuery] Image Load and Resize Events",
+      "summary": "Using onload event to trigger resize functions after image loading completes",
+      "date": "2021-03-15",
+      "tags": [
+        "FrontEnd",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/38",
+      "content": "Using onload event to trigger resize functions after image loading completes",
+      "subcategory": "FrontEnd",
+      "series": "Javascript/jQuery"
+    },
+    {
+      "id": 58,
+      "category": "devops",
+      "title": "[IntelliJ] Removing Korean Characters from Repository URLs",
+      "summary": "Deleting corrupted SVN repository URLs by accessing IntelliJ configuration files",
+      "date": "2021-03-03",
+      "tags": [
+        "IntelliJ"
+      ],
+      "url": "https://youn12.tistory.com/37",
+      "content": "Deleting corrupted SVN repository URLs by accessing IntelliJ configuration files",
+      "subcategory": "IntelliJ",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 59,
+      "category": "live-study",
+      "title": "[Live-Study] 11주차 - Enum",
+      "summary": "열거형 정의, values(), valueOf(), ordinal(), EnumSet",
+      "date": "2021-02-19",
+      "tags": [
+        "Java",
+        "Enum"
+      ],
+      "url": "https://youn12.tistory.com/34",
+      "series": "Live-Study",
+      "content": "## Enum 정의\n\n> \"멤버라 불리는 명명된 값의 집합을 이루는 자료형\"\n\nJava 1.5부터 지원, 타입 안정성 제공\n\n## 기본 사용법\n\n```java\npublic enum Day {\n    MONDAY, TUESDAY, WEDNESDAY\n}\n```\n\n## 생성자와 필드\n\n```java\npublic enum Day {\n    MONDAY(\"월요일\"),\n    TUESDAY(\"화요일\");\n\n    private final String korean;\n\n    Day(String korean) {\n        this.korean = korean;\n    }\n}\n```\n\n## 제공 메소드\n\n| 메소드 | 설명 |\n|--------|------|\n| values() | 모든 상수를 배열로 반환 |\n| valueOf() | 문자열에 해당하는 상수 반환 |\n| ordinal() | 정의된 순서 반환 (0부터) |\n\n## EnumSet\n\n- 메모리 효율적인 Set 구현체\n- 비트 연산 기반\n- null 미지원\n- 생성 메서드: allOf(), of(), range() 등"
+    },
+    {
+      "id": 60,
+      "category": "live-study",
+      "title": "[Live-Study] 12주차 - 애노테이션",
+      "summary": "@Override, @Retention, @Target, 애노테이션 프로세서",
+      "date": "2021-02-19",
+      "tags": [
+        "Java",
+        "Annotation"
+      ],
+      "url": "https://youn12.tistory.com/35",
+      "series": "Live-Study",
+      "content": "## 애노테이션 정의\n\n> \"자바 소스코드에 추가하여 사용할 수 있는 메타데이터의 일종\"\n\nJava 1.5 이상에서 사용 가능\n\n## 내장 애노테이션\n\n| 애노테이션 | 설명 |\n|-----------|------|\n| @Override | 메서드 재정의 표시 |\n| @Deprecated | 사용 자제 권고 |\n| @SuppressWarnings | 경고 억제 |\n\n## @Retention\n\n애노테이션 유지 범위\n\n| 값 | 설명 |\n|----|------|\n| SOURCE | 소스 코드까지만 |\n| CLASS | 클래스 파일까지 |\n| RUNTIME | 런타임까지 |\n\n## @Target\n\n적용 대상 제한\n- TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR 등\n\n## 애노테이션 프로세서\n\n- 컴파일 시점에 애노테이션 처리\n- Lombok 등에서 활용"
+    },
+    {
+      "id": 61,
+      "category": "live-study",
+      "title": "[Live-Study] 13주차 - I/O",
+      "summary": "스트림, 버퍼, 채널, NIO, 파일 읽기/쓰기",
+      "date": "2021-02-19",
+      "tags": [
+        "Java",
+        "I/O",
+        "NIO"
+      ],
+      "url": "https://youn12.tistory.com/36",
+      "series": "Live-Study",
+      "content": "## 스트림 (Stream)\n\n> \"자바는 파일이나 콘솔의 입출력을 직접 다루지 않고, 스트림(Stream)을 통해 처리\"\n\n### InputStream / OutputStream\n- read(), write() 메서드\n- BufferedInputStream 등 보조 스트림\n\n## 버퍼 (Buffer)\n\n장치 간 속도 차이를 완화\n\n| 클래스 | 용량 |\n|--------|------|\n| BufferedInputStream/Reader | 8,192 bytes/chars |\n| BufferedOutputStream/Writer | 8,192 bytes/chars |\n\n## 채널 (Channel)\n\n> \"채널은 스트림과 달리 양방향으로 입력과 출력이 가능하다\"\n\nNIO (New Input/Output) 도입\n\n## IO vs NIO\n\n| 구분 | IO | NIO |\n|------|-----|-----|\n| 방향 | 단방향 | 양방향 |\n| 처리 | 스트림 | 채널 + 버퍼 |\n| 블로킹 | 블로킹 | 논블로킹 지원 |\n\n## 표준 스트림\n\n- System.in\n- System.out\n- System.err"
+    },
+    {
+      "id": 62,
+      "category": "live-study",
+      "title": "[10주차] 멀티쓰레드 프로그래밍",
+      "summary": "Covers processes, threads, Thread class, Runnable interface, thread states, and synchronization",
+      "date": "2021-02-19",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/33",
+      "content": "Covers processes, threads, Thread class, Runnable interface, thread states, and synchronization",
+      "series": "10주차"
+    },
+    {
+      "id": 63,
+      "category": "live-study",
+      "title": "[9주차] 예외 처리",
+      "summary": "Discusses exception vs error differences, exception hierarchies, try/catch handling, and custom exceptions",
+      "date": "2021-02-19",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/32",
+      "content": "Discusses exception vs error differences, exception hierarchies, try/catch handling, and custom exceptions",
+      "series": "9주차"
+    },
+    {
+      "id": 64,
+      "category": "live-study",
+      "title": "[8주차] 인터페이스",
+      "summary": "Details interface definition, implementation, references, inheritance, and Java 8+ features",
+      "date": "2021-02-19",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/31",
+      "content": "Details interface definition, implementation, references, inheritance, and Java 8+ features",
+      "series": "8주차"
+    },
+    {
+      "id": 65,
+      "category": "live-study",
+      "title": "[7주차] 패키지",
+      "summary": "Explains package structure, import statements, class paths, and access modifiers",
+      "date": "2021-02-19",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/30",
+      "content": "Explains package structure, import statements, class paths, and access modifiers",
+      "series": "7주차"
+    },
+    {
+      "id": 66,
+      "category": "live-study",
+      "title": "[6주차] 상속",
+      "summary": "Covers inheritance characteristics, super keyword, method overriding, and abstract classes",
+      "date": "2021-02-19",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/29",
+      "content": "Covers inheritance characteristics, super keyword, method overriding, and abstract classes",
+      "series": "6주차"
+    },
+    {
+      "id": 67,
+      "category": "etc",
+      "title": "[LeetCode][Easy][Java] 1512. Number of Good Pairs",
+      "summary": "Identifies matching value pairs within arrays using nested iteration",
+      "date": "2021-02-19",
+      "tags": [
+        "LeetCode",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/28",
+      "content": "Identifies matching value pairs within arrays using nested iteration",
+      "subcategory": "LeetCode",
+      "series": "LeetCode"
+    },
+    {
+      "id": 68,
+      "category": "devops",
+      "subcategory": "Linux",
+      "title": "[Linux] JAVA_HOME 설정",
+      "summary": "CentOS 7에서 JAVA_HOME 환경변수 설정 방법",
+      "date": "2021-01-14",
+      "tags": [
+        "Linux",
+        "CentOS",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/27",
+      "series": "Linux",
+      "content": "## 설정 단계\n\n### 1단계: JAVAC 경로 확인\n\n```bash\nwhich javac\n```\n\n### 1.1단계: 원본 파일 경로 확인\n\n심볼릭 링크의 실제 경로 파악:\n\n```bash\nreadlink -f [javac 경로]\n```\n\n### 2단계: JAVA_HOME 설정\n\n```bash\nvi /etc/profile\n```\n\n파일 하단에 추가:\n\n```bash\nexport JAVA_HOME=/app/jdk1.8.0_271\nexport PATH=$PATH:$JAVA_HOME/bin\n```\n\n### 3단계: 설정 확인\n\n```bash\n# 설정 적용\nsource /etc/profile\n\n# 환경변수 확인\necho $JAVA_HOME\n```"
+    },
+    {
+      "id": 69,
+      "category": "algorithm",
+      "title": "[LeetCode] 1470. Shuffle the Array",
+      "summary": "배열을 두 부분으로 나누어 번갈아가며 섞기",
+      "date": "2021-01-11",
+      "tags": [
+        "LeetCode",
+        "Easy",
+        "배열"
+      ],
+      "url": "https://youn12.tistory.com/26",
+      "series": "LeetCode",
+      "content": "## 문제 설명\n\n배열을 두 부분으로 나누어 번갈아가며 섞기\n\n## 풀이\n\n```java\npublic int[] shuffle(int[] nums, int n) {\n    int[] result = new int[nums.length];\n    for (int i = 0; i < n; i++) {\n        result[2*i] = nums[i];      // xi\n        result[2*i+1] = nums[i+n];  // yi\n    }\n    return result;\n}\n```\n\n## 핵심 포인트\n\n- 짝수 인덱스: 앞쪽 절반\n- 홀수 인덱스: 뒤쪽 절반\n\n## 시간 복잡도\n\nO(n)"
+    },
+    {
+      "id": 70,
+      "category": "etc",
+      "title": "[LeetCode][Easy][Java] 1431. Kids With the Greatest Number of Candies",
+      "summary": "Algorithm problem determining if kids can have the greatest number of candies after receiving extra candies",
+      "date": "2021-01-08",
+      "tags": [
+        "LeetCode",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/25",
+      "content": "Algorithm problem determining if kids can have the greatest number of candies after receiving extra candies",
+      "subcategory": "LeetCode",
+      "series": "LeetCode"
+    },
+    {
+      "id": 71,
+      "category": "algorithm",
+      "title": "[LeetCode] 1672. Richest Customer Wealth",
+      "summary": "2D 배열에서 각 행의 합 중 최대값 찾기",
+      "date": "2021-01-06",
+      "tags": [
+        "LeetCode",
+        "Easy",
+        "배열"
+      ],
+      "url": "https://youn12.tistory.com/23",
+      "series": "LeetCode",
+      "content": "## 문제 설명\n\n2D 배열에서 각 행의 합 중 최대값 찾기\n\n## 풀이\n\n```java\npublic int maximumWealth(int[][] accounts) {\n    int max = 0;\n    for (int[] account : accounts) {\n        int sum = 0;\n        for (int i : account) {\n            sum += i;\n        }\n        max = Math.max(max, sum);\n    }\n    return max;\n}\n```\n\n## 핵심 포인트\n\n- 중첩 for문으로 2D 배열 순회\n- Math.max()로 최대값 갱신\n\n## 시간 복잡도\n\nO(m * n) - m은 고객 수, n은 은행 수"
+    },
+    {
+      "id": 72,
+      "category": "etc",
+      "title": "[CUBRID] Table, Column Comment 작성",
+      "summary": "Database documentation via comment syntax",
+      "date": "2021-01-06",
+      "tags": [
+        "CUBRID"
+      ],
+      "url": "https://youn12.tistory.com/24",
+      "content": "Database documentation via comment syntax",
+      "subcategory": "CUBRID",
+      "series": "CUBRID"
+    },
+    {
+      "id": 73,
+      "category": "devops",
+      "title": "[IntelliJ][Cubrid] Database tool 연결방법 2",
+      "summary": "Guide for connecting CUBRID database tool in IntelliJ - part 2",
+      "date": "2021-01-06",
+      "tags": [
+        "IntelliJ"
+      ],
+      "url": "https://youn12.tistory.com/20",
+      "content": "Guide for connecting CUBRID database tool in IntelliJ - part 2",
+      "subcategory": "IntelliJ",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 74,
+      "category": "live-study",
+      "title": "[Live-Study] 5주차 - 클래스",
+      "summary": "클래스 정의, 객체 생성, 메서드, 생성자, this 키워드",
+      "date": "2021-01-04",
+      "tags": [
+        "Java",
+        "OOP",
+        "클래스"
+      ],
+      "url": "https://youn12.tistory.com/19",
+      "series": "Live-Study",
+      "content": "## 클래스 정의\n\n> 객체지향프로그래밍에서 객체를 만들기 위한 설계도\n\n구성 요소:\n- 필드 (Field)\n- 메서드 (Method)\n\n## 객체 생성\n\n> \"new 연산자를 통해 메모리에 할당하면서 인스턴스화\"\n\n## 메서드 정의\n\n```java\n접근제어자 반환타입 메서드명(매개변수) {\n    // 구현\n}\n```\n\n### 오버로딩 vs 오버라이딩\n\n| 구분 | 오버로딩 | 오버라이딩 |\n|------|----------|-----------|\n| 정의 | 같은 이름, 다른 매개변수 | 상속받은 메서드 재정의 |\n| 반환타입 | 상관없음 | 동일해야 함 |\n\n## 생성자\n\n- 클래스 이름과 동일\n- 반환값 없음\n- 오버로딩 가능\n\n## this 키워드\n\n- 인스턴스가 자신을 참조\n- 생성자에서 다른 생성자 호출 시 사용"
+    },
+    {
+      "id": 75,
+      "category": "etc",
+      "title": "[LeetCode][Easy][Java] 1480. Running Sum of 1d Array",
+      "summary": "Algorithm for calculating running sum of array elements",
+      "date": "2021-01-04",
+      "tags": [
+        "LeetCode",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/18",
+      "content": "Algorithm for calculating running sum of array elements",
+      "subcategory": "LeetCode",
+      "series": "LeetCode"
+    },
+    {
+      "id": 76,
+      "category": "devops",
+      "title": "[IntelliJ][Cubrid] Database tool 연결방법 1",
+      "summary": "Guide for connecting CUBRID database tool in IntelliJ - part 1",
+      "date": "2021-01-04",
+      "tags": [
+        "IntelliJ"
+      ],
+      "url": "https://youn12.tistory.com/17",
+      "content": "Guide for connecting CUBRID database tool in IntelliJ - part 1",
+      "subcategory": "IntelliJ",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 77,
+      "category": "live-study",
+      "title": "[4주차] 제어문",
+      "summary": "Control flow structures including conditionals and loops",
+      "date": "2020-12-31",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/16",
+      "content": "Control flow structures including conditionals and loops",
+      "series": "4주차"
+    },
+    {
+      "id": 78,
+      "category": "devops",
+      "title": "[IntelliJ] 소스 실시간 반영",
+      "summary": "Real-time source code reflection configuration",
+      "date": "2020-12-02",
+      "tags": [
+        "IntelliJ"
+      ],
+      "url": "https://youn12.tistory.com/15",
+      "content": "Real-time source code reflection configuration",
+      "subcategory": "IntelliJ",
+      "series": "IntelliJ"
+    },
+    {
+      "id": 79,
+      "category": "etc",
+      "title": "[LeetCode][Easy][Java] 9. Palindrome Number",
+      "summary": "Covers palindrome detection and string comparison techniques",
+      "date": "2020-11-27",
+      "tags": [
+        "LeetCode",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/14",
+      "content": "Covers palindrome detection and string comparison techniques",
+      "subcategory": "LeetCode",
+      "series": "LeetCode"
+    },
+    {
+      "id": 80,
+      "category": "etc",
+      "title": "[LeetCode][Easy][Java] 7. Reverse Integer",
+      "summary": "Discusses integer reversal with overflow handling",
+      "date": "2020-11-27",
+      "tags": [
+        "LeetCode",
+        "Java"
+      ],
+      "url": "https://youn12.tistory.com/12",
+      "content": "Discusses integer reversal with overflow handling",
+      "subcategory": "LeetCode",
+      "series": "LeetCode"
+    },
+    {
+      "id": 81,
+      "category": "live-study",
+      "title": "[3주차] 연산자",
+      "summary": "Covers Java operators including arithmetic, bitwise, and logical operations",
+      "date": "2020-11-23",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/11",
+      "content": "Covers Java operators including arithmetic, bitwise, and logical operations",
+      "series": "3주차"
+    },
+    {
+      "id": 82,
+      "category": "live-study",
+      "title": "[2주차] 자바 데이터 타입, 변수 그리고 배열",
+      "summary": "Explains primitive types, reference types, and array declarations",
+      "date": "2020-11-20",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/10",
+      "content": "Explains primitive types, reference types, and array declarations",
+      "series": "2주차"
+    },
+    {
+      "id": 83,
+      "category": "live-study",
+      "title": "[1주차] JVM은 무엇이며 자바 코드는 어떻게 실행하는 것인가",
+      "summary": "Introduces JVM fundamentals and Java compilation/execution process",
+      "date": "2020-11-20",
+      "tags": [
+        "기타"
+      ],
+      "url": "https://youn12.tistory.com/9",
+      "content": "Introduces JVM fundamentals and Java compilation/execution process",
+      "series": "1주차"
+    },
+    {
+      "id": 84,
+      "category": "etc",
+      "title": "[CUBRID][타입 변환] CLOB -> VARCHAR",
+      "summary": "Guide for converting CLOB column type to VARCHAR in CUBRID databases through a 7-step process",
+      "date": "2020-11-16",
+      "tags": [
+        "CUBRID"
+      ],
+      "url": "https://youn12.tistory.com/8",
+      "content": "Guide for converting CLOB column type to VARCHAR in CUBRID databases through a 7-step process",
+      "subcategory": "CUBRID",
+      "series": "CUBRID"
+    },
+    {
+      "id": 85,
+      "category": "etc",
+      "title": "[Tibero][JDBC-12003:Unable to open a session] Session 확인 및 종료",
+      "summary": "Addresses Tibero database error when no sessions are available, demonstrating how to query active sessions and terminate them",
+      "date": "2020-11-12",
+      "tags": [
+        "Tibero"
+      ],
+      "url": "https://youn12.tistory.com/6",
+      "content": "Addresses Tibero database error when no sessions are available, demonstrating how to query active sessions and terminate them",
+      "subcategory": "Tibero",
+      "series": "Tibero"
+    },
+    {
+      "id": 86,
+      "category": "devops",
+      "title": "[Tomcat][Window] 포트 충돌, 사용 중일 경우 포트 죽이기",
+      "summary": "Guide for resolving port conflicts when Tomcat fails to shut down properly, using netstat and taskkill commands",
+      "date": "2020-10-30",
+      "tags": [
+        "Server"
+      ],
+      "url": "https://youn12.tistory.com/4",
+      "content": "Guide for resolving port conflicts when Tomcat fails to shut down properly, using netstat and taskkill commands",
+      "subcategory": "Server",
+      "series": "Tomcat"
+    },
+    {
+      "id": 87,
+      "category": "etc",
+      "title": "[eGovFrame][Maven] 메이븐 빌드 초기화",
+      "summary": "Five-step process for initializing Maven builds in eGovFrame v3.7",
+      "date": "2020-10-30",
+      "tags": [
+        "eGovFrame"
+      ],
+      "url": "https://youn12.tistory.com/3",
+      "content": "Five-step process for initializing Maven builds in eGovFrame v3.7",
+      "subcategory": "eGovFrame",
+      "series": "eGovFrame"
+    },
+    {
+      "id": 88,
+      "category": "etc",
+      "title": "[CentOS 7] firewall 방화벽 설정",
+      "summary": "Firewall configuration guide for CentOS 7",
+      "date": "2020-10-26",
+      "tags": [
+        "CentOS"
+      ],
+      "url": "https://youn12.tistory.com/1",
+      "content": "Firewall configuration guide for CentOS 7",
+      "subcategory": "CentOS",
+      "series": "CentOS 7"
     }
   ]
 }
