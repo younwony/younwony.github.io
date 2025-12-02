@@ -1,3 +1,35 @@
+/* CSS Variables */
+:root {
+    /* Primary Colors */
+    --primary-dark: #1a1a2e;
+    --primary-blue: #4a6cf7;
+    --primary-gradient-start: #1a1a2e;
+    --primary-gradient-end: #16213e;
+
+    /* Text Colors */
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-tertiary: #666;
+    --text-dark: #2d3748;
+    --text-light: #374151;
+
+    /* Background Colors */
+    --bg-body: #f8f9fa;
+    --bg-white: white;
+    --bg-light: #fafbfc;
+    --bg-gray: #f1f5f9;
+
+    /* Accent Colors */
+    --accent-blue-light: #e8f0fe;
+    --accent-blue: #1967d2;
+    --accent-green: #22c55e;
+    --accent-green-dark: #2d5016;
+
+    /* Border & Shadow */
+    --border-light: #eee;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +39,8 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.7;
-    color: #333;
-    background: #f8f9fa;
+    color: var(--text-primary);
+    background: var(--bg-body);
 }
 
 .container {
@@ -19,7 +51,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
     color: white;
     padding: 60px 40px;
     border-radius: 16px;
@@ -63,29 +95,29 @@ body {
 
 /* Sections */
 .section {
-    background: white;
+    background: var(--bg-white);
     padding: 30px 35px;
     border-radius: 12px;
     margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-sm);
 }
 
 .section h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--primary-dark);
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--border-light);
 }
 
 .section h3 i {
     margin-right: 10px;
-    color: #4a6cf7;
+    color: var(--primary-blue);
 }
 
 .section>p {
-    color: #555;
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 
