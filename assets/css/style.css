@@ -266,6 +266,77 @@ body {
     gap: 10px;
 }
 
+/* Professional Summary Highlight */
+.summary-highlight {
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+
+/* Core Competencies List */
+.competency-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.competency-list li {
+    margin-bottom: 12px;
+}
+
+.competency-label {
+    color: #4a6cf7;
+}
+
+/* Skill Categories */
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.skill-bullet {
+    font-size: 0.5rem;
+    margin-right: 8px;
+    color: #4a6cf7;
+}
+
+/* Career Document Specific */
+.competency-career-list {
+    list-style: disc;
+    padding-left: 24px;
+}
+
+.competency-career-list li {
+    margin-bottom: 10px;
+}
+
+.tech-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tech-category-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #4a6cf7;
+    padding-bottom: 5px;
+}
+
+.tech-badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 /* Divider */
 .divider {
     border: none;
@@ -565,6 +636,30 @@ body {
     border-color: #3d4d68;
 }
 
+[data-theme="dark"] .summary-highlight {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .competency-label {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .skill-category-title {
+    color: #d0d0d0;
+}
+
+[data-theme="dark"] .skill-bullet {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .edu-header h4 {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .edu-item p {
+    color: #b0b0b0;
+}
+
 [data-theme="dark"] .landing-page {
     background: #0f0f23;
 }
@@ -737,4 +832,19 @@ body {
 
 .tech-stack strong {
     color: #4a6cf7;
+}
+
+/* Dark Mode - Career Document */
+[data-theme="dark"] .tech-category-title {
+    color: #e0e0e0;
+    border-bottom-color: #60a5fa;
+}
+
+[data-theme="dark"] .tech-stack {
+    border-top-color: #3d4d68;
+    color: #a0a0a0;
+}
+
+[data-theme="dark"] .tech-stack strong {
+    color: #60a5fa;
 }
