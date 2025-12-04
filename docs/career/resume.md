@@ -10,35 +10,42 @@
 
 ## Professional Summary
 
-**"비즈니스 임팩트를 숫자로 증명하는 데이터 드리븐 개발자"**
+**"기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자"**
 
-7년 간 커머스 및 마케팅 도메인에서 대용량 트래픽 처리와 시스템 자동화에 주력해 왔습니다. Java/Spring Boot 기반의 안정적인 시스템 구축 역량을 바탕으로, **Elasticsearch 도입으로 검색 성능을 100배 개선**하고, **ThreadPoolTaskExecutor 커스터마이징과 병렬 처리 아키텍처 설계로 데이터 수집 속도를 100배(100명/h → 10,000명/h) 단축**한 경험이 있습니다. 단순한 기능 구현을 넘어, 운영 비효율을 제거하는 자동화 시스템 구축을 통해 조직의 생산성을 높이는 데 기여합니다.
+Java/Spring 기반 커머스 도메인에서 7년간 상품·가격·주문 등 핵심 비즈니스 로직을 개발하고 운영하며, **기술적 역량과 이해관계자 협업 능력을 함께 성장**시켜왔습니다.
+
+단순 기능 구현을 넘어, **비즈니스 요구사항의 본질적 문제를 파악하고 유관 부서와 적극적으로 소통하여 최적의 해결책을 도출**하는 것이 강점입니다. 네이버 쇼핑 Dynamic Pricing 시스템에서는 API 제약을 마케팅/MD팀과의 협업으로 해결했고, ChatOps 프로젝트에서는 운영팀 인터뷰를 직접 리딩하여 **운영 업무 40%→0% 완전 자동화(Zero Ops)**를 달성했습니다.
+
+**200만 건 대용량 데이터 파이프라인 구축**, **데이터 처리 속도 100배 개선**, **커머스 매출 10% 상승** 등 정량적 성과로 비즈니스 임팩트를 증명합니다.
 
 ---
 
 ## Core Competencies
 
-- **Architecture & Performance:** 대용량 데이터 처리를 위한 병렬 아키텍처 설계 및 ThreadPoolTaskExecutor 최적화 경험
+- **Commerce Domain:** 커머스 핵심 도메인(상품·가격·주문) 비즈니스 로직 설계 및 운영 경험
 - **Data Pipeline:** 200만 건 이상의 이기종 데이터 수집·정제·적재(ETL) 파이프라인 구축
-- **Search Engine:** Elasticsearch 기반의 검색 엔진 도입 및 인덱싱 최적화 (성능 100배 개선)
-- **API Stability:** Retry 로직 및 분산 락을 통한 API 안정성 확보
-- **Automation:** 운영 비효율 제거를 위한 업무 프로세스 100% 자동화 (Zero Ops 지향)
+- **Architecture & Performance:** 대용량 데이터 처리를 위한 병렬 아키텍처 설계 및 성능 최적화
+- **Zero Ops & Automation:** 운영 비효율 제거를 위한 업무 프로세스 100% 자동화 (ChatOps, 리포팅 자동화)
+- **Cross-functional Leadership:** 비즈니스 요구사항 분석부터 유관 부서 협업까지 프로젝트 전 과정 리딩
 
 ---
 
 ## Technical Skills
 
 ### Languages & Frameworks
-- **Java (Expert)**, Spring Boot, Spring Batch, JPA/Hibernate
+- **Java**, Spring Boot, Spring Batch, JPA/Hibernate
 
 ### Database & Cache
-- MySQL, Oracle, **Redis (Distributed Lock)**, **Elasticsearch**
+- MySQL, Oracle, **Redis (Distributed Lock)**, Elasticsearch
 
 ### Infra & DevOps
-- AWS (EC2, S3, RDS), Docker, Jenkins, GitHub Actions
+- AWS (EC2, S3, RDS), Jenkins, GitHub Actions
 
-### Tools & Libraries
-- IntelliJ, JIRA, Confluence, Slack API, Google Sheets API, GA4, BigQuery
+### Data & Analytics
+- BigQuery, GA4
+
+### Tools & Integration
+- Slack API (ChatOps), Google Sheets API, Naver Shopping API, JIRA, Confluence
 
 ---
 
@@ -48,47 +55,46 @@
 **Backend Developer (Senior)**
 *2022.02 - 현재 (3년 9개월)*
 
-#### 인플루언서 데이터 플랫폼 고도화
-- **핵심 성과:** 수집 속도 **99% 단축 (100명/h → 10,000명/h)**, 데이터 풀 **20배 확대 (10만 → 200만 명)**, 검색 성능 **100배 개선 (10초 → 0.1초)**
-- **주요 기술:**
-  - **병렬 아키텍처 설계:** ThreadPoolTaskExecutor를 커스텀하여 I/O Blocking 시간을 최소화하고 리소스 효율 극대화
-  - **안정성 확보:** Retry 로직 구현으로 API 차단 없이 안정적인 데이터 수집
-  - **분산 제어:** Redis Distributed Lock 도입으로 멀티 인스턴스 환경에서 중복 수집 방지
-  - **검색 최적화:** Elasticsearch 도입하여 복합 조건 검색을 0.1초 이내로 처리 (기존 RDB 대비 100배 개선)
-  - **리포팅 자동화:** Google Sheets API를 활용하여 리포팅 작업 완전 자동화
-- **사용 기술:** Spring Boot, ThreadPoolTaskExecutor, Redis Lock, Elasticsearch, Google Sheets API
+#### 인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)
+- **핵심 성과:** 데이터 수집 **100% 자동화**, 데이터 풀 **20배 확대** (10만→200만 명), 검색 성능 **100배 개선** (10초→0.1초), **리포팅 Zero Ops 달성**
+- **주요 역할:**
+  - **요구사항 분석 및 협업 리딩:** 마케팅팀과의 정기 미팅으로 실제 Pain Point 파악, 수집 조건 우선순위 함께 정의
+  - **대용량 데이터 파이프라인 설계:** 멀티소스 수집 아키텍처 설계, 일 5,000명 자동 수집 목표 달성
+  - **시스템 안정성 확보:** Retry 로직 + Redis Distributed Lock으로 API 차단 방지 및 중복 수집 방지
+  - **운영 자동화(Zero Ops):** Google Sheets API로 리포팅 완전 자동화, 마케팅팀 실시간 성과 확인 가능
+- **사용 기술:** Spring Boot, Redis Lock, Elasticsearch, Google Sheets API
 
-#### 네이버 쇼핑 최저가 대응 및 Dynamic Pricing 시스템
-- **핵심 성과:** API Quota(25,000건/일) 제약 극복 및 마진율 4% 보장 범위 내 자동 가격 조정, **매출/트래픽 각각 10% 상승**
-- **주요 기술:**
-  - **Dynamic Pricing 로직:** 모델번호 매핑으로 경쟁사 최저가 수집, [자사 판매가 vs 최저가 차이 < 4%] & [최소 마진 확보] 조건 충족 시에만 자동 할인 적용
-  - **API Quota 효율화:** 매출 상위 및 노출 중요 상품 우선순위 스케줄링으로 한정된 API 리소스 활용 극대화
-  - **하이브리드 운영 구조:** 자동+매뉴얼 프로세스 통합, MD팀이 예외 케이스만 집중 관리할 수 있도록 Admin 뷰 제공
-  - **성과 검증 환경:** GA/BigQuery 연동하여 가격 정책 전후 트래픽 및 매출 변화 정량 분석
+#### 네이버 쇼핑 Dynamic Pricing 시스템 (커머스 가격 경쟁력 확보)
+- **핵심 성과:** API 제약(25,000건/일) 극복, 마진율 4% 보장 범위 내 자동 가격 조정, **매출/트래픽 각각 10% 상승**
+- **주요 역할:**
+  - **비즈니스 규칙 설계 리딩:** 마케팅/MD팀과 협의하여 가격 추종 범위(4%), 최소 마진 기준, 예외 상품군 등 핵심 정책 정의. 기술적 제약을 비즈니스 우선순위로 해결하는 방안 직접 제안
+  - **Dynamic Pricing 엔진 개발:** 모델번호 매핑 기반 경쟁사 최저가 수집 및 조건부 자동 할인 적용 로직 구현
+  - **하이브리드 운영 구조 설계:** 시스템 자동 처리 + MD팀 수동 처리 통합, 예외 케이스 집중 관리 Admin 뷰 제공
+  - **데이터 기반 성과 검증:** GA/BigQuery 연동으로 가격 정책 전후 트래픽·매출 변화 정량 분석 환경 구축
 - **사용 기술:** Spring Batch, Naver Shopping API, BigQuery, Google Analytics
 
-#### 해외 부티크 상품 데이터 정합성 확보 및 클레임 방지
-- **핵심 성과:** 상품 이미지 불일치로 인한 고객 클레임 **Zero 달성**, 반품 비용 절감
-- **주요 기술:**
-  - **해시 기반 검증:** HTTP Header(ETag, Last-Modified) 및 바이너리 해시값(MD5) 비교로 이미지 변경 감지
-  - **동기화 로직 고도화:** 배치 작업 시 해시값 O(1) 비교로 변경 감지 즉시 S3 이미지 강제 업데이트
-  - **리소스 최적화:** 전체 파일 다운로드 대신 Header 우선 비교로 네트워크 비용 최소화
+#### 해외 부티크 상품 데이터 정합성 확보 (커머스 클레임 방지)
+- **핵심 성과:** 상품 이미지 불일치로 인한 고객 클레임 **Zero 달성**, 반품 비용 절감, **운영 자동화(Zero Ops)**
+- **주요 역할:**
+  - **문제 원인 분석 및 해결책 제안:** CS팀과 협업하여 클레임 패턴 분석, 해시 기반 검증 방안 직접 제안
+  - **해시 기반 이미지 검증 시스템 구축:** HTTP Header(ETag, Last-Modified) 및 MD5 해시값 비교로 이미지 변경 정밀 감지
+  - **운영 자동화:** 수동 검수 → 24시간 자동 동기화로 운영팀 개입 없이 이미지 정합성 유지
 - **사용 기술:** Java, Spring Boot, AWS S3, Image Hashing (MD5/ETag)
 
-#### 비즈니스 프로세스 최적화 (ChatOps)
-- **핵심 성과:** 파편화된 소통 채널 **100% 통합**, 운영팀 수동 업무 **40% → 0%** (Zero Ops 달성)
-- **주요 기술:**
-  - **채널 일원화:** 모든 운영 요청 창구를 Slack으로 통합하여 업무 투명성 확보
-  - **ChatOps 구축:** Slack Event API 기반 Interactive Component로 메신저 내 업무 완결
-  - **프로세스 자동화:** 버튼 클릭 한 번으로 DB 처리까지 완료되도록 자동화
+#### 비즈니스 프로세스 최적화 (ChatOps) - Zero Ops 달성
+- **핵심 성과:** 운영팀 수동 업무 **40%→0%** (Zero Ops), 소통 채널 **100% 통합**, 업무 투명성 확보
+- **주요 역할:**
+  - **현업 인터뷰 직접 리딩:** 운영팀·유관 부서 인터뷰 주도하여 실제 Pain Point 발굴 (병목: 컨텍스트 스위칭)
+  - **사용자 중심 플랫폼 선정:** 구성원이 익숙한 Slack 선택, 기존 업무 흐름 유지하며 자동화 적용으로 채택률 극대화
+  - **ChatOps 시스템 구축:** Slack Event API 기반 발주 승인/반려, 클레임 처리 등 버튼 클릭 한 번으로 DB 처리까지 완료
 - **사용 기술:** Java, Spring Boot, Slack Event API
 
-#### 개발 문화 및 엔지니어링 역량 강화
-- **핵심 성과:** 배포 후 버그 및 핫픽스 건수 감소, 신규 입사자 온보딩 시간 단축
-- **주요 기술:**
-  - **코드 리뷰 문화 정착:** PR 기반 개발 프로세스 도입, 최소 2명 이상 리뷰 승인 의무화
-  - **코드 컨벤션 수립:** Java/Spring 코딩 컨벤션 명문화 및 가이드라인 배포
-  - **팀 역량 강화:** 상호 코드 리뷰를 통한 기술 지식 전파 및 주니어 개발자 성장 견인
+#### 개발 문화 및 엔지니어링 역량 강화 - 팀 리딩
+- **핵심 성과:** 배포 후 버그·핫픽스 건수 감소, 신규 입사자 온보딩 시간 단축, 팀 역량 상향 평준화
+- **주요 역할:**
+  - **코드 리뷰 프로세스 도입 리딩:** PR 기반 개발 프로세스 직접 제안 및 팀 합의 도출, 최소 2명 이상 리뷰 승인 의무화
+  - **코드 컨벤션 수립:** 팀원 협의 통해 Java/Spring 코딩 컨벤션 명문화, 신규 입사자 가이드라인 배포
+  - **지식 공유 체계 구축:** 상호 코드 리뷰를 통한 기술 지식 전파, 주니어 개발자 멘토링
 - **사용 기술:** Code Review, Clean Code, Engineering Culture
 
 ---
