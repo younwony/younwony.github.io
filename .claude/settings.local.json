@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:platform.claude.com)",
+      "WebFetch(domain:plugins.jetbrains.com)"
     ],
     "deny": [],
     "ask": []

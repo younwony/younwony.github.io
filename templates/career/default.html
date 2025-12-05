@@ -376,6 +376,9 @@
             <li>
                 <strong>Cross-functional Leadership:</strong> 비즈니스 요구사항 분석부터 유관 부서 협업까지 프로젝트 전 과정 리딩
             </li>
+            <li>
+                <strong>AI-Assisted Development:</strong> AI 코딩 어시스턴트(Claude Code) 활용으로 운영 업무 자동화/시스템화 개발 가속화, 타 부서 직접 개발 지원을 통한 개발팀 리소스 절감
+            </li>
         </ul>
     </section>
 
@@ -423,6 +426,12 @@
                     <span class="tech-badge">Naver Shopping API</span>
                     <span class="tech-badge">JIRA</span>
                     <span class="tech-badge">Confluence</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="tech-category-title">AI Coding Assistant</h3>
+                <div class="tech-badge-list">
+                    <span class="tech-badge">Claude Code</span>
                 </div>
             </div>
         </div>
@@ -492,6 +501,27 @@
                     <span class="metric-pill">🤖 리포팅 Zero Ops</span>
                     <span class="metric-pill">⚡ 검색 속도 100배 개선</span>
                 </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">💡 Impact (비즈니스 효과):</span>
+                <div class="project-content">
+                    <ul>
+                        <li>마케팅 커버리지 극대화로 대형 캠페인 진행 가능</li>
+                        <li>마케팅팀 리포팅 수작업 완전 제거로 고부가가치 업무 집중</li>
+                        <li>정기 소통 체계 구축으로 요구사항 반영 속도 향상</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">🔧 Tech Decision:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>"RDB 대신 Elasticsearch 선택 - 200만 건 복합 조건 검색에서 RDB는 10초 이상 타임아웃, 역색인 기반 ES로 0.1초 달성"</li>
+                        <li>"Redis Distributed Lock 도입 - 멀티 인스턴스 환경에서 중복 수집 방지 및 API Rate Limit 준수"</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Spring Boot</span>
                     <span class="tech-badge">Redis Lock</span>
@@ -551,6 +581,27 @@
                     <span class="metric-pill">📈 트래픽 10% 상승</span>
                     <span class="metric-pill">⚙️ 운영 효율 혁신</span>
                 </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">💡 Impact (비즈니스 효과):</span>
+                <div class="project-content">
+                    <ul>
+                        <li>가격 경쟁력 확보로 네이버 쇼핑 노출 우위 달성, 매출 방어</li>
+                        <li>MD팀은 전략 상품·예외 케이스에만 집중하는 고효율 구조 정착</li>
+                        <li>마케팅/MD팀과의 정기 협의 체계 구축으로 가격 정책 신속 대응</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">🔧 Tech Decision:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>"Spring Batch 선택 - 대량 상품 가격 조정의 트랜잭션 안정성 및 Chunk 기반 처리로 메모리 효율화"</li>
+                        <li>"우선순위 스케줄링 설계 - API Quota 25,000건 제약 하에서 매출 기여도 상위 12% 상품에 집중하여 ROI 극대화"</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Spring Batch</span>
                     <span class="tech-badge">Naver Shopping API</span>
@@ -608,6 +659,27 @@
                     <span class="metric-pill">✅ 클레임 Zero 달성</span>
                     <span class="metric-pill">🔒 데이터 정합성 100%</span>
                     <span class="metric-pill">💸 처리 비용 최소화</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">💡 Impact (비즈니스 효과):</span>
+                <div class="project-content">
+                    <ul>
+                        <li>고객 신뢰도 회복으로 구매 전환율 안정화</li>
+                        <li>CS팀 클레임 처리 업무 부담 제거</li>
+                        <li>브랜드 이미지 손상 방지</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">🔧 Tech Decision:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>"MD5 해시 + ETag 이중 검증 - URL 동일해도 이미지 내용 변경 감지, Header 우선 비교로 네트워크 비용 80% 절감"</li>
+                        <li>"S3 직접 업로드 - CDN 캐시 무효화 없이 즉시 반영되는 구조로 운영 복잡도 제거"</li>
+                    </ul>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Java</span>
@@ -668,6 +740,27 @@
                     <span class="metric-pill">🤖 운영 업무 Zero Ops</span>
                     <span class="metric-pill">⚡ 협업 속도 증대</span>
                 </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">💡 Impact (비즈니스 효과):</span>
+                <div class="project-content">
+                    <ul>
+                        <li>운영팀이 고부가가치 업무에 집중 가능</li>
+                        <li>휴먼 에러 방지로 클레임 감소</li>
+                        <li>현업 만족도 향상: "처리 결과를 즉시 알 수 있다", "요청 창구가 명확해졌다"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">🔧 Tech Decision:</span>
+                <div class="project-content">
+                    <ul>
+                        <li>"Slack 선택 - 구성원이 가장 익숙한 플랫폼으로 채택률 극대화, 별도 앱 설치 없이 즉시 도입"</li>
+                        <li>"Event API + Interactive Component - 버튼 클릭만으로 DB 처리까지 완료, 컨텍스트 스위칭 제거"</li>
+                    </ul>
+                </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Java</span>
                     <span class="tech-badge">Spring Boot</span>
@@ -725,6 +818,17 @@
                     <span class="metric-pill">📝 코드 리뷰 문화 정착</span>
                     <span class="metric-pill">🐛 버그 감소</span>
                     <span class="metric-pill">📚 팀 역량 강화</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <span class="project-label">💡 Impact (비즈니스 효과):</span>
+                <div class="project-content">
+                    <ul>
+                        <li>주니어 개발자 성장 견인으로 팀 전체 생산성 향상</li>
+                        <li>건강한 코드 리뷰 문화 정착으로 협업 효율 증대</li>
+                        <li>기술 부채 감소로 신규 기능 개발 속도 향상</li>
+                    </ul>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Code Review</span>
