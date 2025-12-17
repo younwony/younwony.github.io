@@ -1,156 +1,57 @@
 # Claude Code 작업 지침
 
 > **목적**: Claude Code의 이력서/경력기술서 작업 일관성 확보
-> **버전**: 3.2
-> **최종 업데이트**: 2025-12-05
+> **버전**: 4.1
+> **최종 업데이트**: 2025-12-17
 
 ---
 
-## 📑 목차
-
-1. [문서 구조](#-문서-구조)
-2. [핵심 원칙](#-핵심-원칙)
-3. [작업 프로세스](#-작업-프로세스)
-4. [스타일 가이드](#-스타일-가이드)
-5. [유지보수 가이드](#-유지보수-가이드)
-6. [참고 문서](#-참고-문서)
-
----[CLAUDE.md](../../Users/wony9/.claude/CLAUDE.md)
-
 ## 📁 문서 구조
-
-### 전체 구조도
 
 ```
 younwony.github.io/
-├── docs/                           # 📚 문서 저장소
-│   ├── README.md                   # 문서 구조 설명
+├── docs/                           # 문서 저장소
 │   ├── career/                     # 경력 관련 문서
 │   │   ├── my_career_data.md      # ⭐ 원본 데이터 (SSOT)
 │   │   ├── resume.md              # 자동 생성: 간결 이력서
 │   │   └── career_portfolio.md    # 자동 생성: 상세 경력기술서
-│   ├── references/                 # 참고 자료
-│   │   ├── resume_writing_guide.md
-│   │   └── resume_examples.md
-│   └── analysis/                   # 분석 자료
-│       ├── tech_blog_analysis.md
-│       └── github_analysis.md
-├── templates/                      # 🎨 HTML 템플릿
-│   ├── partials/                   # 공통 컴포넌트
-│   │   └── head.html              # HTML head 섹션 (재사용)
+│   └── references/                 # 참고 자료
+├── templates/                      # HTML 템플릿
 │   ├── resume/                     # 이력서 템플릿 (4종)
-│   │   ├── default.html           # 자동 생성
-│   │   ├── minimal.html           # 자동 생성
-│   │   ├── modern.html            # 자동 생성
-│   │   └── corporate.html         # 자동 생성
 │   └── career/                     # 경력기술서 템플릿 (4종)
-│       ├── default.html           # 자동 생성
-│       ├── minimal.html           # 자동 생성
-│       ├── modern.html            # 자동 생성
-│       └── corporate.html         # 자동 생성
-├── assets/                         # 🎨 스타일 & 스크립트
-│   ├── css/
-│   │   └── style.css              # 공통 스타일 (CSS 변수, 다크모드)
-│   └── js/
-│       └── common.js              # 공통 스크립트
-└── index.html                      # 메인 페이지
+├── assets/                         # 스타일 & 스크립트
+│   ├── css/style.css
+│   └── js/common.js
+└── .claude/
+    ├── skills/                     # 🎯 지식/가이드라인 (자동 참조)
+    │   ├── resume-writing.md      # STAR+I 기법, 시니어 톤
+    │   └── style-guide.md         # CSS 변수, 다크모드
+    └── commands/                   # 🔧 워크플로우 (/명령어로 호출)
+        ├── resume-update.md       # 이력서 업데이트
+        ├── project-add.md         # 새 프로젝트 추가
+        ├── monthly-review.md      # 월간 리뷰
+        └── quarterly-review.md    # 분기별 리뷰
 ```
-
-### 파일 역할 정의
-
-| 파일 | 역할 | 수정 가능 여부 |
-|------|------|--------------|
-| `my_career_data.md` | **원본 데이터** (SSOT) | ✅ 직접 수정 |
-| `resume.md` | 간결 이력서 | ❌ 자동 생성 |
-| `career_portfolio.md` | 상세 경력기술서 | ❌ 자동 생성 |
-| `templates/**/*.html` | HTML 출력물 (8개) | ❌ 자동 생성 |
-| `style.css` | 공통 스타일 | ✅ 직접 수정 |
-| `common.js` | 공통 스크립트 | ✅ 직접 수정 |
 
 ---
 
 ## 🎯 핵심 원칙
 
-> **📘 상세 작성 가이드**: 이력서 작성 시 `docs/references/resume_writing_guide.md`를 반드시 참고하세요.
-> - STAR+I 모델 (Impact 포함)
-> - 7년차 시니어 특화 전략
-> - Bad vs Good 표현 사례
-> - 정량화 방식 및 시니어 톤 문장 패턴
-
-### 1. 단일 진실 공급원 (Single Source of Truth)
+### 단일 진실 공급원 (SSOT)
 
 ```
 my_career_data.md (원본)
     ↓ 자동 생성
     ├── resume.md
     ├── career_portfolio.md
-    └── templates/
-        ├── resume/*.html (4개)
-        └── career/*.html (4개)
+    └── templates/*.html (8개)
 ```
 
-**원칙**:
-- ✅ **DO**: `my_career_data.md`만 수정
-- ❌ **DON'T**: 생성된 파일 직접 수정
+- ✅ `my_career_data.md`만 수정
+- ❌ 생성된 파일 직접 수정 금지
 
-### 2. STAR+I 기법 준수
+### 업데이트 대상 파일 (10개)
 
-모든 프로젝트 설명은 STAR+I 형식을 따릅니다:
-
-| 항목 | 설명 | 예시 |
-|------|------|------|
-| **S**ituation | 상황/배경/제약 | "API Rate Limit 25,000건/일 제약으로..." |
-| **T**ask | 과제/목표 | "수집 속도 개선 및 데이터 확장" |
-| **A**ction | 기술적 의사결정 (Why & How) | "병렬 처리 아키텍처 설계, Redis Lock 선택 이유..." |
-| **R**esult | 정량적 성과 | "속도 99% 단축 (100명/h → 10,000명/h)" |
-| **I**mpact | 비즈니스/조직적 효과 | "마케팅팀 리포팅 수작업 완전 제거" |
-
-> **💡 7년차 핵심**: Action에 **"왜 그 기술을 선택했는지"** 의사결정 근거가 반드시 포함되어야 합니다.
-
-### 3. 정량적 성과 중심
-
-**좋은 예시**:
-- ✅ "수집 속도 **99% 단축** (100명/h → 10,000명/h)"
-- ✅ "검색 성능 **100배 개선** (10초 → 0.1초)"
-- ✅ "운영팀 수동 업무 **40% → 0%** (Zero Ops 달성)"
-
-**나쁜 예시**:
-- ❌ "수집 속도를 많이 개선했습니다"
-- ❌ "검색이 빨라졌습니다"
-- ❌ "업무 자동화를 했습니다"
-
----
-
-## 🔄 작업 프로세스
-
-### 이력서 업데이트 워크플로우
-
-> **📘 필수 참고**: 이력서 업데이트/작성 전 `docs/references/resume_writing_guide.md`를 먼저 읽고 진행하세요.
-
-#### 1단계: 변경사항 확인
-
-```bash
-# 원본 데이터 변경 확인
-git diff docs/career/my_career_data.md
-```
-
-**확인 사항**:
-- [ ] 어떤 프로젝트가 수정되었는가?
-- [ ] 어떤 섹션이 변경되었는가? (S/T/A/R/I)
-- [ ] 새로운 기술이 추가되었는가?
-- [ ] 기술 선택 이유(Why)가 포함되었는가?
-
-#### 2단계: 변경 범위 결정
-
-```
-변경된 프로젝트 식별
-    ↓
-영향받는 파일 목록 작성
-    ↓
-업데이트 대상 파일 (최대 10개)
-```
-
-**업데이트 대상**:
 1. `docs/career/resume.md`
 2. `docs/career/career_portfolio.md`
 3. `templates/resume/default.html`
@@ -162,430 +63,39 @@ git diff docs/career/my_career_data.md
 9. `templates/career/modern.html`
 10. `templates/career/corporate.html`
 
-#### 3단계: 변경 적용
+---
 
-**원칙**:
-- ✅ **변경된 섹션만** 찾아서 교체
-- ✅ STAR+I 형식 그대로 반영 (Impact 포함)
-- ✅ 기술 선택 이유(Why) 포함 확인
-- ❌ **변경되지 않은 부분** 절대 수정 금지
-- ❌ 사용하지 않은 기술 추가 금지
-- ❌ "담당했습니다" 류 수동적 표현 사용 금지
+## 🎨 Skills (지식/가이드라인)
 
-#### 4단계: 검증
+Claude가 작업 시 **자동으로 참조**하는 지식입니다.
 
-```bash
-# 변경사항 확인
-git diff docs/career/resume.md
-git diff templates/resume/default.html
-
-# 전체 변경 파일 확인
-git status
-```
-
-**검증 체크리스트**:
-- [ ] 변경된 프로젝트만 업데이트되었는가?
-- [ ] 10개 파일 모두 업데이트되었는가?
-- [ ] STAR+I 형식이 유지되었는가? (Impact 포함)
-- [ ] 정량적 성과(숫자)가 포함되었는가?
-- [ ] 기술 선택 이유(Why)가 드러나는가?
-- [ ] 비즈니스 임팩트와 연결되는가?
-- [ ] 사용하지 않은 기술이 제거되었는가?
-- [ ] "담당했습니다" 대신 "달성/개선/설계했습니다" 표현 사용?
-
-#### 5단계: 커밋
-
-```bash
-# 작은 단위로 커밋
-git add docs/career/resume.md
-git commit -m "docs: 프로젝트 1 성과 지표 업데이트"
-
-git add docs/career/career_portfolio.md
-git commit -m "docs: 프로젝트 1 상세 내용 보강"
-
-git add templates/resume/*.html
-git commit -m "feat: 이력서 템플릿 프로젝트 1 업데이트"
-
-git add templates/career/*.html
-git commit -m "feat: 경력기술서 템플릿 프로젝트 1 업데이트"
-```
+| Skill | 파일 | 설명 |
+|-------|------|------|
+| `resume-writing` | `.claude/skills/resume-writing.md` | STAR+I 기법, 정량화, 시니어 톤 |
+| `style-guide` | `.claude/skills/style-guide.md` | CSS 변수, 다크모드, 템플릿 구조 |
 
 ---
 
-## 🎨 스타일 가이드
-
-### CSS 구조
-
-#### 파일 구성
-
-```css
-/* assets/css/style.css */
-
-/* 1. CSS Variables (Light & Dark) */
-/* 2. Reset & Base */
-/* 3. Typography */
-/* 4. Layout */
-/* 5. Components */
-/* 6. Dark Mode Overrides (if needed) */
-```
-
-#### CSS 변수 사용 (v3.0부터 적용)
-
-**변수 정의**:
-```css
-:root {
-    /* Primary Colors */
-    --primary-dark: #1a1a2e;
-    --primary-blue: #4a6cf7;
-    --text-primary: #333;
-    --bg-body: #f8f9fa;
-    --bg-white: white;
-}
-
-[data-theme="dark"] {
-    --primary-dark: #e0e0e0;
-    --primary-blue: #60a5fa;
-    --text-primary: #e0e0e0;
-    --bg-body: #0f0f23;
-    --bg-white: #1a1a2e;
-}
-```
-
-**변수 사용**:
-```css
-.section {
-    background: var(--bg-white);
-    color: var(--text-primary);
-}
-
-.section h3 {
-    color: var(--primary-dark);
-}
-
-.section h3 i {
-    color: var(--primary-blue);
-}
-```
-
-**장점**:
-- ✅ 라이트/다크 모드가 자동으로 적용됨
-- ✅ 중복 코드 제거
-- ✅ 유지보수 용이
-
-#### 인라인 스타일 금지
-
-**❌ 나쁜 예시**:
-```html
-<h3 style="color: #1a1a2e; font-size: 1.2rem;">제목</h3>
-```
-
-**✅ 좋은 예시**:
-```html
-<h3 class="section-title">제목</h3>
-```
-
-```css
-.section-title {
-    color: #1a1a2e;
-    font-size: 1.2rem;
-}
-
-[data-theme="dark"] .section-title {
-    color: #e0e0e0;
-}
-```
-
-### HTML 템플릿 구조
-
-#### 공통 구조
-
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문서 제목</title>
-
-    <!-- 외부 CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- 콘텐츠 -->
-
-    <!-- 공통 스크립트 -->
-    <script src="../../assets/js/common.js"></script>
-</body>
-</html>
-```
-
-#### 템플릿별 특성
-
-| 템플릿 | 특징 | 적합한 용도 |
-|--------|------|-----------|
-| **default** | 균형 잡힌 레이아웃 | 일반적인 이력서 |
-| **minimal** | 심플한 디자인 | 간결함 선호 |
-| **modern** | 모던한 UI | 디자인 중시 |
-| **corporate** | 격식 있는 스타일 | 대기업 지원 |
-
----
-
-## 🔧 유지보수 가이드
-
-### 일상적인 유지보수
-
-#### 1. 프로젝트 추가
-
-**절차**:
-1. `my_career_data.md`에 새 프로젝트 추가 (STAR 형식)
-2. 기술 스택 섹션 업데이트
-3. 워크플로우 실행 (10개 파일 업데이트)
-4. 검증 후 커밋
-
-**예시**:
-```markdown
-### 프로젝트 6: 신규 프로젝트명
-
-**기간**: 2025.01 - 진행 중
-
-#### Situation (상황)
-- 기존 시스템의 문제점 설명
-
-#### Task (과제)
-- 해결해야 할 목표
-
-#### Action (실행)
-- 구체적인 실행 내용
-- 사용한 기술 및 방법론
-
-#### Result (결과)
-- 정량적 성과 (숫자로 표현)
-- 비즈니스 임팩트
-```
-
-#### 2. 기술 스택 업데이트
-
-**원칙**:
-- ✅ **사용 중인 기술만** 포함
-- ✅ 프로젝트에서 실제 활용한 기술
-- ❌ 배운 것만 나열 금지
-
-**카테고리**:
-```
-Languages/Frameworks
-├── Java
-├── Spring Boot
-└── JPA/Hibernate
-
-Database & Cache
-├── MySQL
-├── Redis
-└── Elasticsearch
-
-Infra & DevOps
-├── AWS (EC2, S3, RDS)
-├── Jenkins
-└── GitHub Actions
-
-Tools
-├── IntelliJ
-├── JIRA
-└── Slack API
-```
-
-#### 3. 성과 지표 개선
-
-**Before** (정성적):
-```
-- 시스템 성능을 개선했습니다
-```
-
-**After** (정량적):
-```
-- 시스템 응답 속도 **80% 개선** (5초 → 1초)
-- 동시 처리량 **3배 향상** (100 TPS → 300 TPS)
-```
-
-### 정기적인 리뷰
-
-#### 월간 리뷰 (매월 1일)
-
-**체크리스트**:
-- [ ] 새로운 프로젝트 경험 추가
-- [ ] 성과 지표 업데이트
-- [ ] 기술 스택 최신화
-- [ ] 링크 유효성 검증
-
-#### 분기별 리뷰 (분기 말)
-
-**체크리스트**:
-- [ ] 전체 문서 구조 점검
-- [ ] 오래된 프로젝트 간소화
-- [ ] Professional Summary 업데이트
-- [ ] 템플릿 디자인 개선 검토
-
-### 버전 관리
-
-#### 의미 있는 커밋 메시지
-
-```bash
-# 좋은 예시
-git commit -m "docs: 프로젝트 3 성과 지표 추가 (매출 10% 증가)"
-git commit -m "feat: 이력서 템플릿 다크모드 지원 추가"
-git commit -m "fix: 경력기술서 날짜 오타 수정"
-
-# 나쁜 예시
-git commit -m "수정"
-git commit -m "업데이트"
-git commit -m "이것저것 수정함"
-```
-
-#### 브랜치 전략
-
-```
-main (master)
-├── feature/add-project-6     # 새 프로젝트 추가
-├── fix/typo-correction        # 오타 수정
-└── style/dark-mode-improve    # 스타일 개선
-```
-
----
-
-## 🐛 문제 해결
-
-### 자주 발생하는 문제
-
-#### 문제 1: 다크모드가 일부 요소에만 적용됨
-
-**원인**: 인라인 스타일 사용
-
-**해결**:
-```html
-<!-- ❌ Before -->
-<h3 style="color: #1a1a2e;">제목</h3>
-
-<!-- ✅ After -->
-<h3 class="section-title">제목</h3>
-```
-
-```css
-/* CSS 추가 */
-.section-title {
-    color: #1a1a2e;
-}
-
-[data-theme="dark"] .section-title {
-    color: #e0e0e0;
-}
-```
-
-#### 문제 2: 10개 파일 업데이트 누락
-
-**원인**: 수동 작업 시 일부 파일 누락
-
-**해결**:
-```bash
-# 체크리스트 활용
-files=(
-    "docs/career/resume.md"
-    "docs/career/career_portfolio.md"
-    "templates/resume/default.html"
-    "templates/resume/minimal.html"
-    "templates/resume/modern.html"
-    "templates/resume/corporate.html"
-    "templates/career/default.html"
-    "templates/career/minimal.html"
-    "templates/career/modern.html"
-    "templates/career/corporate.html"
-)
-
-for file in "${files[@]}"; do
-    echo "Checking: $file"
-    git diff "$file" | head -5
-done
-```
-
-#### 문제 3: STAR 형식 깨짐
-
-**원인**: 자동 생성 시 형식 미준수
-
-**해결**:
-```markdown
-<!-- 템플릿 준수 -->
-#### Situation (상황)
-- 명확한 배경 설명
-
-#### Task (과제)
-- 구체적인 목표
-
-#### Action (실행)
-- 실행한 내용
-- 사용한 기술
-
-#### Result (결과)
-- **정량적 성과** (숫자 포함)
-- 비즈니스 임팩트
-```
+## 🔧 Commands (워크플로우)
+
+사용자가 `/명령어`로 **직접 호출**하는 작업입니다.
+
+| 명령어 | 설명 | 사용 시점 |
+|--------|------|----------|
+| `/resume-update` | 이력서 업데이트 | `my_career_data.md` 변경 후 |
+| `/project-add` | 새 프로젝트 추가 | 새 프로젝트 경험 추가 시 |
+| `/monthly-review` | 월간 리뷰 | 매월 1일 |
+| `/quarterly-review` | 분기별 리뷰 | 분기 말 |
 
 ---
 
 ## 📚 참고 문서
 
-### 내부 문서
-
-| 문서 | 경로 | 설명 |
-|------|------|------|
-| 문서 구조 안내 | `docs/README.md` | 전체 문서 구조 설명 |
-| 원본 데이터 | `docs/career/my_career_data.md` | STAR 형식 경력 데이터 |
-| 이력서 작성 가이드 | `docs/references/resume_writing_guide.md` | STAR 기법 상세 설명 |
-| 이력서 예시 | `docs/references/resume_examples.md` | 좋은 이력서 사례 |
-| 블로그 분석 | `docs/analysis/tech_blog_analysis.md` | 기술 블로그 현황 |
-
-### 외부 참고 자료
-
-- [STAR 기법 가이드](https://www.indeed.com/career-advice/resumes-cover-letters/star-method-resume)
-- [효과적인 이력서 작성법](https://www.themuse.com/advice/how-to-write-a-resume)
-- [다크모드 디자인 가이드](https://material.io/design/color/dark-theme.html)
-
----
-
-## 🚀 빠른 참조
-
-### 체크리스트: 이력서 업데이트
-
-```markdown
-- [ ] 1. `git diff docs/career/my_career_data.md` 실행
-- [ ] 2. 변경된 프로젝트/섹션 확인
-- [ ] 3. 10개 파일 업데이트 목록 작성
-- [ ] 4. STAR 형식 준수 확인
-- [ ] 5. 정량적 성과 포함 확인
-- [ ] 6. 변경되지 않은 부분 유지 확인
-- [ ] 7. 사용하지 않은 기술 제거 확인
-- [ ] 8. 작은 단위로 커밋
-- [ ] 9. 커밋 메시지 명확히 작성
-- [ ] 10. 최종 검증 (렌더링 확인)
-```
-
-### 명령어 모음
-
-```bash
-# 변경사항 확인
-git diff docs/career/my_career_data.md
-
-# 전체 상태 확인
-git status
-
-# 작은 단위 커밋
-git add <file>
-git commit -m "type: 명확한 설명"
-
-# 최근 커밋 확인
-git log --oneline -5
-
-# 파일 복구 (실수한 경우)
-git checkout HEAD -- <file>
-```
+| 문서 | 경로 |
+|------|------|
+| 원본 데이터 | `docs/career/my_career_data.md` |
+| 작성 가이드 상세 | `docs/references/resume_writing_guide.md` |
+| 이력서 예시 | `docs/references/resume_examples.md` |
 
 ---
 
@@ -593,39 +103,11 @@ git checkout HEAD -- <file>
 
 | 버전 | 날짜 | 변경 내용 |
 |------|------|----------|
-| 3.2 | 2025-12-05 | STAR+I 모델 적용, 이력서 작성 가이드 연결, 7년차 시니어 전략 반영 |
-| 3.1 | 2025-12-02 | CSS 리팩토링: 변수 추출, 다크모드 통합, partials 추가 |
-| 3.0 | 2025-12-02 | 문서 구조 개편, 유지보수 가이드 추가 |
-| 2.0 | 2025-11-30 | docs 디렉토리 구조 개편 |
-| 1.0 | 2025-11-01 | 초기 버전 작성 |
-
-### v3.2 주요 변경사항 (2025-12-05)
-
-**이력서 작성 가이드 연결**:
-- ✅ `docs/references/resume_writing_guide.md` 참조 추가
-- ✅ STAR → STAR+I 모델로 업그레이드 (Impact 추가)
-- ✅ 7년차 시니어 특화 전략 반영
-- ✅ 기술 선택 이유(Why) 필수 포함
-- ✅ 검증 체크리스트 강화
-
-### v3.1 주요 변경사항 (2025-12-02)
-
-**CSS 리팩토링**:
-- ✅ CSS 변수 추출 (`:root`, `[data-theme="dark"]`)
-- ✅ 라이트/다크 모드 색상 통합
-- ✅ 중복 코드 제거 (37개 다크모드 선택자 → CSS 변수 자동 적용)
-
-**템플릿 개선**:
-- ✅ HTML head 섹션 공통화 (`templates/partials/head.html`)
-- ✅ 재사용 가능한 컴포넌트 구조
-
-**유지보수성 향상**:
-- ✅ CSS 변수 사용으로 색상 관리 용이
-- ✅ 다크모드 자동 적용
-- ✅ 작은 단위 커밋 (3개)
+| 4.1 | 2025-12-17 | Skills/Commands 분리 (지식 vs 워크플로우) |
+| 4.0 | 2025-12-17 | 워크플로우를 Slash Commands로 분리 |
+| 3.2 | 2025-12-05 | STAR+I 모델 적용 |
 
 ---
 
 **문서 관리자**: Claude Code
 **프로젝트**: younwony.github.io
-**라이센스**: Private
