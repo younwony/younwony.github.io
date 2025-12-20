@@ -1,0 +1,96 @@
+---
+name: update-resume
+description: my_career_data.md 원본 데이터의 변경사항을 이력서/경력기술서 10개 파일에 동기화합니다. 이력서 업데이트, 경력기술서 수정, 템플릿 동기화가 필요할 때 사용합니다.
+---
+
+# 이력서/경력기술서 업데이트
+
+## 개요
+
+`my_career_data.md` (Single Source of Truth)의 변경사항을 감지하고, 아래 10개 파일에 STAR+I 형식으로 동기화합니다.
+
+## 대상 파일 (10개)
+
+### Markdown 파일
+1. `docs/career/resume.md` - 간결 이력서
+2. `docs/career/career_portfolio.md` - 상세 경력기술서
+
+### Resume HTML 템플릿
+3. `templates/resume/default.html`
+4. `templates/resume/minimal.html`
+5. `templates/resume/modern.html`
+6. `templates/resume/corporate.html`
+
+### Career HTML 템플릿
+7. `templates/career/default.html`
+8. `templates/career/minimal.html`
+9. `templates/career/modern.html`
+10. `templates/career/corporate.html`
+
+## 실행 단계
+
+### Step 1: 변경사항 확인
+```bash
+git diff docs/career/my_career_data.md
+```
+- 변경된 프로젝트/섹션 식별
+- 변경 범위 결정
+
+### Step 2: 가이드 참조
+- `/writing-guide` 스킬 참조 (STAR+I, 시니어 톤, 정량화)
+- STAR+I 형식 준수 확인
+
+### Step 3: 10개 파일 업데이트
+- 변경된 섹션만 정확히 반영
+- 변경되지 않은 부분은 절대 수정 금지
+- HTML 템플릿은 구조 유지하며 내용만 교체
+
+### Step 4: 검증
+- STAR+I 형식 유지 확인
+- 정량적 성과(숫자) 포함 확인
+- 기술 선택 이유(Why) 포함 확인
+
+### Step 5: git add
+- 10개 파일 staging
+- commit은 하지 않음 (사용자 요청 시에만)
+
+## 주의사항
+
+- 변경된 프로젝트/섹션만 업데이트
+- 전체 내용 재작성 금지
+- 사용하지 않은 기술 추가 금지
+- "담당했습니다" 대신 "달성/개선했습니다" 표현 사용
+
+## 체크리스트
+
+### 변경 전 확인
+- [ ] `git diff docs/career/my_career_data.md` 실행
+- [ ] 변경된 프로젝트/섹션 확인
+- [ ] 기술 선택 이유(Why)가 포함되었는가?
+
+### 변경 적용
+- [ ] 10개 파일 업데이트 목록 작성
+- [ ] STAR+I 형식 그대로 반영 (Impact 포함)
+- [ ] **변경된 섹션만** 교체
+
+### 검증
+- [ ] 변경된 프로젝트만 업데이트되었는가?
+- [ ] 10개 파일 모두 업데이트되었는가?
+- [ ] STAR+I 형식이 유지되었는가?
+- [ ] 정량적 성과(숫자)가 포함되었는가?
+- [ ] 기술 선택 이유(Why)가 드러나는가?
+- [ ] 비즈니스 임팩트와 연결되는가?
+- [ ] 사용하지 않은 기술이 제거되었는가?
+- [ ] "담당했습니다" 대신 "달성/개선/설계했습니다" 표현 사용?
+
+### git 작업
+- [ ] git add 완료
+- [ ] git status로 staging 확인
+
+## 커밋 메시지 예시 (사용자 요청 시)
+
+```bash
+git commit -m "docs: 프로젝트 1 성과 지표 업데이트"
+git commit -m "docs: 프로젝트 1 상세 내용 보강"
+git commit -m "feat: 이력서 템플릿 프로젝트 1 업데이트"
+```
