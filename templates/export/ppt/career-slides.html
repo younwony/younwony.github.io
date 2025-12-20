@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤원희 - 경력기술서 PPT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', -apple-system, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .slides-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1c2e 100%);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(74, 108, 247, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Slide Cover */
+        .slide-cover {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-cover h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, #4a6cf7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-cover .subtitle {
+            font-size: 28px;
+            color: #4a6cf7;
+            margin-bottom: 30px;
+        }
+
+        .slide-cover .tagline {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Section Title Slide */
+        .slide-section {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .slide-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .slide-section .company {
+            font-size: 24px;
+            color: #4a6cf7;
+        }
+
+        /* Project Slide */
+        .slide-project h2 {
+            font-size: 28px;
+            color: #4a6cf7;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(74, 108, 247, 0.3);
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .star-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid;
+        }
+
+        .star-box.situation { border-color: #6366f1; }
+        .star-box.task { border-color: #8b5cf6; }
+        .star-box.action { border-color: #0ea5e9; }
+        .star-box.result { border-color: #10b981; }
+        .star-box.impact { border-color: #f59e0b; }
+
+        .star-box h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .star-box.situation h3 { color: #6366f1; }
+        .star-box.task h3 { color: #8b5cf6; }
+        .star-box.action h3 { color: #0ea5e9; }
+        .star-box.result h3 { color: #10b981; }
+        .star-box.impact h3 { color: #f59e0b; }
+
+        .star-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .star-box li {
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .star-box li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Result Slide */
+        .slide-result h2 {
+            font-size: 28px;
+            color: #4a6cf7;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            flex: 1;
+            align-items: center;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .result-card .number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #4a6cf7;
+            margin-bottom: 10px;
+        }
+
+        .result-card .label {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .result-card .desc {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+        }
+
+        /* Tech Stack Slide */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .tech-item i {
+            font-size: 28px;
+            color: #4a6cf7;
+            margin-bottom: 10px;
+        }
+
+        .tech-item span {
+            display: block;
+            font-size: 14px;
+        }
+
+        /* Summary Slide */
+        .slide-summary h2 {
+            font-size: 32px;
+            color: #4a6cf7;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .summary-card h3 {
+            font-size: 18px;
+            color: #4a6cf7;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-card li {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .summary-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+
+        /* Contact Slide */
+        .slide-contact {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-contact h2 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .slide-contact .subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 16px 28px;
+            border-radius: 50px;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: #4a6cf7;
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; }
+            .slides-container { padding: 0; }
+            .slide {
+                page-break-after: always;
+                margin-bottom: 0;
+                border-radius: 0;
+                height: 100vh;
+                aspect-ratio: auto;
+            }
+            .slide:last-child { page-break-after: auto; }
+        }
+
+        .nav-hint {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255,255,255,0.4);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+
+        <!-- Slide 1: Cover -->
+        <div class="slide slide-cover">
+            <h1>경력기술서</h1>
+            <div class="subtitle">윤원희 · Backend Developer · 7년차</div>
+            <p class="tagline">기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자</p>
+            <span class="slide-number">1 / 12</span>
+        </div>
+
+        <!-- Slide 2: Overview -->
+        <div class="slide slide-summary">
+            <h2><i class="fas fa-chart-pie"></i> Career Overview</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3><i class="fas fa-building"></i> 경력 요약</h3>
+                    <ul>
+                        <li>(주)구하다 · 3년 9개월 · Senior</li>
+                        <li>(주)인터파크 · 5개월</li>
+                        <li>(주)한국문헌정보기술 · 3년 2개월</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-trophy"></i> 핵심 성과</h3>
+                    <ul>
+                        <li>Zero Ops 달성 (운영 자동화 100%)</li>
+                        <li>200만 건 대용량 처리 아키텍처</li>
+                        <li>매출 10% 상승 (Dynamic Pricing)</li>
+                        <li>검색 성능 100배 개선</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-code"></i> 기술 스택</h3>
+                    <ul>
+                        <li>Java, Spring Boot, Spring Batch</li>
+                        <li>MySQL, Redis, Elasticsearch</li>
+                        <li>AWS, Jenkins, GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-users"></i> 역량</h3>
+                    <ul>
+                        <li>커머스 도메인 (상품/가격/주문)</li>
+                        <li>유관 부서 협업 리딩</li>
+                        <li>AI 기반 개발 생산성 향상</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">2 / 12</span>
+        </div>
+
+        <!-- Slide 3: Company Section -->
+        <div class="slide slide-section">
+            <h2>(주)구하다</h2>
+            <div class="company">2022.02 - 현재 · Backend Developer (Senior)</div>
+            <span class="slide-number">3 / 12</span>
+        </div>
+
+        <!-- Slide 4: Project 1 - Problem -->
+        <div class="slide slide-project">
+            <h2><i class="fas fa-database"></i> 인플루언서 데이터 플랫폼 (200만 건)</h2>
+            <div class="project-content">
+                <div class="star-box situation">
+                    <h3><i class="fas fa-exclamation-circle"></i> Situation</h3>
+                    <ul>
+                        <li>마케팅팀 수작업 의존 (엑셀 수기 입력)</li>
+                        <li>일 수십 명 수준, 대형 캠페인 불가</li>
+                        <li>200만 건 검색 시 10초 이상 타임아웃</li>
+                    </ul>
+                </div>
+                <div class="star-box task">
+                    <h3><i class="fas fa-bullseye"></i> Task</h3>
+                    <ul>
+                        <li>수집 프로세스 100% 자동화</li>
+                        <li>200만 건 실시간 검색 시스템</li>
+                        <li>리포팅 자동화</li>
+                    </ul>
+                </div>
+                <div class="star-box action">
+                    <h3><i class="fas fa-cogs"></i> Action</h3>
+                    <ul>
+                        <li>멀티소스 파이프라인 (TikTok, Ensemble API)</li>
+                        <li>RDB → Elasticsearch 전환</li>
+                        <li>Redis Distributed Lock 적용</li>
+                        <li>Google Sheets API 리포팅 연동</li>
+                    </ul>
+                </div>
+                <div class="star-box impact">
+                    <h3><i class="fas fa-rocket"></i> Impact</h3>
+                    <ul>
+                        <li>대형 캠페인 진행 가능</li>
+                        <li>마케팅팀 고부가가치 업무 집중</li>
+                        <li>정기 소통 체계 구축</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">4 / 12</span>
+        </div>
+
+        <!-- Slide 5: Project 1 - Result -->
+        <div class="slide slide-result">
+            <h2><i class="fas fa-chart-line"></i> 인플루언서 플랫폼 - 성과</h2>
+            <div class="result-grid">
+                <div class="result-card">
+                    <div class="number">100x</div>
+                    <div class="label">검색 성능 개선</div>
+                    <div class="desc">10초 → 0.1초</div>
+                </div>
+                <div class="result-card">
+                    <div class="number">20x</div>
+                    <div class="label">데이터 풀 확대</div>
+                    <div class="desc">10만 → 200만</div>
+                </div>
+                <div class="result-card">
+                    <div class="number">Zero</div>
+                    <div class="label">리포팅 수작업</div>
+                    <div class="desc">완전 자동화</div>
+                </div>
+            </div>
+            <span class="slide-number">5 / 12</span>
+        </div>
+
+        <!-- Slide 6: Project 2 -->
+        <div class="slide slide-project">
+            <h2><i class="fas fa-tags"></i> Dynamic Pricing 시스템</h2>
+            <div class="project-content">
+                <div class="star-box situation">
+                    <h3><i class="fas fa-exclamation-circle"></i> Situation</h3>
+                    <ul>
+                        <li>네이버 쇼핑 최저가 진입 필수</li>
+                        <li>수동 대응으로는 경쟁 속도 미달</li>
+                        <li>API 일일 한도 25,000건 제약</li>
+                    </ul>
+                </div>
+                <div class="star-box task">
+                    <h3><i class="fas fa-bullseye"></i> Task</h3>
+                    <ul>
+                        <li>최저가 방어 알고리즘 구현</li>
+                        <li>마진 4% 보장 안전장치</li>
+                        <li>자동+수동 하이브리드 운영</li>
+                    </ul>
+                </div>
+                <div class="star-box action">
+                    <h3><i class="fas fa-cogs"></i> Action</h3>
+                    <ul>
+                        <li>마케팅/MD팀 협의 가격 정책 설계</li>
+                        <li>Spring Batch 기반 트랜잭션 안정성</li>
+                        <li>매출 기여도 기반 API Quota 최적화</li>
+                        <li>GA/BigQuery 성과 분석 환경</li>
+                    </ul>
+                </div>
+                <div class="star-box result">
+                    <h3><i class="fas fa-chart-line"></i> Result</h3>
+                    <ul>
+                        <li>매출/트래픽 각각 10% 상승</li>
+                        <li>MD팀 전략 업무 집중 가능</li>
+                        <li>가격 경쟁력 확보</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">6 / 12</span>
+        </div>
+
+        <!-- Slide 7: Project 3 -->
+        <div class="slide slide-project">
+            <h2><i class="fas fa-image"></i> 이미지 정합성 시스템</h2>
+            <div class="project-content">
+                <div class="star-box situation">
+                    <h3><i class="fas fa-exclamation-circle"></i> Situation</h3>
+                    <ul>
+                        <li>이미지 변경 시 URL 동일 유지</li>
+                        <li>기존 시스템 변경 감지 불가</li>
+                        <li>'상품 상이' 클레임 다수 발생</li>
+                    </ul>
+                </div>
+                <div class="star-box action">
+                    <h3><i class="fas fa-cogs"></i> Action</h3>
+                    <ul>
+                        <li>CS팀 협업 클레임 패턴 분석</li>
+                        <li>MD5 해시 + ETag 이중 검증</li>
+                        <li>Header 우선 비교 (비용 최적화)</li>
+                        <li>24시간 무인 동기화 체계</li>
+                    </ul>
+                </div>
+                <div class="star-box result">
+                    <h3><i class="fas fa-chart-line"></i> Result</h3>
+                    <ul>
+                        <li>이미지 불일치 클레임 Zero</li>
+                        <li>네트워크 비용 80% 절감</li>
+                        <li>CS팀 업무 부담 제거</li>
+                    </ul>
+                </div>
+                <div class="star-box impact">
+                    <h3><i class="fas fa-rocket"></i> Impact</h3>
+                    <ul>
+                        <li>고객 신뢰도 회복</li>
+                        <li>구매 전환율 안정화</li>
+                        <li>브랜드 이미지 보호</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">7 / 12</span>
+        </div>
+
+        <!-- Slide 8: Project 4 -->
+        <div class="slide slide-project">
+            <h2><i class="fab fa-slack"></i> ChatOps 운영 자동화 (Zero Ops)</h2>
+            <div class="project-content">
+                <div class="star-box situation">
+                    <h3><i class="fas fa-exclamation-circle"></i> Situation</h3>
+                    <ul>
+                        <li>소통 채널 파편화 (이메일, 메신저, 구두)</li>
+                        <li>운영팀 업무 40%가 단순 반복 작업</li>
+                        <li>"어디로 요청해야 할지 모르겠다"</li>
+                    </ul>
+                </div>
+                <div class="star-box action">
+                    <h3><i class="fas fa-cogs"></i> Action</h3>
+                    <ul>
+                        <li>현업 인터뷰 → Pain Point 발굴</li>
+                        <li>Slack 선택 (채택률 극대화)</li>
+                        <li>Event API + Interactive Component</li>
+                        <li>버튼 클릭으로 DB 처리 완료</li>
+                    </ul>
+                </div>
+                <div class="star-box result">
+                    <h3><i class="fas fa-chart-line"></i> Result</h3>
+                    <ul>
+                        <li>수동 업무 40% → 0% (Zero Ops)</li>
+                        <li>채널 100% 통합</li>
+                        <li>업무 투명성 확보</li>
+                    </ul>
+                </div>
+                <div class="star-box impact">
+                    <h3><i class="fas fa-rocket"></i> Impact</h3>
+                    <ul>
+                        <li>운영팀 고부가가치 업무 집중</li>
+                        <li>휴먼 에러 방지</li>
+                        <li>현업 만족도 향상</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">8 / 12</span>
+        </div>
+
+        <!-- Slide 9: Project 5 -->
+        <div class="slide slide-project">
+            <h2><i class="fas fa-robot"></i> AI 기반 팀 생산성 혁신</h2>
+            <div class="project-content">
+                <div class="star-box situation">
+                    <h3><i class="fas fa-exclamation-circle"></i> Situation</h3>
+                    <ul>
+                        <li>코드 컨벤션/리뷰 프로세스 부재</li>
+                        <li>시니어 개발자 리소스 반복 업무에 소모</li>
+                        <li>협업 비용 증가, 품질 저하</li>
+                    </ul>
+                </div>
+                <div class="star-box action">
+                    <h3><i class="fas fa-cogs"></i> Action</h3>
+                    <ul>
+                        <li>PR 기반 코드 리뷰 문화 정착</li>
+                        <li>Java/Spring 코딩 컨벤션 수립</li>
+                        <li>Claude Code로 반복 업무 자동화</li>
+                        <li>사내 맞춤형 운영 툴 5건+ 구축</li>
+                    </ul>
+                </div>
+                <div class="star-box result">
+                    <h3><i class="fas fa-chart-line"></i> Result</h3>
+                    <ul>
+                        <li>운영 업무 90% 단축 (1~2일→1~2시간)</li>
+                        <li>코드 품질 개선</li>
+                        <li>온보딩 속도 단축</li>
+                    </ul>
+                </div>
+                <div class="star-box impact">
+                    <h3><i class="fas fa-rocket"></i> Impact</h3>
+                    <ul>
+                        <li>시니어 핵심 개발 집중</li>
+                        <li>팀 전반 생산성 향상</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">9 / 12</span>
+        </div>
+
+        <!-- Slide 10: Previous Experience -->
+        <div class="slide slide-summary">
+            <h2><i class="fas fa-history"></i> 이전 경력</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3><i class="fas fa-building"></i> (주)인터파크</h3>
+                    <ul>
+                        <li>2021.09 - 2022.01 (5개월)</li>
+                        <li>Seller 어드민 성능 개선</li>
+                        <li>정산/주문 조회 80% 개선 (5초→1초)</li>
+                        <li>인덱스 튜닝, 쿼리 최적화</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-building"></i> (주)한국문헌정보기술</h3>
+                    <ul>
+                        <li>2018.06 - 2021.08 (3년 2개월)</li>
+                        <li>Elasticsearch 검색 엔진 구축</li>
+                        <li>데이터 등록 속도 70% 단축</li>
+                        <li>2021년 사내 우수사원 선정</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-graduation-cap"></i> 학력</h3>
+                    <ul>
+                        <li>대전대학교</li>
+                        <li>컴퓨터공학 학사</li>
+                        <li>2011 - 2018</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3><i class="fas fa-certificate"></i> 자격증</h3>
+                    <ul>
+                        <li>정보처리기사</li>
+                        <li>한국산업인력공단</li>
+                        <li>2017.05 취득</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="slide-number">10 / 12</span>
+        </div>
+
+        <!-- Slide 11: Tech Stack -->
+        <div class="slide slide-result">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Spring Batch</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>JPA/Hibernate</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Redis</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-search"></i>
+                    <span>Elasticsearch</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>Oracle</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>Jenkins</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Actions</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-slack"></i>
+                    <span>Slack API</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>BigQuery</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>GA4</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-robot"></i>
+                    <span>Claude Code</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-table"></i>
+                    <span>Google Sheets API</span>
+                </div>
+            </div>
+            <span class="slide-number">11 / 12</span>
+        </div>
+
+        <!-- Slide 12: Contact -->
+        <div class="slide slide-contact">
+            <h2>Thank You</h2>
+            <p class="subtitle">함께 성장할 기회를 기대합니다</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>wony9324@naver.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>010-3555-2320</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/younwony</span>
+                </div>
+            </div>
+            <span class="slide-number">12 / 12</span>
+        </div>
+
+        <div class="nav-hint">
+            브라우저 인쇄(Ctrl+P) → 가로 방향 → PDF로 저장
+        </div>
+    </div>
+</body>
+</html>

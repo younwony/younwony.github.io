@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤원희 - 자기소개</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', -apple-system, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .slides-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1c2e 100%);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(74, 108, 247, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Slide 1: Cover */
+        .slide-cover {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-cover h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #4a6cf7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-cover .subtitle {
+            font-size: 28px;
+            color: #4a6cf7;
+            margin-bottom: 40px;
+        }
+
+        .slide-cover .tagline {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+        }
+
+        /* Slide 2: About Me */
+        .slide-about h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #4a6cf7;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-summary {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 20px;
+        }
+
+        .highlight-card {
+            background: rgba(74, 108, 247, 0.15);
+            border: 1px solid rgba(74, 108, 247, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .highlight-card i {
+            font-size: 28px;
+            color: #4a6cf7;
+            width: 40px;
+        }
+
+        .highlight-card .text {
+            flex: 1;
+        }
+
+        .highlight-card .label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .highlight-card .value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Slide 3: Skills */
+        .slide-skills h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #4a6cf7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .skill-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .skill-box i {
+            font-size: 36px;
+            color: #4a6cf7;
+            margin-bottom: 12px;
+        }
+
+        .skill-box h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(74, 108, 247, 0.2);
+            color: #8ba3f7;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .skill-tag.primary {
+            background: #4a6cf7;
+            color: white;
+        }
+
+        /* Slide 4: Projects */
+        .slide-projects h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: #4a6cf7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a6cf7, #7c3aed);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .project-metric {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-metric .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4a6cf7;
+        }
+
+        .project-metric .label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Slide 5: Contact */
+        .slide-contact {
+            text-align: center;
+            align-items: center;
+        }
+
+        .slide-contact h2 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .slide-contact .subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 16px 28px;
+            border-radius: 50px;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: #4a6cf7;
+        }
+
+        .contact-item span {
+            font-size: 16px;
+        }
+
+        /* Print/Export */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .slides-container {
+                padding: 0;
+            }
+
+            .slide {
+                page-break-after: always;
+                margin-bottom: 0;
+                border-radius: 0;
+                height: 100vh;
+                aspect-ratio: auto;
+            }
+
+            .slide:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        /* Navigation hint */
+        .nav-hint {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255,255,255,0.4);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+
+        <!-- Slide 1: Cover -->
+        <div class="slide slide-cover">
+            <h1>윤원희</h1>
+            <div class="subtitle">Backend Developer · 7 Years</div>
+            <p class="tagline">기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자</p>
+            <span class="slide-number">1 / 5</span>
+        </div>
+
+        <!-- Slide 2: About Me -->
+        <div class="slide slide-about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <div class="about-content">
+                <div class="about-summary">
+                    <p>
+                        Java/Spring 기반 7년차 백엔드 개발자로서<br>
+                        커머스 도메인(상품/주문/가격)의 복잡한<br>
+                        비즈니스 로직을 전문적으로 다뤄왔습니다.
+                    </p>
+                    <br>
+                    <p>
+                        기술적 해결책뿐 아니라<br>
+                        비즈니스/운영 조직과의 적극적인 소통을 통해<br>
+                        서비스의 본질적인 문제를 발굴하고 해결합니다.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <i class="fas fa-robot"></i>
+                        <div class="text">
+                            <div class="label">Zero Ops</div>
+                            <div class="value">운영 자동화 100%</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-database"></i>
+                        <div class="text">
+                            <div class="label">대용량 처리</div>
+                            <div class="value">200만 건 파이프라인</div>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="text">
+                            <div class="label">비즈니스 임팩트</div>
+                            <div class="value">매출 10% 상승</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="slide-number">2 / 5</span>
+        </div>
+
+        <!-- Slide 3: Technical Skills -->
+        <div class="slide slide-skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <i class="fab fa-java"></i>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag primary">Java</span>
+                        <span class="skill-tag primary">Spring Boot</span>
+                        <span class="skill-tag">Spring Batch</span>
+                        <span class="skill-tag">JPA</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-database"></i>
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag primary">MySQL</span>
+                        <span class="skill-tag primary">Redis</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-aws"></i>
+                    <h3>Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Tools & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Slack API</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Claude Code</span>
+                    </div>
+                </div>
+            </div>
+            <span class="slide-number">3 / 5</span>
+        </div>
+
+        <!-- Slide 4: Key Projects -->
+        <div class="slide slide-projects">
+            <h2><i class="fas fa-rocket"></i> Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>인플루언서 데이터 플랫폼</h3>
+                    <p>200만 건 규모 데이터 파이프라인 구축 및 검색 최적화</p>
+                    <div class="project-metric">
+                        <span class="number">100x</span>
+                        <span class="label">성능 개선<br>(10초→0.1초)</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Dynamic Pricing</h3>
+                    <p>네이버 쇼핑 가격 경쟁력 확보를 위한 자동화 시스템</p>
+                    <div class="project-metric">
+                        <span class="number">10%↑</span>
+                        <span class="label">매출/트래픽<br>동반 상승</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>ChatOps 자동화</h3>
+                    <p>Slack 기반 운영 프로세스 완전 자동화</p>
+                    <div class="project-metric">
+                        <span class="number">0%</span>
+                        <span class="label">수동 업무<br>(Zero Ops)</span>
+                    </div>
+                </div>
+            </div>
+            <span class="slide-number">4 / 5</span>
+        </div>
+
+        <!-- Slide 5: Contact -->
+        <div class="slide slide-contact">
+            <h2>Thank You</h2>
+            <p class="subtitle">함께 성장할 기회를 기대합니다</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>wony9324@naver.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>010-3555-2320</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/younwony</span>
+                </div>
+            </div>
+            <span class="slide-number">5 / 5</span>
+        </div>
+
+        <div class="nav-hint">
+            브라우저 인쇄(Ctrl+P) → PDF로 저장하여 슬라이드 문서 생성
+        </div>
+    </div>
+</body>
+</html>
