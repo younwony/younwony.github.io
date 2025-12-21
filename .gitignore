@@ -4,3 +4,12 @@
 _site
 Gemfile.lock
 *.code-workspace
+
+# Node
+node_modules/
+
+# Generated documents
+output/
+
+# Windows artifacts
+nul
