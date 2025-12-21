@@ -25,11 +25,7 @@ async function generatePDFs() {
 
     const pdfConfigs = [
         {
-            name: '윤원희_이력서_1페이지',
-            file: 'templates/export/pdf/resume-print.html'
-        },
-        {
-            name: '윤원희_이력서_2페이지',
+            name: '윤원희_이력서',
             file: 'templates/export/pdf/resume-2page.html'
         },
         {

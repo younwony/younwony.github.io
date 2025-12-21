@@ -6,9 +6,10 @@
     <title>윤원희 - 이력서</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== 페이지 템플릿 설정 ===== */
         @page {
             size: A4;
-            margin: 18mm 16mm;
+            margin: 0;
         }
 
         * {
@@ -27,87 +28,21 @@
             background: white;
         }
 
-        .page {
+        /* 페이지 공통 템플릿 */
+        .page-template {
             width: 210mm;
-            min-height: 297mm;
-            padding: 18mm 16mm;
+            height: 297mm;
+            padding: 15mm 22mm 20mm 22mm; /* top right bottom left */
             margin: 0 auto;
             background: white;
+            position: relative;
         }
 
-        /* Header - 눈에 띄는 헤더 */
-        .header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-            color: white;
-            padding: 24px 28px;
-            border-radius: 10px;
-            margin-bottom: 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* ===== 공통 컴포넌트 ===== */
 
-        .header-left h1 {
-            font-size: 26pt;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .header-left .title {
-            font-size: 13pt;
-            color: #93c5fd;
-            font-weight: 500;
-        }
-
-        .header-right {
-            text-align: right;
-            font-size: 9pt;
-            opacity: 0.95;
-        }
-
-        .header-right div {
-            margin-bottom: 6px;
-        }
-
-        .header-right i {
-            width: 16px;
-            margin-right: 6px;
-            color: #93c5fd;
-        }
-
-        /* 핵심 성과 - 가장 눈에 띄게 */
-        .key-metrics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 22px;
-        }
-
-        .metric-card {
-            background: #f0f9ff;
-            border: 2px solid #0ea5e9;
-            border-radius: 10px;
-            padding: 16px 12px;
-            text-align: center;
-        }
-
-        .metric-card .number {
-            font-size: 18pt;
-            font-weight: 800;
-            color: #0369a1;
-            line-height: 1.2;
-        }
-
-        .metric-card .label {
-            font-size: 8pt;
-            color: #0c4a6e;
-            margin-top: 4px;
-            font-weight: 500;
-        }
-
-        /* Section */
+        /* 섹션 */
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .section-title {
@@ -121,7 +56,111 @@
             letter-spacing: 0.5px;
         }
 
-        /* Skills - 2열 그리드 */
+        /* 뱃지 */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 8pt;
+            font-weight: 700;
+            margin-left: 4px;
+        }
+
+        .badge.blue {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        }
+
+        /* ===== 헤더 ===== */
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+            padding: 22px 28px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .header-left .title {
+            font-size: 12pt;
+            color: #93c5fd;
+            font-weight: 500;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+        }
+
+        .header-right div {
+            margin-bottom: 5px;
+        }
+
+        .header-right i {
+            width: 16px;
+            margin-right: 6px;
+            color: #93c5fd;
+        }
+
+        /* ===== Key Metrics ===== */
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 10px;
+            padding: 14px 12px;
+            text-align: center;
+        }
+
+        .metric-card .number {
+            font-size: 17pt;
+            font-weight: 800;
+            color: #0369a1;
+            line-height: 1.2;
+        }
+
+        .metric-card .label {
+            font-size: 8pt;
+            color: #0c4a6e;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ===== Summary ===== */
+        .summary {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .summary-text {
+            font-size: 9.5pt;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        .summary-text strong {
+            color: #1e3a5f;
+        }
+
+        /* ===== Skills ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -152,7 +191,7 @@
             background: #e0e7ff;
             color: #3730a3;
             padding: 4px 10px;
-            border-radius: 15px;
+            border-radius: 14px;
             font-size: 8pt;
             font-weight: 500;
         }
@@ -162,17 +201,16 @@
             color: white;
         }
 
-        /* Experience */
+        /* ===== Work Experience ===== */
         .company {
-            margin-bottom: 18px;
-            page-break-inside: avoid;
+            margin-bottom: 16px;
         }
 
         .company-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .company-name {
@@ -187,11 +225,17 @@
             font-weight: 500;
         }
 
+        .company-desc {
+            font-size: 8.5pt;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
         .company-role {
             font-size: 9pt;
             color: #0ea5e9;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .achievements {
@@ -202,7 +246,7 @@
         .achievements li {
             position: relative;
             padding-left: 16px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 9pt;
             color: #444;
             line-height: 1.6;
@@ -224,30 +268,14 @@
             font-weight: 600;
         }
 
-        /* 성과 뱃지 */
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 8pt;
-            font-weight: 700;
-            margin-left: 4px;
-        }
-
-        .badge.blue {
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-        }
-
-        /* Project Card */
+        /* ===== Projects ===== */
         .project {
             background: white;
             border: 1px solid #e2e8f0;
             border-left: 4px solid #0ea5e9;
             border-radius: 8px;
             padding: 14px 16px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .project-title {
@@ -257,8 +285,15 @@
             margin-bottom: 8px;
         }
 
-        .project-desc {
+        .project-company {
             font-size: 8.5pt;
+            font-weight: 500;
+            color: #64748b;
+            margin-left: 6px;
+        }
+
+        .project-desc {
+            font-size: 9pt;
             color: #555;
             line-height: 1.7;
             margin-bottom: 10px;
@@ -275,11 +310,11 @@
             color: #475569;
             padding: 3px 8px;
             border-radius: 4px;
-            font-size: 7.5pt;
+            font-size: 8pt;
             font-weight: 500;
         }
 
-        /* Education */
+        /* ===== Education ===== */
         .edu-grid {
             display: flex;
             gap: 16px;
@@ -305,7 +340,7 @@
             color: #64748b;
         }
 
-        /* Award */
+        /* ===== Awards ===== */
         .award-box {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 2px solid #f59e0b;
@@ -328,53 +363,45 @@
         }
 
         .award-content span {
-            font-size: 8.5pt;
+            font-size: 9pt;
             color: #a16207;
         }
 
-        /* Page Break */
-        .page-break {
-            page-break-before: always;
-            break-before: page;
-            padding-top: 18mm;
-        }
-
-        /* Print */
+        /* ===== Print & Screen ===== */
         @media print {
-            .page {
-                width: 100%;
-                min-height: auto;
-                padding: 0;
-                margin: 0;
+            body {
+                background: white;
             }
 
-            .page-break {
-                padding-top: 0;
+            .page-template {
+                width: 100%;
+                height: 297mm;
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+
+            .page-template:last-child {
+                page-break-after: avoid;
             }
         }
 
-        /* Screen Preview */
         @media screen {
             body {
                 background: #64748b;
                 padding: 30px;
             }
 
-            .page {
+            .page-template {
                 box-shadow: 0 10px 40px rgba(0,0,0,0.3);
                 margin-bottom: 30px;
-            }
-
-            .page-break {
-                border-top: 3px dashed #94a3b8;
-                margin-top: 40px;
-                padding-top: 40px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="page">
+    <!-- ===== PAGE 1 ===== -->
+    <div class="page-template">
         <!-- Header -->
         <header class="header">
             <div class="header-left">
@@ -388,7 +415,7 @@
             </div>
         </header>
 
-        <!-- Key Metrics - 핵심 성과 강조 -->
+        <!-- Key Metrics -->
         <div class="key-metrics">
             <div class="metric-card">
                 <div class="number">Zero Ops</div>
@@ -405,6 +432,15 @@
             <div class="metric-card">
                 <div class="number">+10%</div>
                 <div class="label">매출 상승</div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+            <div class="summary-text">
+                <strong>기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자.</strong>
+                7년간 커머스/아카이빙 도메인에서 대용량 데이터 처리 시스템을 설계·구축했습니다.
+                운영팀과의 협업을 통해 반복 업무를 자동화하고, 코드 리뷰 문화와 AI 활용 문화를 팀 내 정착시켰습니다.
             </div>
         </div>
 
@@ -457,12 +493,13 @@
                     <span class="company-name">(주)구하다</span>
                     <span class="company-period">2022.02 - 현재 (3년 9개월)</span>
                 </div>
+                <div class="company-desc">명품 커머스 플랫폼</div>
                 <div class="company-role">Backend Developer (Senior) · Tech 팀</div>
                 <ul class="achievements">
                     <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="badge blue">100배 개선</span></li>
                     <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="badge">매출 10%↑</span></li>
                     <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="badge">Zero Ops</span></li>
-                    <li><strong>AI 생산성:</strong> Claude Code 활용, 운영 업무 90% 시간 단축</li>
+                    <li><strong>이미지 정합성:</strong> MD5+ETag 검증으로 이미지 불일치 <span class="badge">클레임 Zero</span></li>
                 </ul>
             </div>
 
@@ -471,6 +508,7 @@
                     <span class="company-name">(주)인터파크</span>
                     <span class="company-period">2021.09 - 2022.01 (5개월)</span>
                 </div>
+                <div class="company-desc">종합 쇼핑몰</div>
                 <div class="company-role">Backend Developer · 쇼핑 개발팀</div>
                 <ul class="achievements">
                     <li><strong>Seller 어드민:</strong> 정산/주문 조회 성능 <span class="badge blue">80% 개선</span> (5초→1초)</li>
@@ -482,26 +520,26 @@
                     <span class="company-name">(주)한국문헌정보기술</span>
                     <span class="company-period">2018.06 - 2021.08 (3년 2개월)</span>
                 </div>
+                <div class="company-desc">아카이빙/기록물 관리 솔루션</div>
                 <div class="company-role">Backend Developer · 솔루션 개발팀</div>
                 <ul class="achievements">
-                    <li><strong>검색 엔진:</strong> Elasticsearch + Nori 구축 <span class="badge blue">70% 단축</span></li>
-                    <li><strong>2021년 사내 우수사원</strong> 선정</li>
+                    <li><strong>검색 엔진:</strong> Elasticsearch + Nori 기반 구축, 데이터 등록 속도 <span class="badge blue">70% 단축</span></li>
                 </ul>
             </div>
         </section>
     </div>
 
-    <!-- PAGE 2 -->
-    <div class="page-break">
+    <!-- ===== PAGE 2 ===== -->
+    <div class="page-template">
         <!-- Key Projects -->
         <section class="section">
             <h2 class="section-title">Key Projects</h2>
 
             <div class="project">
-                <div class="project-title">인플루언서 데이터 플랫폼 고도화 (200만 데이터)</div>
+                <div class="project-title">인플루언서 데이터 플랫폼 고도화 (200만 데이터) <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
                     TikTok API, Ensemble API 조합 멀티소스 파이프라인 구축. RDB→Elasticsearch 전환으로 검색 성능 100배 개선 (10초→0.1초).
-                    Redis Distributed Lock으로 멀티 인스턴스 중복 수집 방지. 마케팅팀 수작업 완전 제거.
+                    Redis Distributed Lock으로 멀티 인스턴스 중복 수집 방지. → 대형 캠페인 진행 가능한 마케팅 커버리지 확보.
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
@@ -511,10 +549,10 @@
             </div>
 
             <div class="project">
-                <div class="project-title">네이버 쇼핑 Dynamic Pricing</div>
+                <div class="project-title">네이버 쇼핑 Dynamic Pricing <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
                     API Rate Limit(25,000건/일) 내 매출 기여도 기반 우선순위 스케줄링. 마진 4% 보장 범위 내 최저가 방어.
-                    Spring Batch 기반 트랜잭션 안정성 확보. GA/BigQuery 연동 성과 분석 환경 구축.
+                    Spring Batch 기반 트랜잭션 안정성 확보. → 가격 경쟁력 확보로 매출 10% 증가 기여.
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Batch</span>
@@ -524,10 +562,10 @@
             </div>
 
             <div class="project">
-                <div class="project-title">ChatOps 운영 자동화 (Zero Ops)</div>
+                <div class="project-title">ChatOps 운영 자동화 (Zero Ops) <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
                     운영팀 인터뷰 기반 Pain Point 발굴. Slack Event API + Interactive Component로 발주/클레임 처리 자동화.
-                    버튼 클릭으로 DB 처리 완료. 운영팀 수동 업무 40%→0%.
+                    버튼 클릭으로 DB 처리 완료. → 운영팀 고부가가치 업무 집중 환경 조성.
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
@@ -536,10 +574,10 @@
             </div>
 
             <div class="project">
-                <div class="project-title">상품 이미지 정합성 시스템</div>
+                <div class="project-title">상품 이미지 정합성 시스템 <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
                     이미지 URL 동일 유지 시 변경 감지 불가 문제 해결. MD5 해시 + ETag 이중 검증.
-                    Header 우선 비교로 네트워크 비용 80% 절감. 이미지 불일치 클레임 Zero.
+                    Header 우선 비교로 네트워크 비용 80% 절감. → 고객 이미지 관련 클레임 Zero 달성.
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
