@@ -79,7 +79,20 @@ description: 새로운 프로젝트를 my_career_data.md에 STAR+I 형식으로 
 - 프로젝트 번호 순서 유지
 - STAR+I 형식 정확히 적용
 
-### Step 4: 10개 파일 동기화
+### Step 4: work-logs에 상세 작업 로그 작성
+
+**파일 위치:** `docs/career/work-logs/{company}/project-{번호}-{slug}.md`
+
+프로젝트의 상세 내용을 work-logs에 기록:
+- 아키텍처 다이어그램
+- 기술 스택 상세
+- 구현 내용 상세
+- 기술적 의사결정 배경
+- 향후 개선점
+
+**README.md 업데이트:** `docs/career/work-logs/README.md`에 인덱스 추가
+
+### Step 5: 10개 파일 동기화
 
 `/update-resume` 스킬 로직 활용:
 1. resume.md 업데이트
@@ -87,12 +100,13 @@ description: 새로운 프로젝트를 my_career_data.md에 STAR+I 형식으로 
 3. templates/resume/*.html (4개) 업데이트
 4. templates/career/*.html (4개) 업데이트
 
-### Step 5: git add
+### Step 6: git add
 
 ```bash
 git add docs/career/my_career_data.md
 git add docs/career/resume.md
 git add docs/career/career_portfolio.md
+git add docs/career/work-logs/
 git add templates/resume/*.html
 git add templates/career/*.html
 ```
@@ -120,6 +134,8 @@ git add templates/career/*.html
 - [ ] 프로젝트 정보 수집 완료
 - [ ] STAR+I 형식 적용
 - [ ] my_career_data.md에 추가
+- [ ] work-logs에 상세 작업 로그 작성
+- [ ] work-logs/README.md 인덱스 업데이트
 - [ ] 10개 파일 동기화
 - [ ] git add 완료
 

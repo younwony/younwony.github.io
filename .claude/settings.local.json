@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git add:*)",
       "WebFetch(domain:platform.claude.com)",
-      "WebFetch(domain:plugins.jetbrains.com)"
+      "WebFetch(domain:plugins.jetbrains.com)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []

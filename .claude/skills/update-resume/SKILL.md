@@ -9,7 +9,7 @@ description: my_career_data.md 원본 데이터의 변경사항을 이력서/경
 
 `my_career_data.md` (Single Source of Truth)의 변경사항을 감지하고, 아래 10개 파일에 STAR+I 형식으로 동기화합니다.
 
-## 대상 파일 (10개)
+## 대상 파일 (10개 + work-logs)
 
 ### Markdown 파일
 1. `docs/career/resume.md` - 간결 이력서
@@ -26,6 +26,10 @@ description: my_career_data.md 원본 데이터의 변경사항을 이력서/경
 8. `templates/career/minimal.html`
 9. `templates/career/modern.html`
 10. `templates/career/corporate.html`
+
+### Work Logs (추가)
+11. `docs/career/work-logs/{company}/*.md` - 해당 프로젝트 작업 로그 업데이트
+12. `docs/career/work-logs/README.md` - 인덱스 업데이트
 
 ## 실행 단계
 
@@ -45,14 +49,28 @@ git diff docs/career/my_career_data.md
 - 변경되지 않은 부분은 절대 수정 금지
 - HTML 템플릿은 구조 유지하며 내용만 교체
 
-### Step 4: 검증
+### Step 4: work-logs 업데이트
+- 변경된 프로젝트의 work-logs 파일도 함께 업데이트
+- work-logs 파일이 없으면 새로 생성
+- README.md 인덱스 확인 및 업데이트
+
+### Step 5: 검증
 - STAR+I 형식 유지 확인
 - 정량적 성과(숫자) 포함 확인
 - 기술 선택 이유(Why) 포함 확인
 
-### Step 5: git add
-- 10개 파일 staging
+### Step 6: git add
+- 10개 파일 + work-logs staging
 - commit은 하지 않음 (사용자 요청 시에만)
+
+```bash
+git add docs/career/my_career_data.md
+git add docs/career/resume.md
+git add docs/career/career_portfolio.md
+git add docs/career/work-logs/
+git add templates/resume/*.html
+git add templates/career/*.html
+```
 
 ## 주의사항
 
@@ -72,10 +90,12 @@ git diff docs/career/my_career_data.md
 - [ ] 10개 파일 업데이트 목록 작성
 - [ ] STAR+I 형식 그대로 반영 (Impact 포함)
 - [ ] **변경된 섹션만** 교체
+- [ ] work-logs 해당 프로젝트 파일 업데이트
+- [ ] work-logs/README.md 인덱스 업데이트
 
 ### 검증
 - [ ] 변경된 프로젝트만 업데이트되었는가?
-- [ ] 10개 파일 모두 업데이트되었는가?
+- [ ] 10개 파일 + work-logs 모두 업데이트되었는가?
 - [ ] STAR+I 형식이 유지되었는가?
 - [ ] 정량적 성과(숫자)가 포함되었는가?
 - [ ] 기술 선택 이유(Why)가 드러나는가?
