@@ -78,7 +78,28 @@ docs/career/
 
 ### Step 2: 프로젝트별 작업 로그 작성
 
-**파일 위치:** `docs/career/work-logs/{company}/{YYYY-MM-작업명}.md`
+**파일 위치:** `docs/career/work-logs/{company}/{파일명}.md`
+
+**파일명 규칙:**
+
+| 형식 | 사용 시점 | 예시 |
+|------|----------|------|
+| `YYYY-MM-작업명.md` | 월이 명확한 경우 | `2025-12-mcp-documentation.md` |
+| `YYYY-작업명.md` | 연도만 있는 경우 | `2022-dynamic-pricing.md` |
+
+- **작업명**: 영어 소문자, 단어는 하이픈(`-`)으로 구분
+- **시간순 정렬**: 파일 탐색기에서 자동 정렬되도록 날짜를 앞에 배치
+- **일관성**: 동일 프로젝트 내 형식 통일 권장
+
+**예시:**
+```
+guhada/
+├── 2022-02-influencer-platform.md    # 월 명시
+├── 2022-dynamic-pricing.md           # 연도만
+├── 2023-chatops.md
+├── 2024-dev-culture.md
+└── 2025-12-mcp-documentation.md      # 월 명시
+```
 
 **템플릿:**
 ```markdown

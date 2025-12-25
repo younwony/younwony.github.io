@@ -1,8 +1,8 @@
 # Claude Code 프로젝트 가이드
 
 > **목적**: 이력서/경력기술서 프로젝트 컨텍스트 제공
-> **버전**: 4.5
-> **최종 업데이트**: 2025-12-24
+> **버전**: 4.8
+> **최종 업데이트**: 2025-12-25
 
 ---
 
@@ -31,7 +31,8 @@ younwony.github.io/
 ├── assets/
 │   ├── css/style.css              # 공통 스타일
 │   └── js/common.js               # 공통 스크립트
-└── .claude/skills/                 # Skills 정의 (13개)
+└── .claude/
+    └── skills/                     # Skills 정의 (14개)
 ```
 
 ### 파일 역할
@@ -102,6 +103,7 @@ my_career_data.md (원본)
 | `/add-project` | 새 프로젝트 추가 (STAR+I 형식) |
 | `/sync-check` | 동기화 상태 검증 |
 | `/work-log` | ⭐ 작업 로그 기록 및 이력서 반영 판단 |
+| `/work-logs-sync` | work-log 가이드 변경 → 기존 파일 일괄 형식 동기화 |
 
 ### 기타
 
@@ -116,6 +118,9 @@ my_career_data.md (원본)
 
 | 버전 | 날짜 | 변경 내용 |
 |------|------|----------|
+| 4.8 | 2025-12-25 | commands 폴더 제거, `/work-logs-sync`를 skills 전용으로 변경 |
+| 4.7 | 2025-12-25 | `/work-logs-sync` 커맨드 추가 (스킬 + 커맨드 양쪽 지원) |
+| 4.6 | 2025-12-25 | `/work-logs-sync` 스킬 추가 (작업 로그 변경 시 이력서 동기화) |
 | 4.5 | 2025-12-24 | `/work-log` 스킬 추가, work-logs 디렉토리 구조 (프로젝트별 상세 작업 기록) |
 | 4.4 | 2025-12-21 | 스킬 분리: `/create-resume-document`, `/export-pdf` 추가, 카테고리별 정리 |
 | 4.3 | 2025-12-20 | `/customize-resume` 스킬 추가, formats 디렉토리 구조 |

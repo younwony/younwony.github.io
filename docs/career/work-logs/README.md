@@ -22,11 +22,11 @@ work-logs/
 
 | 날짜 | 작업명 | 설명 | 이력서 반영 |
 |------|--------|------|------------|
-| 2022-현재 | [인플루언서 데이터 플랫폼 고도화](./guhada/project-01-influencer-platform.md) | 200만 데이터 규모 수집/검색 시스템 구축 | O (프로젝트 1) |
-| 2022-2023 | [네이버 쇼핑 Dynamic Pricing 시스템](./guhada/project-02-dynamic-pricing.md) | 최저가 자동 추종으로 매출 10% 상승 | O (프로젝트 2) |
-| 2023 | [상품 이미지 정합성 확보 시스템](./guhada/project-03-image-integrity.md) | 해시 기반 검증으로 클레임 Zero 달성 | O (프로젝트 3) |
-| 2023-2024 | [ChatOps 기반 운영 프로세스 자동화](./guhada/project-04-chatops.md) | Slack 기반 Zero Ops 달성 | O (프로젝트 4) |
-| 2024-현재 | [개발 문화 개선 및 AI 기반 팀 생산성 혁신](./guhada/project-05-dev-culture.md) | 코드 리뷰 문화 정착, Claude Code 활용 | O (프로젝트 5) |
+| 2022-현재 | [인플루언서 데이터 플랫폼 고도화](./guhada/2022-02-influencer-platform.md) | 200만 데이터 규모 수집/검색 시스템 구축 | O (프로젝트 1) |
+| 2022-2023 | [네이버 쇼핑 Dynamic Pricing 시스템](./guhada/2022-dynamic-pricing.md) | 최저가 자동 추종으로 매출 10% 상승 | O (프로젝트 2) |
+| 2023 | [상품 이미지 정합성 확보 시스템](./guhada/2023-image-integrity.md) | 해시 기반 검증으로 클레임 Zero 달성 | O (프로젝트 3) |
+| 2023-2024 | [ChatOps 기반 운영 프로세스 자동화](./guhada/2023-chatops.md) | Slack 기반 Zero Ops 달성 | O (프로젝트 4) |
+| 2024-현재 | [개발 문화 개선 및 AI 기반 팀 생산성 혁신](./guhada/2024-dev-culture.md) | 코드 리뷰 문화 정착, Claude Code 활용 | O (프로젝트 5) |
 | 2025.12 | [MCP 기반 문서화 자동화](./guhada/2025-12-mcp-documentation.md) | Claude Code + Confluence MCP 연동 | O (프로젝트 5) |
 
 ---
@@ -35,7 +35,7 @@ work-logs/
 
 | 날짜 | 작업명 | 설명 | 이력서 반영 |
 |------|--------|------|------------|
-| 2021-2022 | [Seller 어드민 성능 개선](./interpark/project-01-seller-admin.md) | 조회 성능 80% 단축 (5초 → 1초) | O |
+| 2021-2022 | [Seller 어드민 성능 개선](./interpark/2021-09-seller-admin.md) | 조회 성능 80% 단축 (5초 → 1초) | O |
 
 ---
 
@@ -43,7 +43,7 @@ work-logs/
 
 | 날짜 | 작업명 | 설명 | 이력서 반영 |
 |------|--------|------|------------|
-| 2018-2021 | [자체 검색 엔진 구축](./korealit/project-01-search-engine.md) | Elasticsearch + Nori, 등록 속도 70% 단축 | O |
+| 2018-2021 | [자체 검색 엔진 구축](./korealit/2018-06-search-engine.md) | Elasticsearch + Nori, 등록 속도 70% 단축 | O |
 
 ---
 
