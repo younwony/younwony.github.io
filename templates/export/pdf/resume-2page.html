@@ -439,8 +439,8 @@
         <div class="summary">
             <div class="summary-text">
                 <strong>기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자.</strong>
-                7년간 커머스/아카이빙 도메인에서 대용량 데이터 처리 시스템을 설계·구축했습니다.
-                운영팀과의 협업을 통해 반복 업무를 자동화하고, 코드 리뷰 문화와 AI 활용 문화를 팀 내 정착시켰습니다.
+                Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/주문/가격)의 복잡한 비즈니스 로직을 전문적으로 다뤄왔습니다.
+                기술적 해결책뿐 아니라 비즈니스/운영 조직과의 적극적인 소통을 통해 서비스의 본질적인 문제를 발굴하고 해결합니다.
             </div>
         </div>
 
@@ -536,48 +536,59 @@
             <h2 class="section-title">Key Projects</h2>
 
             <div class="project">
-                <div class="project-title">인플루언서 데이터 플랫폼 고도화 (200만 데이터) <span class="project-company">@ 구하다</span></div>
+                <div class="project-title">인플루언서 데이터 플랫폼 고도화 <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    TikTok API, Ensemble API 조합 멀티소스 파이프라인 구축. RDB→Elasticsearch 전환으로 검색 성능 100배 개선 (10초→0.1초).
-                    Redis Distributed Lock으로 멀티 인스턴스 중복 수집 방지. → 대형 캠페인 진행 가능한 마케팅 커버리지 확보.
+                    <strong style="color:#4a6cf7;">200만 인플루언서 데이터 자동 수집으로 마케팅 커버리지 20배 확대, 검색 100배 개선</strong><br>
+                    <strong>문제:</strong> 수작업 수집으로 일 수십 명 한계, RDB 검색 10초+ 타임아웃<br>
+                    <strong>해결:</strong> Elasticsearch 검색 엔진 + 멀티소스(TikTok/Ensemble API) 수집 파이프라인 설계<br>
+                    <strong>성과:</strong> 데이터 풀 10만→200만(20배↑), 검색 10초→0.1초(100배↑), 리포팅 <strong>Zero Ops</strong>
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
                     <span class="tech-tag">Elasticsearch</span>
                     <span class="tech-tag">Redis Lock</span>
+                    <span class="tech-tag">Google Sheets API</span>
                 </div>
             </div>
 
             <div class="project">
                 <div class="project-title">네이버 쇼핑 Dynamic Pricing <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    API Rate Limit(25,000건/일) 내 매출 기여도 기반 우선순위 스케줄링. 마진 4% 보장 범위 내 최저가 방어.
-                    Spring Batch 기반 트랜잭션 안정성 확보. → 가격 경쟁력 확보로 매출 10% 증가 기여.
+                    <strong style="color:#4a6cf7;">API 제약 내 최저가 방어 알고리즘 구현으로 대상 상품군 매출 10% 상승</strong><br>
+                    <strong>문제:</strong> API 25,000건/일 한도로 5만+ 상품 실시간 대응 불가, 마진율 관리 어려움<br>
+                    <strong>해결:</strong> 매출 기여도 상위 20% 상품 집중 + 마진 4% 보장 룰 엔진 설계<br>
+                    <strong>성과:</strong> 대상 상품 매출/트래픽 각 <strong>10% 상승</strong>, MD팀 가격 조정 업무 <strong>80% 감소</strong>
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Batch</span>
                     <span class="tech-tag">Naver API</span>
                     <span class="tech-tag">BigQuery</span>
+                    <span class="tech-tag">GA4</span>
                 </div>
             </div>
 
             <div class="project">
-                <div class="project-title">ChatOps 운영 자동화 (Zero Ops) <span class="project-company">@ 구하다</span></div>
+                <div class="project-title">ChatOps 기반 운영 프로세스 자동화 <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    운영팀 인터뷰 기반 Pain Point 발굴. Slack Event API + Interactive Component로 발주/클레임 처리 자동화.
-                    버튼 클릭으로 DB 처리 완료. → 운영팀 고부가가치 업무 집중 환경 조성.
+                    <strong style="color:#4a6cf7;">운영 요청 채널 Slack 통합으로 수동 업무 40% → 0% 완전 자동화</strong><br>
+                    <strong>문제:</strong> 발주/클레임 요청이 이메일/메신저/구두로 분산, 운영팀 40% 시간 단순 반복 업무<br>
+                    <strong>해결:</strong> Slack 기반 ChatOps 구축, 버튼 클릭만으로 DB 처리 완료<br>
+                    <strong>성과:</strong> 운영팀 수동 업무 <strong>Zero Ops</strong>, 요청 채널 <strong>100% 통합</strong>, 히스토리 추적 가능
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
                     <span class="tech-tag">Slack Event API</span>
+                    <span class="tech-tag">Interactive Components</span>
                 </div>
             </div>
 
             <div class="project">
-                <div class="project-title">상품 이미지 정합성 시스템 <span class="project-company">@ 구하다</span></div>
+                <div class="project-title">상품 이미지 정합성 확보 시스템 <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    이미지 URL 동일 유지 시 변경 감지 불가 문제 해결. MD5 해시 + ETag 이중 검증.
-                    Header 우선 비교로 네트워크 비용 80% 절감. → 고객 이미지 관련 클레임 Zero 달성.
+                    <strong style="color:#4a6cf7;">URL 동일 이미지 변경 감지 시스템 구축으로 클레임 Zero 달성</strong><br>
+                    <strong>문제:</strong> 해외 부티크 이미지 변경 시 URL 유지 → 기존 시스템 감지 불가, 월 20건+ 클레임<br>
+                    <strong>해결:</strong> ETag + MD5 해시 이중 검증, HEAD 요청 우선으로 네트워크 비용 80% 절감<br>
+                    <strong>성과:</strong> 이미지 불일치 클레임 <strong>Zero</strong>, 반품 비용 월 100만원+ 절감, 검수 <strong>Zero Ops</strong>
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
