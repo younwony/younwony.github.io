@@ -27,52 +27,48 @@ description: 경력기술서(5페이지+)를 작성합니다. 문제 해결 중�
 ### 1. 아키텍처 다이어그램
 
 
-### Architecture
-
-```markdown
-┌─────────────────────────────────────────────────────────┐
-│                    Data Sources                         │
-├─────────────┬─────────────┬─────────────┬──────────────┤
-│   TikTok    │  Ensemble   │   EchoTik   │ Web Scraper  │
-│    API      │    API      │    API      │  (Selenium)  │
-└──────┬──────┴──────┬──────┴──────┬──────┴───────┬──────┘
-       └─────────────┴─────────────┴──────────────┘
-                           │
-                           ▼
-             ┌───────────────────────┐
-             │    Collector Service   │
-             │    (Spring Batch)      │
-             └───────────┬───────────┘
-                         │
-      ┌──────────────────┼──────────────────┐
-      ▼                  ▼                  ▼
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│    MySQL    │───▶│Elasticsearch│    │    Redis    │
-│  (Master)   │    │  (Search)   │    │   (Lock)    │
-└─────────────┘    └─────────────┘    └─────────────┘
-```
+> ### Architecture
+> 
+> ```markdown
+> ┌─────────────────────────────────────────────────────────┐
+> │                    Data Sources                         │
+> ├─────────────┬─────────────┬─────────────┬──────────────┤
+> │   TikTok    │  Ensemble   │   EchoTik   │ Web Scraper  │
+> │    API      │    API      │    API      │  (Selenium)  │
+> └──────┬──────┴──────┬──────┴──────┬──────┴───────┬──────┘
+>        └─────────────┴─────────────┴──────────────┘
+>                            │
+>                            ▼
+>              ┌───────────────────────┐
+>              │    Collector Service   │
+>              │    (Spring Batch)      │
+>              └───────────┬───────────┘
+>                          │
+>       ┌──────────────────┼──────────────────┐
+>       ▼                  ▼                  ▼
+> ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+> │    MySQL    │───▶│Elasticsearch│    │    Redis    │
+> │  (Master)   │    │  (Search)   │    │   (Lock)    │
+> └─────────────┘    └─────────────┘    └─────────────┘
+> ```
 
 ---
 
 ### 2. 데이터 플로우
 
-```markdown
-### Data Flow
-
-```
-1. 수집 (Collection)
-   Schedule Trigger → Lock Acquire → API Request → Response Parse
-
-2. 정제 (Processing)
-   Validation → Deduplication → Normalization → Image Download
-
-3. 적재 (Storage)
-   MySQL Insert → ES Index Sync → S3 Upload (Images)
-
-4. 서빙 (Serving)
-   Search Request → ES Query → Result Format → Response
-```
-```
+> ### Data Flow
+> 
+> 1. 수집 (Collection)
+>    Schedule Trigger → Lock Acquire → API Request → Response Parse
+> 
+> 2. 정제 (Processing)
+>    Validation → Deduplication → Normalization → Image Download
+> 
+> 3. 적재 (Storage)
+>    MySQL Insert → ES Index Sync → S3 Upload (Images)
+> 
+> 4. 서빙 (Serving)
+>    Search Request → ES Query → Result Format → Response
 
 ---
 
@@ -80,35 +76,31 @@ description: 경력기술서(5페이지+)를 작성합니다. 문제 해결 중�
 
 시니어 수준에서 가장 중요한 섹션입니다.
 
-```markdown
-### Troubleshooting
-
-**문제**: 200만 건 검색 시 10초 이상 타임아웃
-
-**발견**:
-- 마케팅팀 피드백: "필터 적용하면 로딩이 안 끝나요"
-- Slow Query Log: `WHERE followers > 10000 AND country = 'US' AND ...` 12초
-
-**분석**:
-1. EXPLAIN 결과: type=ALL (Full Table Scan)
-2. 복합 인덱스 추가 시도 → 4초로 개선되었으나 부족
-3. 원인: 동적 필터 조합이 100가지 이상 → 인덱스 효율 저하
-
-**시도한 방법들**:
-- [실패] Covering Index → 5초로 개선되었으나 여전히 느림
-- [실패] Query Caching → 조건 조합이 많아 Hit율 5% 미만
-- [성공] Elasticsearch 도입 → 역색인 기반 0.1초 달성
-
-**최종 해결**:
-- Elasticsearch 클러스터 구성 (3 nodes)
-- 실시간 동기화 파이프라인 구축 (MySQL → ES)
-- 검색 API 전환 및 Fallback 로직 구현
-
-**검증**:
-- Load Test: 1000 TPS에서 p99 < 200ms
-- 모니터링: 2주간 안정성 확인
-```
-
+> ### Troubleshooting
+> **문제**: 200만 건 검색 시 10초 이상 타임아웃
+>
+>**발견**:
+>- 마케팅팀 피드백: "필터 적용하면 로딩이 안 끝나요"
+>- Slow Query Log: `WHERE followers > 10000 AND country = 'US' AND ...` 12초
+>
+>**분석**:
+>1. EXPLAIN 결과: type=ALL (Full Table Scan)
+>2. 복합 인덱스 추가 시도 → 4초로 개선되었으나 부족
+>3. 원인: 동적 필터 조합이 100가지 이상 → 인덱스 효율 저하
+>
+>**시도한 방법들**:
+>- [실패] Covering Index → 5초로 개선되었으나 여전히 느림
+>- [실패] Query Caching → 조건 조합이 많아 Hit율 5% 미만
+>- [성공] Elasticsearch 도입 → 역색인 기반 0.1초 달성
+>
+>**최종 해결**:
+>- Elasticsearch 클러스터 구성 (3 nodes)
+>- 실시간 동기화 파이프라인 구축 (MySQL → ES)
+>- 검색 API 전환 및 Fallback 로직 구현
+>
+>**검증**:
+>- Load Test: 1000 TPS에서 p99 < 200ms
+>- 모니터링: 2주간 안정성 확인
 ---
 
 ### 4. 기술 구현 상세
