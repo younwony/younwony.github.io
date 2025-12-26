@@ -34,6 +34,12 @@
 | **Sync Check** | `/sync-check` | 원본과 10개 파일의 동기화 상태 검증 |
 | **Work Log** | `/work-log` | 작업 로그 기록 및 이력서 반영 판단 |
 
+### 품질 향상
+
+| Skill | 명령어 | 설명 |
+|-------|--------|------|
+| **Enhance Portfolio** | `/enhance-portfolio` | 아키텍처 다이어그램, 트러블슈팅 상세 등 기술적 깊이 추가 |
+
 ### 기타
 
 | Skill | 명령어 | 설명 |
@@ -194,6 +200,21 @@
 
 ---
 
+### `/enhance-portfolio`
+
+**용도**: 경력기술서 기술적 깊이 강화
+
+**추가 섹션**:
+- Architecture (아키텍처 다이어그램)
+- Data Flow (데이터 플로우)
+- Troubleshooting (트러블슈팅 상세)
+- Implementation Details (구현 상세)
+- Challenges & Solutions (도전 과제)
+
+**사용 시점**: 경력기술서 품질 향상, 시니어 수준 상세 필요 시
+
+---
+
 ### `/style-guide`
 
 **용도**: CSS/HTML 스타일 수정
@@ -242,6 +263,9 @@
   /sync-check           # 동기화 검증
   /work-log             # 작업 로그 기록
 
+품질 향상:
+  /enhance-portfolio    # 기술적 깊이 강화
+
 기타:
   /style-guide          # CSS 스타일 가이드
   /troubleshoot         # 문제 해결
@@ -258,6 +282,7 @@
 ├── create-document-set/SKILL.md
 ├── create-resume-document/SKILL.md
 ├── customize-resume/SKILL.md
+├── enhance-portfolio/SKILL.md   # NEW
 ├── export-document/SKILL.md
 ├── export-pdf/SKILL.md
 ├── format-converter/SKILL.md
@@ -275,4 +300,5 @@
 
 | 날짜 | 변경 내용 |
 |------|----------|
+| 2025-12-26 | `/enhance-portfolio` 스킬 추가 (14개 스킬) |
 | 2025-12-26 | README.md 문서 생성 (13개 스킬 정리) |
