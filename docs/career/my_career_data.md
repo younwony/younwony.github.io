@@ -51,19 +51,15 @@ Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/
 - JPA/Hibernate
 
 ### Database & Cache
-| 기술 | 숙련도 | 비고 |
-|------|--------|------|
-| **MySQL** | Advanced | 쿼리 최적화, 인덱스 튜닝 |
-| **Elasticsearch** | Advanced | 200만 건 검색 시스템 구축 |
-| **Redis** | Advanced | Distributed Lock, 캐싱 |
-| Oracle | Intermediate | 레거시 시스템 유지보수 |
+- MySQL
+- Elasticsearch
+- Redis (Distributed Lock)
+- Oracle
 
 ### Infra & DevOps
-| 기술 | 숙련도 | 비고 |
-|------|--------|------|
-| **AWS** | Intermediate | EC2, S3, RDS 운영 |
-| **Elastic APM** | Advanced | Slow Query 분석, 성능 모니터링 |
-| Jenkins | Intermediate | 배포 자동화 |
+- AWS (EC2, S3, RDS)
+- Elastic APM
+- Jenkins
 
 ### Data & Analytics
 - BigQuery

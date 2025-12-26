@@ -115,20 +115,20 @@
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">5. 개발 문화 개선 및 AI 기반 팀 생산성 혁신</h5>
-                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 팀 내 통일된 코드 컨벤션과 리뷰 프로세스 부재로 개발자마다 스타일이 상이, 협업 비용 증가 및 품질 저하 발생. 코드 리뷰 없이 배포되어 운영 장애 및 사이드 이펙트 반복 발생. 월간/일간 운영성 반복 업무에 시니어 개발자 리소스가 과다 투입되어 핵심 개발 시간 부족.</p>
-                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 건강한 코드 리뷰 문화와 품질 기준을 정착시켜 운영 장애 사전 차단. AI 에이전트 기반 자동화로 반복 업무를 흡수하여 팀 리소스 최적화. 팀 전체 기술 역량과 생산성 상향 평준화.</p>
+                    <h5 style="font-size: 1rem; font-weight: 600; margin-bottom: 8px;">5. 개발 문화 개선 및 시스템 안정성 강화</h5>
+                    <p style="margin-bottom: 8px;"><strong>📌 배경:</strong> 팀 내 통일된 코드 컨벤션과 리뷰 프로세스 부재로 개발자마다 스타일이 상이, 협업 비용 증가 및 품질 저하 발생. 코드 리뷰 없이 배포되어 운영 장애 및 사이드 이펙트 반복 발생. 서버 리소스(디스크/메모리) 모니터링 부재로 장애 사전 감지 어려움. Slow Query로 인한 성능 저하 이슈 빈번 발생.</p>
+                    <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> TDD 기반 개발과 코드 리뷰 문화를 정착시켜 코드 품질 향상. 서버 리소스 모니터링 및 Slow Query 분석 체계 구축으로 서비스 안정성 확보. AI 에이전트 기반 자동화로 반복 업무를 흡수하여 팀 리소스 최적화.</p>
                     <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>PR 기반 리뷰 프로세스 제안 및 도입, 배포 전 최소 2인 승인 체계 확립</li>
-                        <li>Java/Spring 코딩 컨벤션을 팀원들과 함께 정의하고 문서화</li>
-                        <li>Claude Code를 활용하여 SQL 작성, 데이터 조회·정제, 운영성 스크립트를 AI 페어프로그래밍으로 신속 구현. 기존 1~2일 소요 작업을 1~2시간으로 단축</li>
-                        <li>반복 업무를 내부 시스템 기능으로 내재화하여 누구나 즉시 활용 가능하도록 구조화. 사내 맞춤형 운영 툴 5건 이상 신규 구축</li>
-                        <li>프롬프트 엔지니어링 노하우와 AI 활용 패턴을 팀 내 공유</li>
+                        <li>PR 기반 리뷰 프로세스 도입, 배포 전 최소 2인 승인 체계 확립</li>
+                        <li>신규 기능 개발 시 TDD 적용, 핵심 비즈니스 로직 단위 테스트 커버리지 확보</li>
+                        <li>디스크/메모리 사용량 체크 스크립트 → 임계치 초과 시 Slack 알림 자동 발송</li>
+                        <li>Elastic APM 기반 2초 이상 Slow Query 추출 및 시각화, 인덱스 누락·불필요한 JOIN 식별 후 최적화</li>
+                        <li>Claude Code로 운영성 스크립트 AI 페어프로그래밍 (1~2일 → 1~2시간)</li>
                     </ul>
-                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 배포 후 버그·핫픽스 건수 감소, 운영 장애 사전 차단. 온보딩 속도 단축. 운영 업무 <strong>90% 단축</strong> (1~2일 → 1~2시간). 리뷰 기반 학습·지식 공유로 주니어 개발자 역량 상승.</p>
-                    <p style="margin-top: 8px;"><strong>💡 Impact:</strong> 시니어 개발자가 반복 작업에서 해방되어 핵심 도메인 개발·아키텍처 작업에 집중. 개발팀 전반의 협업 효율·코드 품질·개발 속도 유의미 개선. 운영성 업무 자동화로 백엔드 팀 생산성 비약적 향상.</p>
-                    <p style="margin-top: 4px;"><strong>🔧 Tech Decision:</strong> "AI Agent(Claude Code) 도입 - 자연어 명령으로 SQL/스크립트 생성, 반복 업무 90% 시간 단축 및 팀 전체 활용 가능"</p>
+                    <p style="margin-top: 8px;"><strong>✅ 성과:</strong> TDD 도입으로 코드 품질 개선, Slow Query 최적화, 서버 안정성 확보, 운영 업무 <strong>90% 단축</strong>.</p>
+                    <p style="margin-top: 8px;"><strong>💡 Impact:</strong> 리소스 모니터링으로 장애 사전 감지, Slow Query 최적화로 UX 향상, TDD/코드 리뷰로 유지보수 비용 절감.</p>
+                    <p style="margin-top: 4px;"><strong>🔧 Tech Decision:</strong> "Elastic APM 활용 - 추가 비용 없이 Slow Query 시각화, Slack 알림 연동으로 즉시 이슈 인지"</p>
                 </div>
             </div>
 

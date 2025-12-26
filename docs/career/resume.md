@@ -29,6 +29,8 @@ Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/
 | **Data Pipeline** | 200만 건 이상 이기종 데이터 수집·정제·적재(ETL) 파이프라인 구축 |
 | **Architecture & Performance** | 대용량 처리를 위한 병렬 아키텍처 설계 및 성능 최적화 |
 | **Zero Ops & Automation** | ChatOps, 리포팅 자동화 등 운영 프로세스 100% 자동화 |
+| **Reliability Engineering** | 서버 리소스 모니터링, Slow Query 분석 체계로 서비스 안정성 확보 |
+| **Quality & Testing** | TDD 기반 개발, 코드 리뷰 문화 정착으로 코드 품질 향상 |
 | **Cross-functional Leadership** | 요구사항 분석부터 유관 부서 협업까지 프로젝트 전 과정 리딩 |
 | **AI-Assisted Development** | Claude Code 활용으로 운영 업무 자동화 및 개발 생산성 향상 |
 
@@ -40,10 +42,10 @@ Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/
 - **Java**, Spring Boot, Spring Batch, JPA/Hibernate
 
 ### Database & Cache
-- MySQL, Oracle, **Redis (Distributed Lock)**, Elasticsearch
+- **MySQL**, **Elasticsearch**, **Redis** (Distributed Lock), Oracle
 
 ### Infra & DevOps
-- AWS (EC2, S3, RDS), Jenkins, GitHub Actions
+- AWS (EC2, S3, RDS), **Elastic APM** (Slow Query 분석), Jenkins
 
 ### Data & Analytics
 - BigQuery, GA4
@@ -53,6 +55,7 @@ Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/
 
 ### AI Coding Assistant
 - Claude Code (AI 기반 코딩 어시스턴트 활용)
+- MCP (Model Context Protocol) - Confluence/Jira 연동 자동화
 
 ---
 
@@ -104,17 +107,17 @@ Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/
 - **Tech Decision:** Slack 선택(채택률 극대화), Event API + Interactive Component로 컨텍스트 스위칭 제거
 - **사용 기술:** Java, Spring Boot, Slack Event API
 
-#### 개발 문화 개선 및 AI 기반 팀 생산성 혁신
-- **핵심 성과:** 코드 품질 개선, 온보딩 속도 단축, 운영 업무 **90% 단축** (1~2일 → 1~2시간)
+#### 개발 문화 개선 및 시스템 안정성 강화
+- **핵심 성과:** TDD 도입으로 코드 품질 개선, Slow Query 최적화, 서버 안정성 확보, 운영 업무 **90% 단축**
 - **주요 역할:**
   - **코드 리뷰 문화 정착:** PR 기반 리뷰 프로세스 도입, 배포 전 최소 2인 승인 체계 확립
-  - **코딩 컨벤션 수립:** Java/Spring 코딩 컨벤션 정의 및 문서화
-  - **AI 에이전트 활용 자동화:** Claude Code로 SQL 작성, 데이터 조회·정제, 운영성 스크립트 AI 페어프로그래밍
-  - **운영 툴 내재화:** 사내 맞춤형 운영 툴 5건 이상 신규 구축
-  - **팀 내 AI 활용 전파:** 프롬프트 엔지니어링 노하우 공유
-- **Impact:** 시니어 개발자 핵심 개발 집중, 팀 전반 협업 효율·코드 품질·개발 속도 개선
-- **Tech Decision:** AI Agent(Claude Code) 도입으로 반복 업무 90% 시간 단축
-- **사용 기술:** Java, Spring Boot, Claude Code (AI Agent), Code Review, Clean Code
+  - **TDD 기반 개발 도입:** 신규 기능 개발 시 TDD 적용, 핵심 비즈니스 로직 단위 테스트 커버리지 확보
+  - **서버 리소스 모니터링 구축:** 디스크/메모리 사용량 체크 스크립트 → 임계치 초과 시 Slack 알림 자동 발송
+  - **Elastic APM 기반 Slow Query 분석:** 2초 이상 Slow Query 추출 및 시각화, 인덱스 누락·불필요한 JOIN 식별 후 최적화
+  - **AI 에이전트 활용 자동화:** Claude Code로 운영성 스크립트 AI 페어프로그래밍 (1~2일 → 1~2시간)
+- **Impact:** 리소스 모니터링으로 장애 사전 감지, Slow Query 최적화로 UX 향상, TDD/코드 리뷰로 유지보수 비용 절감
+- **Tech Decision:** Elastic APM 활용(추가 비용 없이 Slow Query 시각화), Slack 알림(즉시 이슈 인지)
+- **사용 기술:** Java, Spring Boot, Elastic APM, TDD (JUnit, Mockito), Slack API, Shell Script
 
 ---
 

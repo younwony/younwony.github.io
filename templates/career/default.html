@@ -382,6 +382,14 @@
                 <td style="padding: 10px; border: 1px solid #ddd;">ChatOps, 리포팅 자동화 등 운영 프로세스 100% 자동화</td>
             </tr>
             <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;"><strong>Reliability Engineering</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">서버 리소스 모니터링, Slow Query 분석 체계로 서비스 안정성 확보</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;"><strong>Quality & Testing</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">TDD 기반 개발, 코드 리뷰 문화 정착으로 코드 품질 향상</td>
+            </tr>
+            <tr>
                 <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;"><strong>Cross-functional Leadership</strong></td>
                 <td style="padding: 10px; border: 1px solid #ddd;">요구사항 분석부터 유관 부서 협업까지 프로젝트 전 과정 리딩</td>
             </tr>
@@ -417,8 +425,8 @@
                 <h3 class="tech-category-title">Infra & DevOps</h3>
                 <div class="tech-badge-list">
                     <span class="tech-badge">AWS (EC2, S3, RDS)</span>
+                    <span class="tech-badge">Elastic APM</span>
                     <span class="tech-badge">Jenkins</span>
-                    <span class="tech-badge">GitHub Actions</span>
                 </div>
             </div>
             <div>
@@ -442,6 +450,7 @@
                 <h3 class="tech-category-title">AI Coding Assistant</h3>
                 <div class="tech-badge-list">
                     <span class="tech-badge">Claude Code</span>
+                    <span class="tech-badge">MCP (Confluence/Jira 연동)</span>
                 </div>
             </div>
         </div>
@@ -780,7 +789,7 @@
         </div>
 
         <div class="project-block">
-            <div class="project-title">5. 개발 문화 개선 및 AI 기반 팀 생산성 혁신</div>
+            <div class="project-title">5. 개발 문화 개선 및 시스템 안정성 강화</div>
 
             <div class="project-item">
                 <span class="project-label">📌 Situation (배경):</span>
@@ -788,7 +797,8 @@
                     <ul>
                         <li>팀 내 통일된 코드 컨벤션과 리뷰 프로세스 부재로 개발자마다 스타일이 상이, 협업 비용 증가 및 품질 저하 발생</li>
                         <li>코드 리뷰 없이 배포되어 운영 장애 및 사이드 이펙트 반복 발생</li>
-                        <li>월간/일간 운영성 반복 업무(로그 조회, 데이터 추출, 어드민 기능 개발)에 시니어 개발자 리소스가 과다 투입되어 핵심 개발 시간 부족</li>
+                        <li>서버 리소스(디스크/메모리) 모니터링 부재로 장애 사전 감지 어려움</li>
+                        <li>Slow Query로 인한 성능 저하 이슈 빈번 발생</li>
                     </ul>
                 </div>
             </div>
@@ -797,9 +807,9 @@
                 <span class="project-label">🎯 Task (과제/목표):</span>
                 <div class="project-content">
                     <ul>
-                        <li>건강한 코드 리뷰 문화와 품질 기준을 정착시켜 운영 장애 사전 차단</li>
+                        <li>TDD 기반 개발과 코드 리뷰 문화를 정착시켜 코드 품질 향상</li>
+                        <li>서버 리소스 모니터링 및 Slow Query 분석 체계 구축으로 서비스 안정성 확보</li>
                         <li>AI 에이전트 기반 자동화로 반복 업무를 흡수하여 팀 리소스 최적화</li>
-                        <li>팀 전체 기술 역량과 생산성 상향 평준화</li>
                     </ul>
                 </div>
             </div>
@@ -808,11 +818,11 @@
                 <span class="project-label">⚡ Action (해결 방법):</span>
                 <div class="project-content">
                     <ul>
-                        <li><strong>코드 리뷰 문화 정착:</strong> PR 기반 리뷰 프로세스 제안 및 도입, 배포 전 최소 2인 승인 체계 확립. 설계·성능·운영 요소를 함께 논의하는 "더 나은 설계" 중심 리뷰 문화 형성</li>
-                        <li><strong>코딩 컨벤션 수립:</strong> Java/Spring 코딩 컨벤션을 팀원들과 함께 정의하고 문서화. 신규 입사자 온보딩 시 즉시 적용 가능하도록 체계화</li>
-                        <li><strong>AI 에이전트 활용 자동화:</strong> Claude Code를 활용하여 SQL 작성, 데이터 조회·정제, 운영성 스크립트를 AI 페어프로그래밍으로 신속 구현. 기존 1~2일 소요 작업을 1~2시간으로 단축</li>
-                        <li><strong>운영 툴 내재화:</strong> 반복 업무를 내부 시스템 기능으로 내재화하여 누구나 즉시 활용 가능하도록 구조화. 사내 맞춤형 운영 툴 5건 이상 신규 구축</li>
-                        <li><strong>팀 내 AI 활용 전파:</strong> 프롬프트 엔지니어링 노하우와 AI 활용 패턴을 팀 내 공유하여 주니어 개발자도 복잡한 쿼리 및 테스트 코드 작성에 AI 보조 활용</li>
+                        <li><strong>코드 리뷰 문화 정착:</strong> PR 기반 리뷰 프로세스 도입, 배포 전 최소 2인 승인 체계 확립</li>
+                        <li><strong>TDD 기반 개발 도입:</strong> 신규 기능 개발 시 TDD 적용, 핵심 비즈니스 로직 단위 테스트 커버리지 확보</li>
+                        <li><strong>서버 리소스 모니터링 구축:</strong> 디스크/메모리 사용량 체크 스크립트 → 임계치 초과 시 Slack 알림 자동 발송</li>
+                        <li><strong>Elastic APM 기반 Slow Query 분석:</strong> 2초 이상 Slow Query 추출 및 시각화, 인덱스 누락·불필요한 JOIN 식별 후 최적화</li>
+                        <li><strong>AI 에이전트 활용 자동화:</strong> Claude Code로 운영성 스크립트 AI 페어프로그래밍 (1~2일 → 1~2시간)</li>
                     </ul>
                 </div>
             </div>
@@ -821,16 +831,16 @@
                 <span class="project-label">✅ Result (성과):</span>
                 <div class="project-content">
                     <ul>
-                        <li><strong>코드 품질 개선:</strong> 배포 후 버그·핫픽스 건수 감소, 운영 장애 사전 차단</li>
-                        <li><strong>온보딩 속도 단축:</strong> 일관된 컨벤션과 리뷰 프로세스로 신규 입사자 생산 투입 시점 앞당김</li>
+                        <li><strong>코드 품질 개선:</strong> TDD 도입으로 배포 후 버그·핫픽스 건수 감소</li>
+                        <li><strong>서버 안정성 확보:</strong> 리소스 모니터링으로 장애 사전 감지</li>
+                        <li><strong>성능 최적화:</strong> Slow Query 최적화로 UX 향상</li>
                         <li><strong>운영 업무 90% 단축:</strong> 운영성 도구 개발 시간 1~2일 → 1~2시간으로 개선</li>
-                        <li><strong>팀 역량 향상:</strong> 리뷰 기반 학습·지식 공유로 주니어 개발자 역량 상승</li>
                     </ul>
                 </div>
                 <div class="result-metrics">
-                    <span class="metric-pill">📝 코드 리뷰 문화 정착</span>
+                    <span class="metric-pill">📝 TDD/코드 리뷰 문화 정착</span>
+                    <span class="metric-pill">🔍 Slow Query 최적화</span>
                     <span class="metric-pill">🤖 운영 업무 90% 단축</span>
-                    <span class="metric-pill">📚 팀 역량 강화</span>
                 </div>
             </div>
 
@@ -838,9 +848,9 @@
                 <span class="project-label">💡 Impact (비즈니스 효과):</span>
                 <div class="project-content">
                     <ul>
-                        <li>시니어 개발자가 반복 작업에서 해방되어 핵심 도메인 개발·아키텍처 작업에 집중</li>
-                        <li>개발팀 전반의 협업 효율·코드 품질·개발 속도 유의미 개선</li>
-                        <li>운영성 업무 자동화로 백엔드 팀 생산성 비약적 향상</li>
+                        <li>리소스 모니터링으로 장애 사전 감지, 서비스 안정성 향상</li>
+                        <li>Slow Query 최적화로 UX 향상 및 사용자 만족도 증가</li>
+                        <li>TDD/코드 리뷰로 유지보수 비용 절감</li>
                     </ul>
                 </div>
             </div>
@@ -849,15 +859,17 @@
                 <span class="project-label">🔧 Tech Decision:</span>
                 <div class="project-content">
                     <ul>
-                        <li>"AI Agent(Claude Code) 도입 - 자연어 명령으로 SQL/스크립트 생성, 반복 업무 90% 시간 단축 및 팀 전체 활용 가능"</li>
+                        <li>"Elastic APM 활용 - 추가 비용 없이 Slow Query 시각화, 2초 이상 쿼리 자동 추출"</li>
+                        <li>"Slack 알림 연동 - 임계치 초과 시 즉시 이슈 인지 가능"</li>
                     </ul>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Java</span>
                     <span class="tech-badge">Spring Boot</span>
-                    <span class="tech-badge">Claude Code (AI Agent)</span>
-                    <span class="tech-badge">Code Review</span>
-                    <span class="tech-badge">Clean Code</span>
+                    <span class="tech-badge">Elastic APM</span>
+                    <span class="tech-badge">TDD (JUnit, Mockito)</span>
+                    <span class="tech-badge">Slack API</span>
+                    <span class="tech-badge">Shell Script</span>
                 </div>
             </div>
         </div>
