@@ -1,8 +1,8 @@
 # Claude Code 프로젝트 가이드
 
 > **목적**: 이력서/경력기술서 프로젝트 컨텍스트 제공
-> **버전**: 4.5
-> **최종 업데이트**: 2025-12-24
+> **버전**: 4.6
+> **최종 업데이트**: 2025-12-26
 
 ---
 
@@ -110,12 +110,36 @@ my_career_data.md (원본)
 | `/style-guide` | CSS/HTML 스타일 수정 |
 | `/troubleshoot` | 문제 해결 |
 
+> **상세 문서**: `.claude/skills/README.md` 참조
+
+---
+
+## 🔄 Skills 관리 규칙
+
+### 스킬 추가/수정 시 필수 작업
+
+스킬을 추가하거나 수정할 때 아래 파일들을 함께 업데이트:
+
+1. **스킬 정의 파일**: `.claude/skills/{skill-name}/SKILL.md`
+2. **스킬 가이드**: `.claude/skills/README.md` (전체 스킬 목록 및 상세 설명)
+3. **CLAUDE.md**: Skills 섹션 테이블 업데이트
+
+### 체크리스트
+
+스킬 변경 후 확인:
+
+- [ ] `.claude/skills/{name}/SKILL.md` 생성/수정
+- [ ] `.claude/skills/README.md` 업데이트 (카테고리별 테이블, 상세 설명)
+- [ ] `CLAUDE.md` Skills 섹션 테이블 업데이트
+- [ ] git add 완료
+
 ---
 
 ## 📝 변경 이력
 
 | 버전 | 날짜 | 변경 내용 |
 |------|------|----------|
+| 4.6 | 2025-12-26 | `.claude/skills/README.md` 스킬 가이드 추가, Skills 관리 규칙 추가 |
 | 4.5 | 2025-12-24 | `/work-log` 스킬 추가, work-logs 디렉토리 구조 (프로젝트별 상세 작업 기록) |
 | 4.4 | 2025-12-21 | 스킬 분리: `/create-resume-document`, `/export-pdf` 추가, 카테고리별 정리 |
 | 4.3 | 2025-12-20 | `/customize-resume` 스킬 추가, formats 디렉토리 구조 |
