@@ -16,7 +16,7 @@ docs/career/
 ├── my_career_data.md          # 이력서 원본 (SSOT)
 ├── resume.md                  # 기본 이력서
 ├── career_portfolio.md        # 경력기술서
-└── work-logs/                 # ⭐ 작업 로그 (프로젝트별)
+└── work-logs/                 # 작업 로그 (프로젝트별)
     ├── README.md              # 작업 로그 인덱스
     ├── guhada/                # 구하다 프로젝트
     │   ├── 2024-mcp-documentation.md
@@ -87,20 +87,6 @@ docs/career/
 | `YYYY-MM-작업명.md` | 월이 명확한 경우 | `2025-12-mcp-documentation.md` |
 | `YYYY-작업명.md` | 연도만 있는 경우 | `2022-dynamic-pricing.md` |
 
-- **작업명**: 영어 소문자, 단어는 하이픈(`-`)으로 구분
-- **시간순 정렬**: 파일 탐색기에서 자동 정렬되도록 날짜를 앞에 배치
-- **일관성**: 동일 프로젝트 내 형식 통일 권장
-
-**예시:**
-```
-guhada/
-├── 2022-02-influencer-platform.md    # 월 명시
-├── 2022-dynamic-pricing.md           # 연도만
-├── 2023-chatops.md
-├── 2024-dev-culture.md
-└── 2025-12-mcp-documentation.md      # 월 명시
-```
-
 **템플릿:**
 ```markdown
 # [작업명]
@@ -147,7 +133,6 @@ guhada/
 
 #### 1. [구현 항목 1]
 - 상세 설명
-- 코드 스니펫 (필요시)
 
 #### 2. [구현 항목 2]
 - 상세 설명
@@ -234,8 +219,8 @@ guhada/
 
 | 날짜 | 작업명 | 이력서 반영 |
 |------|--------|------------|
-| 2024.12 | MCP 기반 문서화 자동화 | ✅ 프로젝트 5 |
-| 2024.11 | 로그 조회 스크립트 | ❌ |
+| 2024.12 | MCP 기반 문서화 자동화 | 프로젝트 5 |
+| 2024.11 | 로그 조회 스크립트 | - |
 ```
 
 ### Step 6: git add

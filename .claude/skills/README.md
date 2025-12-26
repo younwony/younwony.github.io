@@ -3,29 +3,49 @@
 > 이력서/경력기술서 프로젝트에서 사용 가능한 Claude Code Skills 목록
 >
 > **최종 업데이트**: 2025-12-26
+> **총 스킬 수**: 9개
+
+---
+
+## 디렉토리 구조
+
+```
+.claude/skills/
+├── README.md                          # 이 파일 (스킬 가이드)
+├── write/                             # 문서 작성
+│   ├── guide/SKILL.md                 # /writing-guide
+│   ├── resume/SKILL.md                # /create-resume-document
+│   └── career/SKILL.md                # /write-career
+├── export/SKILL.md                    # /export (PDF + PPT)
+├── data/                              # 데이터 관리
+│   ├── update/SKILL.md                # /update-resume
+│   ├── add-project/SKILL.md           # /add-project
+│   ├── sync-check/SKILL.md            # /sync-check
+│   ├── work-log/SKILL.md              # /work-log
+│   └── work-logs-sync/SKILL.md        # /work-logs-sync
+└── util/                              # 유틸리티
+    └── style/SKILL.md                 # /style-guide
+```
 
 ---
 
 ## 카테고리별 Skills
 
-### 문서 작성
+### 문서 작성 (write/)
 
 | Skill | 명령어 | 설명 |
 |-------|--------|------|
 | **Writing Guide** | `/writing-guide` | STAR+I 기법, 정량화 방식, 시니어 톤 표현, Bad vs Good 사례 |
-| **Customize Resume** | `/customize-resume` | JD 또는 기업 유형에 맞춘 맞춤형 이력서 생성 |
-| **Create Resume Document** | `/create-resume-document` | PDF 출력에 최적화된 2-3페이지 이력서 작성 |
-| **Create Document Set** | `/create-document-set` | 이력서 + 경력기술서 세트 생성 |
+| **Resume** | `/create-resume-document` | 이력서 작성 (2-3페이지), JD 맞춤형, 이력서+경력기술서 세트 |
+| **Career Portfolio** | `/write-career` | 경력기술서 작성 (5페이지+), 아키텍처/트러블슈팅 상세 |
 
-### 문서 내보내기
+### 문서 내보내기 (export/)
 
 | Skill | 명령어 | 설명 |
 |-------|--------|------|
-| **Export PDF** | `/export-pdf` | PDF 내보내기 (페이지 끊김 방지 최적화) |
-| **Export Document** | `/export-document` | PPT, DOCX 등 제출용 문서 내보내기 |
-| **Format Converter** | `/format-converter` | HTML, Markdown, DOCX, PDF 포맷 변환 |
+| **Export** | `/export` | PDF/PPT 내보내기 (페이지 끊김 방지 최적화) |
 
-### 데이터 관리
+### 데이터 관리 (data/)
 
 | Skill | 명령어 | 설명 |
 |-------|--------|------|
@@ -33,19 +53,13 @@
 | **Add Project** | `/add-project` | 새 프로젝트를 STAR+I 형식으로 추가 |
 | **Sync Check** | `/sync-check` | 원본과 10개 파일의 동기화 상태 검증 |
 | **Work Log** | `/work-log` | 작업 로그 기록 및 이력서 반영 판단 |
+| **Work Logs Sync** | `/work-logs-sync` | work-log 템플릿 변경 시 기존 파일 일괄 동기화 |
 
-### 품질 향상
-
-| Skill | 명령어 | 설명 |
-|-------|--------|------|
-| **Enhance Portfolio** | `/enhance-portfolio` | 아키텍처 다이어그램, 트러블슈팅 상세 등 기술적 깊이 추가 |
-
-### 기타
+### 유틸리티 (util/)
 
 | Skill | 명령어 | 설명 |
 |-------|--------|------|
 | **Style Guide** | `/style-guide` | HTML 템플릿과 CSS 스타일 수정 가이드 |
-| **Troubleshoot** | `/troubleshoot` | 문제 해결 (다크모드 오류, 동기화 누락 등) |
 
 ---
 
@@ -61,86 +75,44 @@
 - 정량화 방식 (%, 배, 건수)
 - Bad vs Good 사례
 
-**사용 시점**: 프로젝트 설명 작성, 성과 정량화 필요 시
-
----
-
-### `/customize-resume`
-
-**용도**: 맞춤형 이력서 생성
-
-**입력 유형**:
-- JD(채용공고) URL 또는 텍스트
-- 기업 유형 (스타트업/대기업)
-- 도메인 (핀테크/커머스 등)
-
-**출력**: `docs/career/formats/by-jd/{company}_{date}.md`
-
-**사용 시점**: 특정 회사 지원, JD 맞춤형 이력서 필요 시
-
 ---
 
 ### `/create-resume-document`
 
-**용도**: 2-3페이지 이력서 작성
+**용도**: 이력서 작성 (2-3페이지)
 
-**특징**:
-- PDF 출력 최적화
-- 채용 담당자 빠른 스크리닝용
-- 핵심 성과 중심 구성
+**작성 유형**:
+1. 기본 이력서
+2. JD 맞춤형 이력서
+3. 이력서 + 경력기술서 세트
 
 **사용 시점**: 채용 사이트 제출, 이메일 첨부용
 
 ---
 
-### `/create-document-set`
+### `/write-career`
 
-**용도**: 이력서 + 경력기술서 세트 생성
+**용도**: 경력기술서 작성 (5페이지+)
 
-**구성**:
-- 이력서 (2-3페이지): 핵심 요약, 성과 중심
-- 경력기술서 (5페이지+): 프로젝트 상세, STAR+I
+**특징**:
+- STAR+I 상세 프로젝트 설명
+- 아키텍처 다이어그램
+- 트러블슈팅 상세
+- 구현 상세 / 도전 과제
 
-**사용 시점**: 채용 지원 시 두 문서 함께 제출
-
----
-
-### `/export-pdf`
-
-**용도**: PDF 내보내기
-
-**핵심 기능**:
-- 페이지 경계 끊김 방지
-- 여백/페이지 나눔 최적화
-- CSS `page-break-inside: avoid` 적용
-
-**사용 시점**: 최종 제출용 PDF 생성
+**사용 시점**: 상세 역량 검증, 시니어 수준 포트폴리오
 
 ---
 
-### `/export-document`
+### `/export`
 
-**용도**: PPT/DOCX 내보내기
+**용도**: PDF/PPT 내보내기
 
 **지원 포맷**:
-- PPT: 자기소개 슬라이드 (5장), 경력기술서 슬라이드 (10장)
-- DOCX: Pandoc 변환
+- **PDF**: 페이지 끊김 방지 최적화
+- **PPT**: 자기소개 슬라이드 (5장), 경력기술서 슬라이드 (10장)
 
-**사용 시점**: 발표용 PPT, 편집 가능 문서 필요 시
-
----
-
-### `/format-converter`
-
-**용도**: 다양한 포맷 변환
-
-**지원 변환**:
-- HTML → PDF (브라우저/wkhtmltopdf)
-- MD → DOCX (Pandoc)
-- MD → PDF (Pandoc + LaTeX)
-- MD → HTML (Pandoc)
-
-**사용 시점**: 특정 포맷으로 변환 필요 시
+**사용 시점**: 최종 제출용 PDF, 발표용 슬라이드
 
 ---
 
@@ -152,7 +124,6 @@
 - `resume.md`, `career_portfolio.md`
 - `templates/resume/*.html` (4개)
 - `templates/career/*.html` (4개)
-- `work-logs/` 관련 파일
 
 **사용 시점**: `my_career_data.md` 수정 후 전체 반영
 
@@ -168,8 +139,6 @@
 3. `work-logs/`에 상세 작업 로그 작성
 4. 10개 파일 동기화
 
-**사용 시점**: 새로운 프로젝트 경험 추가
-
 ---
 
 ### `/sync-check`
@@ -181,8 +150,6 @@
 - 성과 수치 (%, 배, 건수)
 - 기술 스택
 - STAR+I 형식 준수
-
-**사용 시점**: 파일 간 불일치 의심 시
 
 ---
 
@@ -196,22 +163,15 @@
 3. 이력서 반영 여부 판단
 4. 필요 시 이력서 업데이트
 
-**사용 시점**: 작업 완료 후 기록, 이력서 반영 검토
-
 ---
 
-### `/enhance-portfolio`
+### `/work-logs-sync`
 
-**용도**: 경력기술서 기술적 깊이 강화
+**용도**: work-log 템플릿 형식 일괄 동기화
 
-**추가 섹션**:
-- Architecture (아키텍처 다이어그램)
-- Data Flow (데이터 플로우)
-- Troubleshooting (트러블슈팅 상세)
-- Implementation Details (구현 상세)
-- Challenges & Solutions (도전 과제)
-
-**사용 시점**: 경력기술서 품질 향상, 시니어 수준 상세 필요 시
+**사용 시점**:
+- `/work-log` 스킬 가이드(템플릿)가 변경되었을 때
+- 기존 work-logs 파일들을 새 형식에 맞게 일괄 변환
 
 ---
 
@@ -224,74 +184,28 @@
 - CSS 변수 우선 사용
 - 다크모드 자동 적용
 
-**사용 시점**: 템플릿 스타일 변경, 다크모드 수정
-
----
-
-### `/troubleshoot`
-
-**용도**: 문제 해결
-
-**해결 가능 문제**:
-- 다크모드가 일부 요소에만 적용됨
-- 10개 파일 업데이트 누락
-- STAR+I 형식 깨짐
-- 정량적 성과 누락
-- git staging 문제
-
-**사용 시점**: 작업 중 문제 발생 시
-
 ---
 
 ## Quick Reference
 
 ```
 문서 작성:
-  /writing-guide         # STAR+I 작성 가이드
-  /customize-resume      # JD 맞춤형 이력서
-  /create-resume-document # 2-3페이지 이력서
-  /create-document-set   # 이력서+경력기술서 세트
+  /writing-guide            # STAR+I 작성 가이드
+  /create-resume-document   # 이력서 (2-3페이지, JD 맞춤형, 세트)
+  /write-career             # 경력기술서 (5페이지+, 상세)
 
 내보내기:
-  /export-pdf           # PDF 내보내기
-  /export-document      # PPT/DOCX 내보내기
-  /format-converter     # 포맷 변환
+  /export                   # PDF/PPT 내보내기
 
 데이터 관리:
-  /update-resume        # 10개 파일 동기화
-  /add-project          # 새 프로젝트 추가
-  /sync-check           # 동기화 검증
-  /work-log             # 작업 로그 기록
+  /update-resume            # 10개 파일 동기화
+  /add-project              # 새 프로젝트 추가
+  /sync-check               # 동기화 검증
+  /work-log                 # 작업 로그 기록
+  /work-logs-sync           # work-log 형식 일괄 동기화
 
-품질 향상:
-  /enhance-portfolio    # 기술적 깊이 강화
-
-기타:
-  /style-guide          # CSS 스타일 가이드
-  /troubleshoot         # 문제 해결
-```
-
----
-
-## 디렉토리 구조
-
-```
-.claude/skills/
-├── README.md                    # 이 파일 (스킬 가이드)
-├── add-project/SKILL.md
-├── create-document-set/SKILL.md
-├── create-resume-document/SKILL.md
-├── customize-resume/SKILL.md
-├── enhance-portfolio/SKILL.md   # NEW
-├── export-document/SKILL.md
-├── export-pdf/SKILL.md
-├── format-converter/SKILL.md
-├── style-guide/SKILL.md
-├── sync-check/SKILL.md
-├── troubleshoot/SKILL.md
-├── update-resume/SKILL.md
-├── work-log/SKILL.md
-└── writing-guide/SKILL.md
+유틸리티:
+  /style-guide              # CSS 스타일 가이드
 ```
 
 ---
@@ -300,5 +214,6 @@
 
 | 날짜 | 변경 내용 |
 |------|----------|
-| 2025-12-26 | `/enhance-portfolio` 스킬 추가 (14개 스킬) |
-| 2025-12-26 | README.md 문서 생성 (13개 스킬 정리) |
+| 2025-12-26 | Skills 구조 개편: 14개 → 9개로 통합, 카테고리별 그룹화 |
+| 2025-12-26 | DOCX 내보내기 제거, enhance-portfolio를 write-career에 통합 |
+| 2025-12-26 | 디렉토리 구조: write/, export/, data/, util/ |

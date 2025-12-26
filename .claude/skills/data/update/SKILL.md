@@ -41,7 +41,7 @@ git diff docs/career/my_career_data.md
 - 변경 범위 결정
 
 ### Step 2: 가이드 참조
-- `/writing-guide` 스킬 참조 (STAR+I, 시니어 톤, 정량화)
+- `/write-guide` 스킬 참조 (STAR+I, 시니어 톤, 정량화)
 - STAR+I 형식 준수 확인
 
 ### Step 3: 10개 파일 업데이트
@@ -106,11 +106,3 @@ git add templates/career/*.html
 ### git 작업
 - [ ] git add 완료
 - [ ] git status로 staging 확인
-
-## 커밋 메시지 예시 (사용자 요청 시)
-
-```bash
-git commit -m "docs: 프로젝트 1 성과 지표 업데이트"
-git commit -m "docs: 프로젝트 1 상세 내용 보강"
-git commit -m "feat: 이력서 템플릿 프로젝트 1 업데이트"
-```

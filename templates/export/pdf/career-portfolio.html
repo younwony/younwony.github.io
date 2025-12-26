@@ -181,77 +181,96 @@
             font-size: 10.5pt;
             font-weight: 600;
             color: #1e3a5f;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #ddd;
+            margin-bottom: 6px;
         }
 
-        /* STAR Grid */
-        .star-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .star-item {
-            background: #fafbfc;
-            padding: 10px 12px;
+        /* One-line Summary - NEW */
+        .project-summary {
+            font-size: 9pt;
+            color: #4a6cf7;
+            font-weight: 500;
+            background: #f0f9ff;
+            padding: 8px 12px;
             border-radius: 4px;
+            margin-bottom: 14px;
             border-left: 3px solid #4a6cf7;
         }
 
-        .star-item.situation { border-left-color: #6366f1; }
-        .star-item.task { border-left-color: #8b5cf6; }
-        .star-item.action { border-left-color: #0ea5e9; }
-        .star-item.result { border-left-color: #10b981; }
-        .star-item.impact { border-left-color: #f59e0b; }
-
-        .star-label {
-            font-size: 8pt;
-            font-weight: 600;
-            color: #4a6cf7;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* Project Meta */
+        .project-meta {
+            font-size: 8.5pt;
+            color: #666;
+            margin-bottom: 12px;
         }
 
-        .star-item.situation .star-label { color: #6366f1; }
-        .star-item.task .star-label { color: #8b5cf6; }
-        .star-item.action .star-label { color: #0ea5e9; }
-        .star-item.result .star-label { color: #10b981; }
-        .star-item.impact .star-label { color: #f59e0b; }
+        .project-meta span {
+            margin-right: 15px;
+        }
 
-        .star-content {
+        /* Content Section */
+        .content-section {
+            margin-bottom: 12px;
+        }
+
+        .content-label {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .content-label::before {
+            content: '';
+            width: 3px;
+            height: 12px;
+            background: #4a6cf7;
+            border-radius: 2px;
+        }
+
+        .content-body {
             font-size: 8.5pt;
             color: #444;
-            line-height: 1.6;
+            line-height: 1.7;
+            padding-left: 9px;
         }
 
-        .star-content ul {
+        .content-body ul {
             margin: 0;
             padding-left: 14px;
         }
 
-        .star-content li {
-            margin-bottom: 2px;
+        .content-body li {
+            margin-bottom: 3px;
         }
 
-        /* Full width star item */
-        .star-full {
-            grid-column: 1 / -1;
-        }
-
-        /* Tech Decision */
-        .tech-decision {
-            background: #f8fafc;
-            border-left: 3px solid #64748b;
-            padding: 10px 14px;
+        /* Result Table - NEW */
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 8.5pt;
-            color: #555;
-            font-style: italic;
-            margin-top: 8px;
-            line-height: 1.6;
+            margin-top: 6px;
+        }
+
+        .result-table th {
+            background: #f1f5f9;
+            color: #1e3a5f;
+            font-weight: 600;
+            padding: 6px 10px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-table td {
+            padding: 6px 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-table .improvement {
+            color: #10b981;
+            font-weight: 600;
         }
 
         /* Tech Stack */
@@ -341,7 +360,7 @@
         <!-- Header -->
         <header class="header">
             <h1>경력기술서</h1>
-            <div class="subtitle">윤원희 · Backend Developer · 7년차</div>
+            <div class="subtitle">윤원희 | Backend Developer | 7년차</div>
             <div class="contact-row">
                 <span><i class="fas fa-envelope"></i>wony9324@naver.com</span>
                 <span><i class="fas fa-phone"></i>010-3555-2320</span>
@@ -381,54 +400,53 @@
                 <span class="company-name">(주)구하다</span>
                 <span class="company-period">2022.02 - 현재 (3년 9개월)</span>
             </div>
-            <div class="company-role">Backend Developer (Senior) · Tech 팀</div>
+            <div class="company-role">Backend Developer (Senior) | Tech 팀</div>
 
             <!-- Project 1 -->
             <div class="project">
-                <h3 class="project-title">인플루언서 데이터 플랫폼 고도화 (200만 데이터 규모)</h3>
+                <h3 class="project-title">인플루언서 데이터 플랫폼 고도화</h3>
+                <div class="project-summary">200만 인플루언서 데이터 자동 수집 파이프라인 구축으로 마케팅 커버리지 20배 확대 및 검색 성능 100배 개선</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2022.02 - 현재</span>
+                    <span><i class="fas fa-user"></i> 백엔드 설계 및 개발 전담</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>마케팅팀 수작업 의존 (엑셀 수기 입력)</li>
-                                <li>200만 건 검색 시 10초 이상 타임아웃</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item task">
-                        <div class="star-label">Task</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>수집 프로세스 100% 자동화</li>
-                                <li>200만 건 실시간 검색 시스템 구축</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>멀티소스 파이프라인 (TikTok, Ensemble API)</li>
-                                <li>RDB → Elasticsearch 전환</li>
-                                <li>Redis Distributed Lock 적용</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item result">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>데이터 풀 20배 확대 (10만→200만)</li>
-                                <li>검색 성능 100배 개선 (10초→0.1초)</li>
-                            </ul>
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">배경/문제 정의</div>
+                    <div class="content-body">
+                        <ul>
+                            <li>마케팅팀 수작업 의존 (엑셀 수기 입력) - 일 수집량 수십 명 수준</li>
+                            <li>200만 건 복합 조건 검색 시 RDB 타임아웃 (10초 이상)</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="tech-decision">
-                    "RDB 대신 Elasticsearch 선택 - 역색인 기반으로 복합 조건 검색 0.1초 달성"
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        <ul>
+                            <li><strong>기술 선택:</strong> Query Caching (Hit율 5% 예상) 대신 <strong>Elasticsearch</strong> 선택 - 역색인 기반 동적 필터 최적</li>
+                            <li><strong>구현:</strong> TikTok/Ensemble API 멀티소스 파이프라인 + Redis Lock 중복 방지</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <table class="result-table">
+                        <tr>
+                            <th>항목</th><th>Before</th><th>After</th><th>개선율</th>
+                        </tr>
+                        <tr>
+                            <td>일 수집량</td><td>수십 명 (수작업)</td><td>5,000명 (자동)</td><td class="improvement">100% 자동화</td>
+                        </tr>
+                        <tr>
+                            <td>데이터 풀</td><td>10만 명</td><td>200만 명</td><td class="improvement">20배 확대</td>
+                        </tr>
+                        <tr>
+                            <td>검색 응답</td><td>10초</td><td>0.1초</td><td class="improvement">100배 개선</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="tech-stack">
@@ -448,50 +466,50 @@
                 <span class="company-name">(주)구하다</span>
                 <span class="company-period">2022.02 - 현재</span>
             </div>
-            <div class="company-role">Backend Developer (Senior) · Tech 팀</div>
+            <div class="company-role">Backend Developer (Senior) | Tech 팀</div>
 
             <!-- Project 2 -->
             <div class="project">
                 <h3 class="project-title">네이버 쇼핑 Dynamic Pricing 시스템</h3>
+                <div class="project-summary">API 제약 내 최저가 방어 알고리즘 구현으로 대상 상품군 매출 10% 상승 달성</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2023.01 - 2023.06</span>
+                    <span><i class="fas fa-user"></i> 가격 조정 정책 로직 설계 주도</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>네이버 쇼핑 최저가 진입 필수</li>
-                                <li>API 일일 한도 25,000건 제약</li>
-                            </ul>
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">배경/문제 정의</div>
+                    <div class="content-body">
+                        <ul>
+                            <li>매출 1위 채널 네이버 쇼핑 최저가 진입 필수, 수동 대응 한계</li>
+                            <li>API 일일 한도 25,000건 제약</li>
+                        </ul>
                     </div>
-                    <div class="star-item task">
-                        <div class="star-label">Task</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>최저가 방어 알고리즘 구현</li>
-                                <li>마진 4% 보장 안전장치</li>
-                            </ul>
-                        </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        <ul>
+                            <li><strong>기술 선택:</strong> 전체 상품 균등 배분 대신 <strong>매출 기여도 기반 우선순위 스케줄링</strong> - ROI 극대화</li>
+                            <li><strong>구현:</strong> Spring Batch 트랜잭션 안정성 + [차이 < 4%] & [마진 확보] 시 자동 조정</li>
+                        </ul>
                     </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>마케팅/MD팀 협의 가격 정책 설계</li>
-                                <li>Spring Batch 트랜잭션 안정성 확보</li>
-                                <li>GA/BigQuery 성과 분석 환경 구축</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item result">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>매출/트래픽 각각 10% 상승</li>
-                                <li>MD팀 전략 업무 집중 가능</li>
-                            </ul>
-                        </div>
-                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <table class="result-table">
+                        <tr>
+                            <th>항목</th><th>Before</th><th>After</th><th>개선율</th>
+                        </tr>
+                        <tr>
+                            <td>대상 상품 매출</td><td>기준</td><td>+10%</td><td class="improvement">10% 상승</td>
+                        </tr>
+                        <tr>
+                            <td>MD팀 업무</td><td>수동 처리</td><td>시스템 전담</td><td class="improvement">전략 집중</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="tech-stack">
@@ -504,30 +522,43 @@
 
             <!-- Project 3 -->
             <div class="project">
-                <h3 class="project-title">상품 이미지 정합성 확보 및 클레임 방지 시스템</h3>
+                <h3 class="project-title">상품 이미지 정합성 확보 시스템</h3>
+                <div class="project-summary">URL 동일 이미지 변경 감지 시스템 구축으로 이미지 불일치 클레임 완전 제거</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2023.07 - 2023.09</span>
+                    <span><i class="fas fa-user"></i> 해시 기반 검증 시스템 설계</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            이미지 URL 동일 유지로 변경 감지 불가, '상품 상이' 클레임 다수 발생
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">배경/문제 정의</div>
+                    <div class="content-body">
+                        해외 부티크 이미지 변경 시 URL 동일 유지 -> 기존 시스템 감지 불가 -> '상품 상이' 클레임 다수
                     </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>CS팀 협업 클레임 패턴 분석</li>
-                                <li>MD5 해시 + ETag 이중 검증</li>
-                            </ul>
-                        </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        <ul>
+                            <li><strong>기술 선택:</strong> 픽셀 비교(연산 과다) 대신 <strong>MD5 해시 + ETag 이중 검증</strong> - O(1) 비교</li>
+                            <li><strong>구현:</strong> Header 우선 비교로 네트워크 비용 80% 절감</li>
+                        </ul>
                     </div>
-                    <div class="star-item result star-full">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            이미지 불일치 클레임 Zero 달성 · 네트워크 비용 80% 절감
-                        </div>
-                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <table class="result-table">
+                        <tr>
+                            <th>항목</th><th>Before</th><th>After</th><th>개선율</th>
+                        </tr>
+                        <tr>
+                            <td>이미지 불일치 클레임</td><td>다수 발생</td><td>0건</td><td class="improvement">Zero 달성</td>
+                        </tr>
+                        <tr>
+                            <td>검수 업무</td><td>수동</td><td>자동화</td><td class="improvement">Zero Ops</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="tech-stack">
@@ -535,41 +566,6 @@
                     <span class="tech-tag">Spring Boot</span>
                     <span class="tech-tag">AWS S3</span>
                     <span class="tech-tag">MD5/ETag</span>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project">
-                <h3 class="project-title">ChatOps 기반 운영 프로세스 자동화 (Zero Ops)</h3>
-
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            소통 채널 파편화, 운영팀 업무 40%가 단순 반복 작업
-                        </div>
-                    </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>운영팀 인터뷰로 Pain Point 발굴</li>
-                                <li>Slack Event API + Interactive 구현</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item result star-full">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            수동 업무 40% → 0% (Zero Ops) · 채널 100% 통합
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tech-stack">
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">Slack Event API</span>
                 </div>
             </div>
         </section>
@@ -582,41 +578,103 @@
                 <span class="company-name">(주)구하다</span>
                 <span class="company-period">2022.02 - 현재</span>
             </div>
-            <div class="company-role">Backend Developer (Senior) · Tech 팀</div>
+            <div class="company-role">Backend Developer (Senior) | Tech 팀</div>
 
-            <!-- Project 5 -->
+            <!-- Project 4 -->
             <div class="project">
-                <h3 class="project-title">개발 문화 개선 및 AI 기반 팀 생산성 혁신</h3>
+                <h3 class="project-title">ChatOps 기반 운영 프로세스 자동화</h3>
+                <div class="project-summary">파편화된 운영 요청 채널을 Slack으로 통합하여 운영팀 수동 업무 40% -> 0% 완전 자동화</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2024.01 - 2024.03</span>
+                    <span><i class="fas fa-user"></i> 현업 인터뷰 리딩 및 ChatOps 설계</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            코드 컨벤션/리뷰 프로세스 부재, 시니어 리소스 반복 업무 소모
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">배경/문제 정의</div>
+                    <div class="content-body">
+                        이메일/메신저/구두 요청 분산 -> 정보 누락 및 히스토리 추적 불가, 운영팀 40% 단순 반복
                     </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>PR 기반 코드 리뷰 문화 정착</li>
-                                <li>Java/Spring 코딩 컨벤션 수립</li>
-                                <li>Claude Code 반복 업무 자동화</li>
-                            </ul>
-                        </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        <ul>
+                            <li><strong>기술 선택:</strong> 별도 앱(채택률 저조) 대신 <strong>Slack</strong> - 구성원 가장 익숙</li>
+                            <li><strong>구현:</strong> Event API + Interactive Component, 버튼 클릭만으로 DB 처리 완료</li>
+                        </ul>
                     </div>
-                    <div class="star-item result star-full">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            운영 업무 90% 단축 (1~2일→1~2시간) · 사내 운영 툴 5건+ 구축
-                        </div>
-                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <table class="result-table">
+                        <tr>
+                            <th>항목</th><th>Before</th><th>After</th><th>개선율</th>
+                        </tr>
+                        <tr>
+                            <td>운영팀 수동 업무</td><td>40%</td><td>0%</td><td class="improvement">Zero Ops</td>
+                        </tr>
+                        <tr>
+                            <td>요청 채널</td><td>파편화</td><td>통합</td><td class="improvement">100% 통합</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <div class="tech-stack">
                     <span class="tech-tag">Java</span>
                     <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Slack Event API</span>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project">
+                <h3 class="project-title">개발 문화 개선 및 시스템 안정성 강화</h3>
+                <div class="project-summary">TDD/코드 리뷰 문화 정착 및 모니터링 체계 구축으로 운영 장애 사전 차단 및 개발 생산성 90% 향상</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2022.02 - 현재</span>
+                    <span><i class="fas fa-user"></i> 개발 프로세스 개선 주도</span>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">배경/문제 정의</div>
+                    <div class="content-body">
+                        코드 리뷰 없이 배포 -> 운영 장애 반복, 시니어 리소스 반복 업무 소모
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        <ul>
+                            <li><strong>프로세스:</strong> PR 기반 2인 승인 체계 + TDD 도입</li>
+                            <li><strong>모니터링:</strong> Elastic APM Slow Query 시각화 + 리소스 알림</li>
+                            <li><strong>AI 활용:</strong> Claude Code로 운영 스크립트 개발 시간 단축</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <table class="result-table">
+                        <tr>
+                            <th>항목</th><th>Before</th><th>After</th><th>개선율</th>
+                        </tr>
+                        <tr>
+                            <td>운영 도구 개발</td><td>1-2일</td><td>1-2시간</td><td class="improvement">90% 단축</td>
+                        </tr>
+                        <tr>
+                            <td>Slow Query</td><td>미식별</td><td>식별/최적화</td><td class="improvement">성능 개선</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="tech-tag">Elastic APM</span>
+                    <span class="tech-tag">TDD</span>
                     <span class="tech-tag">Claude Code</span>
+                    <span class="tech-tag">Slack API</span>
                 </div>
             </div>
         </section>
@@ -627,29 +685,26 @@
                 <span class="company-name">(주)인터파크</span>
                 <span class="company-period">2021.09 - 2022.01 (5개월)</span>
             </div>
-            <div class="company-role">Backend Developer · 쇼핑 개발팀</div>
+            <div class="company-role">Backend Developer | 쇼핑 개발팀</div>
 
             <div class="project">
-                <h3 class="project-title">Seller 어드민 성능 개선 및 레거시 리팩토링</h3>
+                <h3 class="project-title">Seller 어드민 성능 개선</h3>
+                <div class="project-summary">판매자 정산/주문 조회 쿼리 최적화로 응답 시간 80% 단축</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2021.09 - 2022.01</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            판매자 정산/주문 조회 시 Slow Query로 응답 5초 이상 지연
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        실행 계획 분석 -> 인덱스 튜닝, 불필요한 JOIN 제거
                     </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            실행 계획 분석 → 인덱스 튜닝, 불필요한 JOIN 제거
-                        </div>
-                    </div>
-                    <div class="star-item result star-full">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            조회 성능 80% 개선 (5초 → 1초 미만)
-                        </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <div class="content-body">
+                        조회 응답: 5초 -> 1초 미만 <strong>(80% 단축)</strong>
                     </div>
                 </div>
 
@@ -667,32 +722,26 @@
                 <span class="company-name">(주)한국문헌정보기술</span>
                 <span class="company-period">2018.06 - 2021.08 (3년 2개월)</span>
             </div>
-            <div class="company-role">Backend Developer · 솔루션 개발팀</div>
+            <div class="company-role">Backend Developer | 솔루션 개발팀</div>
 
             <div class="project">
                 <h3 class="project-title">자체 검색 엔진 구축 및 대용량 처리 최적화</h3>
+                <div class="project-summary">Elasticsearch 기반 자체 검색 엔진 구축으로 라이선스 비용 절감 및 데이터 등록 속도 70% 단축</div>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar-alt"></i> 2018.06 - 2021.08</span>
+                </div>
 
-                <div class="star-grid">
-                    <div class="star-item situation">
-                        <div class="star-label">Situation</div>
-                        <div class="star-content">
-                            상용 솔루션 라이선스 비용 부담, 대량 데이터 처리 지연
-                        </div>
+                <div class="content-section">
+                    <div class="content-label">해결 전략</div>
+                    <div class="content-body">
+                        Elasticsearch + Nori 형태소 분석기, 단건 -> Bulk Insert 전환
                     </div>
-                    <div class="star-item action">
-                        <div class="star-label">Action</div>
-                        <div class="star-content">
-                            <ul>
-                                <li>Elasticsearch + Nori 형태소 분석기</li>
-                                <li>단건 → Bulk Insert 전환</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="star-item result star-full">
-                        <div class="star-label">Result</div>
-                        <div class="star-content">
-                            데이터 등록 속도 70% 단축 · 2021년 사내 우수사원 선정
-                        </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-label">성과</div>
+                    <div class="content-body">
+                        데이터 등록 속도 <strong>70% 단축</strong> | <strong>2021년 사내 우수사원</strong> 선정
                     </div>
                 </div>
 

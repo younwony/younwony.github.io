@@ -5,7 +5,17 @@
       "WebFetch(domain:platform.claude.com)",
       "WebFetch(domain:plugins.jetbrains.com)",
       "Bash(git mv:*)",
-      "WebSearch"
+      "WebSearch",
+      "Skill(export-pdf)",
+      "Bash(start templates/export/pdf/resume-2page.html)",
+      "Bash(start templates/export/pdf/career-portfolio.html)",
+      "Bash(where:*)",
+      "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\")",
+      "Bash(dir \"C:\\\\Program Files\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\")",
+      "Bash(\"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" --headless --disable-gpu --print-to-pdf=\"C:\\\\workspace\\\\intellij\\\\younwony.github.io\\\\output\\\\윤원희_이력서_2025-12.pdf\" --no-margins \"file:///C:/workspace/intellij/younwony.github.io/templates/export/pdf/resume-2page.html\")",
+      "Bash(\"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\" --headless --disable-gpu --print-to-pdf=\"C:\\\\workspace\\\\intellij\\\\younwony.github.io\\\\output\\\\윤원희_경력기술서_2025-12.pdf\" --no-margins \"file:///C:/workspace/intellij/younwony.github.io/templates/export/pdf/career-portfolio.html\")",
+      "Bash(dir C:workspaceintellijyounwony.github.iooutput*.pdf)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\workspace\\\\intellij\\\\younwony.github.io\\\\output\\\\*.pdf'' | Select-Object Name, Length, LastWriteTime\")"
     ],
     "deny": [],
     "ask": []

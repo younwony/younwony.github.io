@@ -70,12 +70,12 @@ assets/css/style.css
 
 ### 1. 인라인 스타일 금지
 
-**❌ 나쁜 예시:**
+**Bad:**
 ```html
 <h3 style="color: #1a1a2e; font-size: 1.2rem;">제목</h3>
 ```
 
-**✅ 좋은 예시:**
+**Good:**
 ```html
 <h3 class="section-title">제목</h3>
 ```
@@ -88,12 +88,12 @@ assets/css/style.css
 
 ### 2. CSS 변수 우선 사용
 
-**❌ 하드코딩:**
+**Bad:**
 ```css
 .title { color: #1a1a2e; }
 ```
 
-**✅ 변수 사용:**
+**Good:**
 ```css
 .title { color: var(--primary-dark); }
 ```

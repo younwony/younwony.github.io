@@ -12,7 +12,7 @@ description: /work-log 스킬 가이드가 변경되었을 때 기존 work-logs 
 ## 동기화 흐름
 
 ```
-.claude/skills/work-log/SKILL.md (가이드 변경)
+.claude/skills/data/work-log/SKILL.md (가이드 변경)
     ↓
 변경된 템플릿 형식 분석
     ↓
@@ -28,7 +28,7 @@ git add
 ### Step 1: 가이드 변경사항 확인
 
 ```bash
-git diff .claude/skills/work-log/SKILL.md
+git diff .claude/skills/data/work-log/SKILL.md
 ```
 
 **확인 항목:**
@@ -39,7 +39,7 @@ git diff .claude/skills/work-log/SKILL.md
 
 ### Step 2: 현재 템플릿 형식 파악
 
-`.claude/skills/work-log/SKILL.md`에서 템플릿 섹션 확인:
+`.claude/skills/data/work-log/SKILL.md`에서 템플릿 섹션 확인:
 
 ```markdown
 ## 현재 템플릿 구조
@@ -92,24 +92,6 @@ find docs/career/work-logs -name "*.md" -not -name "README.md"
 4. 차이점 변환 적용
 5. 파일 저장
 
-**예시 - 섹션 추가:**
-```markdown
-## 기존 파일
-# 작업명
-> 작성일: ...
-## 개요
-...
-
-## 새 형식 적용 후
-# 작업명
-> 작성일: ...
-> 카테고리: [신규 필드]  ← 추가됨
-## 개요
-...
-## 관련 문서  ← 새 섹션 추가
-- (작성 필요)
-```
-
 ### Step 6: README.md 인덱스 확인
 
 `docs/career/work-logs/README.md` 형식도 변경되었다면 함께 업데이트
@@ -118,7 +100,7 @@ find docs/career/work-logs -name "*.md" -not -name "README.md"
 
 ```bash
 git add docs/career/work-logs/
-git add .claude/skills/work-log/SKILL.md
+git add .claude/skills/data/work-log/SKILL.md
 ```
 
 ## 체크리스트
@@ -149,10 +131,3 @@ git add .claude/skills/work-log/SKILL.md
 - **백업 권장**: 대량 변경 전 현재 상태 확인
 - **점진적 적용**: 한 파일씩 변환 후 검증
 - 새 필수 항목은 빈 값 또는 "(작성 필요)"로 표시
-
-## 연관 스킬
-
-| 스킬 | 용도 |
-|------|------|
-| `/work-log` | 작업 로그 템플릿 정의 (원본 가이드) |
-| `/sync-check` | 동기화 상태 검증 |
