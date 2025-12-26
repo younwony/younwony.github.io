@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Career Portfolio - CSS Variables
+   ========================================================================== */
+
+:root {
+    /* Primary Colors */
+    --color-primary: #1e3a5f;
+    --color-primary-dark: #1e3a5f;
+    --color-accent: #4a6cf7;
+    --color-accent-light: #2563eb;
+    --color-success: #10b981;
+
+    /* Background Colors */
+    --color-bg-white: #ffffff;
+    --color-bg-light: #f8fafc;
+    --color-bg-lighter: #fafafa;
+    --color-bg-gradient-start: #f8fafc;
+    --color-bg-gradient-end: #eef2ff;
+    --color-bg-screen: #e5e7eb;
+
+    /* Border Colors */
+    --color-border: #e5e7eb;
+    --color-border-light: #e2e8f0;
+
+    /* Text Colors */
+    --color-text: #333;
+    --color-text-dark: #444;
+    --color-text-secondary: #555;
+    --color-text-muted: #666;
+
+    /* Tech Tag Colors */
+    --color-tag-bg: #e0e7ff;
+    --color-tag-text: #3730a3;
+
+    /* Typography */
+    --font-family: 'Malgun Gothic', -apple-system, sans-serif;
+    --font-size-base: 9.5pt;
+    --font-size-xs: 7.5pt;
+    --font-size-sm: 8pt;
+    --font-size-md: 8.5pt;
+    --font-size-lg: 9pt;
+    --font-size-xl: 10pt;
+    --font-size-2xl: 11pt;
+    --font-size-3xl: 22pt;
+
+    --line-height-base: 1.6;
+    --line-height-tight: 1.5;
+    --line-height-relaxed: 1.7;
+
+    /* Page Dimensions (A4) */
+    --page-width: 210mm;
+    --page-height: 297mm;
+    --page-padding-y: 15mm;
+    --page-padding-x: 16mm;
+
+    /* Spacing */
+    --spacing-xs: 3px;
+    --spacing-sm: 4px;
+    --spacing-md: 6px;
+    --spacing-lg: 8px;
+    --spacing-xl: 10px;
+    --spacing-2xl: 12px;
+    --spacing-3xl: 14px;
+    --spacing-4xl: 16px;
+
+    /* Grid */
+    --grid-gap: 8px;
+    --grid-gap-lg: 15px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-full: 10px;
+
+    /* Shadows */
+    --shadow-page: 0 4px 20px rgba(0, 0, 0, 0.15);
+}

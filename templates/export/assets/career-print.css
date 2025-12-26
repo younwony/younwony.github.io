@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Career Portfolio - Print & Screen Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .page {
+        width: 100%;
+        height: 100%;
+        padding: var(--page-padding-y) var(--page-padding-x);
+        margin: 0;
+    }
+
+    /* Ensure colors print correctly */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Prevent page breaks inside elements */
+    .section,
+    .project-box,
+    .competency-item,
+    .skill-category {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Prevent orphaned headers */
+    .section-title,
+    .project-title,
+    .company-header-mini {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+}
+
+/* ==========================================================================
+   Screen Preview Styles
+   ========================================================================== */
+
+@media screen {
+    body {
+        background: var(--color-bg-screen);
+        padding: 20px;
+    }
+
+    .page {
+        box-shadow: var(--shadow-page);
+        margin-bottom: 20px;
+    }
+}
