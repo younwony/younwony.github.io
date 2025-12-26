@@ -82,16 +82,29 @@ description: 이력서/경력기술서를 PDF 또는 PPT로 내보냅니다. 페
 
 ### PDF 내보내기 단계
 
-#### Step 1: 브라우저에서 열기
+#### 방법 1: 스크립트 사용 (권장)
+
+```bash
+# 경력기술서 빌드 (EJS → HTML)
+node scripts/build-career-portfolio.js
+
+# PDF 생성 (Puppeteer)
+node scripts/generate-pdf.js
+
+# 결과물
+# output/윤원희_경력기술서_2025-12.pdf
+```
+
+#### 방법 2: 브라우저에서 수동 내보내기
 
 ```bash
 # Windows
-start templates/resume/default.html      # 이력서
-start templates/career/default.html      # 경력기술서
+start templates/export/pdf/resume-2page.html       # 이력서
+start templates/export/pdf/career-portfolio.html   # 경력기술서
 
 # macOS
-open templates/resume/default.html
-open templates/career/default.html
+open templates/export/pdf/resume-2page.html
+open templates/export/pdf/career-portfolio.html
 ```
 
 #### Step 2: 인쇄 미리보기 (Ctrl+P)
@@ -239,6 +252,53 @@ output/
 | **면접 자료** | PDF |
 | **1분 자기소개** | PPT (intro-slides) |
 | **기술 면접 발표** | PPT (career-slides) |
+
+---
+
+## 템플릿 시스템 (EJS)
+
+### 파일 구조
+
+```
+templates/export/
+├── pdf/
+│   ├── career-portfolio.ejs    # 메인 템플릿
+│   └── career-portfolio.html   # 빌드 결과물
+├── partials/                    # 재사용 컴포넌트
+│   ├── head.ejs
+│   ├── header.ejs
+│   ├── summary.ejs
+│   ├── competencies.ejs
+│   ├── skills.ejs
+│   ├── company-header.ejs
+│   ├── project-box.ejs
+│   ├── tech-stack.ejs
+│   └── other-box.ejs
+├── data/
+│   └── career-data.json        # 경력 데이터
+└── assets/                      # CSS 모듈
+    ├── variables.css
+    ├── base.css
+    ├── layout.css
+    ├── components.css
+    └── career-print.css
+```
+
+### 데이터 수정
+
+경력 정보 수정 시 `templates/export/data/career-data.json` 편집 후 빌드:
+
+```bash
+node scripts/build-career-portfolio.js
+```
+
+### 스타일 수정
+
+| 파일 | 용도 |
+|------|------|
+| `variables.css` | 색상, 폰트, 간격 변수 |
+| `layout.css` | 페이지 레이아웃 |
+| `components.css` | 컴포넌트 스타일 |
 
 ---
 
