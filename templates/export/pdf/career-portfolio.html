@@ -496,47 +496,47 @@
                     </div>
                     <div class="project-box">
                         <div class="project-header">
-                            <h3 class="project-title">Seller 어드민 TDD 도입 및 성능 개선</h3>
+                            <h3 class="project-title">레거시 시스템 TDD 도입 및 테스트 문화 정착</h3>
                         </div>
                         <div class="project-meta"><strong>역할:</strong> 백엔드 개발자 | 쇼핑 개발팀</div>
 
                         <!-- Metrics Cards -->
                         <div class="metrics-container">
                             <div class="metric-card">
-                                <div class="metric-value">80%</div>
-                                <div class="metric-label">응답 시간 단축</div>
-                                <div class="metric-detail">5초 → 1초 미만</div>
+                                <div class="metric-value">TDD</div>
+                                <div class="metric-label">테스트 문화</div>
+                                <div class="metric-detail">팀 내 정착</div>
                             </div>
                             <div class="metric-card">
-                                <div class="metric-value">TDD</div>
-                                <div class="metric-label">테스트 도입</div>
-                                <div class="metric-detail">핵심 로직</div>
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">핵심 로직</div>
+                                <div class="metric-detail">테스트 커버리지</div>
                             </div>
                         </div>
 
                         <div class="project-background">
-                            레거시 시스템에 테스트 코드 전무. 판매자 정산/주문 조회 시 Slow Query로 응답 지연(5초+). 수동 테스트 의존으로 배포 리스크 증가.
+                            레거시 시스템에 테스트 코드 전무. 판매자 정산/주문 조회 등 핵심 기능 정합성 검증 수단 부재. 수동 테스트 의존으로 배포 리스크 증가.
                         </div>
                         <div class="achievements-title">[주요 성과]</div>
                         <ul class="achievements">
                             <li><strong>TDD 기반 개발 도입:</strong> 신규 기능부터 TDD 적용. 핵심 비즈니스 로직 단위 테스트 작성.</li>
-                            <li><strong>응답 시간 80% 단축 <span class="highlight">(5초 → 1초 미만)</span>:</strong> 인덱스 튜닝, Fetch Join + Batch Size 적용.</li>
-                            <li><strong>레거시 코드 리팩토링:</strong> Service Layer 분리, DTO 패턴 도입. 테스트 기반 회귀 검증.</li>
+                            <li><strong>테스트 문화 정착:</strong> 테스트 작성 가이드 공유, 코드 리뷰 시 테스트 포함 여부 검토 프로세스 도입.</li>
+                            <li><strong>레거시 코드 리팩토링:</strong> 테스트 가능한 구조로 Service Layer 분리. 유지보수 효율 개선.</li>
                         </ul>
 
                         <!-- Tech Decision Box -->
                         <div class="tech-decision-box">
                             <div class="tech-decision-title">Tech Decision</div>
-                            <div class="tech-decision-item"><strong>TDD 도입:</strong> 레거시 전면 재작성보다 신규 기능부터 적용</div>
-                            <div class="tech-decision-item"><strong>Fetch Join:</strong> N+1 해결, Batch Size 설정과 병행</div>
+                            <div class="tech-decision-item"><strong>TDD 도입:</strong> 레거시 전면 재작성보다 신규 기능부터 점진적 적용</div>
+                            <div class="tech-decision-item"><strong>테스트 문화:</strong> 코드 리뷰 시 테스트 코드 포함 필수화</div>
                         </div>
 
                         <div class="tech-stack">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Spring</span>
                             <span class="tech-tag">Oracle</span>
-                            <span class="tech-tag">JPA</span>
                             <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Mockito</span>
                         </div>
                     </div>
                 </div>

@@ -145,15 +145,15 @@
         .summary {
             background: #f8fafc;
             border-radius: 8px;
-            padding: 14px 18px;
-            margin-bottom: 22px;
+            padding: 12px 16px;
+            margin-bottom: 18px;
             border-left: 4px solid #0ea5e9;
         }
 
         .summary-text {
             font-size: 9.5pt;
             color: #334155;
-            line-height: 1.7;
+            line-height: 1.65;
         }
 
         .summary-text strong {
@@ -161,55 +161,75 @@
         }
 
         .summary-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 12px;
             margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
         }
 
         .highlight-item {
             font-size: 8.5pt;
-            color: #334155;
+            color: #1e3a5f;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border-left: 3px solid #0ea5e9;
+            font-weight: 500;
         }
 
         .highlight-item i {
-            color: #10b981;
-            margin-right: 4px;
+            color: #0ea5e9;
+            margin-right: 5px;
         }
 
-        /* ===== Skills ===== */
+        /* ===== Skills (2x2 Grid) ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 8px;
         }
 
         .skill-box {
             background: #f8fafc;
-            padding: 12px 14px;
-            border-radius: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
             border: 1px solid #e2e8f0;
+            border-left: 3px solid #0ea5e9;
+        }
+
+        .skill-box:nth-child(2) {
+            border-left-color: #10b981;
+        }
+
+        .skill-box:nth-child(3) {
+            border-left-color: #8b5cf6;
+        }
+
+        .skill-box:nth-child(4) {
+            border-left-color: #f59e0b;
         }
 
         .skill-title {
-            font-size: 9pt;
+            font-size: 8pt;
             font-weight: 600;
-            color: #334155;
-            margin-bottom: 8px;
+            color: #64748b;
+            margin-bottom: 5px;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px;
         }
 
         .skill-tag {
             background: #e0e7ff;
             color: #3730a3;
-            padding: 4px 10px;
-            border-radius: 14px;
-            font-size: 8pt;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 7.5pt;
             font-weight: 500;
         }
 
@@ -220,14 +240,26 @@
 
         /* ===== Work Experience ===== */
         .company {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            padding: 12px 14px;
+            background: #fafbfc;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .company:nth-child(2) {
+            border-left-color: #10b981;
+        }
+
+        .company:nth-child(3) {
+            border-left-color: #8b5cf6;
         }
 
         .company-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .company-name {
@@ -237,36 +269,45 @@
         }
 
         .company-period {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #64748b;
             font-weight: 500;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .company-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
         }
 
         .company-desc {
             font-size: 8.5pt;
             color: #64748b;
-            margin-bottom: 4px;
         }
 
         .company-role {
             font-size: 9pt;
             color: #0ea5e9;
             font-weight: 600;
-            margin-bottom: 8px;
         }
 
         .achievements {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .achievements li {
             position: relative;
-            padding-left: 16px;
-            margin-bottom: 6px;
+            padding-left: 14px;
+            margin-bottom: 5px;
             font-size: 9pt;
             color: #444;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
         .achievements li::before {
@@ -274,8 +315,8 @@
             position: absolute;
             left: 0;
             top: 7px;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             background: #0ea5e9;
             border-radius: 50%;
         }
@@ -436,14 +477,15 @@
         <div class="summary">
             <div class="summary-text">
                 <strong>비즈니스 문제를 대용량 시스템과 자동화로 해결하는 백엔드 개발자.</strong>
+                <br><br>
                 Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼의 상품·가격·주문·검색 영역을 폭넓게 경험하며,
                 단순 기능 구현보다 <strong>"왜 이 구조여야 하는가"</strong>를 먼저 고민합니다.
             </div>
             <div class="summary-highlights">
-                <span class="highlight-item"><i class="fas fa-check"></i> 검색 성능 100배: ES 도입 10초→0.1초</span>
-                <span class="highlight-item"><i class="fas fa-check"></i> Zero Ops: ChatOps로 40%→0% 자동화</span>
-                <span class="highlight-item"><i class="fas fa-check"></i> 매출 10% 상승: Dynamic Pricing</span>
-                <span class="highlight-item"><i class="fas fa-check"></i> 생산성 90% 향상: AI 에이전트 활용</span>
+                <span class="highlight-item"><i class="fas fa-check"></i> <strong>검색 성능 100배: ES 도입 10초 → 0.1초</strong></span>
+                <span class="highlight-item"><i class="fas fa-check"></i> <strong>Zero Ops: ChatOps로 40% → 0% 자동화</strong></span>
+                <span class="highlight-item"><i class="fas fa-check"></i> <strong>매출 10% 상승: Dynamic Pricing</strong></span>
+                <span class="highlight-item"><i class="fas fa-check"></i> <strong>생산성 90% 향상: AI 에이전트 활용</strong></span>
             </div>
         </div>
 
@@ -496,8 +538,10 @@
                     <span class="company-name">(주)구하다</span>
                     <span class="company-period">2022.02 - 현재 (3년 9개월)</span>
                 </div>
-                <div class="company-desc">명품 커머스 플랫폼</div>
-                <div class="company-role">Backend Developer (Senior) · Tech 팀</div>
+                <div class="company-meta">
+                    <span class="company-desc">명품 커머스 플랫폼</span>
+                    <span class="company-role">Backend Developer (Senior)</span>
+                </div>
                 <ul class="achievements">
                     <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="badge blue">100배 개선</span></li>
                     <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="badge">매출 10%↑</span></li>
@@ -511,10 +555,12 @@
                     <span class="company-name">(주)인터파크</span>
                     <span class="company-period">2021.09 - 2022.01 (5개월)</span>
                 </div>
-                <div class="company-desc">종합 쇼핑몰</div>
-                <div class="company-role">Backend Developer · 쇼핑 개발팀</div>
+                <div class="company-meta">
+                    <span class="company-desc">종합 쇼핑몰</span>
+                    <span class="company-role">Backend Developer</span>
+                </div>
                 <ul class="achievements">
-                    <li><strong>Seller 어드민:</strong> 정산/주문 조회 성능 <span class="badge blue">80% 개선</span> (5초→1초)</li>
+                    <li><strong>TDD 도입:</strong> 레거시 시스템에 <span class="badge blue">TDD 문화 정착</span>, 핵심 비즈니스 로직 테스트 커버리지 확보</li>
                 </ul>
             </div>
 
@@ -523,8 +569,10 @@
                     <span class="company-name">(주)한국문헌정보기술</span>
                     <span class="company-period">2018.06 - 2021.08 (3년 2개월)</span>
                 </div>
-                <div class="company-desc">아카이빙/기록물 관리 솔루션</div>
-                <div class="company-role">Backend Developer · 솔루션 개발팀</div>
+                <div class="company-meta">
+                    <span class="company-desc">아카이빙/기록물 관리 솔루션</span>
+                    <span class="company-role">Backend Developer</span>
+                </div>
                 <ul class="achievements">
                     <li><strong>검색 엔진:</strong> Elasticsearch + Nori 기반 구축, 데이터 등록 속도 <span class="badge blue">70% 단축</span></li>
                 </ul>
