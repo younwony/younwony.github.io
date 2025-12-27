@@ -16,229 +16,50 @@ description: 이력서/경력기술서를 PDF 또는 PPT로 내보냅니다. 페
 
 ---
 
+## 템플릿 종류
+
+### 1. 기본 (Colorful)
+- 컬러풀한 디자인, 아이콘 사용
+- Font Awesome 아이콘 포함
+- 그라데이션, 배경색 활용
+
+### 2. 모던 (Modern) - Black & White
+- 미니멀한 흑백 디자인
+- 아이콘 최소화, 타이포그래피 중심
+- 프로젝트별 페이지 이분할 레이아웃
+- 컨텍스트 그리드 (배경/문제 영역 분리)
+
+---
+
 ## PDF 내보내기
 
 ### 핵심 원칙
 
-> **페이지 경계에서 내용이 어색하게 잘리지 않도록** 여백과 페이지 나눔을 최적화합니다.
+> **PDF 출력 요청 시 기본 + 모던 두 가지 형식을 모두 생성합니다.**
 
-### 문제 상황 → 해결
-
-```
-┌─────────── 문제 ───────────┐     ┌─────────── 해결 ───────────┐
-│                            │     │                            │
-│  프로젝트 A                 │     │  (여백으로 조절)            │
-│  - Situation: ...          │     │                            │
-│  - Task: ...               │     ├────────────────────────────┤
-│  - Action: ...             │     │  프로젝트 A (통째로 이동)    │
-├───────── 잘림! ────────────┤     │  - Situation: ...          │
-│  - Result: ...             │     │  - Task: ...               │
-│  - Impact: ...             │     │  - Action: ...             │
-│                            │     │  - Result: ...             │
-└─────────── 페이지 2 ────────┘     │  - Impact: ...             │
-                                   └─────────── 페이지 2 ────────┘
-```
-
-### CSS 페이지 나눔 규칙
-
-```css
-@page {
-    size: A4;
-    margin: 20mm 18mm;
-}
-
-@media print {
-    /* 배경색 강제 인쇄 */
-    * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-
-    /* 섹션 내부 끊김 방지 */
-    .section,
-    .company,
-    .project,
-    .star-grid,
-    .edu-grid {
-        page-break-inside: avoid;
-        break-inside: avoid;
-    }
-
-    /* 제목 뒤 끊김 방지 */
-    .section-title,
-    .company-header,
-    .project-title {
-        page-break-after: avoid;
-        break-after: avoid;
-    }
-
-    /* 명시적 페이지 나눔 */
-    .page-break {
-        page-break-before: always;
-        break-before: page;
-    }
-}
-```
-
-### PDF 내보내기 단계
-
-#### Step 1: HTML 파일 열기
+### PDF 생성 명령어 (Edge Headless)
 
 ```bash
-# Windows
-start templates/export/pdf/resume-2page.html       # 이력서
-start templates/export/pdf/career-portfolio.html   # 경력기술서
+# Windows - 기본 형식
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_이력서_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-2page.html"
 
-# macOS
-open templates/export/pdf/resume-2page.html
-open templates/export/pdf/career-portfolio.html
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_경력기술서_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio.html"
+
+# Windows - 모던 형식
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_이력서_Modern_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-modern.html"
+
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_경력기술서_Modern_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio-modern.html"
 ```
 
-#### Step 2: 인쇄 미리보기 (Ctrl+P)
-
-**필수 설정:**
-- 대상: "PDF로 저장"
-- 용지 크기: A4
-- 여백: **없음** 또는 **최소**
-- 배경 그래픽: **체크**
-
-#### Step 3: 페이지 나눔 확인
-
-```
-✅ 확인 사항:
-□ 각 페이지가 자연스럽게 구성됨
-□ 섹션/프로젝트가 중간에 잘리지 않음
-□ 제목이 페이지 하단에 홀로 남지 않음
-□ 여백이 균일함
-□ 배경색/아이콘이 정상 출력됨
-```
-
-#### Step 4: PDF 저장
-
-문제 없으면 "저장" 클릭
-
-### 레이아웃 조정 방법
-
-**내용이 페이지 경계에서 잘릴 때:**
-
-1. **여백 조절**
-```css
-.section { margin-bottom: 25px; }  /* 기본 */
-.section { margin-bottom: 18px; }  /* 내용 넘치면 줄이기 */
-```
-
-2. **폰트 크기 조절**
-```css
-body { font-size: 9.5pt; }  /* 기본 */
-body { font-size: 9pt; }    /* 분량 많으면 줄이기 */
-```
-
-3. **명시적 페이지 나눔**
-```html
-<div class="page-break">
-    <section class="section">...</section>
-</div>
-```
-
-4. **내용 축약**
-```
-프로젝트 설명 3줄 → 2줄
-성과 항목 5개 → 4개
-```
-
----
-
-## PPT 내보내기
-
-### 템플릿 구조
-
-```
-templates/export/ppt/
-├── intro-slides.html       # 자기소개 슬라이드 (5장)
-└── career-slides.html      # 경력기술서 슬라이드 (10장)
-```
-
-### intro-slides.html (자기소개 5장)
-
-```
-슬라이드 1: 표지
-- 이름, 직함, 한 줄 소개
-
-슬라이드 2: About Me
-- Professional Summary
-- 핵심 역량 4가지
-
-슬라이드 3: Technical Skills
-- 기술 스택 시각화
-
-슬라이드 4: Key Projects
-- 대표 프로젝트 3개
-- 핵심 성과 (숫자 강조)
-
-슬라이드 5: Contact
-- 연락처, GitHub/Portfolio 링크
-```
-
-### career-slides.html (경력기술서 10장)
-
-```
-슬라이드 1: 표지
-슬라이드 2-3: 프로젝트 1 (Situation-Task / Action-Result)
-슬라이드 4-5: 프로젝트 2
-슬라이드 6-7: 프로젝트 3
-슬라이드 8-9: 프로젝트 4
-슬라이드 10: Thank You
-```
-
-### PPT 생성 방법
-
-**방법 1: 스크립트 사용**
-```bash
-node scripts/generate-documents.js
-
-# 결과물 위치
-# output/윤원희_자기소개.pptx
-# output/윤원희_경력기술서.pptx
-```
-
-**방법 2: Google Slides 활용**
-1. HTML을 브라우저에서 열기
-2. 각 슬라이드 스크린샷 (또는 PDF 저장)
-3. Google Slides에 이미지로 삽입
-
----
-
-## 출력 파일 명명
-
-### 기본
+### 출력 파일 목록 (총 4개)
 
 ```
 output/
-├── 윤원희_이력서_2025-12.pdf
-├── 윤원희_경력기술서_2025-12.pdf
-├── 윤원희_자기소개.pptx
-└── 윤원희_경력기술서.pptx
+├── 윤원희_이력서_2025-12.pdf           # 기본 (컬러풀)
+├── 윤원희_이력서_Modern_2025-12.pdf    # 모던 (흑백)
+├── 윤원희_경력기술서_2025-12.pdf       # 기본 (컬러풀)
+└── 윤원희_경력기술서_Modern_2025-12.pdf # 모던 (흑백)
 ```
-
-### 회사별 지원 시
-
-```
-output/
-├── 윤원희_이력서_A회사_2025-12.pdf
-└── 윤원희_경력기술서_A회사_2025-12.pdf
-```
-
----
-
-## 용도별 권장 포맷
-
-| 상황 | 권장 포맷 |
-|------|----------|
-| **채용 사이트 제출** | PDF |
-| **이메일 첨부** | PDF |
-| **면접 자료** | PDF |
-| **1분 자기소개** | PPT (intro-slides) |
-| **기술 면접 발표** | PPT (career-slides) |
 
 ---
 
@@ -247,9 +68,11 @@ output/
 ```
 templates/export/
 ├── pdf/
-│   ├── resume-2page.html       # 이력서 (2페이지)
-│   └── career-portfolio.html   # 경력기술서 (5페이지+)
-└── assets/                      # CSS 모듈
+│   ├── resume-2page.html           # 이력서 - 기본 (2페이지)
+│   ├── resume-modern.html          # 이력서 - 모던 (2페이지)
+│   ├── career-portfolio.html       # 경력기술서 - 기본 (5페이지+)
+│   └── career-portfolio-modern.html # 경력기술서 - 모던 (5페이지)
+└── assets/                          # CSS 모듈 (기본 형식용)
     ├── variables.css
     ├── base.css
     ├── layout.css
@@ -257,22 +80,101 @@ templates/export/
     └── career-print.css
 ```
 
-### 내용 수정
+---
 
-HTML 파일을 직접 수정합니다:
+## 모던 템플릿 특징
 
-| 파일 | 용도 |
-|------|------|
-| `resume-2page.html` | 이력서 내용 수정 |
-| `career-portfolio.html` | 경력기술서 내용 수정 |
+### 디자인 원칙
 
-### 스타일 수정
+| 항목 | 기본 | 모던 |
+|------|------|------|
+| 색상 | 컬러풀 (그라데이션) | 흑백 (#000, #333, #666) |
+| 아이콘 | Font Awesome | 최소화 (텍스트 중심) |
+| 레이아웃 | 자유 배치 | 페이지 이분할 (50%/50%) |
+| 컨텍스트 | 한 줄 텍스트 | 그리드 분리 (배경/문제) |
 
-| 파일 | 용도 |
-|------|------|
-| `variables.css` | 색상, 폰트, 간격 변수 |
-| `layout.css` | 페이지 레이아웃 |
-| `components.css` | 컴포넌트 스타일 |
+### 모던 레이아웃 구조
+
+```
+┌─────────────────────────────────────────────┐
+│ 프로젝트 제목                    2024.01-현재 │
+│ 역할: 백엔드 아키텍처 설계 주도                │
+├─────────────────────────────────────────────┤
+│ [Metrics: 100x | 20x | 100% | Zero]         │
+├──────────────────────┬──────────────────────┤
+│ 배경 (Situation)     │ 문제 (Problem)        │
+│ - 상황 설명          │ - 해결해야 할 문제    │
+├──────────────────────┴──────────────────────┤
+│ [주요 성과 및 해결 방법]                      │
+│ - 성과 1: 설명                               │
+│ - 성과 2: 설명                               │
+├─────────────────────────────────────────────┤
+│ Tech Decision (Why)                          │
+│ - 기술 선택 이유 1                            │
+│ - 기술 선택 이유 2                            │
+├─────────────────────────────────────────────┤
+│ [Spring Boot] [Elasticsearch] [Redis]        │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## PDF 생성 체크리스트
+
+### 필수 생성 항목
+
+- [ ] 이력서 - 기본 형식 (resume-2page.html)
+- [ ] 이력서 - 모던 형식 (resume-modern.html)
+- [ ] 경력기술서 - 기본 형식 (career-portfolio.html)
+- [ ] 경력기술서 - 모던 형식 (career-portfolio-modern.html)
+
+### 확인 사항
+
+- [ ] 각 페이지가 자연스럽게 구성됨
+- [ ] 섹션/프로젝트가 중간에 잘리지 않음
+- [ ] 모던 형식: 프로젝트가 페이지 50%씩 균등 분할
+- [ ] 여백이 균일함
+- [ ] output 폴더에 4개 PDF 생성됨
+
+---
+
+## 수동 내보내기 (브라우저)
+
+### Step 1: HTML 파일 열기
+
+```bash
+# Windows - 기본 형식
+start templates/export/pdf/resume-2page.html
+start templates/export/pdf/career-portfolio.html
+
+# Windows - 모던 형식
+start templates/export/pdf/resume-modern.html
+start templates/export/pdf/career-portfolio-modern.html
+```
+
+### Step 2: 인쇄 미리보기 (Ctrl+P)
+
+**필수 설정:**
+- 대상: "PDF로 저장"
+- 용지 크기: A4
+- 여백: **없음** 또는 **최소**
+- 배경 그래픽: **체크**
+
+### Step 3: PDF 저장
+
+---
+
+## 용도별 권장 포맷
+
+| 상황 | 권장 포맷 |
+|------|----------|
+| **채용 사이트 제출** | PDF (기본 or 모던) |
+| **이메일 첨부** | PDF (모던 권장) |
+| **면접 자료** | PDF |
+| **1분 자기소개** | PPT (intro-slides) |
+| **기술 면접 발표** | PPT (career-slides) |
+| **보수적인 기업** | PDF (모던 권장) |
+| **스타트업/IT기업** | PDF (기본 or 모던) |
 
 ---
 
@@ -285,32 +187,9 @@ HTML 파일을 직접 수정합니다:
 | 배경색이 인쇄 안 됨 | 인쇄 설정에서 "배경 그래픽" 체크 |
 | 섹션이 잘림 | `page-break-inside: avoid` 적용 |
 | 페이지 여백이 너무 큼 | 인쇄 설정에서 여백 "없음" |
-| 아이콘이 안 보임 | Font Awesome CDN 연결 확인 |
+| 아이콘이 안 보임 | Font Awesome CDN 연결 확인 (기본만) |
 | 한글 깨짐 | 폰트 지정: 'Malgun Gothic' |
-
-### PPT
-
-| 문제 | 해결 |
-|------|------|
-| 스크립트 실행 안 됨 | Node.js 설치 확인 |
-| 이미지/아이콘 누락 | 별도 삽입 필요 |
-
----
-
-## 체크리스트
-
-### PDF 내보내기
-- [ ] 브라우저에서 HTML 열기
-- [ ] 인쇄 미리보기 확인
-- [ ] 페이지 끊김 없음 확인
-- [ ] 배경 그래픽 체크
-- [ ] PDF 저장
-
-### PPT 내보내기
-- [ ] 원본 데이터 최신화
-- [ ] 스크립트 실행 (또는 수동)
-- [ ] 슬라이드 내용 확인
-- [ ] 디자인/스타일 검토
+| 모던 하단 여백 많음 | `justify-content: space-between` 확인 |
 
 ---
 

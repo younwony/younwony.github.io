@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤원희 - 이력서 (Modern)</title>
+    <style>
+        /* ===== 페이지 설정 ===== */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.6;
+            color: #222;
+            background: white;
+        }
+
+        /* 페이지 템플릿 */
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 18mm 22mm 18mm 22mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+
+        /* ===== 헤더 ===== */
+        .header {
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-size: 32pt;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .title {
+            font-size: 11pt;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 9pt;
+            color: #444;
+        }
+
+        .contact-item {
+            margin-bottom: 4px;
+        }
+
+        .contact-label {
+            color: #888;
+            margin-right: 8px;
+        }
+
+        /* ===== 섹션 ===== */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+        }
+
+        /* ===== Summary ===== */
+        .summary {
+            margin-bottom: 20px;
+        }
+
+        .summary-text {
+            font-size: 9.5pt;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .summary-text strong {
+            font-weight: 600;
+        }
+
+        .key-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #ddd;
+        }
+
+        .achievement-item {
+            font-size: 8.5pt;
+            color: #333;
+            padding: 8px 12px;
+            background: #f8f8f8;
+            border-left: 2px solid #000;
+        }
+
+        .achievement-item strong {
+            color: #000;
+        }
+
+        /* ===== Skills ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .skill-category {
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+        }
+
+        .skill-label {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-size: 8.5pt;
+            color: #333;
+            padding: 3px 8px;
+            background: #f0f0f0;
+        }
+
+        .skill-tag.primary {
+            background: #000;
+            color: #fff;
+        }
+
+        /* ===== Work Experience ===== */
+        .company {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .company:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .company-name {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .company-period {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .company-meta {
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .company-role {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+            font-size: 9pt;
+            color: #333;
+        }
+
+        .achievements li::before {
+            content: "–";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        .achievements strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .metric {
+            display: inline-block;
+            font-weight: 700;
+            color: #000;
+            background: #f0f0f0;
+            padding: 1px 6px;
+            margin-left: 4px;
+        }
+
+        /* ===== Projects ===== */
+        .project {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .project-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .project-company {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .project-highlight {
+            font-size: 9pt;
+            color: #000;
+            font-weight: 600;
+            margin-bottom: 6px;
+            padding: 6px 10px;
+            background: #f5f5f5;
+            border-left: 2px solid #000;
+        }
+
+        .project-content {
+            font-size: 9pt;
+            color: #444;
+            line-height: 1.65;
+        }
+
+        .project-content strong {
+            color: #222;
+        }
+
+        .project-tech {
+            margin-top: 8px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            font-size: 8pt;
+            color: #555;
+            padding: 2px 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* ===== Education ===== */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .edu-item {
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+        }
+
+        .edu-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .edu-detail {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        /* ===== Awards ===== */
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 18px;
+            background: #f8f8f8;
+            border-left: 3px solid #000;
+        }
+
+        .award-icon {
+            font-size: 20pt;
+        }
+
+        .award-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .award-detail {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        /* ===== Print & Screen ===== */
+        @media print {
+            body { background: white; }
+            .page {
+                width: 100%;
+                height: 297mm;
+                margin: 0;
+                page-break-after: always;
+            }
+            .page:last-child { page-break-after: avoid; }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 30px;
+            }
+            .page {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== PAGE 1 ===== -->
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                <div>
+                    <h1 class="name">윤원희</h1>
+                    <div class="title">Backend Developer · 7 Years Experience</div>
+                </div>
+                <div class="contact">
+                    <div class="contact-item"><span class="contact-label">Email</span>wony9324@naver.com</div>
+                    <div class="contact-item"><span class="contact-label">Phone</span>010-3555-2320</div>
+                    <div class="contact-item"><span class="contact-label">GitHub</span>github.com/younwony</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <div class="summary">
+            <p class="summary-text">
+                <strong>비즈니스 문제를 대용량 시스템과 자동화로 해결하는 백엔드 개발자.</strong><br><br>
+                Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼의 상품·가격·주문·검색 영역을 폭넓게 경험하며,
+                단순 기능 구현보다 <strong>"왜 이 구조여야 하는가"</strong>를 먼저 고민합니다.
+            </p>
+            <div class="key-achievements">
+                <div class="achievement-item"><strong>검색 성능 100배 개선</strong> — ES 도입 10초 → 0.1초</div>
+                <div class="achievement-item"><strong>Zero Ops 달성</strong> — ChatOps로 운영 40% → 0%</div>
+                <div class="achievement-item"><strong>매출 10% 상승</strong> — Dynamic Pricing 시스템</div>
+                <div class="achievement-item"><strong>생산성 90% 향상</strong> — AI 에이전트 활용</div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-label">Backend</div>
+                    <div class="skill-items">
+                        <span class="skill-tag primary">Java</span>
+                        <span class="skill-tag primary">Spring Boot</span>
+                        <span class="skill-tag">Spring Batch</span>
+                        <span class="skill-tag">JPA</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Database & Cache</div>
+                    <div class="skill-items">
+                        <span class="skill-tag primary">MySQL</span>
+                        <span class="skill-tag primary">Redis</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Infra & DevOps</div>
+                    <div class="skill-items">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">AI & Automation</div>
+                    <div class="skill-items">
+                        <span class="skill-tag primary">Claude Code</span>
+                        <span class="skill-tag">MCP</span>
+                        <span class="skill-tag">Slack API</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="company">
+                <div class="company-header">
+                    <span class="company-name">(주)구하다</span>
+                    <span class="company-period">2022.02 - 현재 (3년 9개월)</span>
+                </div>
+                <div class="company-meta">
+                    명품 커머스 플랫폼 · <span class="company-role">Backend Developer (Senior)</span>
+                </div>
+                <ul class="achievements">
+                    <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="metric">100배 개선</span></li>
+                    <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="metric">매출 10%↑</span></li>
+                    <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="metric">Zero Ops</span></li>
+                    <li><strong>AI 생산성 혁신:</strong> Claude Code + MCP 활용 <span class="metric">개발 90%↓</span></li>
+                </ul>
+            </div>
+
+            <div class="company">
+                <div class="company-header">
+                    <span class="company-name">(주)인터파크</span>
+                    <span class="company-period">2021.09 - 2022.01 (5개월)</span>
+                </div>
+                <div class="company-meta">
+                    종합 쇼핑몰 · <span class="company-role">Backend Developer</span>
+                </div>
+                <ul class="achievements">
+                    <li><strong>TDD 도입:</strong> 레거시 시스템에 <span class="metric">TDD 문화 정착</span>, 핵심 비즈니스 로직 테스트 커버리지 확보</li>
+                </ul>
+            </div>
+
+            <div class="company">
+                <div class="company-header">
+                    <span class="company-name">(주)한국문헌정보기술</span>
+                    <span class="company-period">2018.06 - 2021.08 (3년 2개월)</span>
+                </div>
+                <div class="company-meta">
+                    아카이빙/기록물 관리 솔루션 · <span class="company-role">Backend Developer</span>
+                </div>
+                <ul class="achievements">
+                    <li><strong>검색 엔진:</strong> Elasticsearch + Nori 기반 구축, 데이터 등록 속도 <span class="metric">70% 단축</span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== PAGE 2 ===== -->
+    <div class="page">
+        <!-- Key Projects -->
+        <section class="section">
+            <h2 class="section-title">Key Projects</h2>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">인플루언서 데이터 플랫폼 고도화</span>
+                    <span class="project-company">@ 구하다</span>
+                </div>
+                <div class="project-highlight">200만 인플루언서 데이터 자동 수집, 검색 성능 100배 개선</div>
+                <div class="project-content">
+                    <strong>문제:</strong> 수작업 수집으로 일 수십 명 한계, RDB 검색 10초+ 타임아웃<br>
+                    <strong>해결:</strong> Elasticsearch 검색 엔진 + 멀티소스(TikTok/Ensemble API) 파이프라인<br>
+                    <strong>성과:</strong> 데이터 풀 10만→200만(20배↑), 검색 10초→0.1초(100배↑)
+                </div>
+                <div class="project-tech">
+                    <span class="tech-item">Spring Boot</span>
+                    <span class="tech-item">Elasticsearch</span>
+                    <span class="tech-item">Redis Lock</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">네이버 쇼핑 Dynamic Pricing</span>
+                    <span class="project-company">@ 구하다</span>
+                </div>
+                <div class="project-highlight">API 제약 내 최저가 방어 알고리즘으로 매출 10% 상승</div>
+                <div class="project-content">
+                    <strong>문제:</strong> API 25,000건/일 한도로 5만+ 상품 실시간 대응 불가<br>
+                    <strong>해결:</strong> 매출 기여도 상위 20% 집중 + 마진 4% 보장 룰 엔진 설계<br>
+                    <strong>성과:</strong> 대상 상품 매출/트래픽 각 10% 상승, MD팀 업무 80% 감소
+                </div>
+                <div class="project-tech">
+                    <span class="tech-item">Spring Batch</span>
+                    <span class="tech-item">Naver API</span>
+                    <span class="tech-item">BigQuery</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">ChatOps 기반 운영 프로세스 자동화</span>
+                    <span class="project-company">@ 구하다</span>
+                </div>
+                <div class="project-highlight">Slack 기반 운영 요청 통합으로 수동 업무 Zero Ops 달성</div>
+                <div class="project-content">
+                    <strong>문제:</strong> 발주/클레임 요청이 이메일/메신저/구두로 분산<br>
+                    <strong>해결:</strong> Slack ChatOps 구축, 버튼 클릭만으로 DB 처리 완료<br>
+                    <strong>성과:</strong> 운영팀 수동 업무 Zero Ops, 요청 채널 100% 통합
+                </div>
+                <div class="project-tech">
+                    <span class="tech-item">Spring Boot</span>
+                    <span class="tech-item">Slack Event API</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-title">AI 기반 개발 생산성 혁신</span>
+                    <span class="project-company">@ 구하다</span>
+                </div>
+                <div class="project-highlight">Claude Code + MCP 활용으로 개발/문서화 시간 90% 단축</div>
+                <div class="project-content">
+                    <strong>문제:</strong> 반복적인 운영 도구 개발, API 문서 작성에 시간 소요<br>
+                    <strong>해결:</strong> AI 기반 코드 생성, MCP로 Atlassian 연동 자동화<br>
+                    <strong>성과:</strong> 운영 도구 개발 1-2일→1-2시간(90%↓), 문서화 80% 자동화
+                </div>
+                <div class="project-tech">
+                    <span class="tech-item">Claude Code</span>
+                    <span class="tech-item">MCP (Atlassian)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certification -->
+        <section class="section">
+            <h2 class="section-title">Education & Certification</h2>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <div class="edu-title">대전대학교</div>
+                    <div class="edu-detail">컴퓨터공학 학사 (2011 - 2018)</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">정보처리기사</div>
+                    <div class="edu-detail">한국산업인력공단 (2017.05)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section class="section">
+            <h2 class="section-title">Awards</h2>
+            <div class="award-item">
+                <div class="award-icon">◆</div>
+                <div>
+                    <div class="award-title">2021년 사내 우수사원</div>
+                    <div class="award-detail">(주)한국문헌정보기술 — 대용량 처리 최적화 및 검색 엔진 구축 성과</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
