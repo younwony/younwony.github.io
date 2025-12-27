@@ -6,6 +6,22 @@ description: 경력기술서(5페이지+)를 작성합니다. 문제 해결 중�
 # 경력기술서 작성
 
 > **작성 원칙 및 STAR+I 가이드**: `/writing-guide` 참조
+> **Professional Summary 명세**: `docs/career/PROFESSIONAL_SUMMARY_SPEC.md` 참조
+
+---
+
+## Professional Summary 작성
+
+경력기술서 상단의 Professional Summary 작성 시:
+
+```
+[문제] → [해결 방법] → [정량 성과] 패턴 적용
+
+❌ "ChatOps 구축으로 운영 반복 업무 40% → 0% 완전 자동화"
+✅ "운영팀 인터뷰로 발굴한 컨텍스트 스위칭 병목 → Slack ChatOps 구축으로 반복 업무 40% → 0% 자동화"
+```
+
+상세 작성 가이드는 `/writing-guide` 섹션 11 또는 `PROFESSIONAL_SUMMARY_SPEC.md` 참조
 
 ---
 
