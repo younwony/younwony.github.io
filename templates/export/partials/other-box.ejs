@@ -1,9 +1,0 @@
-<div class="project-box">
-    <h3 class="project-title"><%= other.title %><% if (other.period) { %> (<%= other.period %>)<% } %></h3>
-    <ul class="achievements">
-        <% other.items.forEach(function(item) { %>
-        <li><strong><%= item.title %>:</strong> <%= item.description %></li>
-        <% }); %>
-    </ul>
-    <%- include('tech-stack', { techStack: other.techStack }) %>
-</div>

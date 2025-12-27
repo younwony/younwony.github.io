@@ -82,20 +82,7 @@ description: 이력서/경력기술서를 PDF 또는 PPT로 내보냅니다. 페
 
 ### PDF 내보내기 단계
 
-#### 방법 1: 스크립트 사용 (권장)
-
-```bash
-# 경력기술서 빌드 (EJS → HTML)
-node scripts/build-career-portfolio.js
-
-# PDF 생성 (Puppeteer)
-node scripts/generate-pdf.js
-
-# 결과물
-# output/윤원희_경력기술서_2025-12.pdf
-```
-
-#### 방법 2: 브라우저에서 수동 내보내기
+#### Step 1: HTML 파일 열기
 
 ```bash
 # Windows
@@ -255,27 +242,13 @@ output/
 
 ---
 
-## 템플릿 시스템 (EJS)
-
-### 파일 구조
+## 템플릿 파일 구조
 
 ```
 templates/export/
 ├── pdf/
-│   ├── career-portfolio.ejs    # 메인 템플릿
-│   └── career-portfolio.html   # 빌드 결과물
-├── partials/                    # 재사용 컴포넌트
-│   ├── head.ejs
-│   ├── header.ejs
-│   ├── summary.ejs
-│   ├── competencies.ejs
-│   ├── skills.ejs
-│   ├── company-header.ejs
-│   ├── project-box.ejs
-│   ├── tech-stack.ejs
-│   └── other-box.ejs
-├── data/
-│   └── career-data.json        # 경력 데이터
+│   ├── resume-2page.html       # 이력서 (2페이지)
+│   └── career-portfolio.html   # 경력기술서 (5페이지+)
 └── assets/                      # CSS 모듈
     ├── variables.css
     ├── base.css
@@ -284,13 +257,14 @@ templates/export/
     └── career-print.css
 ```
 
-### 데이터 수정
+### 내용 수정
 
-경력 정보 수정 시 `templates/export/data/career-data.json` 편집 후 빌드:
+HTML 파일을 직접 수정합니다:
 
-```bash
-node scripts/build-career-portfolio.js
-```
+| 파일 | 용도 |
+|------|------|
+| `resume-2page.html` | 이력서 내용 수정 |
+| `career-portfolio.html` | 경력기술서 내용 수정 |
 
 ### 스타일 수정
 
