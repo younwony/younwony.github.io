@@ -147,11 +147,27 @@
     flex-direction: column;
 }
 
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
 .project-title {
     font-size: var(--font-size-2xl);
     font-weight: 600;
     color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
+    margin: 0;
+}
+
+.project-period {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    background: var(--color-bg-light);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
 }
 
 .project-meta {
@@ -212,6 +228,155 @@
 .highlight {
     color: var(--color-success);
     font-weight: 600;
+}
+
+/* ==========================================================================
+   Key Metrics Cards (프로젝트 상단 핵심 지표)
+   ========================================================================== */
+
+.metrics-container {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.metric-card {
+    flex: 1;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.metric-detail {
+    font-size: var(--font-size-xs);
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   Tech Decision Box (기술적 의사결정)
+   ========================================================================== */
+
+.tech-decision-box {
+    background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+    border: 1px solid #fde047;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.tech-decision-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: #854d0e;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tech-decision-item {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-xl);
+    position: relative;
+}
+
+.tech-decision-item::before {
+    content: "→";
+    color: #ca8a04;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.tech-decision-item strong {
+    color: #854d0e;
+}
+
+/* ==========================================================================
+   Summary Highlights (핵심 역량 하이라이트)
+   ========================================================================== */
+
+.summary-highlights {
+    margin-top: var(--spacing-lg);
+}
+
+.summary-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.summary-highlights li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-dark);
+    padding-left: var(--spacing-xl);
+    position: relative;
+    line-height: var(--line-height-tight);
+}
+
+.summary-highlights li::before {
+    content: "✓";
+    color: var(--color-success);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* ==========================================================================
+   Key Metrics Banner (첫 페이지 핵심 지표 배너)
+   ========================================================================== */
+
+.key-metrics-banner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.key-metric-item {
+    background: var(--color-bg-white);
+    border: 2px solid var(--color-accent-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.key-metric-item .value {
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.1;
+}
+
+.key-metric-item .label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: var(--spacing-xs);
+}
+
+.key-metric-item .detail {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: 2px;
 }
 
 /* ==========================================================================
