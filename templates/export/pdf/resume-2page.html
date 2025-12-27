@@ -160,6 +160,23 @@
             color: #1e3a5f;
         }
 
+        .summary-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 10px;
+        }
+
+        .highlight-item {
+            font-size: 8.5pt;
+            color: #334155;
+        }
+
+        .highlight-item i {
+            color: #10b981;
+            margin-right: 4px;
+        }
+
         /* ===== Skills ===== */
         .skills-grid {
             display: grid;
@@ -415,32 +432,18 @@
             </div>
         </header>
 
-        <!-- Key Metrics -->
-        <div class="key-metrics">
-            <div class="metric-card">
-                <div class="number">Zero Ops</div>
-                <div class="label">운영 자동화 100%</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">200만</div>
-                <div class="label">대용량 데이터 처리</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">100x</div>
-                <div class="label">검색 성능 개선</div>
-            </div>
-            <div class="metric-card">
-                <div class="number">+10%</div>
-                <div class="label">매출 상승</div>
-            </div>
-        </div>
-
         <!-- Summary -->
         <div class="summary">
             <div class="summary-text">
                 <strong>기술과 소통으로 비즈니스 문제를 해결하는 백엔드 개발자.</strong>
                 Java/Spring 기반 7년차 백엔드 개발자로서 커머스 도메인(상품/주문/가격)의 복잡한 비즈니스 로직을 전문적으로 다뤄왔습니다.
                 기술적 해결책뿐 아니라 비즈니스/운영 조직과의 적극적인 소통을 통해 서비스의 본질적인 문제를 발굴하고 해결합니다.
+            </div>
+            <div class="summary-highlights">
+                <span class="highlight-item"><i class="fas fa-check"></i> 대용량 시스템: ES 기반 200만 건 실시간 검색</span>
+                <span class="highlight-item"><i class="fas fa-check"></i> Zero Ops: ChatOps로 운영 완전 자동화</span>
+                <span class="highlight-item"><i class="fas fa-check"></i> AI 활용: 개발/문서화 90% 시간 단축</span>
+                <span class="highlight-item"><i class="fas fa-check"></i> Cross-functional: PM/MD/CS팀 직접 협업</span>
             </div>
         </div>
 
@@ -474,11 +477,11 @@
                     </div>
                 </div>
                 <div class="skill-box">
-                    <div class="skill-title">Tools & AI</div>
+                    <div class="skill-title">AI & Automation</div>
                     <div class="skill-tags">
+                        <span class="skill-tag main">Claude Code</span>
+                        <span class="skill-tag">MCP</span>
                         <span class="skill-tag">Slack API</span>
-                        <span class="skill-tag">BigQuery</span>
-                        <span class="skill-tag">Claude Code</span>
                     </div>
                 </div>
             </div>
@@ -499,7 +502,7 @@
                     <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="badge blue">100배 개선</span></li>
                     <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="badge">매출 10%↑</span></li>
                     <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="badge">Zero Ops</span></li>
-                    <li><strong>이미지 정합성:</strong> SHA256 검증으로 이미지 불일치 <span class="badge">클레임 Zero</span></li>
+                    <li><strong>AI 생산성 혁신:</strong> Claude Code + MCP 활용 <span class="badge blue">개발 90%↓</span></li>
                 </ul>
             </div>
 
@@ -583,17 +586,17 @@
             </div>
 
             <div class="project">
-                <div class="project-title">상품 이미지 정합성 확보 시스템 <span class="project-company">@ 구하다</span></div>
+                <div class="project-title">AI 기반 개발 생산성 혁신 <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    <strong style="color:#4a6cf7;">URL 동일 이미지 변경 감지 시스템 구축으로 클레임 Zero 달성</strong><br>
-                    <strong>문제:</strong> 해외 부티크 이미지 변경 시 URL 유지 → 기존 시스템 감지 불가, 월 20건+ 클레임<br>
-                    <strong>해결:</strong> SHA256 해시 검증, 첫 0~5KB 영역 확인으로 변경 여부 빠르게 판단<br>
-                    <strong>성과:</strong> 이미지 불일치 클레임 <strong>Zero</strong>, 반품 비용 절감, 검수 <strong>Zero Ops</strong>
+                    <strong style="color:#4a6cf7;">Claude Code + MCP 활용으로 개발/문서화 시간 90% 단축</strong><br>
+                    <strong>문제:</strong> 반복적인 운영 도구 개발, API 문서 작성, JIRA/Confluence 문서화에 시간 소요<br>
+                    <strong>해결:</strong> AI 기반 코드 생성, MCP로 Atlassian 연동 자동화, 표준 API 문서 템플릿<br>
+                    <strong>성과:</strong> 운영 도구 개발 <strong>1-2일→1-2시간(90%↓)</strong>, 문서화 <strong>80% 자동화</strong>, 팀 AI 문화 전파
                 </div>
                 <div class="project-tech">
-                    <span class="tech-tag">Spring Boot</span>
-                    <span class="tech-tag">AWS S3</span>
-                    <span class="tech-tag">SHA256</span>
+                    <span class="tech-tag">Claude Code</span>
+                    <span class="tech-tag">MCP (Atlassian)</span>
+                    <span class="tech-tag">Confluence</span>
                 </div>
             </div>
         </section>
