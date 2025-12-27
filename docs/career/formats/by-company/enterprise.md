@@ -3,6 +3,7 @@
 > **기업 유형**: 대기업 (안정성, 체계, 대규모 처리)
 > **강조 포인트**: 대규모 시스템, 안정성/품질, 체계적 프로세스
 > **생성일**: 2024-12
+> **최종 동기화**: 2025-12-27
 
 ---
 
@@ -27,6 +28,7 @@ Java/Spring 기반 7년차 백엔드 개발자로서 **200만 건 규모 대용�
 | **안정성/품질** | 미션 크리티컬 시스템 | Redis Lock, Spring Batch 안정성 |
 | **체계적 프로세스** | 표준화된 개발 문화 | 코드 리뷰, 컨벤션, 문서화 |
 | **Cross-functional** | 대규모 조직 협업 | 마케팅/MD/CS 유관부서 리딩 |
+| **AI-Assisted Dev** | 생산성 혁신 | Claude Code, MCP 연동 자동화 |
 
 ---
 
@@ -43,6 +45,10 @@ Java/Spring 기반 7년차 백엔드 개발자로서 **200만 건 규모 대용�
 
 ### Data & Analytics
 - BigQuery, GA4
+
+### AI Coding Assistant
+- **Claude Code** (AI 기반 코딩 어시스턴트)
+- **MCP** (Confluence/Jira 연동 자동화)
 
 ---
 
@@ -89,8 +95,7 @@ Java/Spring 기반 7년차 백엔드 개발자로서 **200만 건 규모 대용�
 **핵심 성과:** 이미지 불일치 클레임 **Zero 달성**, 운영 무인화
 
 **대기업 적합성:**
-- **데이터 무결성**: MD5 해시 + ETag 이중 검증 시스템
-- **비용 효율화**: Header 우선 비교로 네트워크 비용 80% 절감
+- **데이터 무결성**: SHA256 해시 검증 시스템
 - **운영 자동화**: 24시간 무인 동기화 체계 구축
 
 **주요 역할:**
@@ -98,7 +103,7 @@ Java/Spring 기반 7년차 백엔드 개발자로서 **200만 건 규모 대용�
 - 해시 기반 검증 시스템 설계 및 구축
 - S3 동기화 파이프라인 고도화
 
-**기술**: Java, Spring Boot, AWS S3, Image Hashing (MD5/ETag)
+**기술**: Java, Spring Boot, AWS S3, Image Hashing (SHA256)
 
 ---
 
@@ -114,7 +119,7 @@ Java/Spring 기반 7년차 백엔드 개발자로서 **200만 건 규모 대용�
 **주요 역할:**
 - 코드 리뷰 문화 정착 주도
 - 코딩 컨벤션 수립 및 문서화
-- AI Agent 활용 반복 업무 자동화
+- AI Agent(Claude Code, MCP) 활용 반복 업무 자동화
 
 **기술**: Java, Spring Boot, Code Review, Clean Code
 

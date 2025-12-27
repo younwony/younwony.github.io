@@ -116,9 +116,8 @@
                             <li><strong>🎯 Task:</strong> 이미지 데이터 정합성 100% 확보를 통한 고객 클레임 원천 차단. 단순 URL 비교가 아닌, 파일 자체의 변경을 감지할 수 있는 고성능/저비용 검증 로직 구현.</li>
                             <li><strong>⚡ Action:</strong>
                                 <ul>
-                                    <li><strong>해시(Hash) 기반 검증 도입:</strong> HTTP Header(ETag, Last-Modified) 및 바이너리 데이터의 해시값(MD5)을 비교하는 정밀 검증 시스템 구축.</li>
+                                    <li><strong>해시(Hash) 기반 검증 도입:</strong> SHA256 해시값 비교로 이미지 변경 정밀 감지. 첫 0~5KB 영역 확인으로 변경 여부 빠르게 판단</li>
                                     <li><strong>동기화 로직 고도화:</strong> 배치 작업 시 저장된 해시값과 원본 해시값을 O(1)로 비교하여, 변경 감지 시 즉시 S3 이미지를 강제 업데이트.</li>
-                                    <li><strong>리소스 최적화:</strong> 전체 파일을 매번 다운로드하지 않고 Header 정보를 우선 비교하여 네트워크 및 처리 비용 최소화.</li>
                                 </ul>
                             </li>
                             <li><strong>✅ Result:</strong> 상품 이미지 불일치로 인한 고객 클레임 및 오배송 건수 'Zero' 달성. 시각적 정보의 정확도를 완벽하게 유지하여 구매 전환율 안정화 및 고객 신뢰도 회복.
@@ -129,7 +128,7 @@
                                 </div>
                             </li>
                             <li><strong>💡 Impact:</strong> 고객 신뢰도 회복 및 CS 비용 절감, 구매 전환율 안정화</li>
-                            <li><strong>🔧 Tech Decision:</strong> "MD5/ETag 해시 비교 선택 - URL 동일해도 이미지 변경 감지, Header 우선 비교로 네트워크 비용 최소화"</li>
+                            <li><strong>🔧 Tech Decision:</strong> "SHA256 해시 검증 - URL 동일해도 이미지 변경 감지"</li>
                         </ul>
                     </div>
 
@@ -168,7 +167,7 @@
                                 <ul>
                                     <li><strong>코드 리뷰 문화 정착:</strong> PR 기반 리뷰 프로세스 제안 및 도입, 배포 전 최소 2인 승인 체계 확립. 설계·성능·운영 요소를 함께 논의하는 "더 나은 설계" 중심 리뷰 문화 형성.</li>
                                     <li><strong>코딩 컨벤션 수립:</strong> Java/Spring 코딩 컨벤션을 팀원들과 함께 정의하고 문서화. 신규 입사자 온보딩 시 즉시 적용 가능하도록 체계화.</li>
-                                    <li><strong>AI 에이전트 활용 자동화:</strong> Claude Code를 활용하여 SQL 작성, 데이터 조회·정제, 운영성 스크립트를 AI 페어프로그래밍으로 신속 구현. 기존 1~2일 소요 작업을 1~2시간으로 단축.</li>
+                                    <li><strong>AI 에이전트 활용 자동화:</strong> Claude Code와 MCP를 활용하여 SQL 작성, 데이터 조회·정제, 운영성 스크립트를 AI 페어프로그래밍으로 신속 구현. MCP로 Confluence/Jira 연동 자동화. 기존 1~2일 소요 작업을 1~2시간으로 단축.</li>
                                     <li><strong>운영 툴 내재화:</strong> 반복 업무를 내부 시스템 기능으로 내재화하여 누구나 즉시 활용 가능하도록 구조화. 사내 맞춤형 운영 툴 5건 이상 신규 구축.</li>
                                     <li><strong>팀 내 AI 활용 전파:</strong> 프롬프트 엔지니어링 노하우와 AI 활용 패턴을 팀 내 공유하여 주니어 개발자도 복잡한 쿼리 및 테스트 코드 작성에 AI 보조 활용.</li>
                                 </ul>
@@ -181,7 +180,7 @@
                                 </div>
                             </li>
                             <li><strong>💡 Impact:</strong> 시니어 개발자가 반복 작업에서 해방되어 핵심 도메인 개발·아키텍처 작업에 집중. 개발팀 전반의 협업 효율·코드 품질·개발 속도 유의미 개선. 운영성 업무 자동화로 백엔드 팀 생산성 비약적 향상.</li>
-                            <li><strong>🔧 Tech Decision:</strong> "AI Agent(Claude Code) 도입 - 자연어 명령으로 SQL/스크립트 생성, 반복 업무 90% 시간 단축 및 팀 전체 활용 가능"</li>
+                            <li><strong>🔧 Tech Decision:</strong> "AI Agent(Claude Code, MCP) 도입 - 자연어 명령으로 SQL/스크립트 생성, Confluence/Jira 연동 자동화, 반복 업무 90% 시간 단축 및 팀 전체 활용 가능"</li>
                         </ul>
                     </div>
                 </div>

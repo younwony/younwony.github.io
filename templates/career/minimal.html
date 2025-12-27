@@ -90,13 +90,12 @@
                     <p style="margin-bottom: 8px;"><strong>🎯 목표:</strong> 이미지 데이터 정합성 100% 확보를 통한 고객 클레임 원천 차단</p>
                     <p style="margin-bottom: 8px;"><strong>⚡ 해결:</strong></p>
                     <ul class="exp-list">
-                        <li>HTTP Header(ETag, Last-Modified) 및 해시값(MD5) 비교 정밀 검증 시스템 구축</li>
+                        <li>SHA256 해시값 비교로 이미지 변경 정밀 감지. 첫 0~5KB 영역 확인으로 변경 여부 빠르게 판단</li>
                         <li>배치 작업 시 해시값 O(1) 비교, 변경 감지 시 즉시 S3 이미지 강제 업데이트</li>
-                        <li>전체 파일 다운로드 대신 Header 정보 우선 비교로 처리 비용 최소화</li>
                     </ul>
                     <p style="margin-top: 8px;"><strong>✅ 성과:</strong> 고객 클레임 및 오배송 건수 <strong>'Zero' 달성</strong>, 구매 전환율 안정화</p>
                     <p style="margin-top: 8px;"><strong>💡 Impact:</strong> 고객 신뢰도 회복 및 CS 비용 절감, 구매 전환율 안정화</p>
-                    <p style="margin-top: 4px;"><strong>🔧 Tech Decision:</strong> "MD5/ETag 해시 비교 선택 - URL 동일해도 이미지 변경 감지, Header 우선 비교로 네트워크 비용 최소화"</p>
+                    <p style="margin-top: 4px;"><strong>🔧 Tech Decision:</strong> "SHA256 해시 검증 - URL 동일해도 이미지 변경 감지"</p>
                 </div>
 
                 <div style="margin-bottom: 20px;">

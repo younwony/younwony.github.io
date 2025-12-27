@@ -75,12 +75,11 @@
               "role": "해시 기반 검증 시스템 설계 및 구현 (1인 개발)",
               "background": "해외 부티크 상품 이미지가 변경되어도 URL이 동일하게 유지되어 변경 감지 불가. 쇼핑몰 노출 이미지와 실제 배송 상품이 다른 '상품 상이' 클레임 월 20건+ 발생. 반품 비용 증가 및 브랜드 신뢰도 하락.",
               "achievements": [
-                { "title": "이미지 불일치 클레임 Zero 달성", "highlight": "(월 20건+ → 0건)", "description": "ETag + MD5 해시 이중 검증 시스템 구축. URL 동일 이미지 변경 100% 감지." },
-                { "title": "네트워크 비용 80% 절감", "description": "HEAD 요청 우선 확인 후 변경분만 다운로드. Header 우선 비교로 O(1) 복잡도 달성." },
+                { "title": "이미지 불일치 클레임 Zero 달성", "highlight": "(월 20건+ → 0건)", "description": "SHA256 해시 검증 시스템 구축. URL 동일 이미지 변경 100% 감지." },
                 { "title": "검수 업무 Zero Ops 달성", "description": "수동 샘플링 → 전수 자동화 전환. CS팀 클레임 처리 부담 월 20시간 제거. 24시간 이미지 동기화 운영." },
                 { "title": "고객 신뢰도 회복", "description": "상품 이미지 불일치 클레임 완전 제거로 구매 전환율 안정화." }
               ],
-              "techStack": ["Spring Boot", "AWS S3", "MD5/ETag", "Image Hashing"]
+              "techStack": ["Spring Boot", "AWS S3", "SHA256", "Image Hashing"]
             },
             {
               "id": "chatops",

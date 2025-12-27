@@ -164,13 +164,13 @@
                             <ul class="exp-list">
                                 <li><strong>핵심 성과:</strong> 상품 이미지 불일치로 인한 고객 클레임 <strong>Zero 달성</strong>, 반품 비용 절감, <strong>운영 자동화(Zero Ops)</strong></li>
                                 <li><strong>문제 원인 분석 및 해결책 제안:</strong> CS팀과 협업하여 클레임 패턴 분석, 해시 기반 검증 방안 직접 제안</li>
-                                <li><strong>해시 기반 이미지 검증 시스템 구축:</strong> HTTP Header(ETag, Last-Modified) 및 MD5 해시값 비교로 이미지 변경 정밀 감지</li>
+                                <li><strong>해시 기반 이미지 검증 시스템 구축:</strong> SHA256 해시값 비교로 이미지 변경 정밀 감지. 첫 0~5KB 영역 확인으로 변경 여부 빠르게 판단</li>
                                 <li><strong>운영 자동화:</strong> 수동 검수 → 24시간 자동 동기화로 운영팀 개입 없이 이미지 정합성 유지</li>
                                 <li><strong>Impact:</strong> 고객 신뢰도 회복으로 구매 전환율 안정화, CS팀 클레임 처리 업무 부담 제거</li>
-                                <li><strong>Tech Decision:</strong> MD5 해시 + ETag 이중 검증으로 URL 동일해도 이미지 변경 감지, Header 우선 비교로 네트워크 비용 80% 절감</li>
+                                <li><strong>Tech Decision:</strong> SHA256 해시 검증으로 URL 동일해도 이미지 변경 감지</li>
                             </ul>
                             <div class="tech-stack">
-                                <strong>사용 기술:</strong> Java, Spring Boot, AWS S3, Image Hashing (MD5/ETag)
+                                <strong>사용 기술:</strong> Java, Spring Boot, AWS S3, Image Hashing (SHA256)
                             </div>
                         </div>
                     </div>

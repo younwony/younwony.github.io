@@ -1,35 +1,46 @@
 ---
 name: update-resume
-description: my_career_data.md 원본 데이터의 변경사항을 이력서/경력기술서 10개 파일에 동기화합니다. 이력서 업데이트, 경력기술서 수정, 템플릿 동기화가 필요할 때 사용합니다.
+description: my_career_data.md 원본 데이터의 변경사항을 이력서/경력기술서 전체 파일에 동기화합니다. 이력서 업데이트, 경력기술서 수정, 템플릿 동기화가 필요할 때 사용합니다.
 ---
 
 # 이력서/경력기술서 업데이트
 
 ## 개요
 
-`my_career_data.md` (Single Source of Truth)의 변경사항을 감지하고, 아래 10개 파일에 STAR+I 형식으로 동기화합니다.
+`my_career_data.md` (Single Source of Truth)의 변경사항을 감지하고, 아래 파일들에 STAR+I 형식으로 동기화합니다.
 
-## 대상 파일 (10개 + work-logs)
+## 대상 파일
 
-### Markdown 파일
+### 1. 핵심 Markdown 파일 (2개)
 1. `docs/career/resume.md` - 간결 이력서
 2. `docs/career/career_portfolio.md` - 상세 경력기술서
 
-### Resume HTML 템플릿
-3. `templates/resume/default.html`
-4. `templates/resume/minimal.html`
-5. `templates/resume/modern.html`
-6. `templates/resume/corporate.html`
+### 2. 맞춤형 이력서 (formats/) (6개)
+3. `docs/career/formats/TEMPLATE.md` - 템플릿 기본
+4. `docs/career/formats/by-company/startup.md` - 스타트업용
+5. `docs/career/formats/by-company/enterprise.md` - 대기업용
+6. `docs/career/formats/by-domain/fintech.md` - 핀테크용
+7. `docs/career/formats/by-domain/commerce.md` - 커머스용
+8. `docs/career/formats/by-jd/backend_sample.md` - JD 샘플
 
-### Career HTML 템플릿
-7. `templates/career/default.html`
-8. `templates/career/minimal.html`
-9. `templates/career/modern.html`
-10. `templates/career/corporate.html`
+### 3. 면접 스크립트 (1개)
+9. `docs/career/interview_script.md` - 면접 답변 스크립트
 
-### Work Logs (추가)
-11. `docs/career/work-logs/{company}/*.md` - 해당 프로젝트 작업 로그 업데이트
-12. `docs/career/work-logs/README.md` - 인덱스 업데이트
+### 4. Resume HTML 템플릿 (4개)
+10. `templates/resume/default.html`
+11. `templates/resume/minimal.html`
+12. `templates/resume/modern.html`
+13. `templates/resume/corporate.html`
+
+### 5. Career HTML 템플릿 (4개)
+14. `templates/career/default.html`
+15. `templates/career/minimal.html`
+16. `templates/career/modern.html`
+17. `templates/career/corporate.html`
+
+### 6. Work Logs
+18. `docs/career/work-logs/{company}/*.md` - 해당 프로젝트 작업 로그 업데이트
+19. `docs/career/work-logs/README.md` - 인덱스 업데이트
 
 ## 실행 단계
 
@@ -44,32 +55,52 @@ git diff docs/career/my_career_data.md
 - `/write-guide` 스킬 참조 (STAR+I, 시니어 톤, 정량화)
 - STAR+I 형식 준수 확인
 
-### Step 3: 10개 파일 업데이트
-- 변경된 섹션만 정확히 반영
+### Step 3: 핵심 파일 업데이트
+- `resume.md`, `career_portfolio.md` 변경된 섹션만 정확히 반영
 - 변경되지 않은 부분은 절대 수정 금지
-- HTML 템플릿은 구조 유지하며 내용만 교체
 
-### Step 4: work-logs 업데이트
+### Step 4: formats/ 폴더 업데이트
+- 맞춤형 이력서 6개 파일 동기화
+- 각 파일의 특성(스타트업/대기업/핀테크/커머스)에 맞게 내용 반영
+
+### Step 5: interview_script.md 업데이트
+- 면접 스크립트의 해당 프로젝트 설명 동기화
+
+### Step 6: HTML 템플릿 업데이트
+- 8개 HTML 템플릿 구조 유지하며 내용만 교체
+
+### Step 7: work-logs 업데이트
 - 변경된 프로젝트의 work-logs 파일도 함께 업데이트
 - work-logs 파일이 없으면 새로 생성
 - README.md 인덱스 확인 및 업데이트
 
-### Step 5: 검증
+### Step 8: 검증
 - STAR+I 형식 유지 확인
 - 정량적 성과(숫자) 포함 확인
 - 기술 선택 이유(Why) 포함 확인
 
-### Step 6: git add
-- 10개 파일 + work-logs staging
+### Step 9: git add
+- 전체 대상 파일 staging
 - commit은 하지 않음 (사용자 요청 시에만)
 
 ```bash
+# 핵심 파일
 git add docs/career/my_career_data.md
 git add docs/career/resume.md
 git add docs/career/career_portfolio.md
-git add docs/career/work-logs/
+
+# formats 폴더
+git add docs/career/formats/
+
+# 면접 스크립트
+git add docs/career/interview_script.md
+
+# HTML 템플릿
 git add templates/resume/*.html
 git add templates/career/*.html
+
+# work-logs
+git add docs/career/work-logs/
 ```
 
 ## 주의사항
@@ -87,15 +118,18 @@ git add templates/career/*.html
 - [ ] 기술 선택 이유(Why)가 포함되었는가?
 
 ### 변경 적용
-- [ ] 10개 파일 업데이트 목록 작성
+- [ ] 핵심 파일 업데이트 (resume.md, career_portfolio.md)
+- [ ] formats/ 폴더 6개 파일 업데이트
+- [ ] interview_script.md 업데이트
+- [ ] HTML 템플릿 8개 파일 업데이트 (필요시)
+- [ ] work-logs 해당 프로젝트 파일 업데이트
+- [ ] work-logs/README.md 인덱스 업데이트 (필요시)
 - [ ] STAR+I 형식 그대로 반영 (Impact 포함)
 - [ ] **변경된 섹션만** 교체
-- [ ] work-logs 해당 프로젝트 파일 업데이트
-- [ ] work-logs/README.md 인덱스 업데이트
 
 ### 검증
 - [ ] 변경된 프로젝트만 업데이트되었는가?
-- [ ] 10개 파일 + work-logs 모두 업데이트되었는가?
+- [ ] 전체 대상 파일 모두 업데이트되었는가?
 - [ ] STAR+I 형식이 유지되었는가?
 - [ ] 정량적 성과(숫자)가 포함되었는가?
 - [ ] 기술 선택 이유(Why)가 드러나는가?
