@@ -2,8 +2,8 @@
 
 > 이력서/경력기술서 프로젝트에서 사용 가능한 Claude Code Skills 목록
 >
-> **최종 업데이트**: 2025-12-26
-> **총 스킬 수**: 9개
+> **최종 업데이트**: 2025-12-29
+> **총 스킬 수**: 11개
 
 ---
 
@@ -22,7 +22,9 @@
 │   ├── add-project/SKILL.md           # /add-project
 │   ├── sync-check/SKILL.md            # /sync-check
 │   ├── work-log/SKILL.md              # /work-log
-│   └── work-logs-sync/SKILL.md        # /work-logs-sync
+│   ├── work-logs-sync/SKILL.md        # /work-logs-sync
+│   ├── platform-profile/SKILL.md      # /platform-profile (신규)
+│   └── sync-platforms/SKILL.md        # /sync-platforms (신규)
 └── util/                              # 유틸리티
     └── style/SKILL.md                 # /style-guide
 ```
@@ -54,6 +56,8 @@
 | **Sync Check** | `/sync-check` | 원본과 10개 파일의 동기화 상태 검증 |
 | **Work Log** | `/work-log` | 작업 로그 기록 및 이력서 반영 판단 |
 | **Work Logs Sync** | `/work-logs-sync` | work-log 템플릿 변경 시 기존 파일 일괄 동기화 |
+| **Platform Profile** | `/platform-profile` | 채용 플랫폼별 프로필/경력 생성 |
+| **Sync Platforms** | `/sync-platforms` | 모든 플랫폼 파일 일괄 동기화 |
 
 ### 유틸리티 (util/)
 
@@ -175,6 +179,42 @@
 
 ---
 
+### `/platform-profile`
+
+**용도**: 채용 플랫폼별 프로필/경력 생성
+
+**지원 플랫폼**:
+- 리멤버, 원티드, 사람인, 잡코리아, 링크드인
+
+**파라미터**:
+- `platform`: remember, wanted, saramin, jobkorea, linkedin
+- `type`: profile, career, all (기본: all)
+- `mode`: basic, jobseek (기본: basic)
+
+**사용 예시**:
+```
+/platform-profile remember           # 리멤버 전체
+/platform-profile wanted profile     # 원티드 프로필만
+/platform-profile linkedin           # 링크드인 전체
+```
+
+---
+
+### `/sync-platforms`
+
+**용도**: 모든 플랫폼 파일 일괄 동기화
+
+**사용 시점**:
+- `my_career_data.md` 수정 후 전체 플랫폼 반영
+- 새 프로젝트 추가 후 플랫폼별 업데이트
+
+**동작**:
+1. 원본 변경사항 확인
+2. 5개 플랫폼 순차 동기화
+3. 변경 리포트 출력
+
+---
+
 ### `/style-guide`
 
 **용도**: CSS/HTML 스타일 수정
@@ -203,6 +243,8 @@
   /sync-check               # 동기화 검증
   /work-log                 # 작업 로그 기록
   /work-logs-sync           # work-log 형식 일괄 동기화
+  /platform-profile         # 플랫폼별 프로필/경력 생성
+  /sync-platforms           # 플랫폼 일괄 동기화
 
 유틸리티:
   /style-guide              # CSS 스타일 가이드
@@ -214,6 +256,7 @@
 
 | 날짜 | 변경 내용 |
 |------|----------|
+| 2025-12-29 | `/platform-profile`, `/sync-platforms` 스킬 추가 (채용 플랫폼 지원) |
 | 2025-12-26 | Skills 구조 개편: 14개 → 9개로 통합, 카테고리별 그룹화 |
 | 2025-12-26 | DOCX 내보내기 제거, enhance-portfolio를 write-career에 통합 |
 | 2025-12-26 | 디렉토리 구조: write/, export/, data/, util/ |
