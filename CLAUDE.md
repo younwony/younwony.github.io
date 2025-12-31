@@ -99,11 +99,16 @@ my_career_data.md (원본)
 
 | Skill | 용도 |
 |-------|------|
-| `/update-resume` | 원본 → 10개 파일 동기화 |
+| `/update-resume` | 원본 → 이력서/경력기술서 동기화 |
 | `/add-project` | 새 프로젝트 추가 (STAR+I 형식) |
 | `/sync-check` | 동기화 상태 검증 |
 | `/work-log` | 작업 로그 기록 및 이력서 반영 판단 |
-| `/work-logs-sync` | work-log 형식 변경 시 일괄 동기화 |
+
+### 커맨드
+
+| Command | 용도 |
+|---------|------|
+| `/sync-all` | **원본 → 전체 파일 동기화** (이력서 + HTML + 리멤버) |
 
 ### 유틸리티 (util/)
 
@@ -127,11 +132,13 @@ my_career_data.md (원본)
   /export                   # PDF/PPT 내보내기
 
 데이터 관리:
-  /update-resume            # 10개 파일 동기화
+  /update-resume            # 이력서/경력기술서 동기화
   /add-project              # 새 프로젝트 추가
   /sync-check               # 동기화 검증
   /work-log                 # 작업 로그 기록
-  /work-logs-sync           # 형식 일괄 동기화
+
+커맨드:
+  /sync-all                 # 전체 동기화 (18개 파일)
 
 유틸리티:
   /style-guide              # CSS 스타일 가이드
