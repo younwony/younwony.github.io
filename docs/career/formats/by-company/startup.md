@@ -71,19 +71,20 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 
 ### 2. AI 기반 팀 생산성 혁신 ⭐ 개발 속도
 
-**핵심 성과:** 운영 업무 **90% 단축** (1~2일 → 1~2시간)
+**핵심 성과:** 운영 업무 **90% 단축**, 검색 API **TPS 1500% 향상**, Review API **Latency 90% 개선**
 
 **스타트업 적합성:**
 - **AI Agent 활용**: Claude Code + MCP로 반복 업무 및 문서 작업 자동화
+- **성능 최적화**: Elasticsearch TPS 200→3,000, Review API 4,000ms→80ms
 - **코드 품질 개선**: PR 기반 리뷰 문화 정착
-- **팀 역량 향상**: 프롬프트 엔지니어링 노하우 공유
 
 **주요 성과:**
+- 검색 API TPS 1500% 향상 (200 → 3,000)
+- Review API Latency 90% 개선 (4,000ms → 80ms)
 - 사내 맞춤형 운영 툴 5건 이상 신규 구축
-- 코딩 컨벤션 수립 및 문서화
 - 주니어 개발자 온보딩 속도 단축
 
-**기술**: Java, Spring Boot, Claude Code (AI Agent)
+**기술**: Java, Spring Boot, Elasticsearch, Claude Code (AI Agent)
 
 ---
 

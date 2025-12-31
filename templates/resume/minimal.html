@@ -118,7 +118,23 @@
                 </div>
 
                 <div class="project-block">
-                    <div class="project-title">3. 상품 이미지 정합성 확보 및 클레임 방지 시스템</div>
+                    <div class="project-title">3. 메인 페이지 큐레이션 시스템 구축</div>
+                    <div class="project-detail">
+                        <ul class="exp-desc">
+                            <li><strong>핵심 성과:</strong> MD팀 <strong>실시간 자율 운영</strong> 달성, <strong>63가지+ UI 레이아웃</strong> 조합, 14개 전시 위치 통합 관리</li>
+                            <li><strong>문제:</strong> 메인 페이지 하드코딩으로 기획전 의존, MD팀 상품 변경 시 개발자 개입 필수</li>
+                            <li><strong>해결:</strong> Enum 기반 타입 시스템(14개 위치 × 9개 아이템 × 7개 뷰 타입) 설계, Strategy 패턴으로 확장성 확보</li>
+                            <li><strong>Impact:</strong> MD팀 마케팅 대응력 향상, 개발팀 반복 업무 제거로 핵심 기능 개발 집중</li>
+                            <li><strong>Tech Decision:</strong> 인메모리 캐시 선택(Redis 의존성 제거, 인프라 단순화), 3분 TTL로 실시간성과 성능 균형</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>사용 기술:</strong> Spring Boot, MySQL, Spring Cache (In-Memory)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-title">4. 상품 이미지 정합성 확보 및 클레임 방지 시스템</div>
                     <div class="project-detail">
                         <ul class="exp-desc">
                             <li><strong>핵심 성과:</strong> 상품 이미지 불일치로 인한 고객 클레임 <strong>Zero 달성</strong>, 반품 비용 절감, <strong>운영 자동화(Zero Ops)</strong></li>
@@ -135,7 +151,7 @@
                 </div>
 
                 <div class="project-block">
-                    <div class="project-title">4. ChatOps 기반 운영 프로세스 자동화 (Zero Ops)</div>
+                    <div class="project-title">5. ChatOps 기반 운영 프로세스 자동화 (Zero Ops)</div>
                     <div class="project-detail">
                         <ul class="exp-desc">
                             <li><strong>핵심 성과:</strong> 운영팀 수동 업무 <strong>40%→0%</strong> (Zero Ops), 소통 채널 <strong>100% 통합</strong>, 업무 투명성 확보</li>
@@ -152,10 +168,12 @@
                 </div>
 
                 <div class="project-block">
-                    <div class="project-title">5. 개발 문화 개선 및 AI 기반 팀 생산성 혁신</div>
+                    <div class="project-title">6. 개발 문화 개선 및 AI 기반 팀 생산성 혁신</div>
                     <div class="project-detail">
                         <ul class="exp-desc">
-                            <li><strong>핵심 성과:</strong> 배포 후 버그·핫픽스 건수 감소, 신규 입사자 온보딩 시간 단축, 운영성 반복 업무 <strong>90% 단축</strong> (1~2일 → 1~2시간)</li>
+                            <li><strong>핵심 성과:</strong> <strong>검색 API TPS 1500% 향상</strong> (200→3,000), <strong>Review API Latency 90% 개선</strong> (4,000ms→80ms), 운영 업무 <strong>90% 단축</strong></li>
+                            <li><strong>검색 API TPS 1500% 향상:</strong> Elasticsearch Hit Index Count 알고리즘 분석 및 병목 지점 파악, TPS 200→3,000 달성</li>
+                            <li><strong>Review API Latency 90% 개선:</strong> Slow Query 분석 및 인덱스 최적화, 객체화 구조 채용으로 유지보수성 향상, 4,000ms→80ms</li>
                             <li><strong>코드 리뷰 문화 정착:</strong> PR 기반 리뷰 프로세스 제안·정착, 최소 2인 승인 체계 도입, Java/Spring 코딩 컨벤션 수립 및 문서화</li>
                             <li><strong>AI 에이전트 활용 자동화:</strong> Claude Code를 활용하여 SQL 작성, 데이터 조회·정제, 운영성 스크립트를 AI 페어프로그래밍으로 신속 구현 (기존 1~2일 소요 작업을 1~2시간으로 단축)</li>
                             <li><strong>운영 툴 내재화:</strong> 반복 업무를 내부 시스템 기능으로 내재화, 사내 맞춤형 운영 툴 5건 이상 신규 구축</li>
