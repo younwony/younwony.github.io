@@ -8,17 +8,43 @@
 ## 디렉토리 구조
 
 ```
-work-logs/
-├── README.md          # 이 파일 (인덱스)
-├── guhada/            # (주)구하다 작업 로그
-├── interpark/         # (주)인터파크 작업 로그
-├── korealit/          # (주)한국문헌정보기술 작업 로그
-└── personal/          # 개인 프로젝트/학습
+career/
+├── work-logs/         # 프로젝트별 상세 문서
+│   ├── README.md      # 이 파일 (인덱스)
+│   ├── guhada/        # (주)구하다 작업 로그
+│   ├── interpark/     # (주)인터파크 작업 로그
+│   ├── korealit/      # (주)한국문헌정보기술 작업 로그
+│   └── personal/      # 개인 프로젝트/학습
+├── work-history/      # Jira 월별 작업 이력
+│   ├── 2022/          # 2022년 (07-12월)
+│   ├── 2023/          # 2023년 (05-12월)
+│   ├── 2024/          # 2024년 (01-12월)
+│   └── 2025/          # 2025년 (01-12월)
+└── summary/           # 연도별 상/하반기 요약
+    ├── 2023-H1.md     # 2023년 상반기
+    ├── 2023-H2.md     # 2023년 하반기
+    ├── 2024-H1.md     # 2024년 상반기
+    ├── 2024-H2.md     # 2024년 하반기
+    └── 2025-H1.md     # 2025년 상반기
 ```
 
 ---
 
+## 연도별 요약
+
+| 기간 | 작업 건수 | 주요 성과 | 요약 문서 |
+|------|----------|----------|----------|
+| 2023 상반기 | 17건+ | TPS 1500% 향상, Latency 90% 개선 | [링크](guhada/summary/2023-H1.md) |
+| 2023 하반기 | 83건 | 색상 검색 50배 확장, NHN 비용 50% 절감 | [링크](guhada/summary/2023-H2.md) |
+| 2024 상반기 | 129건 | 네이버 Dynamic Pricing, 이미지 참조 시스템 | [링크](guhada/summary/2024-H1.md) |
+| 2024 하반기 | 131건 | 이미지 Hash 검증, ChatOps 자동화 | [링크](guhada/summary/2024-H2.md) |
+| 2025 상반기 | 217건 | Seeding Admin, TikTok 연동, ElasticSearch | [링크](guhada/summary/2025-H1.md) |
+
+---
+
 ## 구하다 (2022.02 - 현재)
+
+### 주요 프로젝트 (이력서 반영)
 
 | 날짜 | 작업명 | 설명 | 이력서 반영 |
 |------|--------|------|------------|
@@ -28,6 +54,34 @@ work-logs/
 | 2023-2024 | [ChatOps 기반 운영 프로세스 자동화](./guhada/2023-chatops.md) | Slack 기반 Zero Ops 달성 | O (프로젝트 4) |
 | 2024-현재 | [개발 문화 개선 및 AI 기반 팀 생산성 혁신](./guhada/2024-dev-culture.md) | 코드 리뷰 문화 정착, Claude Code 활용 | O (프로젝트 5) |
 | 2025.12 | [MCP 기반 문서화 자동화](./guhada/2025-12-mcp-documentation.md) | Claude Code + Confluence MCP 연동 | O (프로젝트 5) |
+
+### 2025년 상반기 작업
+
+| 날짜 | 작업명 | 설명 | 이력서 반영 |
+|------|--------|------|------------|
+| 2025.04-06 | [Seeding Admin 구축](./guhada/2025-04-seeding-admin.md) | 데이터 수집 자동화, ElasticSearch 검색 최적화 | O |
+| 2025.02,06 | [WMS 시스템 설계](./guhada/2025-02-wms-system-design.md) | 창고관리시스템 개선 설계 | X |
+| 2025.03 | [쿠폰 최대 할인가 해제](./guhada/2025-03-coupon-max-discount.md) | 쿠폰 시스템 고도화 | X |
+| 2025.02-03 | [발란,젠테 최저가 조정](./guhada/2025-02-competitor-price-adjustment.md) | 크롤링 기반 가격 경쟁력 확보 | X |
+| ~2025.01 | [해외 부티크 API 연동](./guhada/2025-01-boutique-api-integration.md) | Netdressed, Rakuten API 연동 | X |
+
+### 2023년 작업
+
+| 날짜 | 작업명 | 설명 | 이력서 반영 |
+|------|--------|------|------------|
+| 2023.01 | [Algorithm 분석 및 개선](./guhada/2023-01-algorithm-optimization.md) | TPS 1500% 향상, Latency 90% 감소 | O |
+| 2023.03-05 | [상품상세 3차 업데이트](./guhada/2023-03-product-detail-review.md) | Review API Latency 90% 개선 | O |
+| 2023.11-12 | [암호화폐 포인트 전환](./guhada/2023-11-crypto-point-conversion.md) | Temco 코인 → 포인트 전환 | X |
+| 2023.11~ | [Guhada Analytics](./guhada/2023-11-analytics-dashboard.md) | BigQuery, GA 기반 데이터 분석 | X |
+| 2023.10-11 | [상품 색상 검색](./guhada/2023-10-color-search.md) | Color 표준화 알고리즘 | X |
+| 2023.09 | [NHN 알림톡 비용 절감](./guhada/2023-09-nhn-notification-cost.md) | 월 20~30만원 절감 | X |
+| 2023.08-11 | [Alibaba 외부몰 주문 연동](./guhada/2023-08-alibaba-order-integration.md) | Alibaba API 연동 | X |
+| 2023.07-09 | [상품 옵션 재고 알림](./guhada/2023-07-restock-notification.md) | 재입고 Push 알림 | X |
+| 2023.06 | [메인 팝업 관리](./guhada/2023-06-settle-main-popup.md) | Settle 팝업 관리 기능 | X |
+| 2023.04-05 | [외부 주문 수집](./guhada/2023-04-external-order-collection.md) | 외부몰 주문 프로세스 | X |
+| 2023.03-04 | [발주확인 기능](./guhada/2023-03-settle-order-confirm.md) | Settle 발주 확인 | X |
+| 2023.02-03 | [QA Server SSL 적용](./guhada/2023-02-qa-server-ssl.md) | QA/Prod 환경 동일화 | X |
+| 2023.01-02 | [메인 Curation 구현](./guhada/2023-01-main-curation.md) | 2차 Curation 추가 | X |
 
 ---
 
