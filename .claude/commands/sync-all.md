@@ -12,6 +12,12 @@
 - `templates/resume/{default,minimal,modern,corporate}.html`
 - `templates/career/{default,minimal,modern,corporate}.html`
 
+### PDF 출력용 템플릿 (4개)
+- `templates/export/pdf/resume-2page.html`
+- `templates/export/pdf/resume-modern.html`
+- `templates/export/pdf/career-portfolio.html`
+- `templates/export/pdf/career-portfolio-modern.html`
+
 ### 리멤버 (8개)
 - `docs/career/platforms/remember/profile-{basic,jobseek}.md`
 - `docs/career/platforms/remember/careers/{guhada,interpark,korealit}-{basic,jobseek}.md`
@@ -26,9 +32,10 @@
 
 ## 참고
 
+- `/create-resume-document` - 이력서/경력기술서 작성 가이드
 - `/sync-check` - 동기화 상태 검증
 - `/update-resume` - formats, interview_script, work-logs 포함 동기화
-- '/sync-platforms' - 모든 플랫폼 파일 일괄 동기화
+- `/sync-platforms` - 모든 플랫폼 파일 일괄 동기화
 
 ## 완료 후
 
