@@ -81,7 +81,7 @@ career/
 | 2023.04-05 | [외부 주문 수집](./guhada/2023-04-external-order-collection.md) | 외부몰 주문 프로세스 | X |
 | 2023.03-04 | [발주확인 기능](./guhada/2023-03-settle-order-confirm.md) | Settle 발주 확인 | X |
 | 2023.02-03 | [QA Server SSL 적용](./guhada/2023-02-qa-server-ssl.md) | QA/Prod 환경 동일화 | X |
-| 2023.01-02 | [메인 Curation 구현](./guhada/2023-01-main-curation.md) | 2차 Curation 추가 | X |
+| 2023.01-02 | [메인 Curation 구현](./guhada/2023-01-main-curation.md) | 메인 페이지 큐레이션 시스템 구축 | O (프로젝트 3) |
 
 ---
 
