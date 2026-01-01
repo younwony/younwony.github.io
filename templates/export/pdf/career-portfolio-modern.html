@@ -711,7 +711,7 @@
 
                     <div class="achievements-label">[주요 성과 및 해결 방법]</div>
                     <ul class="achievements">
-                        <li><strong>대상 상품 매출 <span class="highlight">10% 상승</span>:</strong> BigQuery + GA4 데이터 분석으로 매출 기여도 상위 20% 상품 선별. 해당 상품 집중 모니터링으로 최저가 대응률 90% 달성.</li>
+                        <li><strong>대상 상품 매출 <span class="highlight">10% 상승</span>:</strong> MD팀 선별 전략 상품 + 카테고리/브랜드 기반 타겟팅으로 최저가 집중 모니터링. 하이브리드 운영 구조로 최저가 대응률 향상.</li>
                         <li><strong>API 호출량 80% 절감 <span class="highlight">25K → 5K건/일</span>:</strong> 우선순위 기반 스케줄링 설계. 판매량·마진율·재고 기반 가중치 알고리즘으로 핵심 상품만 실시간 추적.</li>
                         <li><strong>마진 4% 보장 룰 엔진:</strong> 최저가 추종 시에도 마진 4% 미만 진입 차단. MD팀 수동 예외 처리 기능 연동.</li>
                     </ul>
@@ -719,7 +719,7 @@
                     <div class="tech-decision">
                         <div class="tech-decision-title">Tech Decision (Why)</div>
                         <div class="tech-decision-item"><strong>Spring Batch:</strong> 대량 가격 조정의 트랜잭션 안정성 필수. Chunk 기반 처리로 메모리 효율화. 실패 시 재시작 지점 관리 용이.</div>
-                        <div class="tech-decision-item"><strong>우선순위 스케줄링:</strong> API Quota 25K 제약 하에서 모든 상품 실시간 대응 불가. 매출 기여도 상위 20%가 80% 매출을 차지하는 파레토 법칙 적용.</div>
+                        <div class="tech-decision-item"><strong>하이브리드 운영 구조:</strong> API Quota 25K 제약 하에서 모든 상품 실시간 대응 불가. MD팀 선별 전략 상품 + 카테고리/브랜드 타겟팅 기반 우선순위 스케줄링.</div>
                     </div>
 
                     <div class="tech-stack">
