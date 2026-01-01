@@ -231,8 +231,8 @@ output/                         # 최종 PDF 출력
 ### Professional Summary 패턴 (필수)
 
 ```
-❌ Bad:  "Elasticsearch 도입으로 10초 → 0.1초 달성"
-✅ Good: "RDB 타임아웃 → Elasticsearch 도입으로 10초 → 0.1초 달성"
+❌ Bad:  "Elasticsearch 도입으로 10초+ → 1초 이내 달성"
+✅ Good: "RDB 타임아웃 → Elasticsearch 도입으로 10초+ → 1초 이내 달성"
 ```
 
 **패턴**: `[문제] → [해결 방법] → [정량 성과]`
@@ -244,7 +244,7 @@ output/                         # 최종 PDF 출력
 | **S** (Situation) | 문제/배경 | "RDB 검색 10초 타임아웃" |
 | **T** (Task) | 해결 목표 | "0.5초 이내 검색 달성" |
 | **A** (Action) | 기술적 의사결정 | "ES 역색인 도입" |
-| **R** (Result) | 정량 성과 | "10초 → 0.1초 (100배)" |
+| **R** (Result) | 정량 성과 | "10초+ → 1초 이내 (10배)" |
 | **I** (Impact) | 비즈니스 효과 | "마케팅팀 업무 효율 향상" |
 
 ### 시니어 톤

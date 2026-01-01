@@ -403,7 +403,7 @@ description: 7년차 시니어 백엔드 개발자 이력서/경력기술서 작
 
 ```
 ❌ "Elasticsearch를 도입함"
-✅ "RDB 복합 조건 검색 타임아웃 → Elasticsearch 도입으로 10초 → 0.1초 (100배 개선)"
+✅ "RDB 복합 조건 검색 타임아웃 → Elasticsearch 도입으로 10초+ → 1초 이내 (10배 개선)"
 ```
 
 | 구조 | 설명 |

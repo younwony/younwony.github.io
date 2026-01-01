@@ -496,7 +496,7 @@
                     단순 기능 구현보다 <strong>"왜 이 구조여야 하는가"</strong>를 먼저 고민합니다. 성능·확장성·운영 리스크를 함께 고려한 설계를 지향합니다.
                 </p>
                 <div class="summary-highlights">
-                    <div class="highlight-item"><strong>검색 성능 100배 개선:</strong> RDB → ES 도입으로 10초 → 0.1초 (200만 건)</div>
+                    <div class="highlight-item"><strong>검색 성능 10배 개선:</strong> RDB → ES 도입으로 10초+ → 1초 이내 (200만 건)</div>
                     <div class="highlight-item"><strong>Zero Ops 달성:</strong> Slack ChatOps로 반복 업무 40% → 0% 자동화</div>
                     <div class="highlight-item"><strong>매출 10% 상승:</strong> API Quota 제약 하 Dynamic Pricing 시스템 구축</div>
                     <div class="highlight-item"><strong>개발 생산성 90% 향상:</strong> Claude Code + MCP 활용 운영 도구/문서화 자동화</div>
@@ -611,9 +611,9 @@
 
                     <div class="metrics-row">
                         <div class="metric-box">
-                            <div class="metric-value">100x</div>
+                            <div class="metric-value">10x</div>
                             <div class="metric-label">검색 성능</div>
-                            <div class="metric-detail">10초 → 0.1초</div>
+                            <div class="metric-detail">10초+ → 1초 이내</div>
                         </div>
                         <div class="metric-box">
                             <div class="metric-value">20x</div>
@@ -645,14 +645,14 @@
 
                     <div class="achievements-label">[주요 성과 및 해결 방법]</div>
                     <ul class="achievements">
-                        <li><strong>검색 성능 100배 향상 <span class="highlight">10초 → 0.1초</span>:</strong> Elasticsearch 역색인 기반 검색 엔진 구축. 동적 필터 100가지 조합 모두 커버. Bool Query로 복합 조건 최적화.</li>
+                        <li><strong>검색 성능 10배 향상 <span class="highlight">10초+ → 1초 이내</span>:</strong> Elasticsearch 역색인 기반 검색 엔진 구축. 동적 필터 100가지 조합 모두 커버. Bool Query로 복합 조건 최적화.</li>
                         <li><strong>마케팅 커버리지 20배 확대 <span class="highlight">10만 → 200만</span>:</strong> TikTok, Ensemble, EchoTik API 멀티소스 파이프라인 구축. Redis 분산 락으로 중복 수집 방지 및 API Rate Limit 준수.</li>
                         <li><strong>리포팅 업무 Zero Ops:</strong> Google Sheets API 연동으로 마케팅팀 주간 리포트 작성 업무(반나절/주) 완전 자동화.</li>
                     </ul>
 
                     <div class="tech-decision">
                         <div class="tech-decision-title">Tech Decision (Why)</div>
-                        <div class="tech-decision-item"><strong>RDB → Elasticsearch:</strong> 200만 건 복합 조건 검색에서 Full Table Scan 불가. 역색인 기반 역색인으로 0.1초 달성. 동적 필터 확장에 유리.</div>
+                        <div class="tech-decision-item"><strong>RDB → Elasticsearch:</strong> 200만 건 복합 조건 검색에서 Full Table Scan 불가. 역색인 기반 1초 이내 달성. 동적 필터 확장에 유리.</div>
                         <div class="tech-decision-item"><strong>Redis Distributed Lock:</strong> 멀티 인스턴스 환경에서 동일 인플루언서 중복 수집 방지. API Rate Limit 준수를 위한 전역 동기화 필요.</div>
                     </div>
 
