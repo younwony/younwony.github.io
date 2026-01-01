@@ -38,7 +38,7 @@
             <ul>
                 <li><strong>검색 성능 10배 개선:</strong> RDB 타임아웃 → Elasticsearch 도입으로 10초+ → 1초 이내 (200만 건)</li>
                 <li><strong>Zero Ops 달성:</strong> 컨텍스트 스위칭 병목 → Slack ChatOps로 반복 업무 40% → 0% 자동화</li>
-                <li><strong>매출 10% 상승:</strong> API Quota 제약 하 우선순위 스케줄링 → Dynamic Pricing</li>
+                <li><strong>매출 10% 상승:</strong> MD팀 협업 기반 전략 상품 타겟팅 → Dynamic Pricing</li>
                 <li><strong>개발 생산성 90% 향상:</strong> Claude Code + MCP 활용으로 운영 도구 개발 및 문서화 자동화</li>
             </ul>
         </div>
@@ -193,9 +193,9 @@
                     <div class="project-box">
     <div class="project-header">
         <h3 class="project-title">네이버 쇼핑 Dynamic Pricing 시스템</h3>
-        <span class="project-period">2023.01 - 2023.06</span>
+        <span class="project-period">2023.01 - 현재</span>
     </div>
-    <div class="project-meta"><strong>역할:</strong> 가격 정책 로직 설계 주도 (기획/운영팀 협업)</div>
+    <div class="project-meta"><strong>역할:</strong> 가격 정책 로직 설계 주도 및 MD팀 협업 프로세스 리딩</div>
 
     <!-- Metrics Cards -->
     <div class="metrics-container">
@@ -205,39 +205,37 @@
             <div class="metric-detail">가격 경쟁력 확보</div>
         </div>
         <div class="metric-card">
-            <div class="metric-value">80%</div>
-            <div class="metric-label">API 절감</div>
-            <div class="metric-detail">25K → 5K건/일</div>
+            <div class="metric-value">100%</div>
+            <div class="metric-label">협업 체계</div>
+            <div class="metric-detail">MD팀 핑퐁 프로세스</div>
         </div>
         <div class="metric-card">
-            <div class="metric-value">90%</div>
-            <div class="metric-label">최저가 대응률</div>
-            <div class="metric-detail">핵심 상품 기준</div>
+            <div class="metric-value">진행 중</div>
+            <div class="metric-label">미싱 분석</div>
+            <div class="metric-detail">최저가 데이터 분석</div>
         </div>
     </div>
 
     <div class="project-background">
-        매출 비중 1위 채널 네이버 쇼핑의 노출 우위를 위해 최저가 진입 필수. 네이버 API 일일 호출 한도(25,000건)와 속도 제한으로 전체 상품 실시간 대응 불가.
+        매출 비중 1위 채널 네이버 쇼핑에서 최저가 진입 필수. 기존 자동화 시스템은 일괄 처리만 가능, MD팀 선별 전략 상품 정밀 대응 불가. 최저가 미싱 데이터 대응 체계 부재.
     </div>
     <div class="achievements-title">[주요 성과]</div>
     <ul class="achievements">
-        <li><strong>대상 상품 매출 <span class="highlight">10% 상승</span>:</strong> 매출 기여도 상위 20% 상품 집중 모니터링 + 마진 4% 보장 룰 엔진 설계.</li>
-        <li><strong>API 호출량 80% 절감 <span class="highlight">(25,000 → 5,000건/일)</span>:</strong> 우선순위 기반 스케줄링으로 핵심 상품 최저가 대응률 90% 달성.</li>
-        <li><strong>하이브리드 운영 구조 설계:</strong> 자동 처리 + MD팀 수동 처리 통합 운영 구조 직접 설계 및 리딩.</li>
+        <li><strong>대상 상품 매출/트래픽 <span class="highlight">10% 상승</span>:</strong> 카테고리/브랜드 타겟팅 기반 네이버 최저가 자동 조정 프로세스 구축.</li>
+        <li><strong>MD팀 협업 체계 구축:</strong> MD팀 선별 모델/브랜드 기준 집중 모니터링. 가격 변동 데이터 공유 및 조정 방향 협의.</li>
+        <li><strong>최저가 미싱 분석 체계 확립 (진행 중):</strong> 미싱 데이터 비교 분석 → 마진율 계산 → 가격 조정안 공유 → MD팀 반영 핑퐁 체계.</li>
     </ul>
 
     <!-- Tech Decision Box -->
     <div class="tech-decision-box">
         <div class="tech-decision-title">Tech Decision</div>
         <div class="tech-decision-item"><strong>Spring Batch:</strong> 대량 가격 조정의 트랜잭션 안정성 및 Chunk 기반 메모리 효율화</div>
-        <div class="tech-decision-item"><strong>우선순위 스케줄링:</strong> API Quota 25K 제약 하 매출 기여도 상위 상품 집중</div>
+        <div class="tech-decision-item"><strong>하이브리드 운영:</strong> 자동화 효율성 + MD팀 전문성 결합으로 최적 가격 경쟁력 확보</div>
     </div>
 
     <div class="tech-stack">
         <span class="tech-tag">Spring Batch</span>
         <span class="tech-tag">Naver Shopping API</span>
-        <span class="tech-tag">BigQuery</span>
-        <span class="tech-tag">GA4</span>
     </div>
 </div>
                 </div>
