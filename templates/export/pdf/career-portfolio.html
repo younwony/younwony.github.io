@@ -437,42 +437,53 @@
                 <div class="project-half">
                     <div class="project-box">
     <div class="project-header">
-        <h3 class="project-title">개발 문화 및 시스템 안정성 강화</h3>
-        <span class="project-period">2022.02 - 현재</span>
+        <h3 class="project-title">메인 페이지 큐레이션 시스템 구축</h3>
+        <span class="project-period">2023.03 - 2023.05</span>
     </div>
+    <div class="project-meta"><strong>역할:</strong> 시스템 설계 및 구현 주도 (1인 개발)</div>
 
     <!-- Metrics Cards -->
     <div class="metrics-container">
         <div class="metric-card">
-            <div class="metric-value">2인+</div>
-            <div class="metric-label">코드 리뷰</div>
-            <div class="metric-detail">배포 전 승인 필수</div>
+            <div class="metric-value">7개</div>
+            <div class="metric-label">위치별 관리</div>
+            <div class="metric-detail">홈/카테고리/기획전 등</div>
         </div>
         <div class="metric-card">
-            <div class="metric-value">2초+</div>
-            <div class="metric-label">Slow Query</div>
-            <div class="metric-detail">자동 추출/최적화</div>
+            <div class="metric-value">Zero</div>
+            <div class="metric-label">개발자 개입</div>
+            <div class="metric-detail">MD팀 자율 운영</div>
         </div>
         <div class="metric-card">
-            <div class="metric-value">TDD</div>
-            <div class="metric-label">테스트 도입</div>
-            <div class="metric-detail">핵심 로직 커버리지</div>
+            <div class="metric-value">3분</div>
+            <div class="metric-label">캐시 TTL</div>
+            <div class="metric-detail">인메모리 최적화</div>
         </div>
     </div>
 
+    <div class="project-background">
+        메인 페이지가 하드코딩되어 상품 노출이 기획전 단위로만 가능. MD팀이 상품 구성 변경 시 개발자 개입 필수로 실시간 마케팅 대응 불가.
+    </div>
+    <div class="achievements-title">[주요 성과]</div>
     <ul class="achievements">
-        <li><strong>TDD 기반 개발 프로세스 도입:</strong> 신규 기능 개발 시 TDD 적용, 핵심 비즈니스 로직 테스트 커버리지 확보로 배포 안정성 향상.</li>
-        <li><strong>PR 기반 코드 리뷰 프로세스 정착:</strong> 배포 전 최소 2인 승인 의무화. 단순 지적보다 '더 나은 설계'를 논의하는 문화 조성.</li>
-        <li><strong>Slow Query 모니터링 체계 구축:</strong> Elastic APM 기반 2초+ 쿼리 자동 추출 및 최적화 프로세스 확립.</li>
-        <li><strong>서버 리소스 모니터링:</strong> 디스크/메모리 임계치 초과 시 Slack 자동 알림. 장애 발생 전 선제적 대응 체계 구축.</li>
-        <li><strong>코드 컨벤션 명문화 및 멘토링:</strong> Java/Spring 코딩 컨벤션 문서화 및 주니어 멘토링으로 팀 전체 역량 향상.</li>
+        <li><strong>MD팀 완전 자율 운영 달성:</strong> 개발자 개입 없이 상품 구성 변경 가능. 실시간 마케팅 대응력 확보.</li>
+        <li><strong>7개 위치별 독립 관리 시스템:</strong> 홈/카테고리/기획전/타임딜/브랜드/장바구니/팝업 등 위치별 큐레이션.</li>
+        <li><strong>하이브리드 큐레이션:</strong> BEST, NEW, SELLER_BEST 등 자동 알고리즘 + 수동 설정 병행.</li>
+        <li><strong>확장 용이한 타입 시스템:</strong> 신규 타입 추가 시 Enum 값만 추가하면 확장 완료.</li>
     </ul>
 
+    <!-- Tech Decision Box -->
+    <div class="tech-decision-box">
+        <div class="tech-decision-title">Tech Decision</div>
+        <div class="tech-decision-item"><strong>Enum 기반 타입 시스템:</strong> 전시 위치/아이템/뷰/큐레이션 타입을 Enum으로 정의하여 타입 안전성 및 확장 용이성</div>
+        <div class="tech-decision-item"><strong>인메모리 캐시 (3분 TTL):</strong> 큐레이션 데이터 크기가 작아 Redis 의존성 제거, 인프라 단순화</div>
+    </div>
+
     <div class="tech-stack">
-        <span class="tech-tag">Elastic APM</span>
-        <span class="tech-tag">GitHub PR Review</span>
-        <span class="tech-tag">TDD (JUnit)</span>
-        <span class="tech-tag">Slack API</span>
+        <span class="tech-tag">Spring Boot</span>
+        <span class="tech-tag">Spring Cache</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Enum Type System</span>
     </div>
 </div>
                 </div>

@@ -1,18 +1,24 @@
 ---
 name: export
-description: 이력서/경력기술서를 PDF 또는 PPT로 내보냅니다. 페이지 끊김 방지 최적화, 발표용 슬라이드 생성을 지원합니다.
+description: 이력서/경력기술서를 PDF로 내보냅니다. 현재 날짜 기준 YYYY-MM 형식으로 파일명 생성, 페이지 끊김 방지 최적화.
 ---
 
-# 문서 내보내기 (PDF/PPT)
+# 이력서/경력기술서 PDF 내보내기
 
 ## 개요
 
-이력서/경력기술서를 **PDF** 또는 **PPT**로 내보냅니다.
+이력서/경력기술서를 **PDF**로 내보냅니다.
 
 | 포맷 | 용도 | 특징 |
 |------|------|------|
 | **PDF** | 채용 제출, 이메일 첨부 | 페이지 끊김 방지 최적화 |
-| **PPT** | 자기소개 발표, 기술 면접 | 슬라이드 형식 |
+
+---
+
+## 파일명 규칙
+
+> **파일명 형식**: `윤원희_[문서타입]_YYYY-MM.pdf`
+> - **YYYY-MM**: 현재 날짜 기준 (예: 2026-01)
 
 ---
 
@@ -40,25 +46,27 @@ description: 이력서/경력기술서를 PDF 또는 PPT로 내보냅니다. 페
 ### PDF 생성 명령어 (Edge Headless)
 
 ```bash
-# Windows - 기본 형식
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_이력서_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-2page.html"
+# Windows - 기본 형식 (YYYY-MM을 현재 날짜로 교체)
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="C:\workspace\younwony.github.io\output\윤원희_이력서_YYYY-MM.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-2page.html"
 
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_경력기술서_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio.html"
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="C:\workspace\younwony.github.io\output\윤원희_경력기술서_YYYY-MM.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio.html"
 
 # Windows - 모던 형식
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_이력서_Modern_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-modern.html"
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="C:\workspace\younwony.github.io\output\윤원희_이력서_Modern_YYYY-MM.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/resume-modern.html"
 
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="output/윤원희_경력기술서_Modern_2025-12.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio-modern.html"
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --disable-gpu --print-to-pdf="C:\workspace\younwony.github.io\output\윤원희_경력기술서_Modern_YYYY-MM.pdf" --no-margins "file:///C:/workspace/younwony.github.io/templates/export/pdf/career-portfolio-modern.html"
 ```
+
+> **중요**: 위 명령어의 `YYYY-MM`을 현재 날짜로 교체하세요!
 
 ### 출력 파일 목록 (총 4개)
 
 ```
 output/
-├── 윤원희_이력서_2025-12.pdf           # 기본 (컬러풀)
-├── 윤원희_이력서_Modern_2025-12.pdf    # 모던 (흑백)
-├── 윤원희_경력기술서_2025-12.pdf       # 기본 (컬러풀)
-└── 윤원희_경력기술서_Modern_2025-12.pdf # 모던 (흑백)
+├── 윤원희_이력서_YYYY-MM.pdf           # 기본 (컬러풀)
+├── 윤원희_이력서_Modern_YYYY-MM.pdf    # 모던 (흑백)
+├── 윤원희_경력기술서_YYYY-MM.pdf       # 기본 (컬러풀)
+└── 윤원희_경력기술서_Modern_YYYY-MM.pdf # 모던 (흑백)
 ```
 
 ---
@@ -66,18 +74,11 @@ output/
 ## 템플릿 파일 구조
 
 ```
-templates/export/
-├── pdf/
-│   ├── resume-2page.html           # 이력서 - 기본 (2페이지)
-│   ├── resume-modern.html          # 이력서 - 모던 (2페이지)
-│   ├── career-portfolio.html       # 경력기술서 - 기본 (5페이지+)
-│   └── career-portfolio-modern.html # 경력기술서 - 모던 (5페이지)
-└── assets/                          # CSS 모듈 (기본 형식용)
-    ├── variables.css
-    ├── base.css
-    ├── layout.css
-    ├── components.css
-    └── career-print.css
+templates/export/pdf/
+├── resume-2page.html           # 이력서 - 기본 (3페이지)
+├── resume-modern.html          # 이력서 - 모던 (3페이지)
+├── career-portfolio.html       # 경력기술서 - 기본 (5페이지+)
+└── career-portfolio-modern.html # 경력기술서 - 모던 (5페이지)
 ```
 
 ---
@@ -171,8 +172,6 @@ start templates/export/pdf/career-portfolio-modern.html
 | **채용 사이트 제출** | PDF (기본 or 모던) |
 | **이메일 첨부** | PDF (모던 권장) |
 | **면접 자료** | PDF |
-| **1분 자기소개** | PPT (intro-slides) |
-| **기술 면접 발표** | PPT (career-slides) |
 | **보수적인 기업** | PDF (모던 권장) |
 | **스타트업/IT기업** | PDF (기본 or 모던) |
 

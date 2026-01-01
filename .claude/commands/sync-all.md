@@ -22,6 +22,14 @@
 - `docs/career/platforms/remember/profile-{basic,jobseek}.md`
 - `docs/career/platforms/remember/careers/{guhada,interpark,korealit}-{basic,jobseek}.md`
 
+## 구하다 핵심 프로젝트 (필수 포함)
+
+1. **인플루언서 데이터 플랫폼 고도화** - 200만 데이터, 검색 100배 개선
+2. **네이버 쇼핑 Dynamic Pricing** - 매출 10% 상승
+3. **메인 페이지 큐레이션 시스템 구축** - MD팀 자율 운영, Enum 타입 시스템
+4. **ChatOps 기반 운영 프로세스 자동화** - Zero Ops 달성
+5. **AI 기반 개발 생산성 혁신** - Claude Code + MCP, 90% 시간 단축
+
 ## 원칙
 
 1. **서비스 구분**: 구하다(커머스) / Seeding(인플루언서) 분리
@@ -29,6 +37,7 @@
 3. **STAR+I 형식** 유지
 4. **톤**: basic=차분, jobseek=성과 강조
 5. **글자수**: profile-basic 500자, 나머지 5000자
+6. **프로젝트 순서**: 원본 데이터 순서 유지
 
 ## 참고
 

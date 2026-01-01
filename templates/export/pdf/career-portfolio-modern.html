@@ -949,59 +949,69 @@
                 </div>
             </div>
 
-            <!-- 프로젝트 6: 개발 문화 -->
+            <!-- 프로젝트 6: 메인 페이지 큐레이션 -->
             <div class="project-half">
-                <div class="other-box">
-                    <div class="other-title">개발 문화 및 시스템 안정성 강화</div>
+                <div class="project-box">
+                    <div class="project-header">
+                        <span class="project-title">메인 페이지 큐레이션 시스템 구축</span>
+                        <span class="project-period">2023.03 - 2023.05</span>
+                    </div>
+                    <div class="project-role">역할: 시스템 설계 및 구현 주도 (1인 개발) | MD팀·마케팅팀 협업</div>
 
                     <div class="metrics-row">
                         <div class="metric-box">
-                            <div class="metric-value">2인+</div>
-                            <div class="metric-label">코드 리뷰</div>
-                            <div class="metric-detail">배포 전 필수</div>
+                            <div class="metric-value">7개</div>
+                            <div class="metric-label">위치별 관리</div>
+                            <div class="metric-detail">홈/카테고리/기획전</div>
                         </div>
                         <div class="metric-box">
-                            <div class="metric-value">2초+</div>
-                            <div class="metric-label">Slow Query</div>
-                            <div class="metric-detail">자동 추출</div>
+                            <div class="metric-value">Zero</div>
+                            <div class="metric-label">개발자 개입</div>
+                            <div class="metric-detail">MD팀 자율 운영</div>
                         </div>
                         <div class="metric-box">
-                            <div class="metric-value">TDD</div>
-                            <div class="metric-label">테스트 도입</div>
-                            <div class="metric-detail">핵심 로직</div>
+                            <div class="metric-value">3분</div>
+                            <div class="metric-label">캐시 TTL</div>
+                            <div class="metric-detail">인메모리 최적화</div>
                         </div>
                         <div class="metric-box">
-                            <div class="metric-value">24/7</div>
-                            <div class="metric-label">모니터링</div>
-                            <div class="metric-detail">선제적 알림</div>
+                            <div class="metric-value">Enum</div>
+                            <div class="metric-label">타입 시스템</div>
+                            <div class="metric-detail">확장 용이</div>
                         </div>
                     </div>
 
                     <div class="context-grid">
                         <div class="context-box">
-                            <div class="context-label">목표 (Goal)</div>
-                            <div class="context-text">코드 품질 향상, 장애 선제 대응, 팀 역량 성장을 위한 개발 문화 강화.</div>
+                            <div class="context-label">배경 (Situation)</div>
+                            <div class="context-text">메인 페이지 하드코딩으로 기획전 단위 노출만 가능. MD팀 실시간 마케팅 대응 불가.</div>
                         </div>
                         <div class="context-box">
-                            <div class="context-label">역할 (Role)</div>
-                            <div class="context-text">시스템 안정성 및 개발 프로세스 개선 활동 주도. 주니어 멘토링.</div>
+                            <div class="context-label">문제 (Problem)</div>
+                            <div class="context-text">상품 구성 변경 시 개발자 개입 필수. UI 다양성 부족, 고객 경험 차별화 한계.</div>
                         </div>
                     </div>
 
-                    <ul class="other-list achievements">
-                        <li><strong>TDD 기반 개발 프로세스 도입:</strong> 신규 기능 개발 시 TDD 적용 의무화. 핵심 비즈니스 로직 테스트 커버리지 확보로 배포 안정성 향상. 테스트 코드 작성 가이드 문서화.</li>
-                        <li><strong>PR 기반 코드 리뷰 정착:</strong> 배포 전 최소 2인 승인 의무화. 단순 지적보다 '더 나은 설계'를 논의하는 문화 조성. 리뷰 체크리스트 도입.</li>
-                        <li><strong>Slow Query 모니터링:</strong> Elastic APM 기반 2초+ 쿼리 자동 추출. 주간 리뷰 미팅에서 최적화 대상 선정. 인덱스 튜닝 및 쿼리 개선.</li>
-                        <li><strong>서버 리소스 알림:</strong> 디스크/메모리 임계치 80% 초과 시 Slack 자동 알림. 장애 발생 전 선제적 대응 체계 구축.</li>
-                        <li><strong>코드 컨벤션 문서화:</strong> Java/Spring 코딩 컨벤션, 네이밍 규칙, 예외 처리 패턴 명문화. 주니어 멘토링 및 온보딩 가이드로 활용.</li>
+                    <div class="achievements-label">[주요 성과 및 해결 방법]</div>
+                    <ul class="achievements">
+                        <li><strong>MD팀 완전 자율 운영 달성:</strong> 개발자 개입 없이 상품 구성 변경 가능. 실시간 마케팅 대응력 확보. 전시 순서, 노출 기간, 플랫폼별 설정 지원.</li>
+                        <li><strong>7개 위치별 독립 관리:</strong> 홈/카테고리/기획전/타임딜/브랜드/장바구니/팝업 등 위치별 큐레이션. 각 영역 독립적 운영.</li>
+                        <li><strong>하이브리드 큐레이션:</strong> BEST, NEW, SELLER_BEST, CART_RECOMMEND 등 자동 알고리즘 + 수동 설정 병행 구조.</li>
+                        <li><strong>다양한 뷰 타입:</strong> 세로 스크롤, 가로 스와이프, 그리드형, 아이콘형 등 다양한 레이아웃 제공. 고객 경험 향상.</li>
                     </ul>
 
+                    <div class="tech-decision">
+                        <div class="tech-decision-title">Tech Decision (Why)</div>
+                        <div class="tech-decision-item"><strong>Enum 기반 타입 시스템:</strong> 전시 위치/아이템/뷰/큐레이션 타입을 Enum으로 정의. 타입 안전성 확보 및 신규 타입 Enum 추가만으로 확장 가능.</div>
+                        <div class="tech-decision-item"><strong>인메모리 캐시 (3분 TTL):</strong> 큐레이션 데이터 크기가 작고 서버별 독립 캐시로 충분. Redis 의존성 제거로 인프라 단순화.</div>
+                    </div>
+
                     <div class="tech-stack">
-                        <span class="tech-tag">Elastic APM</span>
-                        <span class="tech-tag">GitHub PR Review</span>
-                        <span class="tech-tag">TDD (JUnit5)</span>
-                        <span class="tech-tag">Slack API</span>
-                        <span class="tech-tag">Mockito</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Spring Cache</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Enum Type System</span>
+                        <span class="tech-tag">Strategy Pattern</span>
                     </div>
                 </div>
             </div>
