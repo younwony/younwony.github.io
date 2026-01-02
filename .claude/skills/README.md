@@ -2,8 +2,8 @@
 
 > 이력서/경력기술서 프로젝트에서 사용 가능한 Claude Code Skills 목록
 >
-> **최종 업데이트**: 2025-12-29
-> **총 스킬 수**: 11개
+> **최종 업데이트**: 2026-01-02
+> **총 스킬 수**: 12개
 
 ---
 
@@ -21,10 +21,11 @@
 │   ├── update/SKILL.md                # /update-resume
 │   ├── add-project/SKILL.md           # /add-project
 │   ├── sync-check/SKILL.md            # /sync-check
+│   ├── content-spec/SKILL.md          # /content-spec (신규)
 │   ├── work-log/SKILL.md              # /work-log
 │   ├── work-logs-sync/SKILL.md        # /work-logs-sync
-│   ├── platform-profile/SKILL.md      # /platform-profile (신규)
-│   └── sync-platforms/SKILL.md        # /sync-platforms (신규)
+│   ├── platform-profile/SKILL.md      # /platform-profile
+│   └── sync-platforms/SKILL.md        # /sync-platforms
 └── util/                              # 유틸리티
     └── style/SKILL.md                 # /style-guide
 ```
@@ -54,6 +55,7 @@
 | **Update Resume** | `/update-resume` | 원본 데이터를 10개 파일에 동기화 |
 | **Add Project** | `/add-project` | 새 프로젝트를 STAR+I 형식으로 추가 |
 | **Sync Check** | `/sync-check` | 원본과 10개 파일의 동기화 상태 검증 |
+| **Content Spec** | `/content-spec` | 필수 포함 내용, 키워드, 수치 정의 (sync-all 참조용) |
 | **Work Log** | `/work-log` | 작업 로그 기록 및 이력서 반영 판단 |
 | **Work Logs Sync** | `/work-logs-sync` | work-log 템플릿 변경 시 기존 파일 일괄 동기화 |
 | **Platform Profile** | `/platform-profile` | 채용 플랫폼별 프로필/경력 생성 |
@@ -157,6 +159,28 @@
 
 ---
 
+### `/content-spec`
+
+**용도**: 동기화 시 필수 포함 내용 정의
+
+**핵심 내용**:
+- **Core Competencies** 8개 항목 (누락 방지)
+- **프로젝트별 필수 수치** (정확한 값)
+- **필수 키워드** (프로젝트별)
+- **검증 체크리스트**
+
+**사용 시점**: `/sync-all`, `/update-resume` 실행 시 참조
+
+**주요 항목**:
+```
+Core Competencies: 8개 전체 포함 (Reliability Engineering, Quality & Testing 누락 주의)
+큐레이션 시스템: 14개 위치 (7개 아님), 기간 2023.01-02
+인플루언서 플랫폼: 200만 건, 10배 개선
+Dynamic Pricing: 매출 10% 상승
+```
+
+---
+
 ### `/work-log`
 
 **용도**: 작업 로그 기록
@@ -241,6 +265,7 @@
   /update-resume            # 10개 파일 동기화
   /add-project              # 새 프로젝트 추가
   /sync-check               # 동기화 검증
+  /content-spec             # 필수 내용/키워드/수치 정의
   /work-log                 # 작업 로그 기록
   /work-logs-sync           # work-log 형식 일괄 동기화
   /platform-profile         # 플랫폼별 프로필/경력 생성
@@ -256,6 +281,7 @@
 
 | 날짜 | 변경 내용 |
 |------|----------|
+| 2026-01-02 | `/content-spec` 스킬 추가, `/sync-all` 구조 분리 (관심사 분리) |
 | 2025-12-29 | `/platform-profile`, `/sync-platforms` 스킬 추가 (채용 플랫폼 지원) |
 | 2025-12-26 | Skills 구조 개편: 14개 → 9개로 통합, 카테고리별 그룹화 |
 | 2025-12-26 | DOCX 내보내기 제거, enhance-portfolio를 write-career에 통합 |
