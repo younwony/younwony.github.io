@@ -333,8 +333,19 @@ cat docs/career/my_career_data.md
 
 ---
 
+## 데이터 정합성 (SSOT)
+
+> **상세 가이드**: `/writing-guide` 섹션 18 참조
+
+```
+모든 수치와 성과는 my_career_data.md를 원본으로 사용
+임의 변경/추정 금지, 변경 시 /update-resume 실행 필수
+```
+
+---
+
 ## 관련 스킬
 
-- `/writing-guide`: STAR+I 작성 원칙, 시니어 톤, 파레토 기준
+- `/writing-guide`: STAR+I 작성 원칙, 시니어 톤, 파레토 기준, SSOT, 업데이트 원칙
 - `/write-career`: 경력기술서 작성 (5페이지+)
 - `/export`: PDF/PPT 내보내기
