@@ -6,11 +6,28 @@
 
 ---
 
-## 대상 파일 (22개)
+## 대상 파일 (27개)
 
-### Markdown (2개)
+### 핵심 Markdown (2개)
 - `docs/career/resume.md`
 - `docs/career/career_portfolio.md`
+
+### 맞춤형 이력서 - formats (5개)
+- `docs/career/formats/by-jd/backend_sample.md`
+- `docs/career/formats/by-company/startup.md`
+- `docs/career/formats/by-company/enterprise.md`
+- `docs/career/formats/by-domain/commerce.md`
+- `docs/career/formats/by-domain/fintech.md`
+
+### 플랫폼 - platforms (8개)
+- `docs/career/platforms/remember/profile-basic.md`
+- `docs/career/platforms/remember/profile-jobseek.md`
+- `docs/career/platforms/remember/careers/guhada-basic.md`
+- `docs/career/platforms/remember/careers/guhada-jobseek.md`
+- `docs/career/platforms/remember/careers/interpark-basic.md`
+- `docs/career/platforms/remember/careers/interpark-jobseek.md`
+- `docs/career/platforms/remember/careers/korealit-basic.md`
+- `docs/career/platforms/remember/careers/korealit-jobseek.md`
 
 ### HTML 템플릿 - Resume (4개)
 - `templates/resume/default.html`
@@ -30,16 +47,6 @@
 - `templates/export/pdf/career-portfolio.html`
 - `templates/export/pdf/career-portfolio-modern.html`
 
-### 리멤버 플랫폼 (8개)
-- `docs/career/platforms/remember/profile-basic.md`
-- `docs/career/platforms/remember/profile-jobseek.md`
-- `docs/career/platforms/remember/careers/guhada-basic.md`
-- `docs/career/platforms/remember/careers/guhada-jobseek.md`
-- `docs/career/platforms/remember/careers/interpark-basic.md`
-- `docs/career/platforms/remember/careers/interpark-jobseek.md`
-- `docs/career/platforms/remember/careers/korealit-basic.md`
-- `docs/career/platforms/remember/careers/korealit-jobseek.md`
-
 ---
 
 ## 실행 순서
@@ -51,19 +58,22 @@
 2. 콘텐츠 스펙 확인
    └── /content-spec (필수 키워드, 수치)
 
-3. 핵심 파일 동기화
+3. 핵심 파일 동기화 (2개)
    ├── resume.md
    └── career_portfolio.md
 
-4. HTML 템플릿 동기화 (12개)
+4. 맞춤형 이력서 동기화 (5개)
+   └── docs/career/formats/**/*.md
+
+5. 플랫폼 동기화 (8개)
+   └── docs/career/platforms/**/*.md
+
+6. HTML 템플릿 동기화 (12개)
    ├── templates/resume/*.html
    ├── templates/career/*.html
    └── templates/export/pdf/*.html
 
-5. 리멤버 플랫폼 동기화 (8개)
-   └── docs/career/platforms/remember/
-
-6. 검증
+7. 검증
    └── /sync-check
 ```
 
@@ -97,5 +107,5 @@
 ## 완료 후
 
 ```bash
-git add docs/career/ templates/
+git add docs/career/resume.md docs/career/career_portfolio.md docs/career/formats/ docs/career/platforms/ templates/
 ```
