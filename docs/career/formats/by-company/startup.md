@@ -35,7 +35,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ## Technical Skills
 
 ### Core Stack
-- **Java**, **Spring Boot**, Spring Batch, JPA/Hibernate
+- **Java**, **Spring Boot**, JPA/Hibernate
 
 ### 자동화 & AI
 - **Slack API** (ChatOps), Google Sheets API
@@ -115,7 +115,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 - **자동화**: API 제약 극복, 마진 보장 자동 가격 조정
 - **데이터 기반**: GA/BigQuery 연동 정량 분석 환경 구축
 
-**기술**: Spring Batch, Naver Shopping API, BigQuery
+**기술**: Spring Boot, Naver Shopping API, BigQuery
 
 ---
 

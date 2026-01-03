@@ -27,7 +27,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 | **데이터 정합성** | 금융 데이터 무결성 | 해시 이중 검증, 클레임 Zero |
 | **정산/가격 시스템** | 결제/정산 자동화 | 마진 보장 가격 자동 조정 |
 | **성능 최적화** | 대용량 트랜잭션 | 200만 건, 1초 이내 검색 |
-| **트랜잭션 안정성** | 금융 시스템 안정성 | Spring Batch, Redis Lock |
+| **트랜잭션 안정성** | 금융 시스템 안정성 | Redis Lock |
 | **AI-Assisted Dev** | 개발 자동화 | Claude Code, MCP 연동 |
 
 ---
@@ -35,7 +35,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ## Technical Skills (핀테크 필수 기술)
 
 ### 필수 기술
-- **Java**, **Spring Boot**, **Spring Batch**, JPA/Hibernate
+- **Java**, **Spring Boot**, JPA/Hibernate
 
 ### 데이터 처리
 - **MySQL**, Oracle, **Redis** (Distributed Lock)
@@ -61,7 +61,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 
 **핀테크 적합성:**
 - **금융 규칙 설계**: 마진율 4% 보장 범위 내 가격 자동 조정 로직
-- **트랜잭션 안정성**: Spring Batch로 대량 가격 조정 안정 처리
+- **자동화 로직**: 스케줄러 기반 대량 가격 조정 자동 처리
 - **비즈니스 규칙 합의**: 마케팅/MD팀과 가격 추종 범위, 최소 마진 기준 정의
 
 **주요 역할:**
@@ -69,7 +69,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 - API Quota 최적화 (매출 기여도 기반 우선순위 스케줄링)
 - GA/BigQuery 연동 성과 검증 환경 구축
 
-**기술**: Spring Batch, Naver Shopping API, BigQuery, GA4
+**기술**: Spring Boot, Naver Shopping API, BigQuery, GA4
 
 ---
 
@@ -129,7 +129,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ### 금융 시스템 경험
 - **가격/정산 자동화**: 마진율 보장 범위 내 가격 자동 조정
 - **데이터 정합성**: 해시 기반 이중 검증으로 100% 무결성 확보
-- **트랜잭션 안정성**: Spring Batch 청크 기반 대량 처리
+- **시스템 안정성**: Redis Lock 기반 동시성 제어
 
 ### 기술적 접근
 - **안정성 우선**: Redis Lock으로 동시성 제어, Retry 로직으로 장애 복구

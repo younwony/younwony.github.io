@@ -40,7 +40,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 ## Technical Skills
 
 ### Languages & Frameworks
-- **Java**, Spring Boot, Spring Batch, JPA/Hibernate
+- **Java**, Spring Boot, JPA/Hibernate
 
 ### Database & Cache
 - **MySQL**, **Elasticsearch**, **Redis** (Distributed Lock), Oracle
@@ -81,7 +81,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 - **문제**: 기존 자동화 시스템은 일괄 처리만 가능, MD팀 선별 전략 상품 정밀 대응 불가, 최저가 미싱 데이터 대응 체계 부재
 - **해결**: 카테고리/브랜드 타겟팅 기반 최저가 자동 조정 프로세스 구축, MD팀 선별 상품 집중 모니터링 체계, 최저가 미싱 분석 → 마진율 계산 → 가격 조정 핑퐁 협업 체계 확립
 - **성과**: 대상 상품 매출/트래픽 각 **10% 상승**, 자동화 + MD팀 전략적 개입 **하이브리드 구조 정착**
-- **기술**: Spring Batch, Naver Shopping API
+- **기술**: Spring Boot, Naver Shopping API
 
 ---
 

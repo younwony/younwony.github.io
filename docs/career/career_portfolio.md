@@ -44,7 +44,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 
 ## Technical Skills
 
-**Languages & Frameworks**: Java, Spring Boot, Spring Batch, JPA/Hibernate
+**Languages & Frameworks**: Java, Spring Boot, JPA/Hibernate
 
 **Database & Cache**: MySQL, Elasticsearch, Redis (Distributed Lock), Oracle
 
@@ -89,7 +89,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 
 **역할**: 가격 정책 로직 설계 주도 및 MD팀 협업 프로세스 리딩
 
-**Tech Stack**: Spring Batch, Naver Shopping API
+**Tech Stack**: Spring Boot, Naver Shopping API
 
 **[프로젝트 배경]**
 매출 비중 1위 채널인 네이버 쇼핑에서 최저가 진입이 필수적이나, 수동 대응으로는 경쟁 속도가 미달했습니다. 기존 자동화 시스템은 카테고리/브랜드 기준 일괄 처리만 가능하여 MD팀이 선별한 전략 상품에 대한 정밀 대응이 불가능했습니다. 또한 최저가 미싱(누락) 데이터 발생 시 대응 체계가 부재하여 매출 기회 손실이 발생하고 있었습니다.
@@ -101,7 +101,6 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 - **하이브리드 운영 구조 정착**: 자동 처리 + MD팀 전략적 수동 개입 통합. Admin 뷰 제공으로 예외 케이스 집중 관리.
 
 **[기술적 의사결정]**
-- Spring Batch 선택: 대량 상품 가격 조정의 트랜잭션 안정성 및 Chunk 기반 처리로 메모리 효율화
 - 하이브리드 운영 구조: 자동화의 효율성과 MD팀 전문성 결합으로 최적의 가격 경쟁력 확보
 
 ---

@@ -35,7 +35,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ## Technical Skills (JD 필수 기술 강조)
 
 ### 필수 기술
-- **Java**, **Spring Boot**, Spring Batch, JPA/Hibernate
+- **Java**, **Spring Boot**, JPA/Hibernate
 
 ### 대용량 처리
 - **Elasticsearch** (200만 건 검색), **Redis** (Distributed Lock)
@@ -60,10 +60,10 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 
 **JD 매칭 포인트:**
 - **정산 자동화**: 마진율 4% 보장 범위 내 가격 자동 조정 로직
-- **대용량 배치**: Spring Batch로 일 25,000건 가격 조정 안정 처리
+- **자동화 시스템**: 스케줄러 기반 가격 조정 자동화
 - **데이터 정합성**: GA/BigQuery 연동 정량 분석 환경 구축
 
-**기술**: Spring Batch, Naver Shopping API, BigQuery
+**기술**: Spring Boot, Naver Shopping API, BigQuery
 
 ---
 

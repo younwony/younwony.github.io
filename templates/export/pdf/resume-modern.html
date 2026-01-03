@@ -103,9 +103,14 @@
         }
 
         .summary-text {
-            font-size: 9.5pt;
+            font-size: 9pt;
             color: #333;
             line-height: 1.7;
+        }
+
+        .summary-title {
+            margin-top: -7px;
+            margin-bottom: 10px;
         }
 
         .summary-text strong {
@@ -115,16 +120,16 @@
         .key-achievements {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-top: 14px;
-            padding-top: 14px;
+            gap: 5px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px solid #ddd;
         }
 
         .achievement-item {
-            font-size: 8.5pt;
+            font-size: 7.5pt;
             color: #333;
-            padding: 8px 12px;
+            padding: 4px 8px;
             background: #f8f8f8;
             border-left: 2px solid #000;
         }
@@ -137,33 +142,33 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            gap: 6px;
         }
 
         .skill-category {
-            padding: 10px 14px;
+            padding: 6px 10px;
             border: 1px solid #ddd;
         }
 
         .skill-label {
-            font-size: 8pt;
+            font-size: 7pt;
             font-weight: 600;
             color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .skill-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 4px;
         }
 
         .skill-tag {
-            font-size: 8.5pt;
+            font-size: 7.5pt;
             color: #333;
-            padding: 3px 8px;
+            padding: 1px 6px;
             background: #f0f0f0;
         }
 
@@ -405,7 +410,7 @@
         <!-- Summary -->
         <div class="summary">
             <p class="summary-text">
-                <strong>비즈니스 문제를 대용량 시스템과 자동화로 해결하는 백엔드 개발자.</strong><br><br>
+                <p class="summary-title"><strong>비즈니스 문제를 대용량 시스템과 자동화로 해결하는 백엔드 개발자.</strong></p>
                 Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼의 상품·가격·주문·검색 영역을 폭넓게 경험하며,
                 단순 기능 구현보다 <strong>"왜 이 구조여야 하는가"</strong>를 먼저 고민합니다. 현재는 인플루언서 마케팅 솔루션 'Seeding' 프로젝트를 리딩하며, 200만 인플루언서 데이터 플랫폼을 구축하여 새로운 비즈니스 성장에 기여하고 있습니다.
             </p>
@@ -426,7 +431,6 @@
                     <div class="skill-items">
                         <span class="skill-tag primary">Java</span>
                         <span class="skill-tag primary">Spring Boot</span>
-                        <span class="skill-tag">Spring Batch</span>
                         <span class="skill-tag">JPA</span>
                     </div>
                 </div>
@@ -473,6 +477,7 @@
                     <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="metric">10배 개선</span></li>
                     <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="metric">매출 10%↑</span></li>
                     <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="metric">Zero Ops</span></li>
+                    <li><strong>큐레이션:</strong> MD팀 자율 상품 구성 시스템 <span class="metric">마케팅 대응↑</span></li>
                     <li><strong>AI 생산성 혁신:</strong> Claude Code + MCP 활용 <span class="metric">개발 90%↓</span></li>
                 </ul>
             </div>
@@ -541,7 +546,7 @@
                     <strong>성과:</strong> 대상 상품 매출/트래픽 각 10% 상승, 하이브리드 운영 구조 정착
                 </div>
                 <div class="project-tech">
-                    <span class="tech-item">Spring Batch</span>
+                    <span class="tech-item">Spring Boot</span>
                     <span class="tech-item">Naver API</span>
                 </div>
             </div>
@@ -571,8 +576,8 @@
                 <div class="project-highlight">MD팀 자율적 상품 구성 시스템으로 마케팅 대응 속도 향상</div>
                 <div class="project-content">
                     <strong>문제:</strong> 메인 페이지 상품 노출이 기획전 의존, MD팀 실시간 마케팅 대응 불가<br>
-                    <strong>해결:</strong> Enum 기반 타입 시스템 + 7개 위치별 독립 관리, 인메모리 캐시(3분 TTL)<br>
-                    <strong>성과:</strong> MD팀 개발자 개입 없이 상품 구성, 신규 타입 Enum 추가만으로 확장
+                    <strong>해결:</strong> 유연한 전시 타입 설계 + 홈/기획전/이벤트/상품상세/셀러페이지 등 다양한 위치 지원, 인메모리 캐시(3분 TTL)<br>
+                    <strong>성과:</strong> MD팀 개발자 개입 없이 상품 구성, 설정 추가만으로 신규 타입 확장
                 </div>
                 <div class="project-tech">
                     <span class="tech-item">Spring Boot</span>

@@ -15,7 +15,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 
 **대기업 적합 역량:**
 - **대규모 처리**: RDB 복합 조건 검색 타임아웃 → 역색인 기반 Elasticsearch 도입으로 검색 성능 **10배 개선** (10초+ → 1초 이내, 200만 건)
-- **시스템 안정성**: Redis Lock 기반 동시성 제어, Spring Batch 트랜잭션 안정성
+- **시스템 안정성**: Redis Lock 기반 동시성 제어
 - **품질 관리**: 코드 리뷰 문화 정착, PR 기반 최소 2인 승인 체계
 
 ---
@@ -25,7 +25,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 | 역량 | 대기업 관련성 | 성과 |
 |------|--------------|------|
 | **대규모 시스템** | 엔터프라이즈 아키텍처 | 200만 건 처리, 10배 성능 개선 |
-| **안정성/품질** | 미션 크리티컬 시스템 | Redis Lock, Spring Batch 안정성 |
+| **안정성/품질** | 미션 크리티컬 시스템 | Redis Lock 기반 동시성 제어 |
 | **체계적 프로세스** | 표준화된 개발 문화 | 코드 리뷰, 컨벤션, 문서화 |
 | **Cross-functional** | 대규모 조직 협업 | 마케팅/MD/CS 유관부서 리딩 |
 | **AI-Assisted Dev** | 생산성 혁신 | Claude Code, MCP 연동 자동화 |
@@ -35,7 +35,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ## Technical Skills
 
 ### Languages & Frameworks
-- **Java**, **Spring Boot**, **Spring Batch**, JPA/Hibernate
+- **Java**, **Spring Boot**, JPA/Hibernate
 
 ### Database & Cache
 - **MySQL**, Oracle, **Redis** (Distributed Lock), **Elasticsearch**
@@ -77,7 +77,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 **핵심 성과:** API 제약 극복, **매출/트래픽 각각 10% 상승**, 마진율 4% 보장
 
 **대기업 적합성:**
-- **트랜잭션 안정성**: Spring Batch Chunk 기반 대량 처리
+- **자동화 시스템**: 스케줄러 기반 가격 조정 자동화
 - **비즈니스 규칙 설계**: 유관 부서 협의 기반 가격 정책 표준화
 - **정량적 성과 검증**: GA/BigQuery 연동 분석 환경 구축
 
@@ -86,7 +86,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 - API Quota 최적화 스케줄링
 - 하이브리드 운영 구조 설계 (자동 + 수동 통합)
 
-**기술**: Spring Batch, Naver Shopping API, BigQuery, GA4
+**기술**: Spring Boot, Naver Shopping API, BigQuery, GA4
 
 ---
 

@@ -49,7 +49,6 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 ### Languages/Frameworks
 - Java
 - Spring Boot
-- Spring Batch
 - JPA/Hibernate
 
 ### Database & Cache
@@ -168,11 +167,10 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼�
 - 데이터 기반 가격 조정 협업 체계로 Cross-functional 협업 강화
 
 **🔧 Tech Decision:**
-> "Spring Batch 선택 - 대량 상품 가격 조정의 트랜잭션 안정성 및 Chunk 기반 처리로 메모리 효율화"
 > "하이브리드 운영 구조 - 자동화의 효율성과 MD팀 전문성 결합으로 최적의 가격 경쟁력 확보"
 
 **사용 기술:**
-- Spring Batch, Naver Shopping API
+- Spring Boot, Naver Shopping API
 
 ---
 

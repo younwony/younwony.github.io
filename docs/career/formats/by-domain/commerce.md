@@ -35,7 +35,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 ## Technical Skills
 
 ### Core Stack
-- **Java**, **Spring Boot**, **Spring Batch**, JPA/Hibernate
+- **Java**, **Spring Boot**, JPA/Hibernate
 
 ### 커머스 연동
 - **Naver Shopping API**, Elasticsearch (상품 검색)
@@ -69,7 +69,7 @@ Java/Spring 기반 7년차 백엔드 개발자입니다. 단순 기능 구현보
 - API Quota 최적화 (매출 기여도 기반 우선순위)
 - GA/BigQuery 연동 성과 분석 환경 구축
 
-**기술**: Spring Batch, Naver Shopping API, BigQuery, GA4
+**기술**: Spring Boot, Naver Shopping API, BigQuery, GA4
 
 ---
 

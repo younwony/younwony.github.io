@@ -153,7 +153,7 @@
         }
 
         .summary-text {
-            font-size: 9.5pt;
+            font-size: 9pt;
             color: #334155;
             line-height: 1.65;
         }
@@ -190,13 +190,13 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
+            gap: 5px;
         }
 
         .skill-box {
             background: #f8fafc;
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 5px 10px;
+            border-radius: 4px;
             border: 1px solid #e2e8f0;
             border-left: 3px solid #0ea5e9;
         }
@@ -214,24 +214,24 @@
         }
 
         .skill-title {
-            font-size: 8pt;
+            font-size: 7pt;
             font-weight: 600;
             color: #64748b;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
+            gap: 3px;
         }
 
         .skill-tag {
             background: #e0e7ff;
             color: #3730a3;
-            padding: 2px 7px;
-            border-radius: 4px;
-            font-size: 7.5pt;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 7pt;
             font-weight: 500;
         }
 
@@ -500,7 +500,6 @@
                     <div class="skill-tags">
                         <span class="skill-tag main">Java</span>
                         <span class="skill-tag main">Spring Boot</span>
-                        <span class="skill-tag">Spring Batch</span>
                         <span class="skill-tag">JPA</span>
                     </div>
                 </div>
@@ -548,6 +547,7 @@
                     <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="badge blue">10배 개선</span></li>
                     <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="badge">매출 10%↑</span></li>
                     <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="badge">Zero Ops</span></li>
+                    <li><strong>큐레이션:</strong> MD팀 자율 상품 구성 시스템 <span class="badge">마케팅 대응↑</span></li>
                     <li><strong>AI 생산성 혁신:</strong> Claude Code + MCP 활용 <span class="badge blue">개발 90%↓</span></li>
                 </ul>
             </div>
@@ -613,7 +613,7 @@
                     <strong>성과:</strong> 대상 상품 매출/트래픽 각 <strong>10% 상승</strong>, 자동화 + MD팀 <strong>하이브리드 구조 정착</strong>
                 </div>
                 <div class="project-tech">
-                    <span class="tech-tag">Spring Batch</span>
+                    <span class="tech-tag">Spring Boot</span>
                     <span class="tech-tag">Naver API</span>
                 </div>
             </div>
@@ -638,8 +638,8 @@
                 <div class="project-desc">
                     <strong style="color:#4a6cf7;">MD팀 자율적 상품 구성 시스템으로 마케팅 대응 속도 향상</strong><br>
                     <strong>문제:</strong> 메인 페이지 상품 노출이 기획전 의존, MD팀 실시간 마케팅 대응 불가<br>
-                    <strong>해결:</strong> Enum 기반 타입 시스템 + 7개 위치별 독립 관리, 인메모리 캐시(3분 TTL)<br>
-                    <strong>성과:</strong> MD팀 <strong>개발자 개입 없이</strong> 상품 구성, <strong>신규 타입 Enum 추가만으로 확장</strong>
+                    <strong>해결:</strong> 유연한 전시 타입 설계 + 홈/기획전/이벤트/상품상세/셀러페이지 등 다양한 위치 지원, 인메모리 캐시(3분 TTL)<br>
+                    <strong>성과:</strong> MD팀 <strong>개발자 개입 없이</strong> 상품 구성, <strong>설정 추가만으로 신규 타입 확장</strong>
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
