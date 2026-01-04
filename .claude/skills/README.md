@@ -2,8 +2,8 @@
 
 > 이력서/경력기술서 프로젝트에서 사용 가능한 Claude Code Skills 목록
 >
-> **최종 업데이트**: 2026-01-02
-> **총 스킬 수**: 12개
+> **최종 업데이트**: 2026-01-04
+> **총 스킬 수**: 15개
 
 ---
 
@@ -15,13 +15,16 @@
 ├── write/                             # 문서 작성
 │   ├── guide/SKILL.md                 # /writing-guide
 │   ├── resume/SKILL.md                # /create-resume-document
-│   └── career/SKILL.md                # /write-career
+│   ├── career/SKILL.md                # /write-career
+│   ├── portfolio/SKILL.md             # /write-portfolio (신규)
+│   ├── svg-diagram/SKILL.md           # /svg-diagram (신규)
+│   └── mermaid-diagram/SKILL.md       # /mermaid-diagram (신규)
 ├── export/SKILL.md                    # /export (PDF + PPT)
 ├── data/                              # 데이터 관리
 │   ├── update/SKILL.md                # /update-resume
 │   ├── add-project/SKILL.md           # /add-project
 │   ├── sync-check/SKILL.md            # /sync-check
-│   ├── content-spec/SKILL.md          # /content-spec (신규)
+│   ├── content-spec/SKILL.md          # /content-spec
 │   ├── work-log/SKILL.md              # /work-log
 │   ├── work-logs-sync/SKILL.md        # /work-logs-sync
 │   ├── platform-profile/SKILL.md      # /platform-profile
@@ -41,6 +44,9 @@
 | **Writing Guide** | `/writing-guide` | STAR+I 기법, 정량화 방식, 시니어 톤 표현, Bad vs Good 사례 |
 | **Resume** | `/create-resume-document` | 이력서 작성 (2-3페이지), JD 맞춤형, 이력서+경력기술서 세트 |
 | **Career Portfolio** | `/write-career` | 경력기술서 작성 (5페이지+), 아키텍처/트러블슈팅 상세 |
+| **Portfolio** | `/write-portfolio` | 포트폴리오 작성 (10-15페이지), 기술 백서 형식, Decision Log |
+| **SVG Diagram** | `/svg-diagram` | SVG 아키텍처 다이어그램 생성 (Before/After, 시스템 구성도) |
+| **Mermaid Diagram** | `/mermaid-diagram` | Mermaid 다이어그램 생성 (플로우차트, 시퀀스, ER) |
 
 ### 문서 내보내기 (export/)
 
@@ -107,6 +113,48 @@
 - 구현 상세 / 도전 과제
 
 **사용 시점**: 상세 역량 검증, 시니어 수준 포트폴리오
+
+---
+
+### `/write-portfolio`
+
+**용도**: 포트폴리오 작성 (10-15페이지)
+
+**특징**:
+- 8년차 시니어의 **기술 백서(White Paper)** 형식
+- 아키텍처 다이어그램 (Before/After)
+- Decision Log (기술 선택 근거)
+- Why NOT (선택하지 않은 기술)
+- Failure & Lessons Learned
+
+**사용 시점**: 테크 리드/CTO 대상 면접, 시니어 포지션 지원
+
+---
+
+### `/svg-diagram`
+
+**용도**: SVG 아키텍처 다이어그램 생성
+
+**적합한 경우**:
+- Before/After 시스템 비교
+- 데이터 파이프라인 구성도
+- 정교한 레이아웃이 필요한 경우
+
+**저장 위치**: `docs/career/portfolio/images/`
+
+---
+
+### `/mermaid-diagram`
+
+**용도**: Mermaid 기반 다이어그램 생성
+
+**적합한 경우**:
+- 플로우차트 (비즈니스 로직)
+- 시퀀스 다이어그램 (API 호출 흐름)
+- ER 다이어그램 (DB 스키마)
+- C4 다이어그램 (시스템 컨텍스트)
+
+**저장 위치**: `docs/career/portfolio/images/`
 
 ---
 
@@ -257,6 +305,11 @@ Dynamic Pricing: 매출 10% 상승
   /writing-guide            # STAR+I 작성 가이드
   /create-resume-document   # 이력서 (2-3페이지, JD 맞춤형, 세트)
   /write-career             # 경력기술서 (5페이지+, 상세)
+  /write-portfolio          # 포트폴리오 (10-15페이지, 기술 백서)
+
+다이어그램:
+  /svg-diagram              # SVG 아키텍처 다이어그램 (Before/After)
+  /mermaid-diagram          # Mermaid 다이어그램 (플로우, 시퀀스, ER)
 
 내보내기:
   /export                   # PDF/PPT 내보내기
@@ -281,6 +334,7 @@ Dynamic Pricing: 매출 10% 상승
 
 | 날짜 | 변경 내용 |
 |------|----------|
+| 2026-01-04 | `/write-portfolio`, `/svg-diagram`, `/mermaid-diagram` 스킬 추가 (포트폴리오 + 다이어그램) |
 | 2026-01-02 | `/content-spec` 스킬 추가, `/sync-all` 구조 분리 (관심사 분리) |
 | 2025-12-29 | `/platform-profile`, `/sync-platforms` 스킬 추가 (채용 플랫폼 지원) |
 | 2025-12-26 | Skills 구조 개편: 14개 → 9개로 통합, 카테고리별 그룹화 |

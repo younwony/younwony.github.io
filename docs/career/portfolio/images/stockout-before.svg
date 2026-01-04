@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="cardGray" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="cardRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee"/>
+      <stop offset="100%" style="stop-color:#ffcdd2"/>
+    </linearGradient>
+    <marker id="arrowSmall" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0.5 L5,2 L0,3.5" fill="none" stroke="#9e9e9e" stroke-width="1" stroke-linecap="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="280" fill="#fafafa"/>
+  <text x="350" y="30" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="16" font-weight="600">Before: 원인 불명의 품절 문제</text>
+
+  <!-- 주문 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="120" height="80" rx="12" fill="url(#cardGray)" stroke="#bdbdbd" stroke-width="1"/>
+  </g>
+  <text x="110" y="100" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">고객 주문</text>
+  <text x="110" y="120" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="9">정상 결제</text>
+
+  <!-- 화살표 -->
+  <path d="M180,110 L250,110" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+
+  <!-- 품절 -->
+  <g filter="url(#shadow)">
+    <rect x="260" y="70" width="140" height="80" rx="12" fill="url(#cardRed)" stroke="#e57373" stroke-width="1"/>
+  </g>
+  <text x="330" y="95" text-anchor="middle" fill="#c62828" font-family="Arial, sans-serif" font-size="11" font-weight="600">품절 발생</text>
+  <text x="330" y="115" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="14" font-weight="bold">취소율 40%</text>
+  <text x="330" y="135" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">원인 파악 어려움</text>
+
+  <!-- 화살표 -->
+  <path d="M410,110 L480,110" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+
+  <!-- 고객 이탈 -->
+  <g filter="url(#shadow)">
+    <rect x="490" y="70" width="160" height="80" rx="12" fill="url(#cardRed)" stroke="#e57373" stroke-width="1"/>
+  </g>
+  <text x="570" y="95" text-anchor="middle" fill="#c62828" font-family="Arial, sans-serif" font-size="11" font-weight="600">고객 이탈</text>
+  <text x="570" y="115" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">재구매 전환</text>
+  <text x="570" y="130" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">거의 없음</text>
+
+  <!-- ? 물음표 -->
+  <circle cx="330" cy="185" r="25" fill="#ffcdd2" stroke="#e57373" stroke-width="1"/>
+  <text x="330" y="193" text-anchor="middle" fill="#c62828" font-family="Arial, sans-serif" font-size="20" font-weight="bold">?</text>
+  <text x="330" y="225" text-anchor="middle" fill="#c62828" font-family="Arial, sans-serif" font-size="10">원인 불명</text>
+
+  <!-- Pain Points -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="175" width="230" height="80" rx="10" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  </g>
+  <text x="440" y="200" fill="#c62828" font-family="Arial, sans-serif" font-size="10" font-weight="600">Pain Points</text>
+  <text x="440" y="218" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 품절 취소율 40%</text>
+  <text x="440" y="233" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 데이터 기반 분석 부재</text>
+  <text x="440" y="248" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 재구매 전환 저조</text>
+</svg>

@@ -308,5 +308,29 @@ boolean acquired = lock.tryLock(0, ttl, TimeUnit.MILLISECONDS);
 ## 관련 스킬
 
 - `/writing-guide`: STAR+I 작성 원칙, 시니어 톤, 파레토 기준, SSOT, 업데이트 원칙
-- `/create-resume-document`: 이력서 작성 (2-3페이지)
+- `/create-resume-document`: 이력서 작성 (2-3페이지, 세트 생성)
+- `/write-portfolio`: 포트폴리오 작성 (10-15페이지, 기술 백서)
+- `/svg-diagram`: SVG 아키텍처 다이어그램 (Before/After)
+- `/mermaid-diagram`: Mermaid 다이어그램 (플로우, 시퀀스, ER)
 - `/export`: PDF/PPT 내보내기
+
+---
+
+## 문서 세트 구조
+
+> 이력서/경력기술서/포트폴리오는 동일한 원본 데이터(SSOT)를 기반으로 작성
+
+| 문서 | 분량 | 목적 | 대상 |
+|------|------|------|------|
+| **이력서** | 2-3페이지 | 빠른 스크리닝 | 인사/채용담당 |
+| **경력기술서** | 5페이지+ | 상세 역량 검증 | 실무 면접관 |
+| **포트폴리오** | 10-15페이지 | 기술 의사결정/리더십 | Tech Lead/CTO |
+
+### 중복 방지 원칙
+
+| 항목 | 이력서 | 경력기술서 | 포트폴리오 |
+|------|--------|-----------|-----------|
+| 프로젝트 성과 | 1줄 요약 | STAR+I 상세 | Decision Log |
+| 기술 선택 이유 | 제외 | 1-2줄 언급 | Why/Why NOT 상세 |
+| 아키텍처 | 제외 | 다이어그램 포함 | Before/After 비교 |
+| 실패 경험 | 제외 | Lesson Learned | Failure & Revisit |

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="cardGray" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="cardRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee"/>
+      <stop offset="100%" style="stop-color:#ffcdd2"/>
+    </linearGradient>
+    <marker id="arrowSmall" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0.5 L5,2 L0,3.5" fill="none" stroke="#9e9e9e" stroke-width="1" stroke-linecap="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="280" fill="#fafafa"/>
+  <text x="350" y="30" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="16" font-weight="600">Before: 수동 가격 관리</text>
+
+  <!-- MD팀 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="140" height="90" rx="12" fill="url(#cardGray)" stroke="#bdbdbd" stroke-width="1"/>
+  </g>
+  <circle cx="90" cy="100" r="15" fill="#78909c"/>
+  <circle cx="90" cy="90" r="8" fill="#eceff1"/>
+  <text x="120" y="100" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">MD팀</text>
+  <text x="120" y="115" fill="#757575" font-family="Arial, sans-serif" font-size="9">수동 확인</text>
+  <text x="120" y="145" fill="#e53935" font-family="Arial, sans-serif" font-size="9">실시간 대응 불가</text>
+
+  <!-- 화살표 -->
+  <path d="M200,115 L270,115" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  <text x="235" y="105" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="8">수동 조정</text>
+
+  <!-- 가격 시스템 -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="70" width="150" height="90" rx="12" fill="url(#cardGray)" stroke="#bdbdbd" stroke-width="1"/>
+  </g>
+  <text x="355" y="100" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">가격 시스템</text>
+  <text x="355" y="120" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="9">경쟁사 모니터링 없음</text>
+  <text x="355" y="145" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">기회 손실</text>
+
+  <!-- 화살표 -->
+  <path d="M440,115 L510,115" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+
+  <!-- 네이버 쇼핑 -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="70" width="140" height="90" rx="12" fill="url(#cardRed)" stroke="#e57373" stroke-width="1"/>
+  </g>
+  <rect x="545" y="90" width="30" height="30" rx="4" fill="#03C75A"/>
+  <text x="560" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">N</text>
+  <text x="600" y="100" fill="#424242" font-family="Arial, sans-serif" font-size="10" font-weight="600">네이버</text>
+  <text x="600" y="115" fill="#757575" font-family="Arial, sans-serif" font-size="9">쇼핑</text>
+  <text x="590" y="145" fill="#e53935" font-family="Arial, sans-serif" font-size="9">노출 순위 하락</text>
+
+  <!-- Pain Points -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="190" width="300" height="70" rx="10" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  </g>
+  <text x="220" y="215" fill="#c62828" font-family="Arial, sans-serif" font-size="10" font-weight="600">Pain Points</text>
+  <text x="220" y="235" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 경쟁사 대비 가격 경쟁력 부족</text>
+  <text x="220" y="250" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 실시간 가격 대응 불가</text>
+</svg>

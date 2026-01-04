@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤원희 - 기술 포트폴리오</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9pt;
+            line-height: 1.5;
+            color: #222;
+            background: white;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 12mm 16mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+        }
+
+        .page:first-child {
+            padding-top: 6mm;
+        }
+
+        .page:last-child {
+            page-break-after: avoid;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+        }
+
+        .header-subtitle {
+            font-size: 10pt;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .header-contact {
+            font-size: 8pt;
+            color: #666;
+        }
+
+        .header-contact span {
+            margin: 0 8px;
+        }
+
+        /* Project Section */
+        .project-section {
+            margin-bottom: 6px;
+        }
+
+        .project-title-bar {
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-title-bar h2 {
+            font-size: 10pt;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            font-size: 7pt;
+            color: #ccc;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            margin-bottom: 4px;
+            margin-top: 5px;
+        }
+
+        /* Challenge Table */
+        .challenge-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7pt;
+            margin-bottom: 6px;
+        }
+
+        .challenge-table th, .challenge-table td {
+            padding: 2px 4px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .challenge-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        /* Architecture - Vertical Layout (Compact) */
+        .arch-vertical {
+            margin-bottom: 8px;
+        }
+
+        .arch-item {
+            margin-bottom: 6px;
+        }
+
+        .arch-label {
+            font-size: 7pt;
+            font-weight: 600;
+            margin-bottom: 2px;
+            padding: 2px 6px;
+            background: #f5f5f5;
+            border-left: 2px solid #000;
+            display: inline-block;
+        }
+
+        .arch-item img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border: 1px solid #eee;
+        }
+
+        /* Decision Box */
+        .decision-box {
+            padding: 4px 8px;
+            background: #f8f8f8;
+            border-left: 2px solid #000;
+            margin-bottom: 4px;
+            font-size: 7pt;
+        }
+
+        .decision-title {
+            font-size: 7pt;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .decision-item {
+            margin-bottom: 1px;
+            color: #333;
+        }
+
+        /* Improvement Box */
+        .improvement-box {
+            padding: 4px 8px;
+            background: #fff3e0;
+            border-left: 2px solid #ff9800;
+            margin-bottom: 4px;
+            font-size: 7pt;
+        }
+
+        .improvement-title {
+            font-size: 7pt;
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 2px;
+        }
+
+        /* Result Table */
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7pt;
+            margin-bottom: 4px;
+        }
+
+        .result-table th, .result-table td {
+            padding: 2px 4px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .result-table th {
+            background: #e8f5e9;
+            font-weight: 600;
+        }
+
+        .result-highlight {
+            color: #2e7d32;
+            font-weight: 700;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            padding: 3px 8px;
+            background: #f5f5f5;
+            border-left: 2px solid #666;
+            font-size: 7pt;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        /* Page Header (for subsequent pages) */
+        .page-header {
+            font-size: 7pt;
+            color: #999;
+            text-align: right;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Meta Info */
+        .meta-box {
+            padding: 6px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            font-size: 7pt;
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; }
+            .page {
+                width: 100%;
+                height: 297mm;
+                margin: 0;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0;
+                padding: 20px;
+            }
+            .page {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE 1: 타이틀 + 프로젝트 1 -->
+    <div class="page">
+        <header class="header">
+            <h1>TECHNICAL PORTFOLIO</h1>
+            <div class="header-subtitle">윤원희 | Backend Developer | 8년차</div>
+        </header>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>1. 인플루언서 데이터 플랫폼 (200만 데이터 규모)</h2>
+                <div class="project-meta">프로젝트 리드 (1인 개발) | 2022.02 - 현재 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>제약 조건</th><th>영향</th></tr>
+                <tr><td>수작업 데이터 수집</td><td>마케팅팀 인적 한계</td><td>일 수십 명, 대형 캠페인 불가</td></tr>
+                <tr><td>RDB 검색 타임아웃</td><td>200만 건 복합 조건</td><td>응답 10초+, 사용성 저하</td></tr>
+                <tr><td>CDN 링크 만료</td><td>외부 이미지 의존</td><td>프로필 이미지 유실</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 수작업 프로세스</div>
+                    <img src="../../../docs/career/portfolio/images/data-pipeline-before-v2.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: 자동화된 데이터 파이프라인</div>
+                    <img src="../../../docs/career/portfolio/images/data-pipeline-after-v2.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">Elasticsearch 도입</div>
+                <div class="decision-item"><strong>Context:</strong> 200만 건 + 복합 필터 → 응답 10초+ 지연</div>
+                <div class="decision-item"><strong>Decision:</strong> 구하다 커머스에서 이미 ES 운영 중, 동일 스택으로 운영 복잡도 최소화</div>
+            </div>
+
+            <div class="decision-box">
+                <div class="decision-title">Redis Distributed Lock</div>
+                <div class="decision-item"><strong>Context:</strong> 멀티 인스턴스 환경, 외부 API Rate Limit</div>
+                <div class="decision-item"><strong>Solution:</strong> TTL 60초 분산락으로 데드락 방지 + 멱등성 확보</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>검색 응답</td><td>10초+</td><td>1초 이내</td><td class="result-highlight">90%↓</td></tr>
+                <tr><td>데이터 풀</td><td>10만 명</td><td>200만 명</td><td class="result-highlight">20배↑</td></tr>
+                <tr><td>일 수집량</td><td>수십 명</td><td>5,000명+</td><td class="result-highlight">100배↑</td></tr>
+            </table>
+
+            <div class="quote-box">
+                <strong>Lesson Learned:</strong> 초기 설계 시 데이터 규모 예측 부족 → 이후 프로젝트에서 Scale-out 전제 설계 원칙 수립
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: 프로젝트 2 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>2. ChatOps 기반 운영 프로세스 자동화</h2>
+                <div class="project-meta">설계/구현 | 2024.01 - 2024.03 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>채널 파편화 (이메일/메신저/구두 등 5개)</td><td>정보 누락, 히스토리 추적 불가</td></tr>
+                <tr><td>어드민 접속 필수</td><td>컨텍스트 스위칭 병목</td></tr>
+                <tr><td>운영 업무 40% 수동 처리</td><td>고부가가치 업무 집중 불가</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 분산된 요청 채널</div>
+                    <img src="../../../docs/career/portfolio/images/chatops-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: Slack 통합 ChatOps</div>
+                    <img src="../../../docs/career/portfolio/images/chatops-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">Slack 플랫폼 선택</div>
+                <div class="decision-item"><strong>Options:</strong> A. Admin Web 강화 B. Slack ChatOps C. 전용 앱 개발</div>
+                <div class="decision-item"><strong>Decision:</strong> B 선택 - 사용자 채택률 극대화가 핵심</div>
+                <div class="decision-item"><strong>Trade-off:</strong> Slack 의존성 → 기존 어드민 Fallback 유지</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>수동 업무 비율</td><td>40%</td><td>0%</td><td class="result-highlight">Zero Ops</td></tr>
+                <tr><td>요청 채널</td><td>5개 분산</td><td>Slack 단일</td><td class="result-highlight">100% 통합</td></tr>
+                <tr><td>히스토리 추적</td><td>불가능</td><td>스레드 기록</td><td class="result-highlight">100% 가능</td></tr>
+            </table>
+
+            <div class="quote-box">
+                <strong>Lesson Learned:</strong> 도구 도입 전 현업 인터뷰로 실제 Pain Point 발굴 필수 → 기술이 아닌 문제 중심 접근
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: 프로젝트 3 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>3. 자체 검색 엔진 구축 및 대용량 처리 최적화</h2>
+                <div class="project-meta">아키텍처 설계 주도 | 2018.06 - 2021.08 | (주)한국문헌정보기술</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>상용 검색엔진 라이선스</td><td>연간 수천만원 → 프로젝트 수익성 저하</td></tr>
+                <tr><td>대량 이미지 단건 Insert</td><td>10시간+ 소요</td></tr>
+                <tr><td>한글 형태소 분석 미지원</td><td>검색 정확도 저조</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 상용 솔루션 의존</div>
+                    <img src="../../../docs/career/portfolio/images/search-engine-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: 자체 검색 엔진 (Elasticsearch + Nori)</div>
+                    <img src="../../../docs/career/portfolio/images/search-engine-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">Elasticsearch + Nori 조합</div>
+                <div class="decision-item"><strong>Why:</strong> 오픈소스로 라이선스 비용 제거, Nori는 한글 형태소 분석 네이티브 지원</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 운영 복잡도 증가 → 자체 운영 역량 확보 필요</div>
+            </div>
+
+            <div class="decision-box">
+                <div class="decision-title">Bulk Insert + 병렬 처리</div>
+                <div class="decision-item"><strong>Context:</strong> 단건 Insert → 네트워크 오버헤드 과다</div>
+                <div class="decision-item"><strong>Solution:</strong> 최대 해상도(2000px) 생성 후 나머지(1000px~300px) 병렬 처리</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>라이선스 비용</td><td>수천만원/년</td><td>0원</td><td class="result-highlight">100%↓</td></tr>
+                <tr><td>데이터 등록</td><td>10시간+</td><td>3시간</td><td class="result-highlight">70%↓</td></tr>
+                <tr><td>한글 검색</td><td>형태소 분석 없음</td><td>Nori 적용</td><td class="result-highlight">정확도↑</td></tr>
+            </table>
+
+            <div class="quote-box">
+                <strong>Impact:</strong> 프로젝트 수익성 향상, <strong>2021년 사내 우수사원 선정</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: 프로젝트 4 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>4. 네이버 쇼핑 Dynamic Pricing</h2>
+                <div class="project-meta">백엔드 개발 | 2023.01 - 현재 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>경쟁사 대비 가격 경쟁력 부족</td><td>네이버 검색 노출 순위 하락</td></tr>
+                <tr><td>MD팀 수동 가격 조정</td><td>실시간 대응 불가, 기회 손실</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 수동 가격 관리</div>
+                    <img src="../../../docs/career/portfolio/images/pricing-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: 하이브리드 Dynamic Pricing</div>
+                    <img src="../../../docs/career/portfolio/images/pricing-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">하이브리드 구조 선택</div>
+                <div class="decision-item"><strong>자동 프로세스:</strong> 전체 상품 동적 가격 모니터링 및 자동 조정</div>
+                <div class="decision-item"><strong>MD팀 협업 (핑퐁):</strong> 타겟팅 상품 데이터 제공 → 마진율 기반 판매가 조정</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 완전 자동화 대신 MD팀 전략 개입 허용 → 마진율 보호</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>성과</th></tr>
+                <tr><td>대상 상품 매출</td><td class="result-highlight">10% 상승</td></tr>
+                <tr><td>대상 상품 트래픽</td><td class="result-highlight">10% 상승</td></tr>
+                <tr><td>네이버 최저가 달성률</td><td class="result-highlight">향상</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 5: 프로젝트 5 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>5. 메인 페이지 큐레이션 시스템</h2>
+                <div class="project-meta">백엔드 개발 | 2023.01 - 2023.02 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>개발자 개입 필요</td><td>메인 페이지 변경마다 배포 필요</td></tr>
+                <tr><td>경직된 구조</td><td>새로운 전시 위치 추가 어려움</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 하드코딩 기반</div>
+                    <img src="../../../docs/career/portfolio/images/curation-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: Enum 기반 확장 구조</div>
+                    <img src="../../../docs/career/portfolio/images/curation-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">Enum 기반 타입 시스템</div>
+                <div class="decision-item"><strong>Solution:</strong> 전시 위치, 아이템 타입, 뷰 타입을 Enum으로 정의</div>
+                <div class="decision-item"><strong>확장성:</strong> 새로운 타입 추가 시 Enum만 확장</div>
+            </div>
+
+            <div class="decision-box">
+                <div class="decision-title">인메모리 캐시 (3분 TTL)</div>
+                <div class="decision-item"><strong>Why:</strong> 외부 의존성 (Redis) 제거, 서버 재시작 시 자동 갱신</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 서버별 캐시 불일치 가능 → 3분 TTL로 최대 3분 지연 허용</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>성과</th></tr>
+                <tr><td>전시 위치</td><td class="result-highlight">10+ 위치 통합 관리</td></tr>
+                <tr><td>MD팀 운영</td><td class="result-highlight">자율 운영 달성</td></tr>
+                <tr><td>개발자 개입</td><td class="result-highlight">0</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 6: 프로젝트 6 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>6. 상품 이미지 정합성 확보 시스템</h2>
+                <div class="project-meta">백엔드 개발 | 2023.07 - 2023.09 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>URL 동일해도 이미지 내용 변경</td><td>고객 불만, 클레임 발생</td></tr>
+                <tr><td>수동 검수 불가능</td><td>수만 건 이미지 실시간 확인 한계</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: URL 기반 단순 비교</div>
+                    <img src="../../../docs/career/portfolio/images/image-integrity-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: SHA256 해시 기반 검증</div>
+                    <img src="../../../docs/career/portfolio/images/image-integrity-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">부분 해시 검증 방식</div>
+                <div class="decision-item"><strong>Solution:</strong> 이미지 파일 0~5KB 영역만 SHA256 해시 비교</div>
+                <div class="decision-item"><strong>운영:</strong> 변경 감지 시 S3 재업로드, 24시간 자동 동기화</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 완전한 검증 대신 빠른 변경 감지 우선</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>이미지 불일치 클레임</td><td>월 20건+</td><td>0건</td><td class="result-highlight">Zero</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 7: 프로젝트 7 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>7. AI 기반 개발 생산성 혁신</h2>
+                <div class="project-meta">도입 주도 | 2024.03 - 현재 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>반복적 CRUD 운영 도구 개발</td><td>1-2일 소요</td></tr>
+                <tr><td>문서화 업무 병목</td><td>API 문서 작성에 상당 시간 소요</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 수동 개발/문서화</div>
+                    <img src="../../../docs/career/portfolio/images/ai-dev-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: AI-Assisted Development</div>
+                    <img src="../../../docs/career/portfolio/images/ai-dev-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">Claude Code + MCP 조합</div>
+                <div class="decision-item"><strong>Claude Code:</strong> 보일러플레이트 코드 생성 자동화, 테스트 케이스 엣지 케이스 발굴</div>
+                <div class="decision-item"><strong>Atlassian MCP:</strong> JIRA 작업 완료 시 Confluence 문서 자동 생성</div>
+                <div class="decision-item"><strong>핵심:</strong> 단순 코드 생성이 아닌, 인간 엔지니어는 아키텍처 설계와 비즈니스 로직 검증에 집중</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>운영 도구 개발</td><td>1-2일</td><td>1-2시간</td><td class="result-highlight">90%↓</td></tr>
+                <tr><td>문서화 업무</td><td>수동</td><td>자동</td><td class="result-highlight">80%↓</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 8: 프로젝트 8 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>8. 품절률 감소 및 데이터 분석</h2>
+                <div class="project-meta">데이터 분석 및 정책 수립 | 2024.01 - 2024.06 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>품절 취소율 40%</td><td>고객 이탈, 재구매 전환 저조</td></tr>
+                <tr><td>원인 파악 어려움</td><td>데이터 기반 분석 부재</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 원인 불명의 품절</div>
+                    <img src="../../../docs/career/portfolio/images/stockout-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: 데이터 기반 품절 관리</div>
+                    <img src="../../../docs/career/portfolio/images/stockout-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">데이터 기반 원인 분석</div>
+                <div class="decision-item"><strong>문제 발견:</strong> GA4 + BigQuery 분석으로 품절 경험 유저의 재구매 전환 거의 없음 확인</div>
+                <div class="decision-item"><strong>원인 분석:</strong> DB 기반 품절 사유 분석 → 지연 셀러(2주+)가 핵심 원인</div>
+            </div>
+
+            <div class="decision-box">
+                <div class="decision-title">해결 정책</div>
+                <div class="decision-item"><strong>정책 1:</strong> 지연 셀러 패널티 정책 수립 (누적 시 계약 해지)</div>
+                <div class="decision-item"><strong>정책 2:</strong> 품절 고객 포인트 보상 정책</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 셀러 이탈 리스크 vs 고객 경험 개선 → 고객 경험 우선</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>품절 취소율</td><td>40%</td><td>20%</td><td class="result-highlight">50%↓</td></tr>
+                <tr><td>재구매 전환율</td><td>-</td><td>-</td><td class="result-highlight">개선</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 9: 프로젝트 9 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>9. 개발 문화 및 시스템 안정성 강화</h2>
+                <div class="project-meta">기술 리드 | 2022.02 - 현재 | (주)구하다</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>코드 리뷰 부재</td><td>배포 후 버그/핫픽스 반복</td></tr>
+                <tr><td>검색 API TPS 200</td><td>트래픽 대응력 부족</td></tr>
+                <tr><td>Slow Query 미파악</td><td>성능 이슈 사후 대응</td></tr>
+            </table>
+
+            <h3 class="section-title">Architecture</h3>
+            <div class="arch-vertical">
+                <div class="arch-item">
+                    <div class="arch-label">BEFORE: 사후 대응 체계</div>
+                    <img src="../../../docs/career/portfolio/images/dev-culture-before.svg" alt="Before">
+                </div>
+                <div class="arch-item">
+                    <div class="arch-label">AFTER: 선제적 품질 관리</div>
+                    <img src="../../../docs/career/portfolio/images/dev-culture-after.svg" alt="After">
+                </div>
+            </div>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">TDD 도입 및 코드 리뷰 문화</div>
+                <div class="decision-item"><strong>TDD 도입:</strong> PM의 일정 지연 우려 → 핫픽스 빈도 감소 데이터 제시로 합의 도출</div>
+                <div class="decision-item"><strong>코드 리뷰:</strong> PR 기반 2인 승인 의무화</div>
+            </div>
+
+            <div class="decision-box">
+                <div class="decision-title">ES Hit Index Count 최적화</div>
+                <div class="decision-item"><strong>Context:</strong> 기존 전체 문서 조회 방식 → TPS 200 수준</div>
+                <div class="decision-item"><strong>Solution:</strong> 인덱싱 전략 재설계 → 필요한 필드만 조회</div>
+                <div class="decision-item"><strong>모니터링:</strong> Elastic APM 기반 Slow Query 분석, 서버 리소스 → Slack 알림</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>Before</th><th>After</th><th>개선율</th></tr>
+                <tr><td>검색 API TPS</td><td>200</td><td>3,000</td><td class="result-highlight">1500%↑</td></tr>
+                <tr><td>Review API</td><td>4,000ms</td><td>80ms</td><td class="result-highlight">98%↓</td></tr>
+                <tr><td>코드 리뷰</td><td>없음</td><td>2인 승인</td><td class="result-highlight">문화 정착</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- PAGE 10: 프로젝트 10 + 메타 정보 -->
+    <div class="page">
+        <div class="page-header">윤원희 | Technical Portfolio</div>
+
+        <div class="project-section">
+            <div class="project-title-bar">
+                <h2>10. 레거시 시스템 TDD 도입</h2>
+                <div class="project-meta">백엔드 개발 | 2021.09 - 2022.01 | (주)인터파크</div>
+            </div>
+
+            <h3 class="section-title">Challenge</h3>
+            <table class="challenge-table">
+                <tr><th>문제</th><th>영향</th></tr>
+                <tr><td>테스트 코드 전무</td><td>배포 리스크 높음</td></tr>
+                <tr><td>레거시 코드 결합도 높음</td><td>수정 시 사이드 이펙트 예측 불가</td></tr>
+            </table>
+
+            <h3 class="section-title">Decision Log</h3>
+            <div class="decision-box">
+                <div class="decision-title">점진적 TDD 도입</div>
+                <div class="decision-item"><strong>Context:</strong> 레거시 시스템에 테스트 코드 전무, 전체 리팩토링은 리스크 과다</div>
+                <div class="decision-item"><strong>Solution:</strong> 신규 기능 개발부터 TDD 방식 적용</div>
+                <div class="decision-item"><strong>우선순위:</strong> 핵심 비즈니스 로직(판매자 정산/주문 조회) 단위 테스트 우선 작성</div>
+                <div class="decision-item"><strong>구조 개선:</strong> 테스트 가능한 구조로 Service Layer 분리 리팩토링</div>
+                <div class="decision-item"><strong>Trade-off:</strong> 전체 커버리지 대신 핵심 로직 집중</div>
+            </div>
+
+            <h3 class="section-title">Result</h3>
+            <table class="result-table">
+                <tr><th>지표</th><th>성과</th></tr>
+                <tr><td>테스트 문화</td><td class="result-highlight">정착</td></tr>
+                <tr><td>배포 리스크</td><td class="result-highlight">감소</td></tr>
+                <tr><td>핵심 로직 커버리지</td><td class="result-highlight">확보</td></tr>
+            </table>
+        </div>
+
+        <div class="meta-box">
+            <strong>윤원희 | Technical Portfolio v2.0</strong><br>
+            최종 수정: 2026-01-04 | 공개 범위: 채용 목적 한정<br>
+            <em>본 포트폴리오는 회사 보안 정책에 따라 아키텍처와 의사결정 중심으로 작성되었습니다.</em>
+        </div>
+    </div>
+</body>
+</html>

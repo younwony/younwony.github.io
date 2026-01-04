@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs>
+    <linearGradient id="cardGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e9"/>
+      <stop offset="100%" style="stop-color:#c8e6c9"/>
+    </linearGradient>
+    <linearGradient id="cardBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd"/>
+      <stop offset="100%" style="stop-color:#bbdefb"/>
+    </linearGradient>
+    <linearGradient id="cardPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e5f5"/>
+      <stop offset="100%" style="stop-color:#e1bee7"/>
+    </linearGradient>
+    <marker id="arrowGreen" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0.5 L5,2 L0,3.5" fill="none" stroke="#4caf50" stroke-width="1" stroke-linecap="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="300" fill="#fafafa"/>
+  <text x="350" y="30" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="16" font-weight="600">After: Enum 기반 확장 구조</text>
+
+  <!-- MD팀 직접 운영 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="160" height="90" rx="12" fill="url(#cardGreen)" stroke="#4caf50" stroke-width="1"/>
+  </g>
+  <text x="130" y="95" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">MD팀</text>
+  <text x="130" y="115" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="10" font-weight="bold">직접 운영</text>
+  <text x="130" y="135" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="9">어드민에서 즉시 변경</text>
+  <text x="130" y="150" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="8">개발자 개입 0</text>
+
+  <!-- 화살표 -->
+  <path d="M220,115 L280,115" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Enum 타입 시스템 -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="60" width="180" height="100" rx="12" fill="url(#cardPurple)" stroke="#9c27b0" stroke-width="1"/>
+  </g>
+  <text x="380" y="85" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">Enum 타입 시스템</text>
+  <text x="380" y="105" text-anchor="middle" fill="#7b1fa2" font-family="Arial, sans-serif" font-size="9">전시 위치 / 아이템 / 뷰 타입</text>
+  <text x="380" y="125" text-anchor="middle" fill="#7b1fa2" font-family="Arial, sans-serif" font-size="9">새 타입 = Enum 추가만</text>
+  <text x="380" y="145" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="9" font-weight="500">10+ 전시 위치 통합 관리</text>
+
+  <!-- 화살표 -->
+  <path d="M480,110 L540,110" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- 인메모리 캐시 -->
+  <g filter="url(#shadow)">
+    <rect x="550" y="70" width="120" height="90" rx="12" fill="url(#cardBlue)" stroke="#1976d2" stroke-width="1"/>
+  </g>
+  <text x="610" y="95" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">In-Memory</text>
+  <text x="610" y="115" text-anchor="middle" fill="#1976d2" font-family="Arial, sans-serif" font-size="9">Cache</text>
+  <text x="610" y="135" text-anchor="middle" fill="#1976d2" font-family="Arial, sans-serif" font-size="9">TTL 3분</text>
+  <text x="610" y="150" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="8">Redis 의존성 제거</text>
+
+  <!-- 성과 박스 -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="200" width="400" height="80" rx="10" fill="white" stroke="#4caf50" stroke-width="1"/>
+  </g>
+  <text x="350" y="225" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="11" font-weight="600">성과</text>
+  <text x="350" y="245" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="10">MD팀 자율 운영 달성 | 개발자 개입 0 | 10+ 전시 위치 통합 관리</text>
+  <text x="350" y="265" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="9">Trade-off: 서버별 캐시 불일치 최대 3분 허용</text>
+</svg>

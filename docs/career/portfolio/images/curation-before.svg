@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <linearGradient id="cardGray" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="cardRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffebee"/>
+      <stop offset="100%" style="stop-color:#ffcdd2"/>
+    </linearGradient>
+    <marker id="arrowSmall" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0.5 L5,2 L0,3.5" fill="none" stroke="#9e9e9e" stroke-width="1" stroke-linecap="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="700" height="280" fill="#fafafa"/>
+  <text x="350" y="30" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="16" font-weight="600">Before: 하드코딩 기반 전시 관리</text>
+
+  <!-- MD팀 요청 -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="70" width="140" height="80" rx="12" fill="url(#cardGray)" stroke="#bdbdbd" stroke-width="1"/>
+  </g>
+  <text x="120" y="100" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">MD팀 요청</text>
+  <text x="120" y="118" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="9">"메인 배너 변경"</text>
+  <text x="120" y="135" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">매번 개발팀 요청</text>
+
+  <!-- 화살표 -->
+  <path d="M200,110 L270,110" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  <text x="235" y="100" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="8">요청</text>
+
+  <!-- 개발팀 -->
+  <g filter="url(#shadow)">
+    <rect x="280" y="70" width="150" height="80" rx="12" fill="url(#cardRed)" stroke="#e57373" stroke-width="1"/>
+  </g>
+  <text x="355" y="95" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">개발팀</text>
+  <text x="355" y="113" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">하드코딩 수정</text>
+  <text x="355" y="130" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">배포 필요</text>
+
+  <!-- 화살표 -->
+  <path d="M440,110 L510,110" stroke="#9e9e9e" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  <text x="475" y="100" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="8">배포</text>
+
+  <!-- 메인 페이지 -->
+  <g filter="url(#shadow)">
+    <rect x="520" y="70" width="140" height="80" rx="12" fill="url(#cardGray)" stroke="#bdbdbd" stroke-width="1"/>
+  </g>
+  <text x="590" y="100" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">메인 페이지</text>
+  <text x="590" y="118" text-anchor="middle" fill="#757575" font-family="Arial, sans-serif" font-size="9">변경 반영</text>
+  <text x="590" y="135" text-anchor="middle" fill="#e53935" font-family="Arial, sans-serif" font-size="9">수 시간 소요</text>
+
+  <!-- Pain Points -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="180" width="300" height="80" rx="10" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+  </g>
+  <text x="220" y="205" fill="#c62828" font-family="Arial, sans-serif" font-size="10" font-weight="600">Pain Points</text>
+  <text x="220" y="225" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 매 변경마다 개발자 개입 필요</text>
+  <text x="220" y="240" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 배포 과정으로 수 시간 소요</text>
+  <text x="220" y="255" fill="#424242" font-family="Arial, sans-serif" font-size="9">- 새로운 전시 위치 추가 어려움</text>
+</svg>

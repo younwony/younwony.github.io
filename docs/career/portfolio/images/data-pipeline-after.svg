@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+    <linearGradient id="nodeBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498DB"/>
+      <stop offset="100%" style="stop-color:#2980B9"/>
+    </linearGradient>
+    <linearGradient id="nodeGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ECC71"/>
+      <stop offset="100%" style="stop-color:#27AE60"/>
+    </linearGradient>
+    <linearGradient id="nodeOrange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E67E22"/>
+      <stop offset="100%" style="stop-color:#D35400"/>
+    </linearGradient>
+    <linearGradient id="nodePurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9B59B6"/>
+      <stop offset="100%" style="stop-color:#8E44AD"/>
+    </linearGradient>
+    <linearGradient id="nodeTeal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1ABC9C"/>
+      <stop offset="100%" style="stop-color:#16A085"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7F8C8D"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" fill="#2C3E50" font-family="Arial, sans-serif" font-size="16" font-weight="bold">After: 자동화된 데이터 파이프라인</text>
+
+  <!-- Data Sources Row -->
+  <text x="350" y="55" text-anchor="middle" fill="#7F8C8D" font-family="Arial, sans-serif" font-size="11">외부 데이터 소스</text>
+
+  <rect x="40" y="70" width="110" height="35" rx="5" fill="url(#nodeBlue)"/>
+  <text x="95" y="93" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">TikTok API</text>
+
+  <rect x="170" y="70" width="110" height="35" rx="5" fill="url(#nodeBlue)"/>
+  <text x="225" y="93" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Ensemble API</text>
+
+  <rect x="300" y="70" width="110" height="35" rx="5" fill="url(#nodeBlue)"/>
+  <text x="355" y="93" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">EchoTik API</text>
+
+  <rect x="430" y="70" width="110" height="35" rx="5" fill="url(#nodeBlue)"/>
+  <text x="485" y="93" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Web Scraper</text>
+
+  <!-- Arrows to Batch Service -->
+  <line x1="95" y1="105" x2="350" y2="155" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="225" y1="105" x2="350" y2="155" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="355" y1="105" x2="350" y2="155" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="485" y1="105" x2="350" y2="155" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Spring Boot Batch Service -->
+  <rect x="240" y="160" width="220" height="50" rx="8" fill="url(#nodeGreen)"/>
+  <text x="350" y="183" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Spring Boot Batch Service</text>
+  <text x="350" y="200" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">(Parallel + Retry + Scheduler)</text>
+
+  <!-- Redis Lock -->
+  <rect x="510" y="165" width="130" height="40" rx="5" fill="url(#nodeOrange)"/>
+  <text x="575" y="190" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Redis Lock</text>
+  <text x="575" y="202" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">(중복 방지)</text>
+
+  <line x1="460" y1="185" x2="505" y2="185" stroke="#7F8C8D" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Arrow to Storage Layer -->
+  <line x1="350" y1="210" x2="350" y2="250" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Storage Layer -->
+  <text x="350" y="270" text-anchor="middle" fill="#7F8C8D" font-family="Arial, sans-serif" font-size="11">데이터 저장</text>
+
+  <rect x="100" y="285" width="130" height="40" rx="5" fill="url(#nodePurple)"/>
+  <text x="165" y="310" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">MySQL</text>
+  <text x="165" y="322" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">(원본 저장)</text>
+
+  <rect x="285" y="285" width="130" height="40" rx="5" fill="url(#nodePurple)"/>
+  <text x="350" y="310" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">S3</text>
+  <text x="350" y="322" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">(이미지 저장)</text>
+
+  <rect x="470" y="285" width="130" height="40" rx="5" fill="url(#nodePurple)"/>
+  <text x="535" y="310" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Elasticsearch</text>
+  <text x="535" y="322" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">(검색 최적화)</text>
+
+  <!-- Arrows from Batch to Storage -->
+  <line x1="290" y1="210" x2="165" y2="280" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="210" x2="350" y2="280" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="410" y1="210" x2="535" y2="280" stroke="#7F8C8D" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Results Box -->
+  <rect x="150" y="360" width="400" height="70" rx="8" fill="#ECF0F1" stroke="#BDC3C7" stroke-width="2"/>
+  <text x="350" y="385" text-anchor="middle" fill="#2C3E50" font-family="Arial, sans-serif" font-size="12" font-weight="bold">성과</text>
+  <text x="350" y="405" text-anchor="middle" fill="#27AE60" font-family="Arial, sans-serif" font-size="11">일 5,000명+ 자동 수집 | 200만 데이터 풀 | 검색 1초 이내</text>
+  <text x="350" y="420" text-anchor="middle" fill="#27AE60" font-family="Arial, sans-serif" font-size="11">Zero Ops 달성 | 이미지 정합성 99%+</text>
+
+</svg>

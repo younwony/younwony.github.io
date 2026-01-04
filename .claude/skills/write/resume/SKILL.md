@@ -348,4 +348,31 @@ cat docs/career/my_career_data.md
 
 - `/writing-guide`: STAR+I 작성 원칙, 시니어 톤, 파레토 기준, SSOT, 업데이트 원칙
 - `/write-career`: 경력기술서 작성 (5페이지+)
+- `/write-portfolio`: 포트폴리오 작성 (10-15페이지, 기술 백서)
 - `/export`: PDF/PPT 내보내기
+
+---
+
+## 세트 생성 (이력서 + 경력기술서 + 포트폴리오)
+
+> 채용 지원 시 세 문서를 함께 생성
+
+### 세트 생성 워크플로우
+
+```
+Step 1: 이력서 작성 (/create-resume-document)
+    ↓
+Step 2: 경력기술서 작성 (/write-career)
+    ↓
+Step 3: 포트폴리오 작성 (/write-portfolio)
+    ↓
+Step 4: PDF 내보내기 (/export)
+```
+
+### 세트 정합성 체크리스트
+
+- [ ] 세 문서 연락처/학력 일치
+- [ ] 성과 수치 일치 (SSOT 기반)
+- [ ] 기술 스택 표기 일치
+- [ ] 프로젝트 기간 일치
+- [ ] 역할 표기 일치
