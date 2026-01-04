@@ -1,7 +1,7 @@
 # Claude Code 프로젝트 가이드
 
 > **목적**: 이력서/경력기술서/포트폴리오 프로젝트 컨텍스트 제공
-> **버전**: 7.0
+> **버전**: 7.1
 > **최종 업데이트**: 2026-01-04
 
 ---
@@ -35,8 +35,8 @@ younwony.github.io/
 ├── assets/
 │   ├── css/style.css              # 공통 스타일
 │   └── js/common.js               # 공통 스크립트
-└── .claude/skills/                 # Skills 정의 (15개)
-    ├── write/                     # 문서 작성 (6개)
+└── .claude/skills/                 # Skills 정의 (17개)
+    ├── write/                     # 문서 작성 (8개)
     ├── export/                    # 내보내기 (1개)
     ├── data/                      # 데이터 관리 (8개)
     └── util/                      # 유틸리티 (1개)
@@ -97,15 +97,17 @@ my_career_data.md (원본)
 
 ---
 
-## Skills (15개)
+## Skills (17개)
 
 ### 문서 작성 (write/)
 
 | Skill | 용도 |
 |-------|------|
 | `/writing-guide` | STAR+I 작성 가이드, 시니어 톤 표현 |
+| `/jd-match` | **JD 분석 + 회사 조사** (비전/인재상), 지원 동기 작성 |
 | `/create-resume-document` | 이력서 작성 (2-3페이지, JD 맞춤형, **세트 생성**) |
 | `/write-career` | 경력기술서 작성 (5페이지+, 아키텍처/트러블슈팅 상세) |
+| `/write-integrated` | **통합 지원서 HTML** (경력기술서+지원동기), 표준 템플릿 |
 | `/write-portfolio` | **포트폴리오 작성** (10-15페이지, 기술 백서 형식) |
 | `/svg-diagram` | SVG 아키텍처 다이어그램 (Before/After) |
 | `/mermaid-diagram` | Mermaid 다이어그램 (플로우, 시퀀스, ER)
@@ -146,8 +148,10 @@ my_career_data.md (원본)
 ```
 문서 작성:
   /writing-guide            # STAR+I 작성 가이드
+  /jd-match                 # JD 분석 + 회사 조사 + 지원 동기 ⭐
   /create-resume-document   # 이력서 (2-3페이지, 세트 생성)
   /write-career             # 경력기술서 (5페이지+)
+  /write-integrated         # 통합 지원서 HTML (경력기술서+지원동기) ⭐ NEW
   /write-portfolio          # 포트폴리오 (10-15페이지, 기술 백서)
 
 다이어그램:
@@ -188,6 +192,7 @@ my_career_data.md (원본)
 
 | 버전 | 날짜 | 변경 내용 |
 |------|------|----------|
+| 7.1 | 2026-01-04 | `/write-integrated` 스킬 추가 (통합 지원서 HTML, 표준 템플릿) |
 | 7.0 | 2026-01-04 | 포트폴리오 스킬 추가 (`/write-portfolio`, `/svg-diagram`, `/mermaid-diagram`), 세트 작성 워크플로우 추가 |
 | 6.0 | 2025-12-26 | Skills 구조 개편: 14개 → 9개 통합, 카테고리별 그룹화 (write/export/data/util) |
 | 5.0 | 2025-12-26 | Skills 정리: troubleshoot 삭제, 중복 내용 정리 |

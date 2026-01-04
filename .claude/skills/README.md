@@ -3,7 +3,7 @@
 > 이력서/경력기술서 프로젝트에서 사용 가능한 Claude Code Skills 목록
 >
 > **최종 업데이트**: 2026-01-04
-> **총 스킬 수**: 15개
+> **총 스킬 수**: 17개
 
 ---
 
@@ -14,11 +14,13 @@
 ├── README.md                          # 이 파일 (스킬 가이드)
 ├── write/                             # 문서 작성
 │   ├── guide/SKILL.md                 # /writing-guide
+│   ├── jd-match/SKILL.md              # /jd-match (회사 조사 + JD 분석)
 │   ├── resume/SKILL.md                # /create-resume-document
 │   ├── career/SKILL.md                # /write-career
-│   ├── portfolio/SKILL.md             # /write-portfolio (신규)
-│   ├── svg-diagram/SKILL.md           # /svg-diagram (신규)
-│   └── mermaid-diagram/SKILL.md       # /mermaid-diagram (신규)
+│   ├── integrated/SKILL.md            # /write-integrated (신규: 통합 지원서)
+│   ├── portfolio/SKILL.md             # /write-portfolio
+│   ├── svg-diagram/SKILL.md           # /svg-diagram
+│   └── mermaid-diagram/SKILL.md       # /mermaid-diagram
 ├── export/SKILL.md                    # /export (PDF + PPT)
 ├── data/                              # 데이터 관리
 │   ├── update/SKILL.md                # /update-resume
@@ -42,8 +44,10 @@
 | Skill | 명령어 | 설명 |
 |-------|--------|------|
 | **Writing Guide** | `/writing-guide` | STAR+I 기법, 정량화 방식, 시니어 톤 표현, Bad vs Good 사례 |
+| **JD Match** | `/jd-match` | JD 분석, **회사 조사(비전/인재상)**, 지원 동기, 맞춤형 지원서 |
 | **Resume** | `/create-resume-document` | 이력서 작성 (2-3페이지), JD 맞춤형, 이력서+경력기술서 세트 |
 | **Career Portfolio** | `/write-career` | 경력기술서 작성 (5페이지+), 아키텍처/트러블슈팅 상세 |
+| **Integrated** | `/write-integrated` | **통합 지원서 HTML** (경력기술서+지원동기), 표준 템플릿 스타일 |
 | **Portfolio** | `/write-portfolio` | 포트폴리오 작성 (10-15페이지), 기술 백서 형식, Decision Log |
 | **SVG Diagram** | `/svg-diagram` | SVG 아키텍처 다이어그램 생성 (Before/After, 시스템 구성도) |
 | **Mermaid Diagram** | `/mermaid-diagram` | Mermaid 다이어그램 생성 (플로우차트, 시퀀스, ER) |
@@ -89,6 +93,29 @@
 
 ---
 
+### `/jd-match`
+
+**용도**: JD(채용공고) 분석 및 맞춤형 지원서 작성
+
+**실행 순서**:
+1. **회사 조사** (비전, 성장 지표, 인재상) ⭐
+2. JD 분석 (필수/우대 요건, Pain Point)
+3. 경험 매칭
+4. **지원 동기 작성** ⭐
+5. 파일 생성
+
+**출력 파일**:
+- `COMPANY_RESEARCH.md`: 회사 조사 결과 ⭐
+- `JD_ANALYSIS.md`: JD 분석
+- `MOTIVATION.md`: 지원 동기 ⭐
+- `COVER_LETTER.md`: 자기소개서
+- `RESUME_JD.md`: JD 맞춤형 이력서
+
+**핵심 포인트**:
+> JD만 보고 지원서를 쓰지 않는다. **회사의 비전/인재상을 먼저 파악**하고, 내 경험과 연결하여 지원 동기를 작성한다.
+
+---
+
 ### `/create-resume-document`
 
 **용도**: 이력서 작성 (2-3페이지)
@@ -113,6 +140,29 @@
 - 구현 상세 / 도전 과제
 
 **사용 시점**: 상세 역량 검증, 시니어 수준 포트폴리오
+
+---
+
+### `/write-integrated`
+
+**용도**: JD 기반 통합 지원서 HTML 작성 (경력기술서 + 지원동기)
+
+**특징**:
+- 표준 템플릿 스타일 적용
+- 5페이지 A4 구성 (Summary → 프로젝트 → 지원동기)
+- JD 키워드 태그 (`jd-tag`) 강조
+- PDF 출력 최적화 (Edge headless)
+
+**스타일 요소**:
+- Company Header: 검정 배경 (#000)
+- Metrics Row: border-left 2px solid #000
+- Context Grid: 배경/문제 2열 그리드
+- Tech Decision: 기술 선택 이유 박스
+- Values Header: 지원동기 페이지 헤더
+
+**사용 시점**: `/jd-match` 완료 후 최종 제출용 문서 작성
+
+**참조 템플릿**: `templates/export/pdf/integrated-application.html`
 
 ---
 
@@ -303,8 +353,10 @@ Dynamic Pricing: 매출 10% 상승
 ```
 문서 작성:
   /writing-guide            # STAR+I 작성 가이드
+  /jd-match                 # JD 분석 + 회사 조사 + 지원 동기 ⭐
   /create-resume-document   # 이력서 (2-3페이지, JD 맞춤형, 세트)
   /write-career             # 경력기술서 (5페이지+, 상세)
+  /write-integrated         # 통합 지원서 HTML (경력기술서+지원동기) ⭐ NEW
   /write-portfolio          # 포트폴리오 (10-15페이지, 기술 백서)
 
 다이어그램:
@@ -334,6 +386,8 @@ Dynamic Pricing: 매출 10% 상승
 
 | 날짜 | 변경 내용 |
 |------|----------|
+| 2026-01-04 | `/write-integrated` 스킬 추가: **통합 지원서 HTML** (경력기술서+지원동기), 표준 템플릿 스타일 가이드 |
+| 2026-01-04 | `/jd-match` 스킬 강화: **회사 조사 프로세스 추가** (비전, 인재상, 성장 지표), 지원 동기 작성 가이드 |
 | 2026-01-04 | `/write-portfolio`, `/svg-diagram`, `/mermaid-diagram` 스킬 추가 (포트폴리오 + 다이어그램) |
 | 2026-01-02 | `/content-spec` 스킬 추가, `/sync-all` 구조 분리 (관심사 분리) |
 | 2025-12-29 | `/platform-profile`, `/sync-platforms` 스킬 추가 (채용 플랫폼 지원) |

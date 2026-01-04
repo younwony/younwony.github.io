@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통합 지원서 템플릿 (경력기술서 + 지원동기)</title>
+    <style>
+        /* ===== 페이지 설정 ===== */
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        body { font-family: 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 9pt; line-height: 1.5; color: #222; background: white; }
+        .page { width: 210mm; height: 297mm; padding: 14mm 18mm; margin: 0 auto; background: white; position: relative; page-break-after: always; }
+        .page:last-child { page-break-after: avoid; }
+
+        /* ===== 헤더 ===== */
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 14px; margin-bottom: 16px; }
+        .header h1 { font-size: 20pt; font-weight: 700; letter-spacing: 4px; margin-bottom: 6px; }
+        .header-info { font-size: 10pt; color: #333; margin-bottom: 6px; }
+        .header-contact { font-size: 9pt; color: #666; }
+        .header-contact span { margin: 0 10px; }
+
+        /* ===== 섹션 ===== */
+        .section { margin-bottom: 18px; }
+        .section-title { font-size: 9.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #000; padding-bottom: 6px; margin-bottom: 12px; background: linear-gradient(90deg, #f8f8f8 0%, #fff 50%); padding: 8px 10px 6px 10px; margin-left: -10px; margin-right: -10px; }
+
+        /* ===== Summary ===== */
+        .summary-box { margin-bottom: 14px; }
+        .summary-headline { font-size: 11pt; font-weight: 700; color: #000; margin-bottom: 8px; }
+        .summary-text { font-size: 8.5pt; color: #333; line-height: 1.6; margin-bottom: 12px; }
+        .summary-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .highlight-item { font-size: 8pt; padding: 8px 10px; background: #f5f5f5; border-left: 2px solid #000; }
+        .jd-tag { display: inline-block; font-size: 6.5pt; background: #000; color: #ffffff !important; padding: 2px 5px; margin-left: 4px; font-weight: 600; letter-spacing: 0.3px; }
+
+        /* ===== Competencies ===== */
+        .competency-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .competency-item { padding: 8px 10px; border: 1px solid #ddd; }
+        .competency-item strong { font-size: 8pt; display: block; margin-bottom: 3px; }
+        .competency-item span { font-size: 7.5pt; color: #555; }
+
+        /* ===== Skills ===== */
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .skill-category { padding: 8px 10px; border: 1px solid #ddd; }
+        .skill-category strong { font-size: 7.5pt; color: #666; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+        .skill-category span { font-size: 7.5pt; color: #333; }
+
+        /* ===== Work Experience ===== */
+        .work-list { display: flex; flex-direction: column; gap: 8px; }
+        .work-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8f8f8; border-left: 3px solid #000; }
+        .work-item strong { font-size: 9pt; }
+        .work-item .role { font-size: 8pt; color: #666; margin-left: 8px; }
+        .work-item .period { font-size: 8pt; color: #666; }
+
+        /* ===== Company Header ===== */
+        .company-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #000; color: #fff; margin-bottom: 12px; }
+        .company-name { font-size: 10pt; font-weight: 600; }
+        .company-period { font-size: 9pt; }
+
+        /* ===== Values/Motivation Header ===== */
+        .values-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: linear-gradient(90deg, #f5f5f5 0%, #fff 100%); border: 2px solid #000; margin-bottom: 16px; }
+        .values-header .company-name { color: #000; font-size: 11pt; font-weight: 700; letter-spacing: 1px; }
+        .values-header .company-period { color: #666; font-size: 9pt; font-style: italic; }
+
+        /* ===== Projects Container ===== */
+        .projects-container { display: flex; flex-direction: column; height: calc(100% - 40px); }
+        .project-half { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
+        .project-half:first-child { border-bottom: 1px dashed #ccc; margin-bottom: 8px; }
+
+        /* ===== Project Box ===== */
+        .project-box { flex: 1; border: 1px solid #ddd; padding: 12px 14px; display: flex; flex-direction: column; }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+        .project-title { font-size: 10pt; font-weight: 700; color: #000; }
+        .project-period { font-size: 8pt; color: #888; }
+        .project-role { font-size: 8pt; color: #666; margin-bottom: 8px; }
+
+        /* Metrics */
+        .metrics-row { display: flex; gap: 6px; margin-bottom: 10px; }
+        .metric-box { flex: 1; text-align: center; padding: 6px 4px; background: #f8f8f8; border-left: 2px solid #000; }
+        .metric-value { font-size: 11pt; font-weight: 700; color: #000; }
+        .metric-label { font-size: 7pt; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-detail { font-size: 6.5pt; color: #888; }
+
+        /* Context Grid */
+        .context-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+        .context-box { padding: 8px 10px; background: #fafafa; border-left: 2px solid #888; font-size: 7.5pt; line-height: 1.5; }
+        .context-label { font-size: 6.5pt; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+        .context-text { color: #444; }
+
+        /* Achievements */
+        .achievements-label { font-size: 7.5pt; font-weight: 600; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid #eee; }
+        .achievements { list-style: none; margin-bottom: 10px; }
+        .achievements li { position: relative; padding-left: 10px; margin-bottom: 4px; font-size: 7.5pt; color: #333; line-height: 1.5; }
+        .achievements li::before { content: "–"; position: absolute; left: 0; color: #999; }
+        .achievements strong { font-weight: 600; color: #000; }
+        .highlight { background: #f0f0f0; padding: 1px 3px; }
+
+        /* Tech Decision */
+        .tech-decision { padding: 8px 10px; background: #f5f5f5; border-left: 2px solid #000; margin-bottom: 8px; }
+        .tech-decision-title { font-size: 7pt; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; padding-bottom: 3px; border-bottom: 1px solid #ddd; }
+        .tech-decision-item { font-size: 7pt; color: #444; margin-bottom: 3px; line-height: 1.5; }
+
+        /* Tech Stack */
+        .tech-stack { margin-top: auto; padding-top: 8px; display: flex; gap: 5px; flex-wrap: wrap; }
+        .tech-tag { font-size: 6.5pt; padding: 3px 6px; border: 1px solid #ccc; color: #555; }
+
+        /* ===== 지원 동기 스타일 ===== */
+        .motivation-box { border: 1px solid #ddd; padding: 12px 14px; margin-bottom: 12px; }
+        .motivation-title { font-size: 9pt; font-weight: 700; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+        .motivation-text { font-size: 8pt; color: #333; line-height: 1.65; }
+        .motivation-text strong { font-weight: 600; color: #000; }
+
+        .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+        .result-item { text-align: center; padding: 12px 8px; background: #f8f8f8; border-left: 2px solid #000; }
+        .result-value { font-size: 14pt; font-weight: 700; color: #000; }
+        .result-label { font-size: 8pt; color: #666; margin-top: 4px; }
+
+        /* ===== Vision Table ===== */
+        .vision-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-top: 10px; }
+        .vision-table th { background: #000; color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+        .vision-table td { padding: 8px 10px; border-bottom: 1px solid #ddd; }
+        .vision-table tr:nth-child(even) { background: #fafafa; }
+
+        /* ===== Print & Screen ===== */
+        @media print { body { background: white; } .page { width: 100%; height: 297mm; margin: 0; } }
+        @media screen { body { background: #e0e0e0; padding: 30px; } .page { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin-bottom: 30px; } }
+    </style>
+</head>
+<body>
+    <!-- ===== PAGE 1: 경력기술서 - Summary ===== -->
+    <div class="page">
+        <header class="header">
+            <h1>경력기술서</h1>
+            <div class="header-info">이름 | 직무 | N년차 | 핵심 키워드</div>
+            <div class="header-contact">
+                <span>email@example.com</span>
+                <span>010-0000-0000</span>
+                <span>github.com/username</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-box">
+                <div class="summary-headline">한 줄 핵심 역량 요약</div>
+                <p class="summary-text">
+                    경력 요약 및 핵심 강점 서술. <strong>주요 성과</strong>를 강조하고,
+                    <strong>기술적 역량</strong>과 <strong>비즈니스 임팩트</strong>를 연결하여 작성.
+                </p>
+                <div class="summary-highlights">
+                    <div class="highlight-item"><strong>성과1:</strong> 상세 수치 <span class="jd-tag">JD키워드</span></div>
+                    <div class="highlight-item"><strong>성과2:</strong> 상세 수치 <span class="jd-tag">JD키워드</span></div>
+                    <div class="highlight-item"><strong>성과3:</strong> 상세 수치 <span class="jd-tag">JD키워드</span></div>
+                    <div class="highlight-item"><strong>성과4:</strong> 상세 수치 <span class="jd-tag">JD키워드</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competency-grid">
+                <div class="competency-item">
+                    <strong>역량1</strong>
+                    <span>상세 설명</span>
+                </div>
+                <div class="competency-item">
+                    <strong>역량2</strong>
+                    <span>상세 설명</span>
+                </div>
+                <div class="competency-item">
+                    <strong>역량3</strong>
+                    <span>상세 설명</span>
+                </div>
+                <div class="competency-item">
+                    <strong>역량4</strong>
+                    <span>상세 설명</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>카테고리1</strong>
+                    <span>기술 스택</span>
+                </div>
+                <div class="skill-category">
+                    <strong>카테고리2</strong>
+                    <span>기술 스택</span>
+                </div>
+                <div class="skill-category">
+                    <strong>카테고리3</strong>
+                    <span>기술 스택</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="work-list">
+                <div class="work-item">
+                    <div><strong>회사명1</strong><span class="role">직책</span></div>
+                    <span class="period">YYYY.MM - 현재 (N년 M개월)</span>
+                </div>
+                <div class="work-item">
+                    <div><strong>회사명2</strong><span class="role">직책</span></div>
+                    <span class="period">YYYY.MM - YYYY.MM (N년 M개월)</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== PAGE 2-3: 프로젝트 상세 ===== -->
+    <div class="page">
+        <div class="company-header">
+            <span class="company-name">회사명 | 직책</span>
+            <span class="company-period">YYYY.MM - 현재</span>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-half">
+                <div class="project-box">
+                    <div class="project-header">
+                        <span class="project-title">프로젝트명 <span class="jd-tag">JD키워드</span></span>
+                        <span class="project-period">YYYY.MM - YYYY.MM</span>
+                    </div>
+                    <div class="project-role">역할: 역할 설명 | 협업 팀</div>
+
+                    <div class="metrics-row">
+                        <div class="metric-box"><div class="metric-value">10x</div><div class="metric-label">지표명</div><div class="metric-detail">Before → After</div></div>
+                        <div class="metric-box"><div class="metric-value">100%</div><div class="metric-label">지표명</div><div class="metric-detail">상세</div></div>
+                        <div class="metric-box"><div class="metric-value">Zero</div><div class="metric-label">지표명</div><div class="metric-detail">상세</div></div>
+                    </div>
+
+                    <div class="context-grid">
+                        <div class="context-box"><div class="context-label">배경</div><div class="context-text">상황 설명</div></div>
+                        <div class="context-box"><div class="context-label">문제</div><div class="context-text">해결해야 할 문제</div></div>
+                    </div>
+
+                    <div class="achievements-label">[주요 성과]</div>
+                    <ul class="achievements">
+                        <li><strong>성과1:</strong> 설명</li>
+                        <li><strong>성과2:</strong> 설명</li>
+                    </ul>
+
+                    <div class="tech-decision">
+                        <div class="tech-decision-title">Tech Decision (Why)</div>
+                        <div class="tech-decision-item"><strong>기술:</strong> 선택 이유</div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">기술1</span>
+                        <span class="tech-tag">기술2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-half">
+                <div class="project-box">
+                    <!-- 두 번째 프로젝트 동일 구조 -->
+                    <div class="project-header">
+                        <span class="project-title">프로젝트명2</span>
+                        <span class="project-period">YYYY.MM - YYYY.MM</span>
+                    </div>
+                    <div class="project-role">역할: 역할 설명</div>
+                    <!-- ... -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PAGE 5: 지원 동기 ===== -->
+    <div class="page">
+        <div class="values-header">
+            <span class="company-name">지원 동기</span>
+            <span class="company-period">Why {Company}</span>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">지원 동기 제목</h2>
+            <div class="motivation-box">
+                <div class="motivation-title">1. 첫 번째 동기</div>
+                <p class="motivation-text">
+                    회사 조사 결과를 바탕으로 작성. <strong>회사 비전/성장</strong>과
+                    <strong>내 경험</strong>을 연결하여 기여 가능성 제시.
+                </p>
+            </div>
+
+            <div class="motivation-box">
+                <div class="motivation-title">2. 두 번째 동기</div>
+                <p class="motivation-text">
+                    도메인 경험, 기술적 역량 등 구체적 연결점 서술.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">비전과 기여 가능성</h2>
+            <table class="vision-table">
+                <tr>
+                    <th style="width: 35%;">회사 비전/과제</th>
+                    <th style="width: 65%;">기여 가능 경험</th>
+                </tr>
+                <tr>
+                    <td><strong>비전1</strong></td>
+                    <td>관련 경험 서술</td>
+                </tr>
+                <tr>
+                    <td><strong>비전2</strong></td>
+                    <td>관련 경험 서술</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education & Certification</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                <div style="padding: 12px 14px; border: 1px solid #ddd;">
+                    <div style="font-size: 9pt; font-weight: 700;">학교명</div>
+                    <div style="font-size: 8pt; color: #666;">전공 (YYYY-YYYY)</div>
+                </div>
+                <div style="padding: 12px 14px; border: 1px solid #ddd;">
+                    <div style="font-size: 9pt; font-weight: 700;">자격증명</div>
+                    <div style="font-size: 8pt; color: #666;">발급기관 (YYYY.MM)</div>
+                </div>
+                <div style="padding: 12px 14px; border: 1px solid #ddd; background: #f8f8f8; border-left: 3px solid #000;">
+                    <div style="font-size: 9pt; font-weight: 700;">수상/성과</div>
+                    <div style="font-size: 8pt; color: #666;">소속</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
