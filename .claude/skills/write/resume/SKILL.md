@@ -103,7 +103,7 @@ JD(채용공고) 또는 기업 유형에 맞춘 이력서 생성
 
 ## Layout 유연성
 
-### 7년차 이상/리드급 레이아웃 옵션
+### 8년차 이상/리드급 레이아웃 옵션
 
 ```
 기본 순서: Summary → Core Competencies → Technical Skills → Work Experience

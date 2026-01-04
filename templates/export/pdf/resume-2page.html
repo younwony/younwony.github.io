@@ -480,7 +480,7 @@
             <div class="summary-text">
                 <strong>비즈니스 문제를 기술로 해결하는 백엔드 개발자</strong>
                 <br><br>
-                Java/Spring 기반 7년차 백엔드 개발자입니다. 이커머스 플랫폼의 상품·가격·주문·검색 영역을 폭넓게 경험하며,
+                Java/Spring 기반 8년차 백엔드 개발자입니다. 이커머스 플랫폼의 상품·가격·주문·검색 영역을 폭넓게 경험하며,
                 단순 기능 구현보다 <strong>"왜 이 구조여야 하는가"</strong>를 먼저 고민합니다. 현재는 인플루언서 마케팅 솔루션 'Seeding' 프로젝트를 리딩하며, 200만 인플루언서 데이터 플랫폼을 구축하여 새로운 비즈니스 성장에 기여하고 있습니다.
             </div>
             <div class="summary-highlights">
@@ -544,8 +544,9 @@
                     <span class="company-role">Backend Developer (Senior)</span>
                 </div>
                 <ul class="achievements">
-                    <li><strong>인플루언서 플랫폼:</strong> 200만 건 파이프라인 구축, 검색 성능 <span class="badge blue">10배 개선</span></li>
-                    <li><strong>Dynamic Pricing:</strong> 네이버 쇼핑 가격 자동화 <span class="badge">매출 10%↑</span></li>
+                    <li><strong>인플루언서 플랫폼:</strong> Instagram/YouTube/TikTok 통합, 200만 건 파이프라인 구축 <span class="badge blue">10배 개선</span></li>
+                    <li><strong>Dynamic Pricing:</strong> 자동화 + MD팀 협업으로 네이버 최저가 달성 <span class="badge">매출 10%↑</span></li>
+                    <li><strong>품절률 감소:</strong> 재구매 이탈 분석 → 셀러 정책 수립 <span class="badge">취소율 50%↓</span></li>
                     <li><strong>ChatOps:</strong> Slack 기반 운영 자동화 <span class="badge">Zero Ops</span></li>
                     <li><strong>큐레이션:</strong> MD팀 자율 상품 구성 시스템 <span class="badge">마케팅 대응↑</span></li>
                     <li><strong>AI 생산성 혁신:</strong> Claude Code + MCP 활용 <span class="badge blue">개발 90%↓</span></li>
@@ -593,7 +594,7 @@
                 <div class="project-desc">
                     <strong style="color:#4a6cf7;">200만 인플루언서 데이터 자동 수집으로 마케팅 커버리지 20배 확대, 검색 10배 개선</strong><br>
                     <strong>문제:</strong> 수작업 수집으로 일 수십 명 한계, RDB 검색 10초+ 타임아웃<br>
-                    <strong>해결:</strong> Elasticsearch 검색 엔진 + 멀티소스(TikTok/Ensemble API) 수집 파이프라인 설계<br>
+                    <strong>해결:</strong> Elasticsearch 검색 엔진 + 멀티소스 API 파이프라인 (Instagram/YouTube/TikTok 등 다중 플랫폼 통합)<br>
                     <strong>성과:</strong> 데이터 풀 10만→200만(20배↑), 검색 10초+→1초 이내(10배↑), 리포팅 <strong>Zero Ops</strong>
                 </div>
                 <div class="project-tech">
@@ -607,14 +608,29 @@
             <div class="project">
                 <div class="project-title">네이버 쇼핑 Dynamic Pricing <span class="project-company">@ 구하다</span></div>
                 <div class="project-desc">
-                    <strong style="color:#4a6cf7;">MD팀 협업 기반 전략 상품 타겟팅 및 최저가 분석 체계 구축으로 대상 상품군 매출 10% 상승</strong><br>
+                    <strong style="color:#4a6cf7;">자동화 + MD팀 협업으로 네이버 최저가 달성, 매출 10% 상승</strong><br>
                     <strong>문제:</strong> 기존 자동화 시스템은 일괄 처리만 가능, MD팀 선별 전략 상품 정밀 대응 불가<br>
-                    <strong>해결:</strong> 카테고리/브랜드 타겟팅 기반 최저가 자동 조정 + MD팀 협업 가격 조정 핑퐁 체계<br>
+                    <strong>해결:</strong> 자동 프로세스(전체 상품 모니터링) + MD팀 협업(핑퐁 방식 타겟팅 상품 최저가 달성)<br>
                     <strong>성과:</strong> 대상 상품 매출/트래픽 각 <strong>10% 상승</strong>, 자동화 + MD팀 <strong>하이브리드 구조 정착</strong>
                 </div>
                 <div class="project-tech">
                     <span class="tech-tag">Spring Boot</span>
                     <span class="tech-tag">Naver API</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">품절률 감소 및 데이터 분석 <span class="project-company">@ 구하다</span></div>
+                <div class="project-desc">
+                    <strong style="color:#4a6cf7;">재구매 이탈 분석 → 품절 취소율 40%→20% 절반 감소</strong><br>
+                    <strong>문제:</strong> GA4+BigQuery 분석 결과 품절 경험 유저의 재구매 전환 거의 없음<br>
+                    <strong>해결:</strong> 지연 셀러(2주+) 패널티 정책 수립 + 품절 고객 포인트 보상<br>
+                    <strong>성과:</strong> 품절 취소율 <strong>40%→20% (50% 감소)</strong>, 재구매 전환율 개선
+                </div>
+                <div class="project-tech">
+                    <span class="tech-tag">BigQuery</span>
+                    <span class="tech-tag">GA4</span>
+                    <span class="tech-tag">MySQL</span>
                 </div>
             </div>
 

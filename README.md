@@ -3,7 +3,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://younwony.github.io)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> 7년차 백엔드 개발자의 이력서 및 경력기술서 포트폴리오 사이트
+> 8년차 백엔드 개발자의 이력서 및 경력기술서 포트폴리오 사이트
 
 ## 📋 프로젝트 개요
 

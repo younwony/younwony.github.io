@@ -127,7 +127,7 @@ docs/career/formats/by-jd/{company}/
 [연차/직무] + [JD 핵심 키워드] + [가장 큰 성과] + [지원 동기 암시]
 
 **예시:**
-"Java/Spring 기반 7년차 백엔드 개발자입니다.
+"Java/Spring 기반 8년차 백엔드 개발자입니다.
 **대규모 트래픽 처리와 Cloud Native 전환** 경험을 바탕으로..."
 ```
 

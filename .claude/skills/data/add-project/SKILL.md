@@ -125,7 +125,7 @@ git add templates/career/*.html
 | **Result** | Before → After 정량적 수치 |
 | **Impact** | 비즈니스/팀 영향 |
 
-### 7년차 핵심
+### 8년차 핵심
 - Action에 **"왜 그 기술을 선택했는지"** 의사결정 근거 필수
 - "담당했습니다" 대신 **"달성/개선했습니다"** 표현 사용
 

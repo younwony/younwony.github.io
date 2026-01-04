@@ -13,3 +13,6 @@ output/
 
 # Windows artifacts
 nul
+
+# Job applications (private)
+applications/

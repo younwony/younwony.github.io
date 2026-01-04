@@ -149,7 +149,7 @@
 ```markdown
 ## 레이아웃 옵션
 
-**7년차 이상/리드급 경력**:
+**8년차 이상/리드급 경력**:
 - Technical Skills 섹션을 하단으로 이동
 - Work Experience 비중 확대
 - Core Competencies보다 프로젝트 성과 우선

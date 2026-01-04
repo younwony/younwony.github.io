@@ -77,7 +77,7 @@
 
 **핵심 내용**:
 - STAR+I 프레임워크 (Situation → Task → Action → Result → Impact)
-- 7년차 시니어 톤 표현법
+- 8년차 시니어 톤 표현법
 - 정량화 방식 (%, 배, 건수)
 - Bad vs Good 사례
 
