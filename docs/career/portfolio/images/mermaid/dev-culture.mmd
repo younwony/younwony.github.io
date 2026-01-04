@@ -1,0 +1,35 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f5e9', 'primaryTextColor': '#2e7d32', 'primaryBorderColor': '#4caf50'}}}%%
+flowchart LR
+    subgraph BEFORE["Before: 사후 대응"]
+        A1["❌ 코드 리뷰 없음"]
+        A2["❌ 테스트 부재"]
+        A3["❌ TPS 200 한계"]
+    end
+
+    BEFORE -->|개선| AFTER
+
+    subgraph AFTER["After: 선제적 품질 관리"]
+        B1["✅ TDD<br/>테스트 먼저"]
+        B2["✅ 코드 리뷰<br/>2인 승인 의무화"]
+        B3["✅ Elastic APM<br/>Slow Query 분석"]
+    end
+
+    subgraph OPT["ES 최적화"]
+        C["⚡ Hit Index Count<br/>인덱싱 전략 재설계"]
+    end
+
+    AFTER --> OPT
+
+    subgraph RESULT["✅ 성과"]
+        R1["TPS 200 → 3,000<br/>1500% 향상"]
+        R2["Review API<br/>4s → 80ms<br/>98% 단축"]
+        R3["코드 리뷰 문화 정착"]
+    end
+
+    OPT --> RESULT
+
+    style B1 fill:#e8f5e9,stroke:#4caf50
+    style B2 fill:#f3e5f5,stroke:#9c27b0
+    style B3 fill:#e3f2fd,stroke:#1976d2
+    style C fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style RESULT fill:#c8e6c9,stroke:#4caf50

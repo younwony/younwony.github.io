@@ -1,0 +1,32 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f3e5f5', 'primaryTextColor': '#7b1fa2', 'primaryBorderColor': '#9c27b0'}}}%%
+flowchart TB
+    subgraph MD["MD팀 직접 운영"]
+        A["👥 MD팀<br/>어드민에서 즉시 변경"]
+    end
+
+    A --> B
+
+    subgraph ENUM["Enum 타입 시스템"]
+        B["📋 전시 위치 / 아이템 / 뷰 타입<br/>새 타입 = Enum 추가만"]
+    end
+
+    B --> C
+
+    subgraph CACHE["캐시 레이어"]
+        C["💾 In-Memory Cache<br/>TTL 3분"]
+    end
+
+    C --> D["🖥️ 메인 페이지<br/>10+ 전시 위치"]
+
+    subgraph RESULT["✅ 성과"]
+        R1["MD팀 자율 운영 달성"]
+        R2["개발자 개입 0"]
+        R3["Redis 의존성 제거"]
+    end
+
+    D --> RESULT
+
+    style A fill:#e8f5e9,stroke:#4caf50
+    style B fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    style C fill:#e3f2fd,stroke:#1976d2
+    style RESULT fill:#c8e6c9,stroke:#4caf50

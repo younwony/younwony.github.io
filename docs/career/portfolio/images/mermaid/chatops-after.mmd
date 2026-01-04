@@ -1,0 +1,30 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#f3e5f5', 'primaryTextColor': '#7b1fa2', 'primaryBorderColor': '#9c27b0', 'lineColor': '#7b1fa2'}}}%%
+flowchart LR
+    subgraph SLACK["Slack 단일 채널"]
+        S["💬 Slack<br/>모든 요청 통합"]
+    end
+
+    S -->|버튼 클릭| API
+
+    subgraph BACKEND["Spring Boot"]
+        API["⚙️ API<br/>Interactive Components"]
+    end
+
+    API -->|처리| DB
+
+    subgraph STORAGE["저장소"]
+        DB[("🗄️ MySQL<br/>결과 기록")]
+    end
+
+    DB -.->|스레드에 결과 표시| S
+
+    subgraph RESULT["✅ Zero Ops 달성"]
+        R1["수동 업무 40% → 0%"]
+        R2["채널 100% 통합"]
+        R3["히스토리 추적 가능"]
+    end
+
+    style S fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    style API fill:#e8f5e9,stroke:#4caf50
+    style DB fill:#e3f2fd,stroke:#1976d2
+    style RESULT fill:#c8e6c9,stroke:#4caf50

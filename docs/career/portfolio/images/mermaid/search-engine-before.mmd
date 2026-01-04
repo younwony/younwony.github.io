@@ -1,0 +1,18 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffebee', 'primaryTextColor': '#c62828', 'primaryBorderColor': '#e57373'}}}%%
+flowchart LR
+    subgraph COMMERCIAL["상용 솔루션"]
+        A["💰 상용 검색 솔루션<br/>수천만원/년"]
+    end
+
+    A --> B["📦 단건 Insert<br/>10시간+"]
+    B --> C["🔤 한글 검색<br/>형태소 분석 미지원"]
+
+    C --> PAIN{{"❌ Pain Points"}}
+    PAIN --> P1["라이선스 비용 과다"]
+    PAIN --> P2["프로젝트 수익성 저하"]
+    PAIN --> P3["검색 정확도 저조"]
+
+    style A fill:#ffebee,stroke:#e57373,stroke-width:2px
+    style B fill:#f5f5f5,stroke:#bdbdbd
+    style C fill:#ffebee,stroke:#e57373
+    style PAIN fill:#ffcdd2,stroke:#e57373

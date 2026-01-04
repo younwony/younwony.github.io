@@ -1,0 +1,22 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f5e9', 'primaryTextColor': '#2e7d32', 'primaryBorderColor': '#4caf50'}}}%%
+flowchart LR
+    subgraph OPENSOURCE["오픈소스 스택"]
+        A["🔍 Elasticsearch<br/>비용 0원"]
+    end
+
+    A --> B["🔤 Nori 형태소 분석<br/>한글 네이티브 지원"]
+    B --> C["⚡ Bulk Insert<br/>+ 병렬 처리"]
+
+    subgraph RESULT["✅ 성과"]
+        R1["라이선스 100% 절감"]
+        R2["데이터 등록 70% 단축<br/>10시간 → 3시간"]
+        R3["한글 검색 정확도 향상"]
+        R4["🏆 2021년 우수사원 선정"]
+    end
+
+    C --> RESULT
+
+    style A fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style B fill:#fff3e0,stroke:#ff9800
+    style C fill:#e3f2fd,stroke:#1976d2
+    style RESULT fill:#c8e6c9,stroke:#4caf50

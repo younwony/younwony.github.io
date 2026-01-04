@@ -1,0 +1,36 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f5e9', 'primaryTextColor': '#2e7d32', 'primaryBorderColor': '#4caf50', 'lineColor': '#78909c', 'secondaryColor': '#e3f2fd', 'tertiaryColor': '#fff'}}}%%
+flowchart TB
+    subgraph API["외부 API"]
+        A1["TikTok API"]
+        A2["Ensemble API"]
+        A3["EchoTik API"]
+        A4["Web Scraper"]
+    end
+
+    subgraph BATCH["Spring Boot Batch"]
+        B["⚙️ Parallel + Retry<br/>+ Scheduler"]
+    end
+
+    subgraph INFRA["인프라"]
+        C1[("🔒 Redis Lock<br/>중복 방지")]
+        C2[("🗄️ MySQL<br/>원본 저장")]
+        C3[("☁️ S3<br/>이미지")]
+        C4[("🔍 Elasticsearch<br/>검색 최적화")]
+    end
+
+    A1 & A2 & A3 & A4 --> B
+    B <-.-> C1
+    B --> C2 & C3
+    C2 --> C4
+
+    subgraph RESULT["✅ 성과"]
+        R1["일 5,000명+ 자동 수집"]
+        R2["검색 응답 1초 이내"]
+        R3["데이터 풀 20배 확대"]
+    end
+
+    C4 --> RESULT
+
+    style B fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style C4 fill:#e3f2fd,stroke:#1976d2
+    style RESULT fill:#c8e6c9,stroke:#4caf50

@@ -1,0 +1,34 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f5e9', 'primaryTextColor': '#2e7d32', 'primaryBorderColor': '#4caf50'}}}%%
+flowchart LR
+    subgraph INPUT["이미지 파일"]
+        A["🖼️ 외부 이미지<br/>0~5KB 영역 추출"]
+    end
+
+    A --> B
+
+    subgraph HASH["해시 검증"]
+        B["🔐 SHA256 해시<br/>기존 해시와 비교"]
+    end
+
+    B -->|변경 감지| C
+
+    subgraph STORAGE["저장소"]
+        C["☁️ AWS S3<br/>이미지 재업로드"]
+    end
+
+    subgraph AUTO["자동화"]
+        D["⏰ 24시간 자동 동기화"]
+    end
+
+    C --> D
+
+    subgraph RESULT["✅ 성과: 클레임 Zero"]
+        R1["월 20건+ → 0건"]
+    end
+
+    D --> RESULT
+
+    style A fill:#e3f2fd,stroke:#1976d2
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#4caf50
+    style RESULT fill:#c8e6c9,stroke:#4caf50

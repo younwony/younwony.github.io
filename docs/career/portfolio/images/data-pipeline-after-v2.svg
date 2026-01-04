@@ -35,7 +35,7 @@
   <g filter="url(#shadow2)">
     <rect x="40" y="50" width="130" height="50" rx="10" fill="url(#cardBlue2)" stroke="#90caf9" stroke-width="1"/>
   </g>
-  <text x="105" y="80" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="12" font-weight="600">TikTok API</text>
+  <text x="105" y="80" text-anchor="middle" fill="#424242" font-family="Arial, sans-serif" font-size="12" font-weight="600">Tik API</text>
 
   <g filter="url(#shadow2)">
     <rect x="185" y="50" width="130" height="50" rx="10" fill="url(#cardBlue2)" stroke="#90caf9" stroke-width="1"/>
@@ -64,7 +64,7 @@
   </g>
   <circle cx="315" cy="158" r="18" fill="#4caf50"/>
   <text x="315" y="163" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚙</text>
-  <text x="420" y="152" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="14" font-weight="600">Spring Boot Batch</text>
+  <text x="420" y="152" text-anchor="middle" fill="#2e7d32" font-family="Arial, sans-serif" font-size="14" font-weight="600">Spring Boot Scheduling</text>
   <text x="420" y="172" text-anchor="middle" fill="#558b2f" font-family="Arial, sans-serif" font-size="11">Parallel + Retry + Scheduler</text>
 
   <!-- Redis Lock -->

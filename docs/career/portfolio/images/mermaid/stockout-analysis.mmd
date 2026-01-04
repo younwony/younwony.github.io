@@ -1,0 +1,38 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e3f2fd', 'primaryTextColor': '#1976d2', 'primaryBorderColor': '#1976d2'}}}%%
+flowchart TB
+    subgraph ANALYTICS["데이터 분석"]
+        A["📊 GA4 + BigQuery<br/>품절 경험 유저 분석"]
+    end
+
+    A -->|전환 거의 없음 발견| B
+
+    subgraph CAUSE["원인 분석"]
+        B["🔍 DB 품절 사유 분석<br/>지연 셀러 (2주+) 발견"]
+    end
+
+    B --> C
+
+    subgraph SOLUTION["해결 정책"]
+        C["📋 정책 수립"]
+        C1["1. 지연 셀러 패널티<br/>(누적 시 계약 해지)"]
+        C2["2. 품절 고객<br/>포인트 보상"]
+    end
+
+    C --> C1 & C2
+
+    subgraph TRADEOFF["Trade-off"]
+        T["셀러 이탈 리스크 vs 고객 경험<br/>→ 고객 경험 우선 결정"]
+    end
+
+    subgraph RESULT["✅ 성과"]
+        R1["품절 취소율 50% 감소<br/>40% → 20%"]
+        R2["재구매 전환율 개선"]
+    end
+
+    C1 & C2 --> RESULT
+
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style B fill:#fff3e0,stroke:#ff9800
+    style C fill:#e8f5e9,stroke:#4caf50
+    style RESULT fill:#c8e6c9,stroke:#4caf50
+    style TRADEOFF fill:#fff3e0,stroke:#ff9800

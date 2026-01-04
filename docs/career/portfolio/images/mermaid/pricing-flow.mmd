@@ -1,0 +1,29 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e8f5e9', 'primaryTextColor': '#2e7d32', 'primaryBorderColor': '#4caf50'}}}%%
+flowchart TB
+    subgraph MONITOR["자동 모니터링"]
+        A["📊 경쟁사 모니터링<br/>Naver Shopping API"]
+    end
+
+    A --> B["⚙️ 자동 가격 조정<br/>전체 상품 대상"]
+
+    subgraph MD["MD팀 협업"]
+        C["👥 MD팀<br/>타겟팅 상품 선정"]
+    end
+
+    B <-->|핑퐁| C
+
+    B --> D["🛒 네이버 쇼핑<br/>최저가 달성"]
+
+    subgraph RESULT["✅ 성과"]
+        R1["매출 10% 상승"]
+        R2["트래픽 10% 상승"]
+        R3["네이버 최저가 달성"]
+    end
+
+    D --> RESULT
+
+    style A fill:#e3f2fd,stroke:#1976d2
+    style B fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style C fill:#fff3e0,stroke:#ff9800
+    style D fill:#e8f5e9,stroke:#4caf50
+    style RESULT fill:#c8e6c9,stroke:#4caf50

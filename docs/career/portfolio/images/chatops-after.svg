@@ -60,16 +60,15 @@
   <path d="M450,130 L500,130" stroke="#1976d2" stroke-width="2" marker-end="url(#arrowSmall)"/>
   <text x="475" y="120" text-anchor="middle" fill="#1976d2" font-family="Arial, sans-serif" font-size="8">처리</text>
 
-  <!-- DB -->
+  <!-- 처리 완료 -->
   <g filter="url(#shadow)">
     <rect x="510" y="80" width="140" height="100" rx="12" fill="url(#cardBlue)" stroke="#1976d2" stroke-width="1"/>
   </g>
-  <ellipse cx="555" cy="115" rx="18" ry="8" fill="#42a5f5"/>
-  <rect x="537" y="115" width="36" height="20" fill="#42a5f5"/>
-  <ellipse cx="555" cy="135" rx="18" ry="8" fill="#1e88e5"/>
-  <text x="590" y="120" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">MySQL</text>
-  <text x="590" y="135" fill="#757575" font-family="Arial, sans-serif" font-size="9">처리 완료</text>
-  <text x="580" y="165" fill="#1976d2" font-family="Arial, sans-serif" font-size="9">결과 기록</text>
+  <circle cx="555" cy="120" r="18" fill="#42a5f5"/>
+  <text x="555" y="125" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✓</text>
+  <text x="590" y="115" fill="#424242" font-family="Arial, sans-serif" font-size="11" font-weight="600">처리 완료</text>
+  <text x="590" y="132" fill="#757575" font-family="Arial, sans-serif" font-size="9">즉시 처리</text>
+  <text x="580" y="165" fill="#1976d2" font-family="Arial, sans-serif" font-size="9">기록 없음</text>
 
   <!-- 결과 반환 화살표 (역방향) -->
   <path d="M510,160 C400,200 250,200 140,180" stroke="#4caf50" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
